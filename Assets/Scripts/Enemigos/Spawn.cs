@@ -7,7 +7,6 @@ public class Spawn : MonoBehaviour
     [SerializeField] private GameObject[] spawnEnemy;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private Transform _playerTarget;
-    [SerializeField] private Health _health;
 
     private void Start()
     {
@@ -15,11 +14,11 @@ public class Spawn : MonoBehaviour
     }
     private IEnumerator CourutineSpawnEnemy()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         int NumberRandom = Random.Range(0, 1);
         GameObject newEnemy = Instantiate(spawnEnemy[NumberRandom]);
         newEnemy.transform.position = spawnPoints[0].transform.position;
-        newEnemy.GetComponent<Enemy>().SetTagetPlayer(_playerTarget,_health);
+        newEnemy.GetComponent<Enemy>().SetTagetPlayer(_playerTarget);
         StartCoroutine(CourutineSpawnEnemy());
     }
 }

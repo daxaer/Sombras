@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Health _health;
     [SerializeField] private Transform target;
+    [SerializeField] private float _vida;
+    [SerializeField] private PoolAlmas _alma;
     NavMeshAgent _agent;
 
     private void Start()
     {
+        Destroy(this,5);
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
@@ -20,14 +22,24 @@ public class Enemy : MonoBehaviour
     {
         _agent.SetDestination(target.position);
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        _health.TakeDamage(1);
-    }
 
-    public void SetTagetPlayer(Transform setTarget, Health setHealth)
+    public void SetTagetPlayer(Transform setTarget)
     {
         target = setTarget;
-        _health = setHealth;
     }
+
+    public void TakeDamage(float damage)
+    {
+        _vida -= damage;
+        Debug.Log("recividaño");
+        Debug.Log(_vida);
+        if (_vida <= 0)
+        {
+            Debug.Log("mori");
+            _alma.ActivarAlma();
+            Destroy(this.gameObject);
+        }
+    }
+    
+   
 }
