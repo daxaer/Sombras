@@ -29,6 +29,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
         vidaMaxima = 100;
         vidaActual = vidaMaxima;
+        velocidadPlayer = 2;
         barraVida.EstablecerBarraVida(vidaActual);
 
     }
@@ -53,7 +54,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + direccion * velocidadPlayer * Time.fixedDeltaTime);
+        playerRb.MovePosition(playerRb.position + direccion * (velocidadPlayer * Time.fixedDeltaTime));
     }
 
     //Prueba de cuando toque un enemigo baje su vida, en este caso son capsulas que deje en el mapa
