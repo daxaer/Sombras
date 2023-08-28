@@ -5,11 +5,17 @@ using UnityEngine.UI;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
-    [SerializeField] private float velocidadPlayer = 1f;
-    [SerializeField] private float vidaMaxima;
-    [SerializeField] private float vidaActual;
+    public float velocidadPlayer { get; private set; }
+    public float vidaMaxima { get; private set; }
+    public float vidaActual { get; private set; }
+
+    public float RangoVida { get { return (float)vidaActual / (float)vidaMaxima; } }
+    
     private Vector2 direccion;
+    
     private Rigidbody2D playerRb;
+
+    
 
     [SerializeField] private BarraVida barraVida;
     [SerializeField] private Almas Alma;
@@ -20,8 +26,8 @@ public class MovimientoPersonaje : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        
 
+        vidaMaxima = 100;
         vidaActual = vidaMaxima;
         barraVida.EstablecerBarraVida(vidaActual);
 
@@ -56,9 +62,12 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            vidaActual = vidaActual - 1f;
+            vidaActual = vidaActual - 10f;
+            vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+            barraVida.ValorBarraPorcentual(RangoVida);
             barraVida.ValorVidaActual(vidaActual);
-            barraVida.barraAnimator.SetBool("estaBaja", true);
+            
+            //barraVida.barraAnimator.SetBool("estaBaja", true);
         }
         if (collision.CompareTag("Alma"))
         {
