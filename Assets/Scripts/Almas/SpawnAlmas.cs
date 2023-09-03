@@ -15,12 +15,12 @@ public class SpawnAlmas : MonoBehaviour
         Debug.Log("probabilidad");
         if (probabilidad >= 90)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             tipoAlma = 1;
         }
         else
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             tipoAlma = 2;
         }
     }

@@ -41,7 +41,6 @@ public class MovimientoPersonaje : MonoBehaviour
         vidaActual = vidaMaxima;
         velocidadPlayer = 2;
         barraVida.EstablecerBarraVida(vidaActual);
-
     }
 
     // Update is called once per frame
