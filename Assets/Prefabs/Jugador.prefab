@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27060e5855b9524aaa91c787ae07805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estadisticas: {fileID: 0}
   prefabAtaque: {fileID: 2212208750441370251, guid: bca74051c6a3ab441a53cf75604a94ec, type: 3}
   spawnAtaque: {fileID: 1869190762329115102}
   _damage: 0
-  damage: 1
 --- !u!50 &2581710144169056315
 Rigidbody2D:
   serializedVersion: 4
