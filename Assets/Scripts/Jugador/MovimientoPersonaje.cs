@@ -21,7 +21,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
     [SerializeField] private BarraVida barraVida;
     [SerializeField] private Almas Alma;
-
+	private Vector2 direccion;
     
 
     // Start is called before the first frame update
@@ -37,9 +37,15 @@ public class MovimientoPersonaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       float direccionX = Input.GetAxisRaw("Horizontal");
+        float direccionY = Input.GetAxisRaw("Vertical");
+        direccion = new Vector2(direccionX, direccionY).normalized;
+
         _objetivoArma = _camera.ScreenToWorldPoint(Input.mousePosition);
 
-
+        float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
+        float rotacion = (180 / Mathf.PI) * angulo - 90;
+        transform.rotation = Quaternion.Euler(0,0,rotacion);
     }
 
     private void FixedUpdate()

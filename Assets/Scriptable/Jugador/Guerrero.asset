@@ -17,5 +17,5 @@ MonoBehaviour:
   velocidadMovimiento: 1
   velocidadDeAtaque: 1
   porcentajeRoboDeVida: 0
-  rangoIluminacion: 0
-  tiempoIluminacion: 0
+  rangoIluminacion: 3
+  tiempoIluminacion: 2

@@ -39,7 +39,6 @@ public class MenuTienda : MonoBehaviour
             alma.CantidadAlmas = alma.CantidadAlmas - tarjetaSlot2.TarjetaEquipada.costoTarjeta;
         }
     }
-
     public void ModificadorCaracteristicaDelSlot3()
     {
         if (alma.CantidadAlmas > tarjetaSlot3.TarjetaEquipada.costoTarjeta)
@@ -51,6 +50,4 @@ public class MenuTienda : MonoBehaviour
 
         }
     }
-
-
 }
