@@ -639,11 +639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267017b224f9f4e4688fa73fc0731c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnEnemy:
-  - {fileID: 293692399791601651, guid: 0f80234a65c0b954684734b1af3998c3, type: 3}
-  spawnPoints:
-  - {fileID: 233363718}
-  _playerTarget: {fileID: 1014082712913613313}
 --- !u!1 &290896052
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &290896053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1614,10 +1609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!212 &583420040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1667,7 +1658,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &695263838
@@ -1700,10 +1691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideByGrid: 0
-  m_UseMeshPrefab: {fileID: 0}
-  m_CompressBounds: 0
-  m_OverrideVector: {x: 1, y: 1, z: 1}
 --- !u!114 &695263840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,24 +1703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: dd7f52f6a1d46ed488a17f7e8120131c, type: 2}
 --- !u!4 &695263841
 Transform:
   m_ObjectHideFlags: 0
@@ -2993,7 +2962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b42331623a4fd43903c5c27c5d71c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TarjetaEquipada: {fileID: 11400000, guid: 35e8a9279f08c0549b2bfac6acfe4ac5, type: 2}
+  TarjetaEquipada: {fileID: 11400000, guid: dedbbb3edcf181b42ad4e90c477927a3, type: 2}
   nombreTarjeta: {fileID: 151889936}
   descripcionTarjeta: {fileID: 481750680}
   costeTarjeta: {fileID: 1577752699}
@@ -3607,10 +3576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!212 &1192807361
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3660,7 +3625,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1310642806
@@ -5001,11 +4966,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1014082712913613313 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4160473408633597086, guid: c118024d841390f40af34fa523372bc5, type: 3}
-  m_PrefabInstance: {fileID: 5049849066716101570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1014082712913613319 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -9084248509724689665, guid: c118024d841390f40af34fa523372bc5, type: 3}
