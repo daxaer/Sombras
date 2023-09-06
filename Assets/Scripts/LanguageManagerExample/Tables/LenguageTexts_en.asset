@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LenguageTexts_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 549809e64b2e22349b57e72ae0d01e5e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4022394179584
+    m_Localized: Shadows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4630937358336
+    m_Localized: PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5107221549056
+    m_Localized: Just Roguelike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5283004829696
+    m_Localized: Another Time To Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5379314438144
+    m_Localized: Just Play!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5430300397568
+    m_Localized: Play with the light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10407873892352
+    m_Localized: EXIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10470876532736
+    m_Localized: CREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10491860635648
+    m_Localized: CONFIGURATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10832429731840
+    m_Localized: Just Roguelike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 219720732672
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
