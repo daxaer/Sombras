@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5379314438144
-    m_Localized: Solo juega
+    m_Localized: Solo juega!
     m_Metadata:
       m_Items: []
   - m_Id: 5430300397568
@@ -56,6 +56,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 10832429731840
     m_Localized: Solo es un roguelike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681489530376192
+    m_Localized: Musica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704174947848192
+    m_Localized: Volumen de Efectos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704228437807104
+    m_Localized: Lenguajes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706037663420416
+    m_Localized: "Espa\xF1ol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723901673918464
+    m_Localized: Regresar
     m_Metadata:
       m_Items: []
   references:

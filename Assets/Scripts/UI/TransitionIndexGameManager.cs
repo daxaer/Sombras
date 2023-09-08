@@ -2,13 +2,11 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
-using Unity.VisualScripting;
 
-public class TransitionGameManager : MonoBehaviour
+public class TransitionIndexGameManager : MonoBehaviour
 {
     [Header("Escena del juego")][SerializeField][Tooltip("Aki pones el nombre de la escena que quieres cambiar")]
-    [TextArea] private string _nombreDeLaEscenaDelJuego;
+    [TextArea] private string _nombreDeLaEscenaDeSeleccion;
     [Space(1)]
     [Header("Texto")][Tooltip("Fuente de texto del objeto subtitulo")]
     [SerializeField]private TextMeshProUGUI _textMeshProUGUI;
@@ -18,13 +16,19 @@ public class TransitionGameManager : MonoBehaviour
     [Multiline]private string[] _descriptionPrimero;
     [Tooltip("Limite del arreglo de descripciones")][SerializeField]private float _limitArray;
     [Space(1)]
-    [Header("Contador de frase")][Tooltip("Este siguiente significa en que espacio del arreglo de frases esta (No tocar)")]
+    [Header("Contador de frase(No Tocar)")][Tooltip("Este siguiente significa en que espacio del arreglo de frases esta (No tocar)")]
     [SerializeField]private int _siguiente;
     [Space(1)]
-    [Header("Objeto Creditos")][Tooltip("Aplicar el objeto de creditos")]
+    [Header("Objeto Settings")][Tooltip("Aplicar el objeto de settings")]
     [SerializeField]private GameObject _SettingsObject;
-    [Tooltip("Tiempo en abrir los creditos")][SerializeField]private float timeToOpenCredits;
+    [Tooltip("Tiempo en abrir los creditos")][SerializeField]private float timeToOpenSettings;
     [Space(1)]
+    [Header("Objeto Credits")]
+    [Tooltip("Aplicar el objeto de credits")]
+    [SerializeField] private GameObject _CreditsObject;
+    [Tooltip("Tiempo en abrir los creditos")][SerializeField] private float timeToOpenCredits;
+    [Space(1)]
+
     //[SerializeField]
     //private Animator _animator;
 
@@ -47,10 +51,6 @@ public class TransitionGameManager : MonoBehaviour
         hola = frases[randomNumber];
     }*/
 
-    public void PlayButton()
-    {
-        SceneManager.LoadScene(_nombreDeLaEscenaDelJuego);
-    }
 
     void Start()
     {
@@ -75,6 +75,11 @@ public class TransitionGameManager : MonoBehaviour
         }
     }
 
+    public void PlayButton()
+    {
+        SceneManager.LoadScene(_nombreDeLaEscenaDeSeleccion);
+    }
+
     public void OpenSettings()
     {
         StartCoroutine(CourutineSettingsOpen());
@@ -85,16 +90,43 @@ public class TransitionGameManager : MonoBehaviour
         StartCoroutine(CourutineSettingsClose());
     }
 
+    public void OpenCredits()
+    {
+        StartCoroutine(CourutineCreditsOpen());
+    }
+
+    public void CloseCredits()
+    {
+        StartCoroutine(CourutineCreditsClose());
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     private IEnumerator CourutineSettingsOpen()
     {
-        yield return new WaitForSeconds(timeToOpenCredits);
+        yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(true);
     }
 
     private IEnumerator CourutineSettingsClose()
     {
-        yield return new WaitForSeconds(timeToOpenCredits);
+        yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(false);
+    }
+
+    private IEnumerator CourutineCreditsOpen()
+    {
+        yield return new WaitForSeconds(timeToOpenCredits);
+        _CreditsObject.SetActive(true);
+    }
+
+    private IEnumerator CourutineCreditsClose()
+    {
+        yield return new WaitForSeconds(timeToOpenCredits);
+        _CreditsObject.SetActive(false);
     }
 
     private IEnumerator SwitcherDescription()
