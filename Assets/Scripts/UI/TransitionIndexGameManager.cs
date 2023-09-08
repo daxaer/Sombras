@@ -11,9 +11,9 @@ public class TransitionIndexGameManager : MonoBehaviour
     [Header("Texto")][Tooltip("Fuente de texto del objeto subtitulo")]
     [SerializeField]private TextMeshProUGUI _textMeshProUGUI;
     [Space(1)]
-    [Header("Descripciones Y Limite de Arreglo")]
+    [Header("Frases")]
     [SerializeField][Tooltip("Arreglo de frases, puedes poner una frase aki para que se muestre en la section de descripcion")]
-    [Multiline]private string[] _descriptionPrimero;
+    [Multiline]private string[] _arregloDeFrases;
     [Tooltip("Limite del arreglo de descripciones")][SerializeField]private float _limitArray;
     [Space(1)]
     [Header("Contador de frase(No Tocar)")][Tooltip("Este siguiente significa en que espacio del arreglo de frases esta (No tocar)")]
@@ -54,7 +54,7 @@ public class TransitionIndexGameManager : MonoBehaviour
 
     void Start()
     {
-        _textMeshProUGUI.text = _descriptionPrimero[0];
+        _textMeshProUGUI.text = _arregloDeFrases[0];
         //_animator.SetBool("Aparecer", true);
     }
 
@@ -71,7 +71,7 @@ public class TransitionIndexGameManager : MonoBehaviour
         if (_siguiente == _limitArray)
         {
             _siguiente = 0;
-            _textMeshProUGUI.text = _descriptionPrimero[_siguiente];
+            _textMeshProUGUI.text = _arregloDeFrases[_siguiente];
         }
     }
 
@@ -134,7 +134,7 @@ public class TransitionIndexGameManager : MonoBehaviour
         AnimationDesaparecer();
         yield return new WaitForSeconds(1);
         AnimationAparecer();
-        _textMeshProUGUI.text = _descriptionPrimero[_siguiente];
+        _textMeshProUGUI.text = _arregloDeFrases[_siguiente];
     }
 
     private void AnimationAparecer()

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
@@ -11,19 +8,17 @@ public class DropdownLocaleLanguage : MonoBehaviour
     private void Start()
     {
         int savedLocalID = PlayerPrefs.GetInt(LocaleKey, 0);
-
         ChangeLocal(savedLocalID);
     }
 
     public void ChangeLocal(int localID)
     {
         var avaliableLocales = LocalizationSettings.AvailableLocales;
-
         if (localID >= 0 && localID < avaliableLocales.Locales.Count)
         {
             LocalizationSettings.SelectedLocale = avaliableLocales.Locales[localID];
-
             PlayerPrefs.SetInt(LocaleKey, localID);
         }
     }
+
 }

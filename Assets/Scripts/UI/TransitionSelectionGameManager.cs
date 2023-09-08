@@ -3,14 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class TransitionSelectionGameManager : MonoBehaviour
 {
-    [Header("Escena del juego")]
+    [Header("Escena del juego")][Tooltip("Nombre de la escena del juego")]
     [SerializeField]
-    [Tooltip("Aki pones el nombre de la escena que quieres cambiar")]
     [TextArea] private string _nombreDeLaEscenaDelJuego;
+    [Space(1)]
 
-    [Header("Escena del inicio")]
+    [Header("Escena del inicio")][Tooltip("Nombre de la escena del inicio")]
     [SerializeField]
-    [Tooltip("Aki pones el nombre de la escena que quieres cambiar")]
     [TextArea] private string _nombreDeInicioDelJuego;
     private string _champSelected;
 
