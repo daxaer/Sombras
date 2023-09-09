@@ -79,6 +79,22 @@ MonoBehaviour:
     m_Key: ButtonReturn
     m_Metadata:
       m_Items: []
+  - m_Id: 1301438057697280
+    m_Key: DescriptionKnightSelection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1301638524456960
+    m_Key: DescriptionShooterSelection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302022097752064
+    m_Key: DescriptionSoulEaterSelection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1339837724512256
+    m_Key: 
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139

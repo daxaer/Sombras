@@ -78,6 +78,19 @@ MonoBehaviour:
     m_Localized: Regresar
     m_Metadata:
       m_Items: []
+  - m_Id: 1301438057697280
+    m_Localized: Caballero de gran armadura, portadora de la espadad de luz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1301638524456960
+    m_Localized: Tirador de gran alcance, puede disparar a distancia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302022097752064
+    m_Localized: Es un come almas, le encanta la oscuridad y obtiene ventaja en las
+      zonas oscuras.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -82,6 +82,18 @@ MonoBehaviour:
     m_Localized: Return
     m_Metadata:
       m_Items: []
+  - m_Id: 1301438057697280
+    m_Localized: Knight in great armor, wielder of the sword of light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1301638524456960
+    m_Localized: Powerful shooter, can shoot from a distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302022097752064
+    m_Localized: It is a soul eater, loves darkness and gains advantage in dark areas.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

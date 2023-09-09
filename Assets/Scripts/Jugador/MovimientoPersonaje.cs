@@ -25,14 +25,12 @@ public class MovimientoPersonaje : MonoBehaviour
     
     private Rigidbody2D playerRb;
 
-    
-
     [SerializeField] private BarraVida barraVida;
     [SerializeField] private Almas Alma;
 
+    [SerializeField] private GameObject _objectOpenSettings;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -41,10 +39,8 @@ public class MovimientoPersonaje : MonoBehaviour
         vidaActual = vidaMaxima;
         velocidadPlayer = 2;
         barraVida.EstablecerBarraVida(vidaActual);
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         float direccionX = Input.GetAxisRaw("Horizontal");
@@ -58,12 +54,7 @@ public class MovimientoPersonaje : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,0,rotacion);
 
         //Prueba de aumento de velocidad a la hora de hacer la compra
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            velocidadPlayer++;
-        }
-
-
+        Pause();
     }
 
     private void FixedUpdate()
@@ -100,5 +91,18 @@ public class MovimientoPersonaje : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _objectOpenSettings.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
 
+    public void closePause()
+    {
+        _objectOpenSettings.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }
