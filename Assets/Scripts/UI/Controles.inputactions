@@ -113,6 +113,17 @@
                 },
                 {
                     "name": "",
+                    "id": "364e33df-0022-4e68-b5cb-f554fb7ffb2b",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotacion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2f9e5dd8-258c-4ae1-ab02-700484330f64",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",

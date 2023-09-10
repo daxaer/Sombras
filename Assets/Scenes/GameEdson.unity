@@ -721,6 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alma: {fileID: 1310642810}
+  sonidoTarjeta: {fileID: 511932012}
   estadisticas: {fileID: 5049849066716101571}
   tarjetaSlot1: {fileID: 1053224000}
   tarjetaSlot2: {fileID: 2011259121}
@@ -1158,12 +1159,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 296907064}
         m_TargetAssemblyTypeName: MenuTienda, Assembly-CSharp
-        m_MethodName: ModificadorCaracteristicaDelSlot1
-        m_Mode: 1
+        m_MethodName: ModificadorCaracteristicaDelSlot
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 926512255}
+        m_TargetAssemblyTypeName: SistemaDrop, Assembly-CSharp
+        m_MethodName: AparicionTarjetaEnSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1286,6 +1299,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481750678}
   m_CullTransparentMesh: 1
+--- !u!1 &511932010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511932011}
+  - component: {fileID: 511932012}
+  m_Layer: 0
+  m_Name: SonidoTarjeta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &511932011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511932010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542862585}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &511932012
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511932010}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 701487d4b029aae47b180504e99c427e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &558311535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,12 +1513,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 296907064}
         m_TargetAssemblyTypeName: MenuTienda, Assembly-CSharp
-        m_MethodName: ModificadorCaracteristicaDelSlot1
-        m_Mode: 1
+        m_MethodName: ModificadorCaracteristicaDelSlot
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 926512255}
+        m_TargetAssemblyTypeName: SistemaDrop, Assembly-CSharp
+        m_MethodName: AparicionTarjetaEnSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1602,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddabd14a1c7a4914cac3f643a3dec089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TarjetaEquipada: {fileID: 11400000, guid: f3d59c4388673634590e03edd9df74bc, type: 2}
+  TarjetaEquipada: {fileID: 0}
   nombreTarjeta: {fileID: 1190232646}
   descripcionTarjeta: {fileID: 874355290}
   costeTarjeta: {fileID: 1848367658}
@@ -2856,13 +3009,14 @@ GameObject:
   - component: {fileID: 926512252}
   - component: {fileID: 926512254}
   - component: {fileID: 926512253}
+  - component: {fileID: 926512255}
   m_Layer: 5
   m_Name: Tienda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &926512252
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2925,6 +3079,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926512251}
   m_CullTransparentMesh: 1
+--- !u!114 &926512255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926512251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0969f9cc5a7ec3d4b8a911a569ee781b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probabilidadTarjetas: {fileID: 11400000, guid: 863633d82c15dec46a4ad7d163d9a613, type: 2}
+  slot1: {fileID: 1053224000}
+  slot2: {fileID: 2011259121}
+  slot3: {fileID: 589134785}
+  almas: {fileID: 1310642810}
+  probabilidad1: 0
+  probabilidad2: 0
+  probabilidad3: 0
+  porcentajeTotal: 0
+  botonCompraSlot1: {fileID: 473350713}
+  botonCompraSlot2: {fileID: 558311537}
+  botonCompraSlot3: {fileID: 2125775978}
 --- !u!1 &937034763
 GameObject:
   m_ObjectHideFlags: 0
@@ -3478,7 +3656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddabd14a1c7a4914cac3f643a3dec089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TarjetaEquipada: {fileID: 11400000, guid: f3d59c4388673634590e03edd9df74bc, type: 2}
+  TarjetaEquipada: {fileID: 0}
   nombreTarjeta: {fileID: 151889936}
   descripcionTarjeta: {fileID: 481750680}
   costeTarjeta: {fileID: 1577752699}
@@ -4358,6 +4536,39 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &1542862584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542862585}
+  m_Layer: 0
+  m_Name: Sonidos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1542862585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542862584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 963.9368, y: 249.63034, z: -60.83929}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1832040776}
+  - {fileID: 511932011}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1547671927
 GameObject:
   m_ObjectHideFlags: 0
@@ -5030,6 +5241,134 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1832040775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832040776}
+  - component: {fileID: 1832040777}
+  m_Layer: 0
+  m_Name: SonidoAtaque
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832040776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832040775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542862585}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1832040777
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832040775}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 38dd22a314a8f5646a78675805397f53, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1846022968
 GameObject:
   m_ObjectHideFlags: 0
@@ -5423,7 +5762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddabd14a1c7a4914cac3f643a3dec089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TarjetaEquipada: {fileID: 11400000, guid: f3d59c4388673634590e03edd9df74bc, type: 2}
+  TarjetaEquipada: {fileID: 0}
   nombreTarjeta: {fileID: 228736313}
   descripcionTarjeta: {fileID: 1024516855}
   costeTarjeta: {fileID: 1766815356}
@@ -5633,12 +5972,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 296907064}
         m_TargetAssemblyTypeName: MenuTienda, Assembly-CSharp
-        m_MethodName: ModificadorCaracteristicaDelSlot1
-        m_Mode: 1
+        m_MethodName: ModificadorCaracteristicaDelSlot
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 926512255}
+        m_TargetAssemblyTypeName: SistemaDrop, Assembly-CSharp
+        m_MethodName: AparicionTarjetaEnSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5727,8 +6078,12 @@ PrefabInstance:
       objectReference: {fileID: 1319883929}
     - target: {fileID: 2622110522608581265, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: velocidadPlayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2622110522608581265, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: personajeSeleccionado
+      value: 
+      objectReference: {fileID: 11400000, guid: e66177b87d7616e41b84dc4ec4dc84c3, type: 2}
     - target: {fileID: 2755939281613191656, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: m_Name
       value: Jugador
@@ -5777,6 +6132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4178300058161498754, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: sonidoAtaque
+      value: 
+      objectReference: {fileID: 1832040777}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

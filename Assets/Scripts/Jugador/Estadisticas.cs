@@ -13,9 +13,23 @@ public class Estadisticas : MonoBehaviour
     public float rango;
     public float VelocidadAtaque;
     public float roboDeVida;
-    public bool iluminarEnemigo;
+    public float iluminarEnemigo;
     public float duracionLamparas;
-    public float rangoLamparas;
+   
 
-  
+    [SerializeField] private ScriptableEstadisticas personajeSeleccionado;
+
+    private void Start()
+    {
+        vidaMaxima = personajeSeleccionado.VIdaMaxima;
+        velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento;
+        vidaActual = personajeSeleccionado.vidaActual;
+        ataque = personajeSeleccionado.ATaque;
+        rango = personajeSeleccionado.RangoGolpe;
+        VelocidadAtaque = personajeSeleccionado.VelocidadDeAtaque;
+        roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida;
+        iluminarEnemigo = personajeSeleccionado.RangoIluminacion;
+        duracionLamparas = personajeSeleccionado.TiempoIluminacion;
+       
+    }
 }

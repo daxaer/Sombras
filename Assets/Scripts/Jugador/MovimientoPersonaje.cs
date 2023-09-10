@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MovimientoPersonaje : MonoBehaviour
 {
     public Estadisticas estadisticas;
-    [SerializeField] private ScriptableObject personajeSeleccionado;
 
     private Vector3 _objetivoArma;
     [SerializeField] private Camera _camera;
@@ -45,9 +44,6 @@ public class MovimientoPersonaje : MonoBehaviour
         playerRb.MovePosition(playerRb.position + direccionPlayer * (estadisticas.velocidadPlayer * Time.fixedDeltaTime));
 
     }
-
-    //Prueba de cuando toque un enemigo baje su vida, en este caso son capsulas que deje en el mapa
-
     public void moveDir(Vector2 direccion)
     {
         direccionPlayer = direccion;

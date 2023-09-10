@@ -19,15 +19,21 @@ public class TarjetaMostrada : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nombreTarjeta.text = TarjetaEquipada.nombreTarjetaEs;
-        descripcionTarjeta.text = TarjetaEquipada.descripcionTarjetaEs;
-        costeTarjeta.text = TarjetaEquipada.costoTarjeta.ToString();
-        marcoTarjeta.color = TarjetaEquipada.colorRareza;
-        imagenTarjeta.sprite = TarjetaEquipada.imagenTarjeta; 
+        Actualizar();
     }
 
     private void Update()
     {
         
     }
+
+    public void Actualizar()
+    {
+        nombreTarjeta.text = TarjetaEquipada.nombreTarjetaEs;
+        descripcionTarjeta.text = TarjetaEquipada.descripcionTarjetaEs;
+        costeTarjeta.text = TarjetaEquipada.costoTarjeta.ToString();
+        marcoTarjeta.color = TarjetaEquipada.colorRareza;
+        imagenTarjeta.sprite = TarjetaEquipada.imagenTarjeta;
+    }
+    
 }

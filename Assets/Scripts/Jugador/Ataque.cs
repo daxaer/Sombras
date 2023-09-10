@@ -8,9 +8,11 @@ using UnityEngine.Serialization;
 public class Ataque : MonoBehaviour
 {
     public Estadisticas estadisticas;
+    public AudioSource sonidoAtaque;
     [SerializeField] private GameObject prefabAtaque;
     [SerializeField] private Transform spawnAtaque;
     [FormerlySerializedAs("damage")] [SerializeField] private int _damage;
+
 
     void Update()
     {
@@ -18,6 +20,7 @@ public class Ataque : MonoBehaviour
     
     public void Atacar()
     {
+        sonidoAtaque.Play();
         GameObject temp = Instantiate(prefabAtaque, spawnAtaque.position, spawnAtaque.rotation);
     }
 

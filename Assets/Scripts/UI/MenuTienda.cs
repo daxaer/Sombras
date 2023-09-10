@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MenuTienda : MonoBehaviour
 {
 
     public Almas alma;
-    public Estadisticas estadisticas;
+
+    public AudioSource sonidoTarjeta;
+
+    [SerializeField] private Estadisticas estadisticas;
+    
     [SerializeField] private TarjetaMostrada tarjetaSlot1;
 
     [SerializeField] private TarjetaMostrada tarjetaSlot2;
@@ -17,37 +22,45 @@ public class MenuTienda : MonoBehaviour
     // Start is called before the first frame update
 
 
-    public void ModificadorCaracteristicaDelSlot1()
+    public void ModificadorCaracteristicaDelSlot(int slot)
     {
-        if(alma.CantidadAlmas > tarjetaSlot1.TarjetaEquipada.costoTarjeta)
+        if (slot < 1 || slot > 3)
         {
-            estadisticas.ataque = estadisticas.ataque + tarjetaSlot1.TarjetaEquipada.AtaqueBonus;
-            estadisticas.vidaMaxima = estadisticas.vidaMaxima + tarjetaSlot1.TarjetaEquipada.SaludBonus;
-            estadisticas.velocidadPlayer = estadisticas.velocidadPlayer + tarjetaSlot1.TarjetaEquipada.VelocidadBonus;
-            alma.CantidadAlmas = alma.CantidadAlmas - tarjetaSlot1.TarjetaEquipada.costoTarjeta;
+            return;
         }
+
+        TarjetaEquipada tarjetaEquipada = null;
         
-    }
 
-    public void ModificadorCaracteristicaDelSlot2()
-    {
-        if (alma.CantidadAlmas > tarjetaSlot2.TarjetaEquipada.costoTarjeta)
+        switch (slot)
         {
-            estadisticas.ataque = estadisticas.ataque + tarjetaSlot2.TarjetaEquipada.AtaqueBonus;
-            estadisticas.vidaMaxima = estadisticas.vidaMaxima + tarjetaSlot2.TarjetaEquipada.SaludBonus;
-            estadisticas.velocidadPlayer = estadisticas.velocidadPlayer + tarjetaSlot2.TarjetaEquipada.VelocidadBonus;
-            alma.CantidadAlmas = alma.CantidadAlmas - tarjetaSlot2.TarjetaEquipada.costoTarjeta;
+            case 1:
+                tarjetaEquipada = tarjetaSlot1.TarjetaEquipada;
+                break;
+            case 2:
+               
+                tarjetaEquipada = tarjetaSlot2.TarjetaEquipada;
+                break;
+            case 3:
+               
+                tarjetaEquipada = tarjetaSlot3.TarjetaEquipada;
+                break;
         }
-    }
-    public void ModificadorCaracteristicaDelSlot3()
-    {
-        if (alma.CantidadAlmas > tarjetaSlot3.TarjetaEquipada.costoTarjeta)
-        {
-            estadisticas.ataque = estadisticas.ataque + tarjetaSlot3.TarjetaEquipada.AtaqueBonus;
-            estadisticas.vidaMaxima = estadisticas.vidaMaxima + tarjetaSlot3.TarjetaEquipada.SaludBonus;
-            estadisticas.velocidadPlayer = estadisticas.velocidadPlayer + tarjetaSlot3.TarjetaEquipada.VelocidadBonus;
-            alma.CantidadAlmas = alma.CantidadAlmas - tarjetaSlot3.TarjetaEquipada.costoTarjeta;
 
+        if (alma.CantidadAlmas >= tarjetaEquipada.costoTarjeta)
+        {
+            sonidoTarjeta.Play();
+            estadisticas.ataque += tarjetaEquipada.AtaqueBonus;
+            estadisticas.vidaMaxima += tarjetaEquipada.SaludBonus;
+            estadisticas.velocidadPlayer += tarjetaEquipada.VelocidadBonus;
+            estadisticas.rango += tarjetaEquipada.RangoArma;
+            estadisticas.VelocidadAtaque += tarjetaEquipada.velAtaque;
+            estadisticas.roboDeVida += tarjetaEquipada.robaVida;
+            estadisticas.iluminarEnemigo += tarjetaEquipada.RangoLampara;
+            alma.CantidadAlmas -= tarjetaEquipada.costoTarjeta;
         }
+       
+
+
     }
 }
