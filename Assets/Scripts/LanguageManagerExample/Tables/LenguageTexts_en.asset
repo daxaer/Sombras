@@ -58,10 +58,6 @@ MonoBehaviour:
     m_Localized: Just Roguelike
     m_Metadata:
       m_Items: []
-  - m_Id: 219720732672
-    m_Localized: 
-    m_Metadata:
-      m_Items: []
   - m_Id: 681489530376192
     m_Localized: Music
     m_Metadata:
@@ -92,6 +88,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1302022097752064
     m_Localized: It is a soul eater, loves darkness and gains advantage in dark areas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1339837724512256
+    m_Localized: Game Over
     m_Metadata:
       m_Items: []
   references:

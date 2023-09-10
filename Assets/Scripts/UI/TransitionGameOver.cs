@@ -8,6 +8,10 @@ public class TransitionGameOver : MonoBehaviour
     [SerializeField][Tooltip("")]
     [TextArea] private string _nombreDeLaEscenaInicio;
 
+    [SerializeField]
+    [Tooltip("")]
+    [TextArea] private string _nombreDeLaEsceneJuego;
+
     private bool _JugadorMuerto;
     private GameObject _GameOver;
 
@@ -26,9 +30,10 @@ public class TransitionGameOver : MonoBehaviour
         StartCoroutine(CourutineOpenIndex());
     }
 
-    public void ExitGame()
+    public void ReloadEscene()
     {
-        Application.Quit();
+        _GameOver.SetActive(false);
+        SceneManager.LoadSceneAsync(_nombreDeLaEsceneJuego);
     }
 
     public IEnumerator CourutineOpenIndex()

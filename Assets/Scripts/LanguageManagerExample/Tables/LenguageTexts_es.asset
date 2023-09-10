@@ -91,6 +91,10 @@ MonoBehaviour:
       zonas oscuras.
     m_Metadata:
       m_Items: []
+  - m_Id: 1339837724512256
+    m_Localized: Juego Terminado
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
