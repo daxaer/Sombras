@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class MovimientoPersonaje : MonoBehaviour
@@ -12,12 +10,11 @@ public class MovimientoPersonaje : MonoBehaviour
     private Vector3 _objetivoArma;
     [SerializeField] private Camera _camera;
     
-    public float RangoVida { get { return (float)estadisticas.vidaActual / (float)estadisticas.vidaMaxima; } }
+    public float RangoVida { get { return (float)vidaActual / (float)vidaMaxima; } }
     
-    private Vector2 direccionPlayer;
+    private Vector2 direccion;
     
     private Rigidbody2D playerRb;
-
 
     [SerializeField] private BarraVida barraVida;
     [SerializeField] private Almas Alma;
@@ -25,17 +22,19 @@ public class MovimientoPersonaje : MonoBehaviour
 
     private  Vector2 rotacionPlayer;
 
-    // Start is called before the first frame update
+    [SerializeField] private GameObject _objectOpenSettings;
+
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
 
-       
-        barraVida.EstablecerBarraVida(estadisticas.vidaActual);
-
+        vidaMaxima = 100;
+        vidaActual = vidaMaxima;
+        velocidadPlayer = 2;
+        barraVida.EstablecerBarraVida(vidaActual);
     }
 
-    // Update is called once per frame
     void Update()
     {
         float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
@@ -43,6 +42,7 @@ public class MovimientoPersonaje : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rotacion);
         _objetivoArma = _camera.ScreenToWorldPoint(Input.mousePosition);
 
+        Pause();
     }
 
     private void FixedUpdate()
@@ -50,7 +50,6 @@ public class MovimientoPersonaje : MonoBehaviour
         playerRb.MovePosition(playerRb.position + direccionPlayer * (estadisticas.velocidadPlayer * Time.fixedDeltaTime));
         
     }
-    
 
     public void moveDir(Vector2 direccion)
     {
@@ -60,10 +59,10 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            estadisticas.vidaActual = estadisticas.vidaActual - 10f;
-            estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
+            vidaActual = vidaActual - 10f;
+            vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
             barraVida.ValorBarraPorcentual(RangoVida);
-            barraVida.ValorVidaActual(estadisticas.vidaActual);
+            barraVida.ValorVidaActual(vidaActual);
             
         }
         if (collision.CompareTag("Alma"))
@@ -82,5 +81,18 @@ public class MovimientoPersonaje : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _objectOpenSettings.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
 
+    public void closePause()
+    {
+        _objectOpenSettings.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }

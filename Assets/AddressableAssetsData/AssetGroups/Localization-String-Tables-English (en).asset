@@ -15,18 +15,18 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_Data:
     m_SerializedData: []
-  m_GUID: 00f2cc208b1f2164e91b545efeaf9463
+  m_GUID: 3d391fb90d002e748aa4b54d2fedf2b2
   m_SerializeEntries:
-  - m_GUID: 18404e7b8923ddb49b9dc0afbc212aa6
-    m_Address: TextoTarjetas_en
+  - m_GUID: 15f67a7ae30ae874e82f7141ec9efb20
+    m_Address: LenguageTexts_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: 8bf8ce2a94a50704ebdd9e00a1780c11, type: 2}
+  m_Settings: {fileID: 11400000, guid: 6bb0c3dd8bac8924fabe01f61f7a0857, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: d99795d41452a8a49a94af39171b7379, type: 2}
-    - {fileID: 11400000, guid: 2394e08b9722c2a42b5962f3cd6430bb, type: 2}
+    - {fileID: 11400000, guid: b6ae4129c6088d14ea05bb8920b7402f, type: 2}
+    - {fileID: 11400000, guid: 236b4c2ff1f592a4ab96fc031081e906, type: 2}

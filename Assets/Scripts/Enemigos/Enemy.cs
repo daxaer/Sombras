@@ -5,27 +5,41 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    //[SerializeField] private Transform target;
+    [SerializeField] private Transform target;
     [SerializeField] private float _vida;
-    //[SerializeField] private PoolAlmas _alma;
-    //[SerializeField] private GameObject target;
+    [SerializeField] private PoolAlmas _alma;
+    NavMeshAgent _agent;
+
+    private void Start()
+    {
+        Destroy(this,5);
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
+    }
+
+    public void Update()
+    {
+        _agent.SetDestination(target.position);
+    }
+
+    public void SetTagetPlayer(Transform setTarget)
+    {
+        target = setTarget;
+    }
 
     public void TakeDamage(float damage)
     {
         _vida -= damage;
+        Debug.Log("recividaño");
+        Debug.Log(_vida);
         if (_vida <= 0)
         {
-            //_alma.ActivarAlma();
-            Invoke(nameof(Desactivar), 0f);
+            Debug.Log("mori");
+            _alma.ActivarAlma();
+            Destroy(this.gameObject);
         }
     }
-    private void OnDisable()
-    {
-        CancelInvoke(nameof(Desactivar));
-    }
-    public void Desactivar() // esto sera mi nuevo "Destruir"
-    {
-        print("se apaga");
-        gameObject.SetActive(false); //nos apagamos para seguir en el pool
-    }
+    
+   
 }

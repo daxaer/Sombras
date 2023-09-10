@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LenguageTexts Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: LenguageTexts
+  m_TableCollectionNameGuidString: 549809e64b2e22349b57e72ae0d01e5e
+  m_Entries:
+  - m_Id: 4022394179584
+    m_Key: TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4630937358336
+    m_Key: PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5107221549056
+    m_Key: JustRogueLike/Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5283004829696
+    m_Key: AnotherTimeTo Complete/Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5379314438144
+    m_Key: Index/GameManager 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5430300397568
+    m_Key: Index/GameManager 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10407873892352
+    m_Key: EXIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10470876532736
+    m_Key: CREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10491860635648
+    m_Key: CONFIGURATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10832429731840
+    m_Key: Index/Canvas/SpaceCam/Section-Header/Title-Subtitle/Subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681489530376192
+    m_Key: MusicTextVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704174947848192
+    m_Key: VolumeTextEffects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704228437807104
+    m_Key: Lenguages
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706037663420416
+    m_Key: SelectorLenguageEsp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723901673918464
+    m_Key: ButtonReturn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1301438057697280
+    m_Key: DescriptionKnightSelection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1301638524456960
+    m_Key: DescriptionShooterSelection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302022097752064
+    m_Key: DescriptionSoulEaterSelection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1339837724512256
+    m_Key: TextGameOver
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 959351525567365139
+  m_KeyGenerator:
+    rid: 959351524754456601
+  references:
+    version: 2
+    RefIds:
+    - rid: 959351524754456601
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1693981656851
+    - rid: 959351525567365139
+      type: {class: PreloadAssetTableMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_PreloadBehaviour: 1

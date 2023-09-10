@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 
 public class Ataque : MonoBehaviour
 {
-    public Estadisticas estadisticas;
     [SerializeField] private GameObject prefabAtaque;
     [SerializeField] private Transform spawnAtaque;
     [FormerlySerializedAs("damage")] [SerializeField] private int _damage;
+    public float damage = 1;
 
     void Update()
     {
@@ -23,7 +23,7 @@ public class Ataque : MonoBehaviour
 
     public void  DamageUp(int damage)
     {
-        estadisticas.ataque += damage;
+        _damage += damage;
     }
 
 }

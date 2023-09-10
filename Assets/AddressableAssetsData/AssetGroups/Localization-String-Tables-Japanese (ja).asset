@@ -15,18 +15,18 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Japanese (ja)
   m_Data:
     m_SerializedData: []
-  m_GUID: 79227dec66301bf40a0e7d1a5284e792
+  m_GUID: 4bfa8d45aac19324bb650f7a291018f3
   m_SerializeEntries:
-  - m_GUID: 6c0af292611bee3448276c3e421abf23
-    m_Address: TextoTarjetas_ja
+  - m_GUID: 11aac0bd005d57746902d440d05f1f98
+    m_Address: LenguageTexts_ja
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: 8bf8ce2a94a50704ebdd9e00a1780c11, type: 2}
+  m_Settings: {fileID: 11400000, guid: 6bb0c3dd8bac8924fabe01f61f7a0857, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 0ab7e0ffcbc3d144a8d4fa23ab0ddb92, type: 2}
-    - {fileID: 11400000, guid: bf14ad7ac4c22e94c87f5f624c929ec6, type: 2}
+    - {fileID: 11400000, guid: edad4e8ed74e1264195c9a60e190e445, type: 2}
+    - {fileID: 11400000, guid: 4f72b364f5d4c5843b1d54b77f5b36b9, type: 2}

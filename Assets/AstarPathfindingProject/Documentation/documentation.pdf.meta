@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/AstarPathfindingProject/Documentation/documentation.pdf.meta
 guid: 3b746da7b40c860c894ce656f273a7de
 DefaultImporter:
+========
+guid: bca74051c6a3ab441a53cf75604a94ec
+PrefabImporter:
+>>>>>>>> main:Assets/Prefabs/Ataque.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
