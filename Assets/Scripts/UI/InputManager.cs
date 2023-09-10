@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,18 +16,6 @@ public class InputManager : MonoBehaviour
         control.Gameplay.Enable();
         control.Gameplay.Movimiento.performed += movimiento;
         control.Gameplay.Movimiento.canceled += movimiento;
-        control.Gameplay.Atacar.started += atacar;
-       
-    }
-
-    private void atacar(InputAction.CallbackContext obj)
-    {
-        FindAnyObjectByType<Ataque>().Atacar();
-    }
-
-    private void rotacion(InputAction.CallbackContext obj)
-    {
-        
     }
 
     private void movimiento(InputAction.CallbackContext obj)

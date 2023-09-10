@@ -35,27 +35,20 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Rotacion"",
-                    ""type"": ""Value"",
-                    ""id"": ""48bc5c2e-8beb-4ea0-889d-ed49610f3eb6"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Atacar"",
-                    ""type"": ""Button"",
-                    ""id"": ""54d73f30-86d6-4b33-8a16-5b8abc76a644"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""cf7c73e7-2fd8-45bf-9c9d-fc952deaac7b"",
+                    ""path"": ""<SwitchProControllerHID>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movimiento"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""ef7375fc-59bc-4a86-9415-498d93f63471"",
@@ -110,50 +103,6 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""action"": ""Movimiento"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bff2e50d-2c11-4447-afc0-9ea50e7f69a5"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""34f5dbe3-e225-4777-8475-79adcaf920a3"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotacion"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2f9e5dd8-258c-4ae1-ab02-700484330f64"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Atacar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cd1d3735-6906-4539-9cf6-4f65539eb2c0"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Atacar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -163,8 +112,6 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movimiento = m_Gameplay.FindAction("Movimiento", throwIfNotFound: true);
-        m_Gameplay_Rotacion = m_Gameplay.FindAction("Rotacion", throwIfNotFound: true);
-        m_Gameplay_Atacar = m_Gameplay.FindAction("Atacar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,15 +174,11 @@ public partial class @Controles: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Movimiento;
-    private readonly InputAction m_Gameplay_Rotacion;
-    private readonly InputAction m_Gameplay_Atacar;
     public struct GameplayActions
     {
         private @Controles m_Wrapper;
         public GameplayActions(@Controles wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movimiento => m_Wrapper.m_Gameplay_Movimiento;
-        public InputAction @Rotacion => m_Wrapper.m_Gameplay_Rotacion;
-        public InputAction @Atacar => m_Wrapper.m_Gameplay_Atacar;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -248,12 +191,6 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Movimiento.started += instance.OnMovimiento;
             @Movimiento.performed += instance.OnMovimiento;
             @Movimiento.canceled += instance.OnMovimiento;
-            @Rotacion.started += instance.OnRotacion;
-            @Rotacion.performed += instance.OnRotacion;
-            @Rotacion.canceled += instance.OnRotacion;
-            @Atacar.started += instance.OnAtacar;
-            @Atacar.performed += instance.OnAtacar;
-            @Atacar.canceled += instance.OnAtacar;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -261,12 +198,6 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Movimiento.started -= instance.OnMovimiento;
             @Movimiento.performed -= instance.OnMovimiento;
             @Movimiento.canceled -= instance.OnMovimiento;
-            @Rotacion.started -= instance.OnRotacion;
-            @Rotacion.performed -= instance.OnRotacion;
-            @Rotacion.canceled -= instance.OnRotacion;
-            @Atacar.started -= instance.OnAtacar;
-            @Atacar.performed -= instance.OnAtacar;
-            @Atacar.canceled -= instance.OnAtacar;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -287,7 +218,5 @@ public partial class @Controles: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnMovimiento(InputAction.CallbackContext context);
-        void OnRotacion(InputAction.CallbackContext context);
-        void OnAtacar(InputAction.CallbackContext context);
     }
 }

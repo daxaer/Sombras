@@ -19,7 +19,7 @@ public class TarjetaEquipada : Tarjeta
     public int SaludBonus;
     public int AtaqueBonus;
     public int VelocidadBonus;
-    public float RangoLampara;
+    public int RangoLampara;
     public int DuracionLampara;
     public int costoTarjeta;
     public string descripcionTarjetaEs;

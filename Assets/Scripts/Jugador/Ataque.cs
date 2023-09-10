@@ -14,9 +14,13 @@ public class Ataque : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Atacar();
+        }
     }
     
-    public void Atacar()
+    private void Atacar()
     {
         GameObject temp = Instantiate(prefabAtaque, spawnAtaque.position, spawnAtaque.rotation);
     }
