@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
 public class DropdownLocaleLanguage : MonoBehaviour
 {
     private const string LocaleKey = "SelectedKey";
+    public string[] palabra;
 
     private void Start()
     {
@@ -20,5 +22,4 @@ public class DropdownLocaleLanguage : MonoBehaviour
             PlayerPrefs.SetInt(LocaleKey, localID);
         }
     }
-
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4178300058161498754}
   - component: {fileID: 2581710144169056315}
   - component: {fileID: 5336366335421745312}
+  - component: {fileID: 2622110522608581265}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -35,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 1869190762329115102}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3904388983087780166
 SpriteRenderer:
@@ -101,9 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ccd5463eff765498ff5770b9e49d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estadisticas: {fileID: 2622110522608581265}
+  personajeSeleccionado: {fileID: 11400000, guid: e66177b87d7616e41b84dc4ec4dc84c3, type: 2}
   _camera: {fileID: 0}
   barraVida: {fileID: 0}
   Alma: {fileID: 0}
+  _objectOpenSettings: {fileID: 0}
 --- !u!114 &4178300058161498754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27060e5855b9524aaa91c787ae07805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabAtaque: {fileID: 2212208750441370251, guid: bca74051c6a3ab441a53cf75604a94ec, type: 3}
+  estadisticas: {fileID: 2622110522608581265}
+  prefabAtaque: {fileID: 2212208750441370251, guid: d4acc73c82a6f0c43aeb36708951bdcd, type: 3}
   spawnAtaque: {fileID: 1869190762329115102}
+  _damage: 0
 --- !u!50 &2581710144169056315
 Rigidbody2D:
   serializedVersion: 4
@@ -190,6 +196,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2622110522608581265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755939281613191656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0503bf4b969d54aacf66b9368bcd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadPlayer: 0
+  vidaMaxima: 0
+  vidaActual: 0
+  ataque: 0
+  rango: 0
+  VelocidadAtaque: 0
+  roboDeVida: 0
+  iluminarEnemigo: 0
+  duracionLamparas: 0
+  rangoLamparas: 0
 --- !u!1 &9123679852323725374
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,23 +5,15 @@ using UnityEngine.UI;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
-    public float velocidadPlayer { get; private set; }
-    public float vidaMaxima { get; private set; }
-    public float vidaActual { get; private set; }
-    
-    public float rango { get; private set; }
-    public float VelocidadAtaque { get; private set; }
-    public float roboDeVida { get; private set; }
-    public bool iluminarEnemigo { get; private set; }
-    public float duracionLamparas { get; private set; }
-    public float rangoLamparas { get; private set; }
+    public Estadisticas estadisticas;
+    [SerializeField] private ScriptableObject personajeSeleccionado;
 
     private Vector3 _objetivoArma;
     [SerializeField] private Camera _camera;
-    
-    public float RangoVida { get { return (float)vidaActual / (float)vidaMaxima; } }
-    
-    private Vector2 direccion;
+
+    public float RangoVida { get { return (float)estadisticas.vidaActual / (float)estadisticas.vidaMaxima; } }
+
+    private Vector2 direccionPlayer;
     
     private Rigidbody2D playerRb;
 
@@ -35,54 +27,49 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
 
-        vidaMaxima = 100;
-        vidaActual = vidaMaxima;
-        velocidadPlayer = 2;
-        barraVida.EstablecerBarraVida(vidaActual);
+        barraVida.EstablecerBarraVida(estadisticas.vidaActual);
     }
 
     void Update()
     {
-        float direccionX = Input.GetAxisRaw("Horizontal");
-        float direccionY = Input.GetAxisRaw("Vertical");
-        direccion = new Vector2(direccionX, direccionY).normalized;
-
-        _objetivoArma = _camera.ScreenToWorldPoint(Input.mousePosition);
-
         float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
         float rotacion = (180 / Mathf.PI) * angulo - 90;
-        transform.rotation = Quaternion.Euler(0,0,rotacion);
+        transform.rotation = Quaternion.Euler(0, 0, rotacion);
+        _objetivoArma = _camera.ScreenToWorldPoint(Input.mousePosition);
 
-        //Prueba de aumento de velocidad a la hora de hacer la compra
         Pause();
     }
 
     private void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + direccion * (velocidadPlayer * Time.fixedDeltaTime));
+        playerRb.MovePosition(playerRb.position + direccionPlayer * (estadisticas.velocidadPlayer * Time.fixedDeltaTime));
+
     }
 
     //Prueba de cuando toque un enemigo baje su vida, en este caso son capsulas que deje en el mapa
-    
+
+    public void moveDir(Vector2 direccion)
+    {
+        direccionPlayer = direccion;
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
-            vidaActual = vidaActual - 10f;
-            vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+            estadisticas.vidaActual = estadisticas.vidaActual - 10f;
+            estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
             barraVida.ValorBarraPorcentual(RangoVida);
-            barraVida.ValorVidaActual(vidaActual);
-            
-            //barraVida.barraAnimator.SetBool("estaBaja", true);
+            barraVida.ValorVidaActual(estadisticas.vidaActual);
+
         }
         if (collision.CompareTag("Alma"))
         {
             if (collision.GetComponent<SpawnAlmas>().TipoAlma() == 1)
             {
-                vidaActual = vidaActual + 10f;
-                vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+                estadisticas.vidaActual = estadisticas.vidaActual + 10f;
+                estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
                 barraVida.ValorBarraPorcentual(RangoVida);
-                barraVida.ValorVidaActual(vidaActual);
+                barraVida.ValorVidaActual(estadisticas.vidaActual);
             }
             else
             {

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36eb23e21e8dd5a4d81b7d1d14fb3e12, type: 3}
+  m_Name: LegendariaSalud
+  m_EditorClassIdentifier: 
+  IdTarjeta: 000
+  nombreTarjetaEs: Aumento de Salud V
+  nombreTarjetaEN: Health Increase V
+  nombreTarjetaJa: "\u5065\u5EB7\u306E\u5897\u52A0 V"
+  imagenTarjeta: {fileID: 21300000, guid: 26d1d7be5bc59b249bc5779bf8a1923f, type: 3}
+  SaludBonus: 100
+  AtaqueBonus: 0
+  VelocidadBonus: 0
+  RangoLampara: 0
+  DuracionLampara: 0
+  costoTarjeta: 200
+  descripcionTarjetaEs: Aumenta 100 puntos de salud a tu salud maxima.
+  descripcionTarjetaEn: Increases 100 health points to your maximum health.
+  descripcionTarjetaJa: "\u4F53\u529B\u30DD\u30A4\u30F3\u30C8\u304C 100 \u5897\u52A0\u3057\u3066\u6700\u5927\u4F53\u529B\u306B\u306A\u308A\u307E\u3059\u3002"
+  colorRareza: {r: 0.7264151, g: 0.6772072, b: 0.03769135, a: 1}
+  RarezaTarjeta: 4

@@ -7,27 +7,23 @@ using UnityEngine.Serialization;
 
 public class Ataque : MonoBehaviour
 {
+    public Estadisticas estadisticas;
     [SerializeField] private GameObject prefabAtaque;
     [SerializeField] private Transform spawnAtaque;
     [FormerlySerializedAs("damage")] [SerializeField] private int _damage;
-    public float damage = 1;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Atacar();
-        }
     }
     
-    private void Atacar()
+    public void Atacar()
     {
         GameObject temp = Instantiate(prefabAtaque, spawnAtaque.position, spawnAtaque.rotation);
     }
 
     public void  DamageUp(int damage)
     {
-        _damage += damage;
+        estadisticas.ataque += damage;
     }
 
 }

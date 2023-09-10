@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36eb23e21e8dd5a4d81b7d1d14fb3e12, type: 3}
+  m_Name: ComunAtaque
+  m_EditorClassIdentifier: 
+  IdTarjeta: 000
+  nombreTarjetaEs: Aumento de Ataque I
+  nombreTarjetaEN: Attack Increase I
+  nombreTarjetaJa: "\u653B\u6483\u529B\u5897\u52A0 I"
+  imagenTarjeta: {fileID: 21300000, guid: f3872c49383243a4aa443c1c5851c375, type: 3}
+  SaludBonus: 0
+  AtaqueBonus: 1
+  VelocidadBonus: 0
+  RangoLampara: 0
+  DuracionLampara: 0
+  costoTarjeta: 10
+  descripcionTarjetaEs: Aumenta 1 punto de ataque
+  descripcionTarjetaEn: Increases 1 attack point
+  descripcionTarjetaJa: "\u653B\u6483\u30DD\u30A4\u30F3\u30C8\u304C1\u5897\u52A0\u3057\u307E\u3059"
+  colorRareza: {r: 0.40392157, g: 0.40392157, b: 0.40392157, a: 1}
+  RarezaTarjeta: 0
