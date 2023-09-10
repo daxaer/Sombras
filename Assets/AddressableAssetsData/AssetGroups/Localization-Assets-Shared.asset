@@ -15,16 +15,22 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_Data:
     m_SerializedData: []
-  m_GUID: 893cfe8404d156149b1f21f4f09315e4
+  m_GUID: d4a82037884b1b24b969e0b61339c024
   m_SerializeEntries:
-  - m_GUID: a457030d4fc74ac4c9244dd0ccf2b5c9
-    m_Address: Assets/Localizacion/TextoTarjetas Shared Data.asset
+  - m_GUID: f1f880f8cad711a4fa44d5d1237258d1
+    m_Address: Assets/Scripts/LanguageManagerExample/Locales/MyLenguages Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 549809e64b2e22349b57e72ae0d01e5e
+    m_Address: Assets/Scripts/LanguageManagerExample/Locales/LenguageTexts Shared
+      Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: 8bf8ce2a94a50704ebdd9e00a1780c11, type: 2}
+  m_Settings: {fileID: 11400000, guid: 6bb0c3dd8bac8924fabe01f61f7a0857, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 4bd05ceb435538c4eb9f2ecd9f8c0ed8, type: 2}
-    - {fileID: 11400000, guid: 633c60e2377004442b1fa21d415858a9, type: 2}
+    - {fileID: 11400000, guid: 10e616fb1fdb8814292dc0d743ad9389, type: 2}
+    - {fileID: 11400000, guid: 9ea581a1eba30ba42930ddcb1c9b452a, type: 2}

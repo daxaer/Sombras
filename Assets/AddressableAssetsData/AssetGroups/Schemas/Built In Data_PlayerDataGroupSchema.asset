@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1487f5d688e4f94f828f879d599dbdc, type: 3}
   m_Name: Built In Data_PlayerDataGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: 25feba591b4bbd640a9ffcd417c79c02, type: 2}
+  m_Group: {fileID: 11400000, guid: c51a38cff062a2548b03b54a9fa4fd7c, type: 2}
   m_IncludeResourcesFolders: 1
   m_IncludeBuildSettingsScenes: 1
