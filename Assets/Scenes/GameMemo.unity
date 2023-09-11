@@ -2355,7 +2355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b27b356089aa974585d720d063fd4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeRemaining: 120
+  _timeRemaining: 10
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
   spawn: {fileID: 1141194140}
@@ -3688,6 +3688,12 @@ MonoBehaviour:
   rangoProhibido:
   - -3
   - 3
+  maxEnemies: 30
+  currentEnemies: 0
+  _startEnemyCount: 1
+  _enemiesPerInterval: 1
+  _timeSinceLastSpawn: 0
+  _currentEnemiesCount: 0
   target: {fileID: 1014082712913613320}
 --- !u!1 &1165149847
 GameObject:
@@ -5776,6 +5782,10 @@ PrefabInstance:
     - target: {fileID: 4160473408633597086, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178300058161498754, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: _attackDelay
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

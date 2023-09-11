@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject tienda;
     [SerializeField] private Pool pool;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class Timer : MonoBehaviour
             {
                 spawn.DetenerSpawn();
                 tienda.SetActive(true);
+                spawn.DestroyAllEnemies();
             }
             else
             {
