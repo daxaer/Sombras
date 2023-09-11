@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
+    public TransitionGameOver gameOver;
+    public EventSystem eventSystem;
     public Estadisticas estadisticas;
+    public GameObject botonRetornar;
 
     private Vector3 _objetivoArma;
     [SerializeField] private Camera _camera;
@@ -66,6 +70,13 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         direccionPlayer = direccion;
     }
+    public void  Mori()
+    {
+        if(estadisticas.vidaActual <=0)
+        {
+            gameOver.CargarGameOver();
+        }
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -75,6 +86,8 @@ public class MovimientoPersonaje : MonoBehaviour
             estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
             barraVida.ValorBarraPorcentual(RangoVida);
             barraVida.ValorVidaActual(estadisticas.vidaActual);
+            Mori();
+            collision.GetComponent<Enemy>().Atacar();
 
         }
         if (collision.CompareTag("Alma"))
@@ -107,6 +120,7 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if (playerInputMap.Gameplay.Pause.WasPressedThisFrame())
         {
+            eventSystem.SetSelectedGameObject(botonRetornar);
             _objectOpenSettings.SetActive(true);
             Time.timeScale = 0f;
         }

@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Timer : MonoBehaviour
 {
+    public TransitionGameOver gameOver;
+    public EventSystem eventSystem;
     [SerializeField] private float _timeRemaining = 180;
     [SerializeField] private float _tiempoInicial;
     [SerializeField] private bool _timeIsRunning = true;
@@ -13,8 +16,10 @@ public class Timer : MonoBehaviour
     [SerializeField] private SpawnManager spawn;
     [SerializeField] private Enemy _enemy;
     [SerializeField] private GameObject tienda;
+    [SerializeField] private GameObject retorno;
     public Pool pool;
     private bool stoptimer = true;
+    [SerializeField] private int rondaActual;
 
 
     // Start is called before the first frame update
@@ -32,13 +37,19 @@ public class Timer : MonoBehaviour
             _timeRemaining -= Time.deltaTime;
             if (_timeRemaining <= -1 && stoptimer)
             {
-                stoptimer = false;
-                tienda.SetActive(true);
-                PauseGame();
-                //spawn.DetenerSpawn();
-                //spawn.DestroyAllEnemies();
-                //_enemy.DestroyAllEnemies();
-                //DeactivateEnemies();
+                if(rondaActual == 4)
+                {
+                    gameOver.Win();
+                    stoptimer = false;
+                }
+                else
+                {
+                    rondaActual++;
+                    stoptimer = false;
+                    tienda.SetActive(true);
+                    eventSystem.SetSelectedGameObject(retorno);
+                    PauseGame();
+                }
             }
             else if(stoptimer)
             {

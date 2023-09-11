@@ -15,6 +15,7 @@ public class Projectil : MonoBehaviour
     {
         AumentoRango();
         _damage = estadisticas.ataque;
+        Destroy(gameObject,0.3f);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
