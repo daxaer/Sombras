@@ -62,6 +62,7 @@ public class TransitionIndexGameManager : MonoBehaviour
     void Start()
     {
         _textMeshProUGUI.text = _arregloDeFrases[0];
+        eventSystem.SetSelectedGameObject(_buttonSelectedPlay);
         //_animator.SetBool("Aparecer", true);
     }
 
@@ -118,26 +119,27 @@ public class TransitionIndexGameManager : MonoBehaviour
         yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(true);
         eventSystem.SetSelectedGameObject(_buttonSelectionedSettings.gameObject); 
-        
     }
 
     private IEnumerator CourutineSettingsClose()
     {
         yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(false);
+        eventSystem.SetSelectedGameObject(_buttonSelectedPlay.gameObject);
     }
 
     private IEnumerator CourutineCreditsOpen()
     {
         yield return new WaitForSeconds(timeToOpenCredits);
         _CreditsObject.SetActive(true);
+        eventSystem.SetSelectedGameObject(_buttonSelectionedCredits.gameObject);
     }
 
     private IEnumerator CourutineCreditsClose()
     {
         yield return new WaitForSeconds(timeToOpenCredits);
         _CreditsObject.SetActive(false);
-        eventSystem.firstSelectedGameObject = _buttonSelectedPlay.gameObject;
+        eventSystem.SetSelectedGameObject(_buttonSelectedPlay.gameObject);
     }
 
     private IEnumerator SwitcherDescription()
