@@ -1,6 +1,9 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 
 public class TransitionIndexGameManager : MonoBehaviour
@@ -38,6 +41,11 @@ public class TransitionIndexGameManager : MonoBehaviour
     [Header("Contador(No tocar)")][Tooltip("Contador")]
     [SerializeField] private float _timer;
 
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] GameObject _buttonSelectedPlay;
+    [SerializeField] GameObject _buttonSelectionedSettings;
+    [SerializeField] GameObject _buttonSelectionedCredits;
+
     /*[Header("Right click this variable name!")]
     [SerializeField]
     private string[] frases;
@@ -50,7 +58,6 @@ public class TransitionIndexGameManager : MonoBehaviour
         int randomNumber = Random.Range(0, frases.Length);
         hola = frases[randomNumber];
     }*/
-
 
     void Start()
     {
@@ -105,10 +112,12 @@ public class TransitionIndexGameManager : MonoBehaviour
         Application.Quit();
     }
 
+
     private IEnumerator CourutineSettingsOpen()
     {
         yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(true);
+        eventSystem.firstSelectedGameObject = _buttonSelectionedSettings.gameObject;
     }
 
     private IEnumerator CourutineSettingsClose()
@@ -127,6 +136,7 @@ public class TransitionIndexGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToOpenCredits);
         _CreditsObject.SetActive(false);
+        eventSystem.firstSelectedGameObject = _buttonSelectedPlay.gameObject;
     }
 
     private IEnumerator SwitcherDescription()
