@@ -25,8 +25,7 @@ public class MovimientoPersonaje : MonoBehaviour
     public Transform player;
     Vector2 rStickInput = Vector2.zero;
 
-    [SerializeField] private InputAction inputAction;
-    [SerializeField] private PlayerInput playerInput;
+    
     [SerializeField] private Controles playerInputMap;
 
 
@@ -94,6 +93,16 @@ public class MovimientoPersonaje : MonoBehaviour
         }
     }
 
+    public void RecuperarVIda(float vida)
+    {
+        estadisticas.vidaActual += vida;
+        estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
+        barraVida.ValorBarraPorcentual(RangoVida);
+        barraVida.ValorVidaActual(estadisticas.vidaActual);
+        Debug.Log("recuperevida" + vida);
+    }
+
+ 
     public void Pause()
     {
         if (playerInputMap.Gameplay.Pause.WasPressedThisFrame())

@@ -21,7 +21,7 @@ public class TarjetaEquipada : Tarjeta
     public int VelocidadBonus;
     public float RangoLampara;
     public float velAtaque;
-    public int RangoArma;
+    public float RangoArma;
     public int DuracionLampara;
     public int costoTarjeta;
     public float robaVida;

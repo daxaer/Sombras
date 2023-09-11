@@ -20,9 +20,12 @@ MonoBehaviour:
   SaludBonus: 0
   AtaqueBonus: 0
   VelocidadBonus: 0
-  RangoLampara: 0.1
+  RangoLampara: 0
+  velAtaque: 0
+  RangoArma: 0.1
   DuracionLampara: 0
   costoTarjeta: 10
+  robaVida: 0
   descripcionTarjetaEs: "Aumenta ligeramente el tama\xF1o de tu arma"
   descripcionTarjetaEn: 
   descripcionTarjetaJa: 

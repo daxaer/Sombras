@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 
 public class Ataque : MonoBehaviour
 {
+    [SerializeField] private Controles playerInputMap;
     public Estadisticas estadisticas;
     public AudioSource sonidoAtaque;
     [SerializeField] private GameObject prefabAtaque;
@@ -19,13 +20,20 @@ public class Ataque : MonoBehaviour
     [SerializeField] private bool _canAttack = true; //se puede atacar?
     [SerializeField] private float _attackTimer = 0f; //contador entre ataques
     [SerializeField] private float _attackSpeedMultiplier = 1f; // multiplicador de velocidad de ataque
+    [SerializeField] private MovimientoPersonaje movimientoPersonaje;
+    private void Start()
+    {
+        playerInputMap = new Controles();
+
+        playerInputMap.Gameplay.Enable();
+    }
 
     void Update()
     {
         _attackTimer = Time.time; //contador
 
         //verificar si se puede atacar y mantiene presionada la tecla
-        if( _canAttack && Input.GetKey(attackKey))
+        if( _canAttack && playerInputMap.Gameplay.Atacar.IsPressed())
         {
             Atacar();
             _attackTimer = 0;
@@ -39,6 +47,9 @@ public class Ataque : MonoBehaviour
     {
         sonidoAtaque.Play();
         GameObject temp = Instantiate(prefabAtaque, spawnAtaque.position, spawnAtaque.rotation);
+        Projectil proj= temp.GetComponent<Projectil>();
+        proj.EstadisticasPersonaje = estadisticas;
+        proj.Movimiento = movimientoPersonaje;
         float modifiedAttackDelay = _attackDelay / _attackSpeedMultiplier;
         _attackTimer = Mathf.Clamp(_attackTimer, 0f, modifiedAttackDelay);
     }
@@ -53,11 +64,6 @@ public class Ataque : MonoBehaviour
     private void IncreaseAttackSpeed(float _multiplier)
     {
         _attackSpeedMultiplier *= _multiplier;
-    }
-
-    private void RoboDeVIda()
-    {
-
     }
 
     public void  DamageUp(int damage)

@@ -18,7 +18,7 @@ MonoBehaviour:
   vidaActual: 100
   velocidadMovimiento: 3
   velocidadDeAtaque: 1
-  porcentajeRoboDeVida: 0
+  porcentajeRoboDeVida: 90
   rangoGolpe: 1
   rangoIluminacion: 12
   tiempoIluminacion: 3
