@@ -6,11 +6,13 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float _timeRemaining = 180;
+    [SerializeField] private float _timeRemaining = 30;
     [SerializeField] private bool _timeIsRunning = true;
     [SerializeField] private TMP_Text _timeText;
     [SerializeField] private SpawnManager spawn;
+    //[SerializeField] private Enemy _enemy;
     [SerializeField] private GameObject tienda;
+    [SerializeField] private Pool pool;
 
     // Start is called before the first frame update
     void Start()

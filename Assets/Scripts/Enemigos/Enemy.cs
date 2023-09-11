@@ -10,6 +10,13 @@ public class Enemy : MonoBehaviour
     //[SerializeField] private PoolAlmas _alma;
     //[SerializeField] private GameObject target;
 
+    private SpawnManager spawnManager;
+
+    private void Start()
+    {
+        spawnManager = FindAnyObjectByType<SpawnManager>(); //encontrar 
+    }
+
     public void TakeDamage(float damage)
     {
         _vida -= damage;
@@ -27,5 +34,10 @@ public class Enemy : MonoBehaviour
     {
         print("se apaga");
         gameObject.SetActive(false); //nos apagamos para seguir en el pool
+    }
+
+    private void OnDestroy()
+    {
+        spawnManager.DecreaseEnemyCount(); //disminuir contador
     }
 }
