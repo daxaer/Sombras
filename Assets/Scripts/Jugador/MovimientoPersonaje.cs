@@ -25,11 +25,20 @@ public class MovimientoPersonaje : MonoBehaviour
     public Transform player;
     Vector2 rStickInput = Vector2.zero;
 
+    [SerializeField] private InputAction inputAction;
+    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private Controles playerInputMap;
+
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
 
         barraVida.EstablecerBarraVida(estadisticas.vidaActual);
+
+        playerInputMap = new Controles();
+
+        playerInputMap.Gameplay.Enable();
     }
 
     void Update()
@@ -87,7 +96,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
     public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (playerInputMap.Gameplay.Pause.WasPressedThisFrame())
         {
             _objectOpenSettings.SetActive(true);
             Time.timeScale = 0f;
