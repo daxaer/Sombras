@@ -1,6 +1,9 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 
 public class TransitionIndexGameManager : MonoBehaviour
@@ -38,6 +41,11 @@ public class TransitionIndexGameManager : MonoBehaviour
     [Header("Contador(No tocar)")][Tooltip("Contador")]
     [SerializeField] private float _timer;
 
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] GameObject _buttonSelectedPlay;
+    [SerializeField] GameObject _buttonSelectionedSettings;
+    [SerializeField] GameObject _buttonSelectionedCredits;
+
     /*[Header("Right click this variable name!")]
     [SerializeField]
     private string[] frases;
@@ -51,10 +59,10 @@ public class TransitionIndexGameManager : MonoBehaviour
         hola = frases[randomNumber];
     }*/
 
-
     void Start()
     {
         _textMeshProUGUI.text = _arregloDeFrases[0];
+        eventSystem.SetSelectedGameObject(_buttonSelectedPlay);
         //_animator.SetBool("Aparecer", true);
     }
 
@@ -105,28 +113,33 @@ public class TransitionIndexGameManager : MonoBehaviour
         Application.Quit();
     }
 
+
     private IEnumerator CourutineSettingsOpen()
     {
         yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(true);
+        eventSystem.SetSelectedGameObject(_buttonSelectionedSettings.gameObject); 
     }
 
     private IEnumerator CourutineSettingsClose()
     {
         yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(false);
+        eventSystem.SetSelectedGameObject(_buttonSelectedPlay.gameObject);
     }
 
     private IEnumerator CourutineCreditsOpen()
     {
         yield return new WaitForSeconds(timeToOpenCredits);
         _CreditsObject.SetActive(true);
+        eventSystem.SetSelectedGameObject(_buttonSelectionedCredits.gameObject);
     }
 
     private IEnumerator CourutineCreditsClose()
     {
         yield return new WaitForSeconds(timeToOpenCredits);
         _CreditsObject.SetActive(false);
+        eventSystem.SetSelectedGameObject(_buttonSelectedPlay.gameObject);
     }
 
     private IEnumerator SwitcherDescription()
