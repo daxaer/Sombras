@@ -113,7 +113,6 @@ public class TransitionIndexGameManager : MonoBehaviour
         Application.Quit();
     }
 
-
     private IEnumerator CourutineSettingsOpen()
     {
         yield return new WaitForSeconds(timeToOpenSettings);
