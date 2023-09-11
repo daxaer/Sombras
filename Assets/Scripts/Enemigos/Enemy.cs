@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -15,20 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _lifeDropChance = 0.3f;
     [SerializeField] private GameObject _lifePrefab;
     
-
-    private SpawnManager spawnManager;
-
-
-
-    private void Start()
-    {
-        spawnManager = FindAnyObjectByType<SpawnManager>(); //encontrar 
-    }
-
-    private void Update()
-    {
-        
-    }
+    [SerializeField] private SpawnManager _spawnManager;
 
     public void TakeDamage(float damage)
     {
@@ -37,7 +25,7 @@ public class Enemy : MonoBehaviour
         if (_vida <= 0)
         {
 
-            spawnManager.CurrentEnemy();
+            _spawnManager.CurrentEnemy();
             //_alma.ActivarAlma();
             Invoke(nameof(Desactivar), 0f);
 
@@ -61,4 +49,5 @@ public class Enemy : MonoBehaviour
         print("se apaga");
         gameObject.SetActive(false); //nos apagamos para seguir en el pool
     }
+
 }

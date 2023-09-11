@@ -190,7 +190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4148539617265017001
 Transform:
   m_ObjectHideFlags: 0
@@ -386,6 +386,7 @@ MonoBehaviour:
   _vida: 1
   _lifeDropChance: 0.3
   _lifePrefab: {fileID: 5620427087319276789, guid: eef0a684fa888ac43be9d17ec2fdede4, type: 3}
+  _spawnManager: {fileID: 0}
 --- !u!58 &1707214561227098646
 CircleCollider2D:
   m_ObjectHideFlags: 0

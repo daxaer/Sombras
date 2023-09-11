@@ -2359,6 +2359,7 @@ MonoBehaviour:
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
   spawn: {fileID: 1141194140}
+  _enemy: {fileID: 235953647414781044, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
   tienda: {fileID: 926512251}
 --- !u!114 &833105532
 MonoBehaviour:
@@ -3656,7 +3657,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141194138}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3695,6 +3696,7 @@ MonoBehaviour:
   _timeSinceLastSpawn: 0
   _currentEnemiesCount: 0
   target: {fileID: 1014082712913613320}
+  _enemy: {fileID: 235953647414781044, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
 --- !u!1 &1165149847
 GameObject:
   m_ObjectHideFlags: 0

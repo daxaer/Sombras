@@ -23,12 +23,13 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float _timeSinceLastSpawn = 0f; //Tiempo transcurrido desde la ultima instancia
     [SerializeField] private int _currentEnemiesCount = 0; //enemigos actuales en pantalla
 
-    private List<GameObject> enemies = new List<GameObject>();
+    //private List<GameObject> enemies = new List<GameObject>();
 
 
     [SerializeField] private Transform target;
     //pool
-    Pool _objectPool;
+    public Pool _objectPool;
+    public Enemy _enemy;
 
     // Start is called before the first frame update
     public void DetenerSpawn()
@@ -41,20 +42,18 @@ public class SpawnManager : MonoBehaviour
         _objectPool.Inicializar(_enemySpawn, 5);
         InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
 
-        GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        /*GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach(GameObject enemyObject in enemyObjects) 
         {
             enemies.Add(enemyObject);
-        }
+        }*/
 
         for (int i = 0; i < _startEnemyCount; i++)
         {
             SpawnEnemy();
             _currentEnemiesCount++;
         }
-
-        //InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
     }
 
     private void Update()
@@ -66,10 +65,8 @@ public class SpawnManager : MonoBehaviour
         {
             _timeSinceLastSpawn = 0;
 
-
             //Aumentar el numero de enemigos actuales en pantalla
             _currentEnemiesCount += _enemiesPerInterval;
-
 
             for(int i = 0; i < _enemiesPerInterval; i++)
             {
@@ -78,7 +75,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public void DestroyAllEnemies()
+    /*public void DestroyAllEnemies()
     {
         foreach(GameObject enemy in enemies)
         {
@@ -86,7 +83,7 @@ public class SpawnManager : MonoBehaviour
         }
 
         enemies.Clear();
-    }
+    }*/
 
     public void CurrentEnemy()
     {
@@ -105,8 +102,6 @@ public class SpawnManager : MonoBehaviour
             {
                 CancelInvoke("SpawnEnemy");
                 //timer en 0
-            
-                
             }
         }
       
@@ -129,4 +124,5 @@ public class SpawnManager : MonoBehaviour
     {
         return target;
     }
+
 }
