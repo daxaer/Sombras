@@ -21,12 +21,6 @@ public class TarjetaMostrada : MonoBehaviour
     {
         Actualizar();
     }
-
-    private void Update()
-    {
-        
-    }
-
     public void Actualizar()
     {
         nombreTarjeta.text = TarjetaEquipada.nombreTarjetaEs;

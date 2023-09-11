@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class SpawnAlmas : MonoBehaviour
 {
-    private Action<SpawnAlmas> desactivarAlma;
     private int tipoAlma;
 
     public void OnEnable()
@@ -33,12 +32,7 @@ public class SpawnAlmas : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            desactivarAlma(this);
+            gameObject.SetActive(false);
         }
-    }
-
-    public void DesactivarAlma(Action<SpawnAlmas> desactivarParametro)
-    {
-        desactivarAlma = desactivarParametro;
-    }
+    } 
 }

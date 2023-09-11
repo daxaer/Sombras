@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-
 public class Enemy : MonoBehaviour
 {
     //[SerializeField] private Transform target;
@@ -24,8 +23,7 @@ public class Enemy : MonoBehaviour
 
         if (_vida <= 0)
         {
-
-            _spawnManager.CurrentEnemy();
+            
             //_alma.ActivarAlma();
             Invoke(nameof(Desactivar), 0f);
 
@@ -46,8 +44,19 @@ public class Enemy : MonoBehaviour
     }
     public void Desactivar() // esto sera mi nuevo "Destruir"
     {
-        print("se apaga");
+        _spawnManager.RestarCurrentEnemy();
+        _spawnManager.SpawnAlmas(gameObject.transform);
         gameObject.SetActive(false); //nos apagamos para seguir en el pool
+    }
+
+    public void SetSpawn(SpawnManager spawn)
+    {
+        _spawnManager = spawn;
+    }
+
+    public void Atacar()
+    {
+        gameObject.SetActive(false);
     }
 
 }

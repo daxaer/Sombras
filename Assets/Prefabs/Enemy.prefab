@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3011830166460772717}
   - component: {fileID: 1745192954688936496}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9173711795534250554}
   - component: {fileID: 4384994995405490819}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,20 +177,20 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4148539617265017001}
+  - component: {fileID: 235953647414781044}
   - component: {fileID: 8225459986862862613}
   - component: {fileID: 5783500662886769663}
   - component: {fileID: 594802796594497193}
   - component: {fileID: 4492078496029235557}
   - component: {fileID: 7349952213639143445}
-  - component: {fileID: 235953647414781044}
   - component: {fileID: 1707214561227098646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4148539617265017001
 Transform:
   m_ObjectHideFlags: 0
@@ -208,6 +208,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &235953647414781044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3155063478553261289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0eac51490f21f545aec091607f40d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vida: 1
+  _lifeDropChance: 0.3
+  _lifePrefab: {fileID: 5620427087319276789, guid: eef0a684fa888ac43be9d17ec2fdede4, type: 3}
+  _spawnManager: {fileID: 0}
 --- !u!212 &8225459986862862613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -371,22 +387,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &235953647414781044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155063478553261289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eac51490f21f545aec091607f40d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vida: 1
-  _lifeDropChance: 0.3
-  _lifePrefab: {fileID: 5620427087319276789, guid: eef0a684fa888ac43be9d17ec2fdede4, type: 3}
-  _spawnManager: {fileID: 0}
 --- !u!58 &1707214561227098646
 CircleCollider2D:
   m_ObjectHideFlags: 0

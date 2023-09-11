@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c512b9997c320db4bb490cc32dc66320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nombreDeLaEscenaDelJuego: Game
+  _nombreDeLaEscenaDelJuego: 'Game
+
+'
   _nombreDeInicioDelJuego: Index
 --- !u!1 &217060844
 GameObject:

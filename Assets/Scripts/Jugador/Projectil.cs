@@ -6,10 +6,6 @@ using UnityEngine;
 public class Projectil : MonoBehaviour
 {
     private int _damage = 1;
-    public void Start()
-    {
-        Destroy(this.gameObject,0.1f);
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +13,10 @@ public class Projectil : MonoBehaviour
         {
             Debug.Log("choque");
             other.GetComponent<Enemy>().TakeDamage(_damage);
-            Destroy(gameObject);
         }
+    }
+    public void Destruir()
+    {
+        Destroy(gameObject);    
     }
 }

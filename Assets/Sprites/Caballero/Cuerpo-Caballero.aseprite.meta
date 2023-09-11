@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a867dce633f864f418efbbbcefd2d49d
+guid: 2a8bf82b0d9978447a5c68c96c9ef25d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 30
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 1
@@ -87,7 +87,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 1
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638300094874783597
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,289 +119,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: caballero_Frame_0
+  - name: Cuerpo-Caballero_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.64285713}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 54
-      y: 4
-      width: 42
-      height: 70
-    spriteID: 9a17730d8bb9cc044ae6477fb3c4acfc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 54, y: 4}
-  - name: caballero_Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: -0.6571429}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 54
-      y: 82
-      width: 42
-      height: 70
-    spriteID: 50d95ba4fe713d54595c6c519580ba54
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 54, y: 82}
-  - name: caballero_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.67142856}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 54
-      y: 160
-      width: 42
-      height: 70
-    spriteID: 48c06b8d62fb16741934e9f18d043fba
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 54, y: 160}
-  - name: caballero_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: -0.6571429}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 104
-      y: 4
-      width: 42
-      height: 70
-    spriteID: d08fc70e3724e7c47adfe798fc72ab0a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 104, y: 4}
-  - name: caballero_Frame_4
-    originalName: 
-    pivot: {x: 0.5, y: -0.64285713}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 104
-      y: 82
-      width: 42
-      height: 70
-    spriteID: aeb8dd543f09df845aa72954d6971654
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 104, y: 82}
-  - name: caballero_Frame_5
-    originalName: 
-    pivot: {x: 0.5, y: -0.6617647}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 154
-      y: 82
-      width: 42
-      height: 68
-    spriteID: 237573b5e81f8b14489aa281179a87de
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 154, y: 82}
-  - name: caballero_Frame_6
-    originalName: 
-    pivot: {x: 0.5, y: -0.6769231}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 154
-      y: 158
-      width: 42
-      height: 65
-    spriteID: 09495b3a2447c8149bcd49b78e8372cc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 154, y: 158}
-  - name: caballero_Frame_7
-    originalName: 
-    pivot: {x: 0.5, y: -0.6027397}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 176
-      width: 42
-      height: 73
-    spriteID: 2b747cdcabbb2cc4880377cedc50d54f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 176}
-  - name: caballero_Frame_8
-    originalName: 
-    pivot: {x: 0.5, y: -0.59210527}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 92
-      width: 42
-      height: 76
-    spriteID: e544e41f7dc66974baa04db0aee755c6
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 92}
-  - name: caballero_Frame_9
-    originalName: 
-    pivot: {x: 0.5, y: -0.5625}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 42
-      height: 80
-    spriteID: f554eb6c081356a4d95caaf11a7bd624
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-  - name: caballero_Frame_10
-    originalName: 
-    pivot: {x: 0.5, y: -0.64285713}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 104
-      y: 160
-      width: 42
-      height: 70
-    spriteID: 797a382179f144049806efca47afe47a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 104, y: 160}
-  - name: caballero_Frame_11
-    originalName: 
-    pivot: {x: 0.5, y: -0.6923077}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 204
-      y: 4
-      width: 42
-      height: 65
-    spriteID: 7c5da05bbed3080428151ced20a1ee9c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 204, y: 4}
-  - name: caballero_Frame_12
-    originalName: 
-    pivot: {x: 0.5121951, y: -0.7894737}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 204
-      y: 150
-      width: 41
-      height: 57
-    spriteID: b4d569eefc82dd14fbf6844b13c30b4f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 204, y: 150}
-  - name: caballero_Frame_13
-    originalName: 
-    pivot: {x: 0.5, y: -0.6923077}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 204
-      y: 77
-      width: 42
-      height: 65
-    spriteID: 86538e4605c590c4db1d834096e4412a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 204, y: 77}
-  - name: caballero_Frame_14
-    originalName: 
-    pivot: {x: 0.5, y: -0.64285713}
+    pivot: {x: 0.5, y: 0.71999997}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -409,8 +129,8 @@ ScriptedImporter:
       x: 154
       y: 4
       width: 42
-      height: 70
-    spriteID: 376e2ee0fe6c51646a89ef1f5198cee7
+      height: 50
+    spriteID: d492730ab8d9d6a46b81129fcb568729
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -419,138 +139,370 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 154, y: 4}
+  - name: Cuerpo-Caballero_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.70212764}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 120
+      width: 42
+      height: 47
+    spriteID: 8eb25a32a1d45ea4891360b673e6a650
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 120}
+  - name: Cuerpo-Caballero_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.7254902}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 190
+      width: 42
+      height: 51
+    spriteID: e24785db1ff7f6d4e8ec269846472595
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 103, y: 190}
+  - name: Cuerpo-Caballero_Frame_3
+    originalName: 
+    pivot: {x: 0.4883721, y: 0.7407408}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 4
+      width: 43
+      height: 54
+    spriteID: 86459ddf6aacb434e9eeb0a6f97f5bea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 103, y: 4}
+  - name: Cuerpo-Caballero_Frame_4
+    originalName: 
+    pivot: {x: 0.4883721, y: 0.7407408}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 66
+      width: 43
+      height: 54
+    spriteID: 77faac3253512df4bb4e5182042f5844
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 103, y: 66}
+  - name: Cuerpo-Caballero_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.75438595}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 144
+      width: 42
+      height: 57
+    spriteID: e0f95d3e5236d614cb01181f6a6b4ebe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 144}
+  - name: Cuerpo-Caballero_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.7741935}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 42
+      height: 62
+    spriteID: 1daebaa53dd9670409a9ad6f922e0560
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Cuerpo-Caballero_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.71999997}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 62
+      width: 42
+      height: 50
+    spriteID: bade951a31afade43b57331512e095a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 62}
+  - name: Cuerpo-Caballero_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.70212764}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 175
+      width: 42
+      height: 47
+    spriteID: d41088357d58b5a42b460341805d9c1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 175}
+  - name: Cuerpo-Caballero_Frame_9
+    originalName: 
+    pivot: {x: 0.4883721, y: 0.7407408}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 128
+      width: 43
+      height: 54
+    spriteID: 11bb15c6a9ab29045aa7e26a55b1a752
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 103, y: 128}
+  - name: Cuerpo-Caballero_Frame_10
+    originalName: 
+    pivot: {x: 0.48780486, y: 0.75438595}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 4
+      width: 41
+      height: 57
+    spriteID: 0e801a219b5ae3f4c8d116820467397a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 4}
+  - name: Cuerpo-Caballero_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.7741935}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 74
+      width: 42
+      height: 62
+    spriteID: 6d8042f4aabd6d8478bb8e5df7f89713
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 74}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 424103829
-    name: caballero
+    guid: -244631638
+    name: Cuerpo-Caballero
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: caballero_Frame_0
+    - name: Cuerpo-Caballero_Frame_0
       frameIndex: 0
       cellRect:
         x: 43
-        y: 45
+        y: 28
         width: 42
-        height: 70
-      spriteId: 9a17730d8bb9cc044ae6477fb3c4acfc
-    - name: caballero_Frame_1
+        height: 50
+      spriteId: d492730ab8d9d6a46b81129fcb568729
+    - name: Cuerpo-Caballero_Frame_1
       frameIndex: 1
       cellRect:
         x: 43
-        y: 46
+        y: 31
         width: 42
-        height: 70
-      spriteId: 50d95ba4fe713d54595c6c519580ba54
-    - name: caballero_Frame_2
+        height: 47
+      spriteId: 8eb25a32a1d45ea4891360b673e6a650
+    - name: Cuerpo-Caballero_Frame_2
       frameIndex: 2
       cellRect:
         x: 43
-        y: 47
+        y: 27
         width: 42
-        height: 70
-      spriteId: 48c06b8d62fb16741934e9f18d043fba
-    - name: caballero_Frame_3
+        height: 51
+      spriteId: e24785db1ff7f6d4e8ec269846472595
+    - name: Cuerpo-Caballero_Frame_3
       frameIndex: 3
       cellRect:
         x: 43
-        y: 46
-        width: 42
-        height: 70
-      spriteId: d08fc70e3724e7c47adfe798fc72ab0a
-    - name: caballero_Frame_4
+        y: 24
+        width: 43
+        height: 54
+      spriteId: 86459ddf6aacb434e9eeb0a6f97f5bea
+    - name: Cuerpo-Caballero_Frame_4
       frameIndex: 4
       cellRect:
         x: 43
-        y: 45
-        width: 42
-        height: 70
-      spriteId: aeb8dd543f09df845aa72954d6971654
-    - name: caballero_Frame_5
+        y: 24
+        width: 43
+        height: 54
+      spriteId: 77faac3253512df4bb4e5182042f5844
+    - name: Cuerpo-Caballero_Frame_5
       frameIndex: 5
       cellRect:
         x: 43
-        y: 45
+        y: 21
         width: 42
-        height: 68
-      spriteId: 237573b5e81f8b14489aa281179a87de
-    - name: caballero_Frame_6
+        height: 57
+      spriteId: e0f95d3e5236d614cb01181f6a6b4ebe
+    - name: Cuerpo-Caballero_Frame_6
       frameIndex: 6
       cellRect:
         x: 43
-        y: 44
+        y: 16
         width: 42
-        height: 65
-      spriteId: 09495b3a2447c8149bcd49b78e8372cc
-    - name: caballero_Frame_7
+        height: 62
+      spriteId: 1daebaa53dd9670409a9ad6f922e0560
+    - name: Cuerpo-Caballero_Frame_7
       frameIndex: 7
       cellRect:
         x: 43
-        y: 44
+        y: 28
         width: 42
-        height: 73
-      spriteId: 2b747cdcabbb2cc4880377cedc50d54f
-    - name: caballero_Frame_8
+        height: 50
+      spriteId: bade951a31afade43b57331512e095a6
+    - name: Cuerpo-Caballero_Frame_8
       frameIndex: 8
       cellRect:
         x: 43
-        y: 45
+        y: 31
         width: 42
-        height: 76
-      spriteId: e544e41f7dc66974baa04db0aee755c6
-    - name: caballero_Frame_9
+        height: 47
+      spriteId: d41088357d58b5a42b460341805d9c1f
+    - name: Cuerpo-Caballero_Frame_9
       frameIndex: 9
       cellRect:
         x: 43
-        y: 45
-        width: 42
-        height: 80
-      spriteId: f554eb6c081356a4d95caaf11a7bd624
-    - name: caballero_Frame_10
+        y: 24
+        width: 43
+        height: 54
+      spriteId: 11bb15c6a9ab29045aa7e26a55b1a752
+    - name: Cuerpo-Caballero_Frame_10
       frameIndex: 10
       cellRect:
-        x: 43
-        y: 45
-        width: 42
-        height: 70
-      spriteId: 797a382179f144049806efca47afe47a
-    - name: caballero_Frame_11
+        x: 44
+        y: 21
+        width: 41
+        height: 57
+      spriteId: 0e801a219b5ae3f4c8d116820467397a
+    - name: Cuerpo-Caballero_Frame_11
       frameIndex: 11
       cellRect:
         x: 43
-        y: 45
+        y: 16
         width: 42
-        height: 65
-      spriteId: 7c5da05bbed3080428151ced20a1ee9c
-    - name: caballero_Frame_12
-      frameIndex: 12
-      cellRect:
-        x: 43
-        y: 45
-        width: 41
-        height: 57
-      spriteId: b4d569eefc82dd14fbf6844b13c30b4f
-    - name: caballero_Frame_13
-      frameIndex: 13
-      cellRect:
-        x: 43
-        y: 45
-        width: 42
-        height: 65
-      spriteId: 86538e4605c590c4db1d834096e4412a
-    - name: caballero_Frame_14
-      frameIndex: 14
-      cellRect:
-        x: 43
-        y: 45
-        width: 42
-        height: 70
-      spriteId: 376e2ee0fe6c51646a89ef1f5198cee7
+        height: 62
+      spriteId: 6d8042f4aabd6d8478bb8e5df7f89713
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 128, y: 128}

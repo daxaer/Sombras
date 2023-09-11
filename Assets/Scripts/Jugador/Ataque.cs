@@ -55,6 +55,11 @@ public class Ataque : MonoBehaviour
         _attackSpeedMultiplier *= _multiplier;
     }
 
+    private void RoboDeVIda()
+    {
+
+    }
+
     public void  DamageUp(int damage)
     {
         estadisticas.ataque += damage;
