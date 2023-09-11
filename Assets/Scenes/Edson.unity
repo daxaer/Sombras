@@ -8233,6 +8233,10 @@ PrefabInstance:
       propertyPath: _objectOpenSettings
       value: 
       objectReference: {fileID: 1319883929}
+    - target: {fileID: 2581710144169056315, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2622110522608581265, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: velocidadPlayer
       value: 0
