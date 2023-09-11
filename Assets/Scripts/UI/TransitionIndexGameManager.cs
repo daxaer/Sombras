@@ -117,7 +117,8 @@ public class TransitionIndexGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToOpenSettings);
         _SettingsObject.SetActive(true);
-        eventSystem.firstSelectedGameObject = _buttonSelectionedSettings.gameObject;
+        eventSystem.SetSelectedGameObject(_buttonSelectionedSettings.gameObject); 
+        
     }
 
     private IEnumerator CourutineSettingsClose()
