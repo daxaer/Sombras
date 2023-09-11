@@ -21,7 +21,7 @@ public class MovimientoPersonaje : MonoBehaviour
     [SerializeField] private GameObject _objectOpenSettings;
 
     public AudioSource recibiendoDano;
-
+    public Transform player;
     Vector3 rStick = Vector3.zero;
 
     void Start()
@@ -40,7 +40,7 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
             float rotacion = (180 / Mathf.PI) * angulo - 90;
-            transform.rotation = Quaternion.Euler(0, 0, rotacion);
+            player.transform.rotation = Quaternion.Euler(0, 0, rotacion);
         }
         if (rStick.y != 0)
         {
