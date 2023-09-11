@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class TransitionGameOver : MonoBehaviour
@@ -12,17 +13,23 @@ public class TransitionGameOver : MonoBehaviour
     [Tooltip("")]
     [TextArea] private string _nombreDeLaEsceneJuego;
 
-    private bool _JugadorMuerto;
-    private GameObject _GameOver;
+    [SerializeField]
+    [Tooltip("")]
+    [TextArea] private string _nombreDeLaEsceneSelectChamp;
 
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] GameObject _buttonRetryInitialize;
 
-    public void Update()
+    [SerializeField] private GameObject _GameOver;
+    private TransitionGameOver _transitionGameOver;
+
+    public TransitionGameOver GameOverTransition { get { return _transitionGameOver; } }
+
+    public void CargarGameOver()
     {
-        if (_JugadorMuerto)
-        {
-            _JugadorMuerto = false;
-            _GameOver.SetActive(true);
-        }
+        _GameOver.SetActive(true);
+        Time.timeScale = 0;
+        eventSystem.SetSelectedGameObject(_buttonRetryInitialize);
     }
 
     public void OpenIndex()
@@ -32,13 +39,31 @@ public class TransitionGameOver : MonoBehaviour
 
     public void ReloadEscene()
     {
-        _GameOver.SetActive(false);
-        SceneManager.LoadSceneAsync(_nombreDeLaEsceneJuego);
+        StartCoroutine(CourutineReloadEscene());
     }
 
-    public IEnumerator CourutineOpenIndex()
+    public void OpenSelectChamp()
+    {
+        StartCoroutine(CourutineOpenSelectChamp());
+    }
+
+    private IEnumerator CourutineOpenIndex()
     {
         yield return new WaitForSeconds(0.1f);
+        _GameOver.SetActive(false);
         SceneManager.LoadSceneAsync(_nombreDeLaEscenaInicio);
+    }
+
+    private IEnumerator CourutineOpenSelectChamp()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadSceneAsync(_nombreDeLaEsceneSelectChamp);
+    }
+
+    private IEnumerator CourutineReloadEscene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _GameOver.SetActive(false);
+        SceneManager.LoadSceneAsync(_nombreDeLaEsceneJuego);
     }
 }
