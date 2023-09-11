@@ -22,7 +22,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
     public AudioSource recibiendoDano;
     public Transform player;
-    Vector3 rStick = Vector3.zero;
+    Vector2 rStickInput = Vector2.zero;
 
     void Start()
     {
@@ -33,19 +33,18 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
-        rStick.x = Input.GetAxis("4 Axis");
-        rStick.y = Input.GetAxis("5 Axis");
+        Vector2 rStickInput = new Vector2(Input.GetAxis("4 Axis"), Input.GetAxis("5 Axis"));
 
-        if (rStick.x != 0)
+        if (rStickInput != Vector2.zero)
         {
+            Vector2 shootingDirection = rStickInput.normalized;
+            float distanceFromPlayer = 1.0f;
+
+            _objetivoArma = transform.position + new Vector3(shootingDirection.x, shootingDirection.y, 0) * distanceFromPlayer;
+
             float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
             float rotacion = (180 / Mathf.PI) * angulo - 90;
             player.transform.rotation = Quaternion.Euler(0, 0, rotacion);
-        }
-        if (rStick.y != 0)
-        {
-            
-            _objetivoArma = _camera.ScreenToWorldPoint(Input.mousePosition);
         }
         Pause();
     }
