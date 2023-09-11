@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -14,6 +15,10 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float spawnx;
     [SerializeField] private float[] rangoMinimoYMaximo;
     [SerializeField] private float[] rangoProhibido;
+    [SerializeField] private int maxEnemies = 10; //limite de enemigos
+    [SerializeField] private int currentEnemies = 0; //contador de enemigos
+
+
 
     [SerializeField] private Transform target;
     //pool
@@ -30,18 +35,34 @@ public class SpawnManager : MonoBehaviour
         _objectPool.Inicializar(_enemySpawn, 5);
 
         InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
+
+
     }
 
     public void SpawnEnemy()
     {
         Vector3 position = new Vector3(RandomizarNumero(), RandomizarNumero(), 0);
-        GameObject go = _objectPool.Spawn(position, transform.rotation);
-        go.GetComponent<AIDestinationSetter>().target = target;
-        if(_stopSpawning)
+        
+        if(currentEnemies < maxEnemies)
         {
-            CancelInvoke("SpawnEnemy");
-            //timer en 0
+            GameObject go = _objectPool.Spawn(position, transform.rotation);
+            go.GetComponent<AIDestinationSetter>().target = target;
+            currentEnemies++;
+            if (_stopSpawning)
+            {
+                CancelInvoke("SpawnEnemy");
+                //timer en 0
+                
+            }
         }
+
+        
+      
+    }
+
+    public void DecreaseEnemyCount()
+    {
+        currentEnemies--;
     }
     private float RandomizarNumero()
     {
