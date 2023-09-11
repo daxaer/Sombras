@@ -14,11 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Index.unity
     guid: beeeb3e888967dd4bbdbb690c745e020
-  - enabled: 0
-    path: Assets/Scenes/save.unity
-    guid: db61bc6b91cebfc47b39bc7983c19a8e
   - enabled: 1
     path: Assets/Scenes/Game.unity
+    guid: db61bc6b91cebfc47b39bc7983c19a8e
+  - enabled: 0
+    path: Assets/Scenes/Edson.unity
     guid: 53bec406a4dd3834f8e0a2ae447a09f8
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: df4edc8cbcb12874fac2eaf1d11c7083, type: 2}

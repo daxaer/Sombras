@@ -3466,9 +3466,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeRemaining: 120
+  _tiempoInicial: 0
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
   spawn: {fileID: 0}
+  _enemy: {fileID: 0}
   tienda: {fileID: 926512251}
 --- !u!114 &833105532
 MonoBehaviour:
@@ -4058,8 +4060,12 @@ MonoBehaviour:
   probabilidad3: 0
   porcentajeTotal: 0
   botonCompraSlot1: {fileID: 473350713}
+  textocompraSlot1: {fileID: 0}
   botonCompraSlot2: {fileID: 558311537}
+  textocompraSlot2: {fileID: 0}
   botonCompraSlot3: {fileID: 2125775978}
+  textocompraSlot3: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!1 &937034763
 GameObject:
   m_ObjectHideFlags: 0
@@ -4811,7 +4817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e08614698d0ca4ba6049af43486c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _estadisticas: {fileID: 0}
   _enemySpawn: {fileID: 3155063478553261289, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
+  _almaSpawn: {fileID: 0}
   _stopSpawning: 0
   _spawnTime: 1
   _spawnDelay: 3
@@ -4823,9 +4831,16 @@ MonoBehaviour:
   rangoProhibido:
   - -3
   - 3
+  _lamp: []
+  timeLamp: 0
   maxEnemies: 10
-  currentEnemies: 0
+  _startEnemyCount: 1
+  _enemiesPerInterval: 1
+  _timeSinceLastSpawn: 0
+  _currentEnemiesCount: 0
+  spawn: {fileID: 0}
   target: {fileID: 1014082712913613320}
+  _enemy: {fileID: 0}
 --- !u!1 &1165149847
 GameObject:
   m_ObjectHideFlags: 0
@@ -5752,10 +5767,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiempoParpadeo: 1
   tiempoSinLuz: 0.2
-  tiempoLuzPrendida: 3
+  tiempoIluminacion: 0
   ReiniciandoLuz: 5
   luzPrendida: 1
   luz: {fileID: 1465099770}
+  activado: 0
+  rangoLuz: 0
 --- !u!58 &1465099774
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6501,6 +6518,10 @@ PrefabInstance:
     - target: {fileID: 1674268624033046436, guid: 9b0792dee7f80e34f8878669c9e5db3c, type: 3}
       propertyPath: m_Name
       value: Panel-Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674268624033046436, guid: 9b0792dee7f80e34f8878669c9e5db3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4101182456923318066, guid: 9b0792dee7f80e34f8878669c9e5db3c, type: 3}
       propertyPath: m_Pivot.x
@@ -8099,6 +8120,10 @@ PrefabInstance:
     - target: {fileID: 2755939281613191656, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: m_Name
       value: Jugador
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755939281613191656, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4160473408633597086, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: m_RootOrder

@@ -94,6 +94,30 @@ MonoBehaviour:
     m_Localized: Game Over
     m_Metadata:
       m_Items: []
+  - m_Id: 1990199351463936
+    m_Localized: Game Over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1990554348965888
+    m_Localized: "What do you want to do?\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991070902669312
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991218160488448
+    m_Localized: Home screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991447337259008
+    m_Localized: Select character
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1992496466907136
+    m_Localized: "\xA1You Win!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

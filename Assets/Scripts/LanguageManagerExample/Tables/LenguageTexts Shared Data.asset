@@ -91,6 +91,30 @@ MonoBehaviour:
     m_Key: TextGameOver
     m_Metadata:
       m_Items: []
+  - m_Id: 1990199351463936
+    m_Key: GameOverText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1990554348965888
+    m_Key: TextSubtitleGameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991070902669312
+    m_Key: TextReload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991218160488448
+    m_Key: TextIndexButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991447337259008
+    m_Key: TextSelectCharacter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1992496466907136
+    m_Key: WinnableText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139

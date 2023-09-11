@@ -23,6 +23,8 @@ public class TransitionGameOver : MonoBehaviour
     [SerializeField] private GameObject _GameOver;
     private TransitionGameOver _transitionGameOver;
 
+    [SerializeField] private GameObject _Settigns;
+
     public TransitionGameOver GameOverTransition { get { return _transitionGameOver; } }
 
     public void CargarGameOver()
@@ -47,6 +49,11 @@ public class TransitionGameOver : MonoBehaviour
         StartCoroutine(CourutineOpenSelectChamp());
     }
 
+    public void CloseSettings()
+    {
+        StartCoroutine(CourutineCloseSettings());
+    }
+
     private IEnumerator CourutineOpenIndex()
     {
         yield return new WaitForSeconds(0.1f);
@@ -62,8 +69,14 @@ public class TransitionGameOver : MonoBehaviour
 
     private IEnumerator CourutineReloadEscene()
     {
-        yield return new WaitForSeconds(0.1f);
         _GameOver.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadSceneAsync(_nombreDeLaEsceneJuego);
+    }
+
+    private IEnumerator CourutineCloseSettings()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _Settigns.SetActive(true);
     }
 }

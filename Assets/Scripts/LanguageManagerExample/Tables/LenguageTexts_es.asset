@@ -95,6 +95,30 @@ MonoBehaviour:
     m_Localized: Juego Terminado
     m_Metadata:
       m_Items: []
+  - m_Id: 1990199351463936
+    m_Localized: Juego Terminado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1990554348965888
+    m_Localized: "\xBFQue quieres hacer?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991070902669312
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991218160488448
+    m_Localized: Pantalla inicio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1991447337259008
+    m_Localized: Seleccionar personaje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1992496466907136
+    m_Localized: "\xA1Ganaste!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
