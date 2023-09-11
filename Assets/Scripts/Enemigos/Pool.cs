@@ -43,4 +43,9 @@ public class Pool
         return Instanciar(_pos, _rot);
     }
 
+    public void DeactivateEnemy(GameObject go)
+    {
+        go.SetActive(false);
+    }
+
 }

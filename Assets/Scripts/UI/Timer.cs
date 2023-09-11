@@ -6,13 +6,14 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float _timeRemaining = 30;
+    [SerializeField] private float _timeRemaining = 180;
     [SerializeField] private bool _timeIsRunning = true;
     [SerializeField] private TMP_Text _timeText;
     [SerializeField] private SpawnManager spawn;
-    //[SerializeField] private Enemy _enemy;
+    [SerializeField] private Enemy _enemy;
     [SerializeField] private GameObject tienda;
-    [SerializeField] private Pool pool;
+    public Pool pool;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,13 @@ public class Timer : MonoBehaviour
             if (_timeRemaining <= -1)
             {
                 spawn.DetenerSpawn();
+               
                 tienda.SetActive(true);
+                //spawn.DestroyAllEnemies();
+                //_enemy.DestroyAllEnemies();
+                //DeactivateEnemies();
+
+
             }
             else
             {
@@ -44,5 +51,14 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(_timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(_timeToDisplay % 60);
         _timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+
+    private void DeactivateEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies) 
+        {
+            pool.DeactivateEnemy(enemy);
+        }
     }
 }
