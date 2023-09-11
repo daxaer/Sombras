@@ -37,12 +37,12 @@ public class MovimientoPersonaje : MonoBehaviour
 
         if (rStickInput != Vector2.zero)
         {
-            Vector2 shootingDirection = rStickInput.normalized;
-            float distanceFromPlayer = 1.0f;
+            Vector2 Direction = rStickInput.normalized;
+            float distanciaDelJugador = 100f;
 
-            _objetivoArma = transform.position + new Vector3(shootingDirection.x, shootingDirection.y, 0) * distanceFromPlayer;
+            _objetivoArma = transform.position + new Vector3(Direction.x, Direction.y, 0) * distanciaDelJugador;
 
-            float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
+            float angulo = Mathf.Atan2(transform.position.y - _objetivoArma.y, transform.position.x - _objetivoArma.x);
             float rotacion = (180 / Mathf.PI) * angulo - 90;
             player.transform.rotation = Quaternion.Euler(0, 0, rotacion);
         }
