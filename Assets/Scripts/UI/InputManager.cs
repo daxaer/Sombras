@@ -26,11 +26,6 @@ public class InputManager : MonoBehaviour
         FindAnyObjectByType<Ataque>().Atacar();
     }
 
-    private void rotacion(InputAction.CallbackContext obj)
-    {
-        
-    }
-
     private void movimiento(InputAction.CallbackContext obj)
     {
         Vector2 moveDir = obj.ReadValue<Vector2>();

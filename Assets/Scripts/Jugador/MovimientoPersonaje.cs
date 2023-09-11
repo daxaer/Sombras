@@ -9,7 +9,6 @@ public class MovimientoPersonaje : MonoBehaviour
 
     private Vector3 _objetivoArma;
     [SerializeField] private Camera _camera;
-
     public float RangoVida { get { return (float)estadisticas.vidaActual / (float)estadisticas.vidaMaxima; } }
 
     private Vector2 direccionPlayer;
@@ -21,6 +20,9 @@ public class MovimientoPersonaje : MonoBehaviour
 
     [SerializeField] private GameObject _objectOpenSettings;
 
+    public AudioSource recibiendoDano;
+
+    Vector3 rStick = Vector3.zero;
 
     void Start()
     {
@@ -31,18 +33,26 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
-        float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
-        float rotacion = (180 / Mathf.PI) * angulo - 90;
-        transform.rotation = Quaternion.Euler(0, 0, rotacion);
-        _objetivoArma = _camera.ScreenToWorldPoint(Input.mousePosition);
+        rStick.x = Input.GetAxis("4 Axis");
+        rStick.y = Input.GetAxis("5 Axis");
 
+        if (rStick.x != 0)
+        {
+            float angulo = Mathf.Atan2(_objetivoArma.y - transform.position.y, _objetivoArma.x - transform.position.x);
+            float rotacion = (180 / Mathf.PI) * angulo - 90;
+            transform.rotation = Quaternion.Euler(0, 0, rotacion);
+        }
+        if (rStick.y != 0)
+        {
+            
+            _objetivoArma = _camera.ScreenToWorldPoint(Input.mousePosition);
+        }
         Pause();
     }
 
     private void FixedUpdate()
     {
         playerRb.MovePosition(playerRb.position + direccionPlayer * (estadisticas.velocidadPlayer * Time.fixedDeltaTime));
-
     }
     public void moveDir(Vector2 direccion)
     {
@@ -52,6 +62,7 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            recibiendoDano.Play();
             estadisticas.vidaActual = estadisticas.vidaActual - 10f;
             estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
             barraVida.ValorBarraPorcentual(RangoVida);
@@ -88,4 +99,5 @@ public class MovimientoPersonaje : MonoBehaviour
         _objectOpenSettings.SetActive(false);
         Time.timeScale = 1f;
     }
+   
 }

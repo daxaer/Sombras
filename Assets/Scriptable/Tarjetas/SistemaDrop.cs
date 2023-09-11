@@ -21,11 +21,11 @@ public class SistemaDrop : MonoBehaviour
     private ProbTarjetas.Probabilidades[] prob;
 
     public Button botonCompraSlot1;
-
+    public Text textocompraSlot1;
     public Button botonCompraSlot2;
-
+    public Text textocompraSlot2;
     public Button botonCompraSlot3;
-
+    public Text textocompraSlot3;
     [SerializeField] private EventSystem eventSystem;
 
     private void Awake()
@@ -58,6 +58,10 @@ public class SistemaDrop : MonoBehaviour
         eventSystem.SetSelectedGameObject(botonCompraSlot1.gameObject);
     }
 
+    void Update()
+    {
+    }
+
     public void AparicionTarjetaEnSlot(int slot)
     {
         if (slot != 1 && slot != 2 && slot != 3)
@@ -81,36 +85,33 @@ public class SistemaDrop : MonoBehaviour
                 if (slot == 1)
                 {
                     slot1.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
-                    botonCompraSlot1.gameObject.SetActive(true);
                     slot1.Actualizar();
-                       if (slot == 1 && almas.CantidadAlmas < slot1.TarjetaEquipada.costoTarjeta )
+                    if (almas.CantidadAlmas < slot1.TarjetaEquipada.costoTarjeta)
                     {
-                        botonCompraSlot1.gameObject.SetActive(false);
+                        textocompraSlot1.color = Color.red;
+                        slot1.TarjetaEquipada = null;
                     }
                 }
                 else if (slot == 2)
                 {
                     slot2.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
-                    botonCompraSlot2.gameObject.SetActive(true);
                     slot2.Actualizar();
-                    if (slot == 2 && almas.CantidadAlmas < slot2.TarjetaEquipada.costoTarjeta)
+                    if (almas.CantidadAlmas < slot2.TarjetaEquipada.costoTarjeta)
                     {
-                        botonCompraSlot2.gameObject.SetActive(false);
+                        textocompraSlot2.color = Color.red;
+                        slot2.TarjetaEquipada = null;
                     }
                 }
                 else if (slot == 3)
                 {
-
                     slot3.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
-                    botonCompraSlot3.gameObject.SetActive(true);
                     slot3.Actualizar();
-                    if (slot == 3 && almas.CantidadAlmas < slot3.TarjetaEquipada.costoTarjeta)
+                    if (almas.CantidadAlmas < slot3.TarjetaEquipada.costoTarjeta)
                     {
-                        botonCompraSlot3.gameObject.SetActive(false);
+                        textocompraSlot3.color = Color.red;
+                        slot3.TarjetaEquipada = null;
                     }
-
                 }
-
                 return;
             }
             else
@@ -121,11 +122,6 @@ public class SistemaDrop : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public class CompararRareza : IComparer
     {
