@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SistemaDrop : MonoBehaviour
@@ -24,6 +25,9 @@ public class SistemaDrop : MonoBehaviour
     public Button botonCompraSlot2;
 
     public Button botonCompraSlot3;
+
+    [SerializeField] private EventSystem eventSystem;
+
     private void Awake()
     {
         if(Instance == null)
@@ -47,11 +51,11 @@ public class SistemaDrop : MonoBehaviour
             porcentajeTotal += cantidad.probabilidadAparicion;
         }
 
-       
-
         AparicionTarjetaEnSlot(1); 
         AparicionTarjetaEnSlot(2); 
         AparicionTarjetaEnSlot(3);
+
+        eventSystem.SetSelectedGameObject(botonCompraSlot1.gameObject);
     }
 
     public void AparicionTarjetaEnSlot(int slot)
