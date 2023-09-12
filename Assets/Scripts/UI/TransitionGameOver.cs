@@ -34,17 +34,18 @@ public class TransitionGameOver : MonoBehaviour
     {
         _GameOver.SetActive(true);
         eventSystem.SetSelectedGameObject(_buttonRetryInitialize);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
     public void Win()
     {
         _Winner.SetActive(true);
         eventSystem.SetSelectedGameObject(_bottonWin);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void OpenIndex()
     {
+        Debug.Log("llamando index 1");
         StartCoroutine(CourutineOpenIndex());
     }
 
@@ -55,7 +56,6 @@ public class TransitionGameOver : MonoBehaviour
 
     public void OpenSelectChamp()
     {
-       
         StartCoroutine(CourutineOpenSelectChamp());
     }
 
@@ -66,9 +66,10 @@ public class TransitionGameOver : MonoBehaviour
 
     private IEnumerator CourutineOpenIndex()
     {
+        Debug.Log("llamando index 2");
+        Time.timeScale = 1;
         yield return new WaitForSeconds(0.1f);
         _GameOver.SetActive(false);
-        //Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(_nombreDeLaEscenaInicio);
     }
 

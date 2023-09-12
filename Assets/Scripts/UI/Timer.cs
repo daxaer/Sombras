@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private Enemy _enemy;
     [SerializeField] private GameObject tienda;
     [SerializeField] private GameObject retorno;
+    [SerializeField] private SistemaDrop sistemDrop;
     public Pool pool;
     private bool stoptimer = true;
     [SerializeField] private int rondaActual;
@@ -46,6 +47,9 @@ public class Timer : MonoBehaviour
                 {
                     rondaActual++;
                     stoptimer = false;
+                    sistemDrop.AparicionTarjetaEnSlot(1);
+                    sistemDrop.AparicionTarjetaEnSlot(2);
+                    sistemDrop.AparicionTarjetaEnSlot(3);
                     tienda.SetActive(true);
                     eventSystem.SetSelectedGameObject(retorno);
                     PauseGame();

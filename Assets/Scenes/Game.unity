@@ -3575,7 +3575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddabd14a1c7a4914cac3f643a3dec089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TarjetaEquipada: {fileID: 0}
+  TarjetaEquipada: {fileID: 11400000, guid: 8b391f9c952787144ad24fcc9e5c32e9, type: 2}
   nombreTarjeta: {fileID: 1190232646}
   descripcionTarjeta: {fileID: 874355290}
   costeTarjeta: {fileID: 1848367658}
@@ -4547,7 +4547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: {fileID: 159582228}
   eventSystem: {fileID: 852162712}
-  _timeRemaining: 180
+  _timeRemaining: 5
   _tiempoInicial: 0
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
@@ -4555,6 +4555,7 @@ MonoBehaviour:
   _enemy: {fileID: 0}
   tienda: {fileID: 926512251}
   retorno: {fileID: 783250464}
+  sistemDrop: {fileID: 926512255}
   rondaActual: 0
 --- !u!114 &833105532
 MonoBehaviour:
@@ -5831,7 +5832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddabd14a1c7a4914cac3f643a3dec089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TarjetaEquipada: {fileID: 0}
+  TarjetaEquipada: {fileID: 11400000, guid: f3d59c4388673634590e03edd9df74bc, type: 2}
   nombreTarjeta: {fileID: 151889936}
   descripcionTarjeta: {fileID: 481750680}
   costeTarjeta: {fileID: 1577752699}
@@ -6907,7 +6908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoAlmas: {fileID: 1310642808}
-  CantidadAlmas: 0
+  CantidadAlmas: 100
 --- !u!1 &1312100755
 GameObject:
   m_ObjectHideFlags: 0
@@ -11026,7 +11027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddabd14a1c7a4914cac3f643a3dec089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TarjetaEquipada: {fileID: 0}
+  TarjetaEquipada: {fileID: 11400000, guid: 2c394222f31229342a2a839649540001, type: 2}
   nombreTarjeta: {fileID: 228736313}
   descripcionTarjeta: {fileID: 1024516855}
   costeTarjeta: {fileID: 1766815356}
