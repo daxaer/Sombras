@@ -22,7 +22,6 @@ public class Timer : MonoBehaviour
     private bool stoptimer = true;
     [SerializeField] private int rondaActual;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +58,7 @@ public class Timer : MonoBehaviour
             {
                 DisplayTime(_timeRemaining);
             }
+  
         }
     }
 

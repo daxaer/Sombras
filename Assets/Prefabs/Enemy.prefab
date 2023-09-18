@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vida: 1
+  _lifeIncrease: 1
   _lifeDropChance: 0.3
   _lifePrefab: {fileID: 5620427087319276789, guid: eef0a684fa888ac43be9d17ec2fdede4, type: 3}
   _spawnManager: {fileID: 0}

@@ -7,7 +7,12 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     //[SerializeField] private Transform target;
+
+    //Vida
     [SerializeField] private float _vida;
+    [SerializeField] private float _lifeIncrease = 1f;
+
+
     //[SerializeField] private PoolAlmas _alma;
     //[SerializeField] private GameObject target;
 
@@ -45,5 +50,9 @@ public class Enemy : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
+    public void IncreaseLife()
+    {
+        //Aumentar vida del enemigo
+        _vida += _lifeIncrease;
+    }
 }
