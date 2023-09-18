@@ -12228,6 +12228,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1832040777}
     - target: {fileID: 4178300058161498754, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: _spawnManager
+      value: 
+      objectReference: {fileID: 1141194140}
+    - target: {fileID: 4178300058161498754, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: movimientoPersonaje
       value: 
       objectReference: {fileID: 5049849066716101575}

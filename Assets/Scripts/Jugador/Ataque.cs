@@ -11,6 +11,7 @@ public class Ataque : MonoBehaviour
     public AudioSource sonidoAtaque;
     [SerializeField] private GameObject prefabAtaque;
     [SerializeField] private Transform spawnAtaque;
+    [SerializeField] private SpawnManager _spawnManager;
 
     public KeyCode attackKey = KeyCode.Space; //tecla
     [SerializeField] private bool _canAttack = true; //se puede atacar?
@@ -23,7 +24,7 @@ public class Ataque : MonoBehaviour
             StartCoroutine(SpeedAtack());
             _canAttack = false;
             sonidoAtaque.Play();
-            GameObject temp = Instantiate(prefabAtaque, spawnAtaque.position, spawnAtaque.rotation);
+            GameObject temp = _spawnManager.SpawnAtaque(spawnAtaque);
             Projectil proj = temp.GetComponent<Projectil>();
             proj.EstadisticasPersonaje = estadisticas;
             proj.Movimiento = movimientoPersonaje;

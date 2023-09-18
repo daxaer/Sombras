@@ -119,6 +119,12 @@ public class SpawnManager : MonoBehaviour
         GameObject alma = _poolAlmas.Spawn(transform.position, transform.rotation);
     }
 
+    public GameObject SpawnAtaque(Transform transform)
+    {
+        GameObject alma = _poolBalas.Spawn(transform.position, transform.rotation);
+        return alma;
+    }
+
     private float RandomizarNumero()
     {
         float numero = Random.Range(rangoMinimoYMaximo[0], rangoMinimoYMaximo[1]);
