@@ -16,7 +16,6 @@ public class Timer : MonoBehaviour
     public Pool pool;
     private bool stoptimer = true;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +43,7 @@ public class Timer : MonoBehaviour
             {
                 DisplayTime(_timeRemaining);
             }
+  
         }
     }
 

@@ -3941,12 +3941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b27b356089aa974585d720d063fd4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeRemaining: 180
+  _timeRemaining: 15
   _tiempoInicial: 0
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
-  spawn: {fileID: 0}
-  _enemy: {fileID: 0}
+  spawn: {fileID: 1141194140}
+  _enemy: {fileID: 235953647414781044, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
   tienda: {fileID: 926512251}
 --- !u!114 &833105532
 MonoBehaviour:

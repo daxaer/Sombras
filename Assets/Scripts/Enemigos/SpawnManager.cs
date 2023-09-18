@@ -31,10 +31,10 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private SpawnManager spawn;
     [SerializeField] private Transform target;
+
     //pool
     public Pool _objectPool;
     public Enemy _enemy;
-
     public Pool _poolAlmas;
 
 

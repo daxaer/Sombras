@@ -234,7 +234,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.24780273, y: 0}
   m_SizeDelta: {x: -0.4956, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3465,10 +3465,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b27b356089aa974585d720d063fd4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeRemaining: 120
+  _timeRemaining: 10
+  _tiempoInicial: 0
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
-  spawn: {fileID: 0}
+  spawn: {fileID: 1141194140}
+  _enemy: {fileID: 235953647414781044, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
   tienda: {fileID: 926512251}
 --- !u!114 &833105532
 MonoBehaviour:
@@ -3973,7 +3975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &926512252
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4058,8 +4060,12 @@ MonoBehaviour:
   probabilidad3: 0
   porcentajeTotal: 0
   botonCompraSlot1: {fileID: 473350713}
+  textocompraSlot1: {fileID: 0}
   botonCompraSlot2: {fileID: 558311537}
+  textocompraSlot2: {fileID: 0}
   botonCompraSlot3: {fileID: 2125775978}
+  textocompraSlot3: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!1 &937034763
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,7 +4681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1082920749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4811,7 +4817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e08614698d0ca4ba6049af43486c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _estadisticas: {fileID: 0}
   _enemySpawn: {fileID: 3155063478553261289, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
+  _almaSpawn: {fileID: 0}
   _stopSpawning: 0
   _spawnTime: 1
   _spawnDelay: 3
@@ -4823,9 +4831,16 @@ MonoBehaviour:
   rangoProhibido:
   - -3
   - 3
+  _lamp: []
+  timeLamp: 0
   maxEnemies: 10
-  currentEnemies: 0
+  _startEnemyCount: 1
+  _enemiesPerInterval: 1
+  _timeSinceLastSpawn: 0
+  _currentEnemiesCount: 0
+  spawn: {fileID: 1141194140}
   target: {fileID: 1014082712913613320}
+  _enemy: {fileID: 235953647414781044, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
 --- !u!1 &1165149847
 GameObject:
   m_ObjectHideFlags: 0
@@ -5752,10 +5767,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiempoParpadeo: 1
   tiempoSinLuz: 0.2
-  tiempoLuzPrendida: 3
+  tiempoIluminacion: 0
   ReiniciandoLuz: 5
   luzPrendida: 1
   luz: {fileID: 1465099770}
+  activado: 0
+  rangoLuz: 0
 --- !u!58 &1465099774
 CircleCollider2D:
   m_ObjectHideFlags: 0
