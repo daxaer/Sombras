@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour
     //Vida
     [SerializeField] private float _vida;
     [SerializeField] private float _lifeIncrease = 1f;
-
+    [SerializeField] private GameObject iluminar;
+    [SerializeField] private GameObject maskara;
 
     //[SerializeField] private PoolAlmas _alma;
     //[SerializeField] private GameObject target;
@@ -54,5 +55,18 @@ public class Enemy : MonoBehaviour
     {
         //Aumentar vida del enemigo
         _vida += _lifeIncrease;
+    }
+    public void Activarluz()
+    {
+        iluminar.SetActive(true);
+        maskara.SetActive(true);
+        CancelInvoke("DesactivarLuz");
+        Invoke(nameof(DesactivarLuz), 2f);
+    }
+    
+    public void DesactivarLuz()
+    {
+        iluminar.SetActive(false);
+        maskara.SetActive(false);
     }
 }

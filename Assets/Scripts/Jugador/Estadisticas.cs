@@ -13,10 +13,11 @@ public class Estadisticas : MonoBehaviour
     public float rango;
     public float VelocidadeAtaque;
     public float roboDeVida;
-    public float iluminarEnemigo;
     public float duracionLamparas;
     public float rangoIluminacion;
 
+    //Pasivas
+    public bool iluminarEnemigos;
 
 
     [SerializeField] private ScriptableEstadisticas personajeSeleccionado;
@@ -30,9 +31,10 @@ public class Estadisticas : MonoBehaviour
         rango = personajeSeleccionado.RangoGolpe;
         VelocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque;
         roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida;
-        iluminarEnemigo = personajeSeleccionado.RangoIluminacion;
         duracionLamparas = personajeSeleccionado.TiempoIluminacion;
         rangoIluminacion = personajeSeleccionado.RangoIluminacion;
 
+        //Pasivas
+        iluminarEnemigos = true;
     }
 }

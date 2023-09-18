@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class Projectil : MonoBehaviour
 {
-    private float _damage = 1;
     [SerializeField] private Estadisticas estadisticas;
     [SerializeField] private MovimientoPersonaje movimientoPersonaje;
     [SerializeField] private float velocidad;
@@ -13,10 +12,9 @@ public class Projectil : MonoBehaviour
 
     public Estadisticas EstadisticasPersonaje { get { return estadisticas; } set { estadisticas = value; } }
     public MovimientoPersonaje Movimiento { get { return movimientoPersonaje; } set { movimientoPersonaje = value; } }
-    private void Start()
+    
+    private void OnEnable()
     {
-        AumentoRango();
-        _damage = estadisticas.ataque;
         Invoke("Destruir", 0.3f);
     }
 
@@ -29,7 +27,12 @@ public class Projectil : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("choque");
-            other.GetComponent<Enemy>().TakeDamage(_damage);
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            enemy.TakeDamage(estadisticas.ataque);
+            if (estadisticas.iluminarEnemigos == true)
+            {
+                enemy.Activarluz();
+            }
             roboVida();
         }
     }

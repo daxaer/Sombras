@@ -11,6 +11,7 @@ public class MovimientoPersonaje : MonoBehaviour
     public EventSystem eventSystem;
     public Estadisticas estadisticas;
     public GameObject botonRetornar;
+    public SpriteRenderer sprite;
 
     private Vector3 _objetivoArma;
     [SerializeField] private Camera _camera;
@@ -28,7 +29,7 @@ public class MovimientoPersonaje : MonoBehaviour
     public AudioSource recibiendoDano;
     public Transform player;
     Vector2 rStickInput = Vector2.zero;
-
+    bool invulnerable = false;
     
     [SerializeField] private Controles playerInputMap;
 
@@ -79,8 +80,9 @@ public class MovimientoPersonaje : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && invulnerable == false)
         {
+            invulnerable = true;
             recibiendoDano.Play();
             estadisticas.vidaActual = estadisticas.vidaActual - 10f;
             estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
@@ -88,6 +90,8 @@ public class MovimientoPersonaje : MonoBehaviour
             barraVida.ValorVidaActual(estadisticas.vidaActual);
             Mori();
             collision.GetComponent<Enemy>().Atacar();
+            StartCoroutine("Invulnerabilidad");
+
 
         }
         if (collision.CompareTag("Alma"))
@@ -131,6 +135,22 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         _objectOpenSettings.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    IEnumerator Invulnerabilidad()
+    {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+        invulnerable = false;
     }
    
 }

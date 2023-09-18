@@ -63,7 +63,7 @@ public class SpawnManager : MonoBehaviour
         _poolAlmas.Inicializar(_almaSpawn, 10);
         //Balas
         _poolBalas = new Pool();
-        _poolBalas.Inicializar(_spawnBalas, 10);
+        _poolBalas.Inicializar(_spawnBalas, 0);
         InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
         StartCoroutine("ActivarLampara");
 

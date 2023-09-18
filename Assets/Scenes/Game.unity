@@ -4547,11 +4547,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: {fileID: 159582228}
   eventSystem: {fileID: 852162712}
-  _timeRemaining: 5
+  _timeRemaining: 100
   _tiempoInicial: 0
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
-  spawn: {fileID: 0}
+  spawn: {fileID: 1141194140}
   _enemy: {fileID: 0}
   tienda: {fileID: 926512251}
   retorno: {fileID: 783250464}
@@ -12104,9 +12104,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1014082712913613320}
     - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 5049849066716101580}
+    - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 8744469191267717315}
+    - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: color2.b
+      value: 0.0141509175
+      objectReference: {fileID: 0}
+    - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: color2.g
+      value: 0.0141509175
+      objectReference: {fileID: 0}
+    - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: color2.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 372281042277662231, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: gameOver
       value: 
@@ -12158,6 +12186,10 @@ PrefabInstance:
     - target: {fileID: 2755939281613191656, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: m_Name
       value: Jugador
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904388983087780166, guid: c118024d841390f40af34fa523372bc5, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3904388983087780166, guid: c118024d841390f40af34fa523372bc5, type: 3}
       propertyPath: m_Color.b
@@ -12274,6 +12306,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ccd5463eff765498ff5770b9e49d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &5049849066716101580 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3904388983087780166, guid: c118024d841390f40af34fa523372bc5, type: 3}
+  m_PrefabInstance: {fileID: 5049849066716101570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6592359059817362853
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,9 +17,9 @@ public class TransitionGameOver : MonoBehaviour
     [Tooltip("")]
     [TextArea] private string _nombreDeLaEsceneSelectChamp;
 
-    [SerializeField] EventSystem eventSystem;
-    [SerializeField] GameObject _buttonRetryInitialize;
-    [SerializeField] GameObject _bottonWin;
+    [SerializeField] private EventSystem eventSystem;
+    [SerializeField] private GameObject _buttonRetryInitialize;
+    [SerializeField] private GameObject _bottonWin;
 
     [SerializeField] private GameObject _GameOver;
     [SerializeField] private GameObject _Winner;

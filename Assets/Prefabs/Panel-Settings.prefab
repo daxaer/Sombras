@@ -870,7 +870,7 @@ RectTransform:
   - {fileID: 6933793615477430967}
   - {fileID: 7415687880579332726}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2320,7 +2320,6 @@ GameObject:
   - component: {fileID: 333563693262978841}
   - component: {fileID: 8449963361700274329}
   - component: {fileID: 916708101956573969}
-  - component: {fileID: 3265521094422098509}
   - component: {fileID: 6679468283347048646}
   m_Layer: 5
   m_Name: Dropdown-Lenguage
@@ -2449,7 +2448,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3265521094422098509}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DropdownLocaleLanguage, Assembly-CSharp
         m_MethodName: ChangeLocal
         m_Mode: 0
@@ -2461,7 +2460,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3265521094422098509}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DropdownLocaleLanguage, Assembly-CSharp
         m_MethodName: ChangeLocal
         m_Mode: 0
@@ -2473,7 +2472,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3265521094422098509}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DropdownLocaleLanguage, Assembly-CSharp
         m_MethodName: ChangeLocal
         m_Mode: 0
@@ -2486,22 +2485,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
---- !u!114 &3265521094422098509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5086350993431834915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013781758bda0ca47bf8d056dde063d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  palabra:
-  - espanol
-  - ingles
-  - japones
 --- !u!114 &6679468283347048646
 MonoBehaviour:
   m_ObjectHideFlags: 0

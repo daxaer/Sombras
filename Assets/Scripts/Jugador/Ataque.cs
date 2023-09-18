@@ -27,6 +27,7 @@ public class Ataque : MonoBehaviour
             GameObject temp = _spawnManager.SpawnAtaque(spawnAtaque);
             Projectil proj = temp.GetComponent<Projectil>();
             proj.EstadisticasPersonaje = estadisticas;
+            proj.AumentoRango();
             proj.Movimiento = movimientoPersonaje;
         }
     }
