@@ -29,6 +29,9 @@ public class TransitionSelectionGameManager : MonoBehaviour
     [SerializeField]
     private GameObject _panelLoadTransition;
 
+    [SerializeField]
+    private Image _imagen;
+
     public void SelectKnightChamp()
     {
         _champSelected = "Knight";
@@ -74,7 +77,6 @@ public class TransitionSelectionGameManager : MonoBehaviour
         _panelLoadTransition.SetActive(true);
         for (int contador = 0; contador < timeToWait; contador++)
         {
-            Debug.Log("Entro");
             yield return new WaitForSeconds(timeToWaitBar);
             gameBar.fillAmount += 0.1f;
 
@@ -84,4 +86,11 @@ public class TransitionSelectionGameManager : MonoBehaviour
             }
         }
     }
+
+    public void CambiarImagen(Sprite image)
+    {
+        _imagen.sprite = image;
+    }
+    //Falta cambiar el nombre cuando sea seleccionado
+
 }
