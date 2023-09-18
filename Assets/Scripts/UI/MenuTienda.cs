@@ -58,6 +58,7 @@ public class MenuTienda : MonoBehaviour
             estadisticas.roboDeVida += tarjetaEquipada.robaVida;
             estadisticas.iluminarEnemigo += tarjetaEquipada.RangoLampara;
             alma.CantidadAlmas -= tarjetaEquipada.costoTarjeta;
+            alma.ActualizarAlmas();
         }
        
 

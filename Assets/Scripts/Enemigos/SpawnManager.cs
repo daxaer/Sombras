@@ -43,13 +43,13 @@ public class SpawnManager : MonoBehaviour
    
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance !=this)
         {
-            Instance = this;
+            Destroy(Instance);
         }
         else
         {
-            Debug.Log("Hay mas de un spawnManager");
+            Instance = this;
         }
     }
     void Start()

@@ -11,6 +11,7 @@ public class Almas : MonoBehaviour
     void Start()
     {
         textoAlmas = GetComponent<Text>();
+        textoAlmas.text = CantidadAlmas.ToString();
     }
     public void ActualizarAlmas()
     {

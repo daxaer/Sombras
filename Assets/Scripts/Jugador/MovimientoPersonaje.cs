@@ -102,6 +102,7 @@ public class MovimientoPersonaje : MonoBehaviour
             else
             {
                 Alma.CantidadAlmas = Alma.CantidadAlmas + 1;
+                Alma.ActualizarAlmas();
             }
         }
     }

@@ -17,22 +17,27 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Hay mas de un game manager");
+            Destroy(Instance);
         }
     }
-    public void AbrirMenu(GameObject menu,GameObject selectedButton)
+    public void AbrirMenu(GameObject menu)
     {
         menu.SetActive(true);
+    }
+    public void SeleccionarBoton(GameObject selectedButton)
+    {
         eventSystem.SetSelectedGameObject(selectedButton);
     }
-
     public void CerrarMenu(GameObject menu)
     {
         menu.SetActive(false);
     }
-
     public void LoadScene(string nombreScena)
     {
         SceneManager.LoadSceneAsync(nombreScena, LoadSceneMode.Single);
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

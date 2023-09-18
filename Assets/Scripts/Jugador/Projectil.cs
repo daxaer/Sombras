@@ -8,6 +8,7 @@ public class Projectil : MonoBehaviour
     private float _damage = 1;
     [SerializeField] private Estadisticas estadisticas;
     [SerializeField] private MovimientoPersonaje movimientoPersonaje;
+    [SerializeField] private float velocidad;
 
     public Estadisticas EstadisticasPersonaje { get { return estadisticas; } set { estadisticas = value; } }
     public MovimientoPersonaje Movimiento { get { return movimientoPersonaje; } set { movimientoPersonaje = value; } }
@@ -16,6 +17,11 @@ public class Projectil : MonoBehaviour
         AumentoRango();
         _damage = estadisticas.ataque;
         Destroy(gameObject,0.3f);
+    }
+
+    private void Update()
+    {
+        transform.Translate(Vector2.right * velocidad * Time.captureDeltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,11 +42,12 @@ public class Projectil : MonoBehaviour
     }
     public void Destruir()
     {
-        Destroy(gameObject);    
+        gameObject.SetActive(false);
     }
 
     public void AumentoRango()
     {
         gameObject.transform.localScale = new Vector3(estadisticas.rango, estadisticas.rango, 1);
     }
+
 }

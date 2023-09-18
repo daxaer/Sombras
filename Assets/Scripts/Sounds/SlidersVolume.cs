@@ -6,7 +6,6 @@ public class SlidersVolume : MonoBehaviour
 
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Slider effectSlider;
-    [SerializeField] private MusicManager musicManager;
     [SerializeField] private float valueEffects;
     [SerializeField] private float valueMusic;
 
@@ -14,24 +13,24 @@ public class SlidersVolume : MonoBehaviour
     public void SubirVolumenEffects()
     {
         effectSlider.value += 0.1f;
-        musicManager.VolumeEffects(effectSlider.value);
+        MusicManager.Instance.VolumeEffects(effectSlider.value);
     }
 
     public void BajarVolumenEffects()
     {
         effectSlider.value -= 0.1f;
-        musicManager.VolumeEffects(effectSlider.value);
+        MusicManager.Instance.VolumeEffects(effectSlider.value);
     }
 
     public void SubirVolumen()
     {
         volumeSlider.value += 0.1f;
-        musicManager.VolumeMusic(volumeSlider.value);
+        MusicManager.Instance.VolumeMusic(volumeSlider.value);
     }
 
     public void BajarVolumen()
     {
         volumeSlider.value -= 0.1f;
-        musicManager.VolumeMusic(volumeSlider.value);
+        MusicManager.Instance.VolumeMusic(volumeSlider.value);
     }
 }
