@@ -8,18 +8,12 @@ public class Almas : MonoBehaviour
     [SerializeField] private Text textoAlmas;
     public int CantidadAlmas;
 
-    // Start is called before the first frame update
     void Start()
     {
         textoAlmas = GetComponent<Text>();
-        
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ActualizarAlmas()
     {
         textoAlmas.text = CantidadAlmas.ToString();
     }
-   
-   
 }

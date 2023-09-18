@@ -17,14 +17,22 @@ public class InputManager : MonoBehaviour
         control.Gameplay.Enable();
         control.Gameplay.Movimiento.performed += movimiento;
         control.Gameplay.Movimiento.canceled += movimiento;
-        //control.Gameplay.Atacar.started += atacar;
+        control.Gameplay.Atacar.started += atacar;
        
     }
 
-    //private void atacar(InputAction.CallbackContext obj)
-    //{
-    //    FindAnyObjectByType<Ataque>().Atacar();
-    //}
+    private void OnDisable()
+    {
+        control.Gameplay.Disable();
+        control.Gameplay.Movimiento.performed -= movimiento;
+        control.Gameplay.Movimiento.canceled -= movimiento;
+        control.Gameplay.Atacar.started -= atacar;
+    }
+
+    private void atacar(InputAction.CallbackContext obj)
+    {
+        FindAnyObjectByType<Ataque>().Atacar();
+    }
 
     private void movimiento(InputAction.CallbackContext obj)
     {

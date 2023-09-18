@@ -11,7 +11,7 @@ public class Estadisticas : MonoBehaviour
     public float vidaActual;
     public float ataque;
     public float rango;
-    public float VelocidadAtaque;
+    public float VelocidadeAtaque;
     public float roboDeVida;
     public float iluminarEnemigo;
     public float duracionLamparas;
@@ -28,7 +28,7 @@ public class Estadisticas : MonoBehaviour
         vidaActual = personajeSeleccionado.vidaActual;
         ataque = personajeSeleccionado.ATaque;
         rango = personajeSeleccionado.RangoGolpe;
-        VelocidadAtaque = personajeSeleccionado.VelocidadDeAtaque;
+        VelocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque;
         roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida;
         iluminarEnemigo = personajeSeleccionado.RangoIluminacion;
         duracionLamparas = personajeSeleccionado.TiempoIluminacion;

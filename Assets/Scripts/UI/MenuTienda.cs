@@ -54,7 +54,7 @@ public class MenuTienda : MonoBehaviour
             estadisticas.vidaMaxima += tarjetaEquipada.SaludBonus;
             estadisticas.velocidadPlayer += tarjetaEquipada.VelocidadBonus;
             estadisticas.rango += tarjetaEquipada.RangoArma;
-            estadisticas.VelocidadAtaque += tarjetaEquipada.velAtaque;
+            estadisticas.VelocidadeAtaque += tarjetaEquipada.velAtaque;
             estadisticas.roboDeVida += tarjetaEquipada.robaVida;
             estadisticas.iluminarEnemigo += tarjetaEquipada.RangoLampara;
             alma.CantidadAlmas -= tarjetaEquipada.costoTarjeta;

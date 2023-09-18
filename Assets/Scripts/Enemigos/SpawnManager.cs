@@ -7,9 +7,14 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public static SpawnManager Instance { get; private set; }
+
+    //instancias pools
     [SerializeField] private Estadisticas _estadisticas;
     [SerializeField] private GameObject _enemySpawn;
     [SerializeField] private GameObject _almaSpawn;
+    [SerializeField] private GameObject _spawnBalas;
+
     [SerializeField] private bool _stopSpawning;
     [SerializeField] private float _spawnTime;
     [SerializeField] private float _spawnDelay = 1f; //intervalo entre cada instancia
@@ -21,7 +26,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float timeLamp;
 
     [SerializeField] private int maxEnemies = 10; //limite de enemigos
-    //[SerializeField] private int currentEnemies = 0; //contador de enemigos
     [SerializeField] private int _startEnemyCount = 1; //Cantidad inicial de enemigos
     [SerializeField] private int _enemiesPerInterval = 1; //Cantidad de enemigos a aumentar por intervalo
     [SerializeField] private float _timeSinceLastSpawn = 0f; //Tiempo transcurrido desde la ultima instancia
@@ -33,32 +37,35 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Transform target;
     //pool
     public Pool _objectPool;
-    public Enemy _enemy;
-
     public Pool _poolAlmas;
-
-
-    // Start is called before the first frame update
-    public void DetenerSpawn()
+    public Pool _poolBalas;
+    public Enemy _enemy;
+   
+    private void Awake()
     {
-        _stopSpawning = true;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.Log("Hay mas de un spawnManager");
+        }
     }
     void Start()
     {
         spawn = gameObject.GetComponent<SpawnManager>();
+        //Enemigos
         _objectPool = new Pool();
         _objectPool.Inicializar(_enemySpawn, 5);
+        //Almas
         _poolAlmas = new Pool();
         _poolAlmas.Inicializar(_almaSpawn, 10);
+        //Balas
+        _poolBalas = new Pool();
+        _poolBalas.Inicializar(_spawnBalas, 10);
         InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
         StartCoroutine("ActivarLampara");
-
-        /*GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
-
-        foreach(GameObject enemyObject in enemyObjects) 
-        {
-            enemies.Add(enemyObject);
-        }*/
 
         for (int i = 0; i < _startEnemyCount; i++)
         {
@@ -74,7 +81,6 @@ public class SpawnManager : MonoBehaviour
         if(_timeSinceLastSpawn >= _spawnDelay )
         {
             _timeSinceLastSpawn = 0;
-
             //Aumentar el numero de enemigos actuales en pantalla
             for(int i = 0; i < _enemiesPerInterval; i++)
             {
@@ -82,16 +88,10 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
-
-    /*public void DestroyAllEnemies()
+    public void DetenerSpawn()
     {
-        foreach(GameObject enemy in enemies)
-        {
-            Destroy(enemy);
-        }
-
-        enemies.Clear();
-    }*/
+        _stopSpawning = true;
+    }
 
     public void RestarCurrentEnemy()
     {
@@ -110,10 +110,8 @@ public class SpawnManager : MonoBehaviour
             if (_stopSpawning)
             {
                 CancelInvoke("SpawnEnemy");
-                //timer en 0
             }
         }
-      
     }
 
     public void SpawnAlmas(Transform transform)
@@ -147,7 +145,6 @@ public class SpawnManager : MonoBehaviour
             _lamp[numero].GetComponent<Lampara>().Activado = true;
             _lamp[numero].GetComponent<Lampara>().RangoLuz(_estadisticas.rangoIluminacion);
             _lamp[numero].GetComponent<Lampara>().TiempoIluminacion(_estadisticas.duracionLamparas);
-
         }
         else
         {
@@ -156,5 +153,4 @@ public class SpawnManager : MonoBehaviour
         _lamp[numero].SetActive(true);
         yield return new WaitForSeconds(timeLamp);
     }
-
 }
