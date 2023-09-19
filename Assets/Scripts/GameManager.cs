@@ -5,11 +5,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] EventSystem eventSystem;
-
+    [SerializeField] Tarjeta tarjeta;
+    private int idioma;
     //Lenguaje
     [SerializeField] private const string LocaleKey = "SelectedKey";
     public string[] palabra;
@@ -60,6 +62,12 @@ public class GameManager : MonoBehaviour
         {
             LocalizationSettings.SelectedLocale = avaliableLocales.Locales[localID];
             PlayerPrefs.SetInt(LocaleKey, localID);
+            idioma = localID;
         }
+    }
+
+    public int ChangeLenguageTarget()
+    {
+        return idioma;
     }
 }

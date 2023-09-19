@@ -15,19 +15,23 @@ public class TarjetaMostrada : MonoBehaviour
     [SerializeField] Image imagenTarjeta;
     [SerializeField] Image marcoTarjeta;
 
-    
     // Start is called before the first frame update
     void Start()
     {
+       
         Actualizar();
     }
     public void Actualizar()
     {
-        nombreTarjeta.text = TarjetaEquipada.nombreTarjetaEs;
-        descripcionTarjeta.text = TarjetaEquipada.descripcionTarjetaEs;
+        
+        nombreTarjeta.text = TarjetaEquipada.nombreTarjeta[GameManager.Instance.ChangeLenguageTarget()];
+        descripcionTarjeta.text = TarjetaEquipada.descripcionDeTarjeta[GameManager.Instance.ChangeLenguageTarget()];
         costeTarjeta.text = TarjetaEquipada.costoTarjeta.ToString();
         marcoTarjeta.color = TarjetaEquipada.colorRareza;
         imagenTarjeta.sprite = TarjetaEquipada.imagenTarjeta;
     }
+
+  
+    
     
 }

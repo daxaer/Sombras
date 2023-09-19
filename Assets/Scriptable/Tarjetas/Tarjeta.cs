@@ -6,9 +6,25 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Tarjeta : ScriptableObject
 {
-    public string IdTarjeta;
-    public string nombreTarjetaEs;
-    public string nombreTarjetaEN;
-    public string nombreTarjetaJa;
     public Sprite imagenTarjeta;
+    public string IdTarjeta;
+
+    public string[] nombreTarjeta;
+
+    
+
+
+
+    public string NombreTarjetas(int idioma)
+    {
+
+        if (idioma >= 0 && idioma < nombreTarjeta.Length)
+        {
+            return nombreTarjeta[idioma];
+        }
+        else
+        {
+            return "No existe el idioma";
+        }
+    }
 }
