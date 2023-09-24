@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3873bf664f9d27448486449f4c21fb7, type: 3}
-  m_Name: Guerrero
+  m_Name: ComeAlmas
   m_EditorClassIdentifier: 
-  nombreJugador:
-  - Guerrero
-  - Warrior
-  - shinoby
-  vidaMaxima: 100
-  Ataque: 1
-  vidaActual: 100
-  velocidadMovimiento: 3
-  velocidadDeAtaque: 1
-  porcentajeRoboDeVida: 90
-  rangoGolpe: 1
+  nombreJugador: []
+  vidaMaxima: 0
+  Ataque: 0
+  vidaActual: 0
+  velocidadMovimiento: 0
+  velocidadDeAtaque: 0
+  porcentajeRoboDeVida: 0
+  rangoGolpe: 0
   velocidadBala: 0
-  ataqueMele: 0
-  rangoIluminacion: 12
-  tiempoIluminacion: 3
+  rangoIluminacion: 0
+  tiempoIluminacion: 0

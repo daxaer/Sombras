@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2581710144169056315}
   - component: {fileID: 2622110522608581265}
   - component: {fileID: 7025925609239190522}
-  - component: {fileID: 7222006471541087715}
+  - component: {fileID: 7903139616052774103}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -188,7 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ccd5463eff765498ff5770b9e49d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  eventSystem: {fileID: 0}
   estadisticas: {fileID: 2622110522608581265}
+  botonRetornar: {fileID: 0}
+  sprite: {fileID: 0}
   _camera: {fileID: 0}
   barraVida: {fileID: 0}
   Alma: {fileID: 0}
@@ -211,12 +215,10 @@ MonoBehaviour:
   sonidoAtaque: {fileID: 0}
   prefabAtaque: {fileID: 2212208750441370251, guid: d4acc73c82a6f0c43aeb36708951bdcd, type: 3}
   spawnAtaque: {fileID: 1869190762329115102}
-  _damage: 0
-  _attackDelay: 5
+  _spawnManager: {fileID: 0}
   attackKey: 32
   _canAttack: 1
-  _attackTimer: 0
-  _attackSpeedMultiplier: 1
+  movimientoPersonaje: {fileID: 0}
 --- !u!50 &2581710144169056315
 Rigidbody2D:
   serializedVersion: 4
@@ -261,11 +263,11 @@ MonoBehaviour:
   vidaActual: 0
   ataque: 0
   rango: 0
-  VelocidadAtaque: 0
+  VelocidadeAtaque: 0
   roboDeVida: 0
-  iluminarEnemigo: 0
   duracionLamparas: 0
   rangoIluminacion: 0
+  iluminarEnemigos: 0
   personajeSeleccionado: {fileID: 0}
 --- !u!58 &7025925609239190522
 CircleCollider2D:
@@ -302,7 +304,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!95 &7222006471541087715
+--- !u!95 &7903139616052774103
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -312,7 +314,7 @@ Animator:
   m_GameObject: {fileID: 2755939281613191656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 1232005670409531074, guid: 2a8bf82b0d9978447a5c68c96c9ef25d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4169facd306ee424db2a1f83755bd5dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
