@@ -188,7 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ccd5463eff765498ff5770b9e49d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  eventSystem: {fileID: 0}
   estadisticas: {fileID: 2622110522608581265}
+  botonRetornar: {fileID: 0}
+  sprite: {fileID: 0}
   _camera: {fileID: 0}
   barraVida: {fileID: 0}
   Alma: {fileID: 0}
@@ -211,12 +215,10 @@ MonoBehaviour:
   sonidoAtaque: {fileID: 0}
   prefabAtaque: {fileID: 2212208750441370251, guid: d4acc73c82a6f0c43aeb36708951bdcd, type: 3}
   spawnAtaque: {fileID: 1869190762329115102}
-  _damage: 0
-  _attackDelay: 5
+  _spawnManager: {fileID: 0}
   attackKey: 32
   _canAttack: 1
-  _attackTimer: 0
-  _attackSpeedMultiplier: 1
+  movimientoPersonaje: {fileID: 0}
 --- !u!50 &2581710144169056315
 Rigidbody2D:
   serializedVersion: 4
@@ -261,11 +263,11 @@ MonoBehaviour:
   vidaActual: 0
   ataque: 0
   rango: 0
-  VelocidadAtaque: 0
+  VelocidadeAtaque: 0
   roboDeVida: 0
-  iluminarEnemigo: 0
   duracionLamparas: 0
   rangoIluminacion: 0
+  iluminarEnemigos: 0
   personajeSeleccionado: {fileID: 0}
 --- !u!58 &7025925609239190522
 CircleCollider2D:
