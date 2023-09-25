@@ -1,0 +1,752 @@
+fileFormatVersion: 2
+guid: 5b71b7fcb4a5089459c4be06f7bba1b1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: BotonesMejoradosV1 - copia_Frame_11
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1496
+      height: 352
+    spriteID: e047f5eef7d8e86418d91ac29807d3cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: BotonesMejoradosV1 - copia_Frame_12
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 4
+      width: 1496
+      height: 352
+    spriteID: dcf7493e9147f0847b9788e092bb3ccf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 4}
+  - name: BotonesMejoradosV1 - copia_Frame_13
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 364
+      width: 1496
+      height: 352
+    spriteID: 454a38ae6b4569848ab7f05bea5cc36d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 364}
+  - name: BotonesMejoradosV1 - copia_Frame_14
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 364
+      width: 1496
+      height: 352
+    spriteID: d0197b758d3910e47bb374b006f76dc8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 364}
+  - name: BotonesMejoradosV1 - copia_Frame_15
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 724
+      width: 1496
+      height: 352
+    spriteID: c2286bf27bf689a4abed6ae91ce02c20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 724}
+  - name: BotonesMejoradosV1 - copia_Frame_16
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 724
+      width: 1496
+      height: 352
+    spriteID: 5e924345e688bc945a205c742e968a4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 724}
+  - name: BotonesMejoradosV1 - copia_Frame_17
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1084
+      width: 1496
+      height: 352
+    spriteID: ea4016028fe3f2c47a2f53ef163d68d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1084}
+  - name: BotonesMejoradosV1 - copia_Frame_18
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 1084
+      width: 1496
+      height: 352
+    spriteID: e2ee255c8af6b084283716abac0a1bae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 1084}
+  - name: BotonesMejoradosV1 - copia_Frame_19
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1444
+      width: 1496
+      height: 352
+    spriteID: 43abf1f7223bdbf45a4cfdf7bbb3f079
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1444}
+  - name: BotonesMejoradosV1 - copia_Frame_20
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 1444
+      width: 1496
+      height: 352
+    spriteID: 6e1f26a7991313f49887536d96160be3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 1444}
+  - name: BotonesMejoradosV1 - copia_Frame_21
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1804
+      width: 1496
+      height: 352
+    spriteID: 33f85d598b5a3a245a07e4ec250c3c52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1804}
+  - name: BotonesMejoradosV1 - copia_Frame_0
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 1804
+      width: 1496
+      height: 352
+    spriteID: 95b77ded632c6714ca5dd374c3c420a3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 1804}
+  - name: BotonesMejoradosV1 - copia_Frame_1
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2164
+      width: 1496
+      height: 352
+    spriteID: 49912e39a81e69d4cbf00ac986f0eb50
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2164}
+  - name: BotonesMejoradosV1 - copia_Frame_2
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 2164
+      width: 1496
+      height: 352
+    spriteID: eb86430b23dffd2458255fdfa2d0bf1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 2164}
+  - name: BotonesMejoradosV1 - copia_Frame_3
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2524
+      width: 1496
+      height: 352
+    spriteID: 13bd41746125b394ebf7193709beca9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2524}
+  - name: BotonesMejoradosV1 - copia_Frame_4
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 2524
+      width: 1496
+      height: 352
+    spriteID: 89853c079a317db449141b30c39cd653
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 2524}
+  - name: BotonesMejoradosV1 - copia_Frame_5
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2884
+      width: 1496
+      height: 352
+    spriteID: 17ff2cbd000ec844d9328fde4ec841ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2884}
+  - name: BotonesMejoradosV1 - copia_Frame_6
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 2884
+      width: 1496
+      height: 352
+    spriteID: 9e5f6ae14eaba3b4f8c51af579fb1247
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 2884}
+  - name: BotonesMejoradosV1 - copia_Frame_7
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3244
+      width: 1496
+      height: 352
+    spriteID: 9a9f8b6a9e4d4df46a58abb929d8c8c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3244}
+  - name: BotonesMejoradosV1 - copia_Frame_8
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 3244
+      width: 1496
+      height: 352
+    spriteID: de3fea4a423ce78458c893c891f81932
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 3244}
+  - name: BotonesMejoradosV1 - copia_Frame_9
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3604
+      width: 1496
+      height: 352
+    spriteID: 3bdf048b7edc1ba418036597ee4c98b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3604}
+  - name: BotonesMejoradosV1 - copia_Frame_10
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07954545}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1508
+      y: 3604
+      width: 1496
+      height: 352
+    spriteID: 8fd7be592ac2f324ab44edc8792d745e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1508, y: 3604}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -974817922
+    name: BotonesMejoradosV1 - copia
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BotonesMejoradosV1 - copia_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: e047f5eef7d8e86418d91ac29807d3cf
+    - name: BotonesMejoradosV1 - copia_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: dcf7493e9147f0847b9788e092bb3ccf
+    - name: BotonesMejoradosV1 - copia_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 454a38ae6b4569848ab7f05bea5cc36d
+    - name: BotonesMejoradosV1 - copia_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: d0197b758d3910e47bb374b006f76dc8
+    - name: BotonesMejoradosV1 - copia_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: c2286bf27bf689a4abed6ae91ce02c20
+    - name: BotonesMejoradosV1 - copia_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 5e924345e688bc945a205c742e968a4f
+    - name: BotonesMejoradosV1 - copia_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: ea4016028fe3f2c47a2f53ef163d68d1
+    - name: BotonesMejoradosV1 - copia_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: e2ee255c8af6b084283716abac0a1bae
+    - name: BotonesMejoradosV1 - copia_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 43abf1f7223bdbf45a4cfdf7bbb3f079
+    - name: BotonesMejoradosV1 - copia_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 6e1f26a7991313f49887536d96160be3
+    - name: BotonesMejoradosV1 - copia_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 33f85d598b5a3a245a07e4ec250c3c52
+    - name: BotonesMejoradosV1 - copia_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 95b77ded632c6714ca5dd374c3c420a3
+    - name: BotonesMejoradosV1 - copia_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 49912e39a81e69d4cbf00ac986f0eb50
+    - name: BotonesMejoradosV1 - copia_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: eb86430b23dffd2458255fdfa2d0bf1e
+    - name: BotonesMejoradosV1 - copia_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 13bd41746125b394ebf7193709beca9c
+    - name: BotonesMejoradosV1 - copia_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 89853c079a317db449141b30c39cd653
+    - name: BotonesMejoradosV1 - copia_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 17ff2cbd000ec844d9328fde4ec841ac
+    - name: BotonesMejoradosV1 - copia_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 9e5f6ae14eaba3b4f8c51af579fb1247
+    - name: BotonesMejoradosV1 - copia_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 9a9f8b6a9e4d4df46a58abb929d8c8c0
+    - name: BotonesMejoradosV1 - copia_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: de3fea4a423ce78458c893c891f81932
+    - name: BotonesMejoradosV1 - copia_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 3bdf048b7edc1ba418036597ee4c98b6
+    - name: BotonesMejoradosV1 - copia_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 27
+        y: 28
+        width: 1496
+        height: 352
+      spriteId: 8fd7be592ac2f324ab44edc8792d745e
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 1550, y: 400}
