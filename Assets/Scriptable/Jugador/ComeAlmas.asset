@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3873bf664f9d27448486449f4c21fb7, type: 3}
   m_Name: ComeAlmas
   m_EditorClassIdentifier: 
-  nombreJugador: []
+  nombreJugador:
+  - Come Almas
+  - Soul eater
+  - soul
   vidaMaxima: 0
   Ataque: 0
   vidaActual: 0
@@ -21,5 +24,7 @@ MonoBehaviour:
   porcentajeRoboDeVida: 0
   rangoGolpe: 0
   velocidadBala: 0
-  rangoIluminacion: 0
-  tiempoIluminacion: 0
+  ataqueMele: 1
+  rangoIluminacion: 12
+  tiempoIluminacion: 3
+  player: {fileID: 2755939281613191656, guid: 1c526459102e7744fa50820edd730b24, type: 3}

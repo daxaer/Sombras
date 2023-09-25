@@ -35,6 +35,10 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private SpawnManager spawn;
     [SerializeField] private Transform target;
+    [SerializeField] private Transform spawnPlayer;
+    [SerializeField] private GameObject jugador;
+
+
     //pool
     public Pool _objectPool;
     public Pool _poolAlmas;
@@ -54,7 +58,9 @@ public class SpawnManager : MonoBehaviour
     }
     void Start()
     {
-        spawn = gameObject.GetComponent<SpawnManager>();
+        //jugador = GameManager.Instance.Player().Player;
+        //SpawnearPlayer();
+        target = jugador.transform;
         //Enemigos
         _objectPool = new Pool();
         _objectPool.Inicializar(_enemySpawn, 5);
@@ -158,5 +164,9 @@ public class SpawnManager : MonoBehaviour
         }
         _lamp[numero].SetActive(true);
         yield return new WaitForSeconds(timeLamp);
+    }
+    private void SpawnearPlayer()
+    {
+       Instantiate(jugador,spawnPlayer);
     }
 }

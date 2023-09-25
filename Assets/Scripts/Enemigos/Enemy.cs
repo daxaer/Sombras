@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,10 +13,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _vida;
     [SerializeField] private float _lifeIncrease = 1f;
     [SerializeField] private GameObject iluminar;
-    [SerializeField] private GameObject maskara;
-
-    //[SerializeField] private PoolAlmas _alma;
-    //[SerializeField] private GameObject target;
 
     //probabilidad
     [SerializeField] private SpawnManager _spawnManager;
@@ -49,7 +46,7 @@ public class Enemy : MonoBehaviour
 
     public void Atacar()
     {
-        gameObject.SetActive(false);
+        
     }
     public void IncreaseLife()
     {
@@ -59,7 +56,6 @@ public class Enemy : MonoBehaviour
     public void Activarluz()
     {
         iluminar.SetActive(true);
-        maskara.SetActive(true);
         CancelInvoke("DesactivarLuz");
         Invoke(nameof(DesactivarLuz), 2f);
     }
@@ -67,6 +63,10 @@ public class Enemy : MonoBehaviour
     public void DesactivarLuz()
     {
         iluminar.SetActive(false);
-        maskara.SetActive(false);
+    }
+
+    public void Explosion()
+    {
+
     }
 }

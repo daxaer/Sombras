@@ -12,14 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3873bf664f9d27448486449f4c21fb7, type: 3}
   m_Name: Tirador
   m_EditorClassIdentifier: 
-  nombreJugador: []
-  vidaMaxima: 0
-  Ataque: 0
-  vidaActual: 0
-  velocidadMovimiento: 0
-  velocidadDeAtaque: 0
+  nombreJugador:
+  - Tirador
+  - Tirador en ingles
+  - Tirador en japones
+  vidaMaxima: 50
+  Ataque: 2
+  vidaActual: 50
+  velocidadMovimiento: 3
+  velocidadDeAtaque: 0.5
   porcentajeRoboDeVida: 0
-  rangoGolpe: 0
-  velocidadBala: 0
-  rangoIluminacion: 0
-  tiempoIluminacion: 0
+  rangoGolpe: 1
+  velocidadBala: 10
+  ataqueMele: 0
+  rangoIluminacion: 12
+  tiempoIluminacion: 3
+  player: {fileID: 2755939281613191656, guid: 20e4d079b64649644808d90721c462a0, type: 3}

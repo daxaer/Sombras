@@ -19,6 +19,7 @@ public class ScriptableEstadisticas : ScriptableObject
     [Header("Lamparas")] 
     [SerializeField] private float rangoIluminacion;
     [SerializeField] private float tiempoIluminacion;
+    [SerializeField] private GameObject player;
 
     public string NombreJugador(int idioma)
     {
@@ -31,7 +32,7 @@ public class ScriptableEstadisticas : ScriptableObject
             return "No existe el idioma";
         }
     }
-    public int VIdaMaxima { get { return vidaMaxima; } }
+    public int VidaMaxima { get { return vidaMaxima; } }
     public int ATaque { get { return Ataque; } }
     public float VelocidadDeMovimiento { get { return velocidadMovimiento; } }
     public float VelocidadDeAtaque { get { return velocidadDeAtaque; } }
@@ -42,4 +43,5 @@ public class ScriptableEstadisticas : ScriptableObject
     public bool AtaqueMele { get { return ataqueMele; } }
     public float RangoIluminacion { get { return rangoIluminacion; } }
     public float TiempoIluminacion { get { return tiempoIluminacion; } }
+    public GameObject Player { get { return player; } set { player = value; } }
 }
