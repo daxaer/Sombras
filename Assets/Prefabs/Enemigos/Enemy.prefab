@@ -268,6 +268,8 @@ MonoBehaviour:
   _vida: 3
   _lifeIncrease: 1
   iluminar: {fileID: 1804796711718029088}
+  animation_Ojo: {fileID: 8673536928570557922}
+  animation_Cuerpo: {fileID: 4411845708124067182}
   _spawnManager: {fileID: 0}
 --- !u!212 &8225459986862862613
 SpriteRenderer:

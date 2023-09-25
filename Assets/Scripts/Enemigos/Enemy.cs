@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _vida;
     [SerializeField] private float _lifeIncrease = 1f;
     [SerializeField] private GameObject iluminar;
+    [SerializeField] private Animator animation_Ojo;
+    [SerializeField] private Animator animation_Cuerpo;
+
 
     //probabilidad
     [SerializeField] private SpawnManager _spawnManager;
@@ -27,7 +30,12 @@ public class Enemy : MonoBehaviour
             Invoke(nameof(Desactivar), 0f);
         }
     }
+    private void OnEnable()
+    {
+        animation_Cuerpo.SetBool("Muerto", false);
+        animation_Ojo.SetBool("Muerto", false);
 
+    }
     private void OnDisable()
     {
         CancelInvoke(nameof(Desactivar));
@@ -46,7 +54,11 @@ public class Enemy : MonoBehaviour
 
     public void Atacar()
     {
-        
+        //iluminar.SetActive(false);
+        //animation_Ojo.SetTrigger("Atacar");
+        //animation_Cuerpo.SetTrigger("Atacar");
+        Desactivar();
+
     }
     public void IncreaseLife()
     {
@@ -63,10 +75,5 @@ public class Enemy : MonoBehaviour
     public void DesactivarLuz()
     {
         iluminar.SetActive(false);
-    }
-
-    public void Explosion()
-    {
-
     }
 }
