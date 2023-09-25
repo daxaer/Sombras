@@ -105,7 +105,8 @@ public class SpawnManager : MonoBehaviour
         {
             GameObject go = _objectPool.Spawn(position, transform.rotation);
             go.GetComponent<AIDestinationSetter>().target = target;
-            go.GetComponent<Enemy>().SetSpawn(spawn);
+            //go.GetComponent<Enemy>().SetSpawn(spawn);
+            go.GetComponent<Enemy2>().SetSpawn(spawn);
             _currentEnemiesCount++;
             if (_stopSpawning)
             {
