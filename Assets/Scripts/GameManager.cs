@@ -10,14 +10,16 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] EventSystem eventSystem;
-    [SerializeField] Tarjeta tarjeta;
     private int idioma;
+    private bool pausa;
+    [SerializeField] private ScriptableEstadisticas jugador;
+    private Transform spawnPlayer;
     //Lenguaje
     [SerializeField] private const string LocaleKey = "SelectedKey";
-    public string[] palabra;
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         if(Instance == null)
         {
             Instance = this;
@@ -69,5 +71,28 @@ public class GameManager : MonoBehaviour
     public int ChangeLenguageTarget()
     {
         return idioma;
+    }
+
+    public void GamePaused()
+    {
+        pausa = !pausa;
+        if(pausa)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void SelectedChamp(ScriptableEstadisticas _jugador)
+    {
+        jugador = _jugador;
+    }
+
+    public ScriptableEstadisticas Player()
+    {
+        return jugador;
     }
 }

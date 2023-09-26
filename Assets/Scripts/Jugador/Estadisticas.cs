@@ -24,7 +24,7 @@ public class Estadisticas : MonoBehaviour
 
     private void Start()
     {
-        vidaMaxima = personajeSeleccionado.VIdaMaxima;
+        vidaMaxima = personajeSeleccionado.VidaMaxima;
         velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento;
         vidaActual = personajeSeleccionado.vidaActual;
         ataque = personajeSeleccionado.ATaque;

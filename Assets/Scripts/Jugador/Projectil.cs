@@ -26,7 +26,6 @@ public class Projectil : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("choque");
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             enemy.TakeDamage(estadisticas.ataque);
             if (estadisticas.iluminarEnemigos == true)

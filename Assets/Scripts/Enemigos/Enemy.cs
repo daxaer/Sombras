@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,10 +13,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _vida;
     [SerializeField] private float _lifeIncrease = 1f;
     [SerializeField] private GameObject iluminar;
-    [SerializeField] private GameObject maskara;
+    [SerializeField] private Animator animation_Ojo;
+    [SerializeField] private Animator animation_Cuerpo;
 
-    //[SerializeField] private PoolAlmas _alma;
-    //[SerializeField] private GameObject target;
 
     //probabilidad
     [SerializeField] private SpawnManager _spawnManager;
@@ -30,7 +30,12 @@ public class Enemy : MonoBehaviour
             Invoke(nameof(Desactivar), 0f);
         }
     }
+    private void OnEnable()
+    {
+        animation_Cuerpo.SetBool("Muerto", false);
+        animation_Ojo.SetBool("Muerto", false);
 
+    }
     private void OnDisable()
     {
         CancelInvoke(nameof(Desactivar));
@@ -49,7 +54,11 @@ public class Enemy : MonoBehaviour
 
     public void Atacar()
     {
-        gameObject.SetActive(false);
+        //iluminar.SetActive(false);
+        //animation_Ojo.SetTrigger("Atacar");
+        //animation_Cuerpo.SetTrigger("Atacar");
+        Desactivar();
+
     }
     public void IncreaseLife()
     {
@@ -59,7 +68,6 @@ public class Enemy : MonoBehaviour
     public void Activarluz()
     {
         iluminar.SetActive(true);
-        maskara.SetActive(true);
         CancelInvoke("DesactivarLuz");
         Invoke(nameof(DesactivarLuz), 2f);
     }
@@ -67,6 +75,5 @@ public class Enemy : MonoBehaviour
     public void DesactivarLuz()
     {
         iluminar.SetActive(false);
-        maskara.SetActive(false);
     }
 }
