@@ -32,6 +32,8 @@ public class MovimientoPersonaje : MonoBehaviour
     
     [SerializeField] private Controles playerInputMap;
 
+    public DeathCount _deathcount;
+
 
     void Start()
     {
@@ -75,6 +77,7 @@ public class MovimientoPersonaje : MonoBehaviour
         if(estadisticas.vidaActual <=0)
         {
             gameOver.CargarGameOver();
+            _deathcount.OnPlayerDeath();
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)

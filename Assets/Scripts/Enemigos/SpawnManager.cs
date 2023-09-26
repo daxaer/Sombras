@@ -11,7 +11,7 @@ public class SpawnManager : MonoBehaviour
 
     //instancias pools
     [SerializeField] private Estadisticas _estadisticas;
-    [SerializeField] private GameObject _enemySpawn;
+    [SerializeField] private GameObject[] _enemySpawn;
     [SerializeField] private GameObject _almaSpawn;
     [SerializeField] private GameObject _spawnBalas;
 
@@ -63,7 +63,7 @@ public class SpawnManager : MonoBehaviour
         target = jugador.transform;
         //Enemigos
         _objectPool = new Pool();
-        _objectPool.Inicializar(_enemySpawn, 5);
+        _objectPool.Inicializar(_enemySpawn[Random.Range(0, _enemySpawn.Length)], 5);
         //Almas
         _poolAlmas = new Pool();
         _poolAlmas.Inicializar(_almaSpawn, 10);
@@ -111,7 +111,8 @@ public class SpawnManager : MonoBehaviour
         {
             GameObject go = _objectPool.Spawn(position, transform.rotation);
             go.GetComponent<AIDestinationSetter>().target = target;
-            go.GetComponent<Enemy>().SetSpawn(spawn);
+            //go.GetComponent<Enemy>().SetSpawn(spawn);
+            go.GetComponent<Enemy2>().SetSpawn(spawn);
             _currentEnemiesCount++;
             if (_stopSpawning)
             {
