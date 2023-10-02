@@ -9,18 +9,17 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] EventSystem eventSystem;
     private int idioma;
     private bool pausa;
-    [SerializeField] private ScriptableEstadisticas jugador;
     private Transform spawnPlayer;
     //Lenguaje
     [SerializeField] private const string LocaleKey = "SelectedKey";
-    public static GameManager Instance { get; private set; }
+
+    public static GameManager Instance;
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -35,27 +34,6 @@ public class GameManager : MonoBehaviour
         int savedLocalID = PlayerPrefs.GetInt(LocaleKey, 0);
         ChangeLocal(savedLocalID);
     }
-    public void AbrirMenu(GameObject menu)
-    {
-        menu.SetActive(true);
-    }
-    public void SeleccionarBoton(GameObject selectedButton)
-    {
-        eventSystem.SetSelectedGameObject(selectedButton);
-    }
-    public void CerrarMenu(GameObject menu)
-    {
-        menu.SetActive(false);
-    }
-    public void LoadScene(string nombreScena)
-    {
-        SceneManager.LoadSceneAsync(nombreScena, LoadSceneMode.Single);
-    }
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
     //Lenguaje
     public void ChangeLocal(int localID)
     {
@@ -73,7 +51,7 @@ public class GameManager : MonoBehaviour
         return idioma;
     }
 
-    public void GamePaused()
+    public void JuegoPausado()
     {
         pausa = !pausa;
         if(pausa)
@@ -84,15 +62,5 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-    }
-
-    public void SelectedChamp(ScriptableEstadisticas _jugador)
-    {
-        jugador = _jugador;
-    }
-
-    public ScriptableEstadisticas Player()
-    {
-        return jugador;
     }
 }

@@ -91,6 +91,5 @@ public class TransitionSelectionGameManager : MonoBehaviour
     {
         _imagen.sprite = image;
     }
-    //Falta cambiar el nombre cuando sea seleccionado
 
 }

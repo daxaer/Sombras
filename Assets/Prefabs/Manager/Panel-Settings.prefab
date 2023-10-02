@@ -921,7 +921,6 @@ GameObject:
   - component: {fileID: 4101182456923318066}
   - component: {fileID: 4102064477388849762}
   - component: {fileID: 7952421668255606006}
-  - component: {fileID: 2872999262256662334}
   m_Layer: 5
   m_Name: Panel-Settings
   m_TagString: Untagged
@@ -943,7 +942,7 @@ RectTransform:
   m_Children:
   - {fileID: 4378167995599737987}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -988,22 +987,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2872999262256662334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674268624033046436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18adad9d5d2fdbd4fb064ff426e9230a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 8363787782233908078}
-  effectSlider: {fileID: 7343736392749741774}
-  valueEffects: 0
-  valueMusic: 0
 --- !u!1 &1814305338734666826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2872999262256662334}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SlidersVolume, Assembly-CSharp
         m_MethodName: BajarVolumenEffects
         m_Mode: 1
@@ -1879,7 +1862,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2646182701525160690}
-  - component: {fileID: 4117340055421487876}
   - component: {fileID: 859319723072005550}
   - component: {fileID: 1870690719606551128}
   m_Layer: 5
@@ -1910,19 +1892,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &4117340055421487876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3228577324550941771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
 --- !u!222 &859319723072005550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2157,7 +2126,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2872999262256662334}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SlidersVolume, Assembly-CSharp
         m_MethodName: BajarVolumen
         m_Mode: 1
@@ -2479,7 +2448,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2872999262256662334}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SlidersVolume, Assembly-CSharp
         m_MethodName: SubirVolumen
         m_Mode: 1
@@ -4083,7 +4052,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2872999262256662334}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SlidersVolume, Assembly-CSharp
         m_MethodName: SubirVolumenEffects
         m_Mode: 1

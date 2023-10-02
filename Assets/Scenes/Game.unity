@@ -6269,7 +6269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _estadisticas: {fileID: 824421574}
-  _enemySpawn: {fileID: 3155063478553261289, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
+  _enemySpawn: []
   _almaSpawn: {fileID: 1623635145803344270, guid: 43d61249d01455a449c643a36b92c1ec, type: 3}
   _spawnBalas: {fileID: 2212208750441370251, guid: e8720a8fe95824648b70e9e9a4617c7a, type: 3}
   _stopSpawning: 0
