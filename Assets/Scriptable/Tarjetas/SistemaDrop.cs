@@ -25,7 +25,7 @@ public class SistemaDrop : MonoBehaviour
     public Text textocompraSlot2;
     public Button botonCompraSlot3;
     public Text textocompraSlot3;
-    [SerializeField] private EventSystem eventSystem;
+    //[SerializeField] private EventSystem eventSystem;
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class SistemaDrop : MonoBehaviour
         AparicionTarjetaEnSlot(2); 
         AparicionTarjetaEnSlot(3);
 
-        eventSystem.SetSelectedGameObject(botonCompraSlot1.gameObject);
+        //eventSystem.SetSelectedGameObject(botonCompraSlot1.gameObject);
     }
 
     void Update()

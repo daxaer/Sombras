@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 public class SelectedButton : MonoBehaviour
 {
     [SerializeField] private GameObject boton;
+    [SerializeField] private EventSystem eventSystem;
+
     private void OnEnable()
     {
-        EventSystem eventSystem = ManageEventSystem.Instance.GetEventSystem();
         eventSystem.SetSelectedGameObject(boton);
     }
 }

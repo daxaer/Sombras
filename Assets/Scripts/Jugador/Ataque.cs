@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 public class Ataque : MonoBehaviour
@@ -20,14 +22,22 @@ public class Ataque : MonoBehaviour
     {
 
     }
+    public void Update()
+    {
+        //if (Input.GetKey(KeyCode.Space)) 
+        //{
+            Atacar();
+        //}
+    }
 
     public void Atacar()
     {
         if(_canAttack)
         {
             StartCoroutine(SpeedAtack());
+            Debug.Log("atacando");
             _canAttack = false;
-            MusicManager.Instance.PlayAudio(SOUNDTYPE.HIT_ENEMY, transform.position);
+            //MusicManager.Instance.PlayAudio(SOUNDTYPE.HIT_ENEMY, transform.position);
             animatorArma.SetTrigger("Atacar");
             animatorCuerpo.SetTrigger("Atacar");
             animatorOjos.SetTrigger("Atacar");
@@ -43,7 +53,8 @@ public class Ataque : MonoBehaviour
 
     public void SpawnAtaque()
     {
-        GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
-        Projectil proj = temp.GetComponent<Projectil>();
+        Instantiate(EstadisticasManager.Instance.bala, spawnAtaque.position, spawnAtaque.rotation);
+        //GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
+        //Projectil proj = temp.GetComponent<Projectil>();
     }
 }

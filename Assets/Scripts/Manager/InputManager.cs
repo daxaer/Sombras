@@ -38,7 +38,7 @@ public class InputManager : MonoBehaviour
 
     private void atacar(InputAction.CallbackContext obj)
     {
-        FindAnyObjectByType<Ataque>().Atacar();
+        //FindAnyObjectByType<Ataque>().Atacar();
     }
 
     private void Pause(InputAction.CallbackContext obj)

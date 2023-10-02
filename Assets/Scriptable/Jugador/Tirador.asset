@@ -27,4 +27,4 @@ MonoBehaviour:
   ataqueMele: 0
   rangoIluminacion: 12
   tiempoIluminacion: 3
-  player: {fileID: 2755939281613191656, guid: 20e4d079b64649644808d90721c462a0, type: 3}
+  bala: {fileID: -2253911629886400664, guid: 44796476339823449b40fc192a5cdfff, type: 3}
