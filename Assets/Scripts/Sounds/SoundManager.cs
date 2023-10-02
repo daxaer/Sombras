@@ -18,7 +18,6 @@ public class MusicManager : MonoBehaviour
 
     public void Awake()
     {
-        DontDestroyOnLoad(gameObject);
         if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
@@ -70,19 +69,15 @@ public class MusicManager : MonoBehaviour
         }
         return null;
     }
-    /*public AudioSource Music { get { return _music; } }
-
-    public AudioSource Effects { get { return _effects; } }
 
     public void VolumeMusic(float volume)
     {
-        Music.volume = volume;
+        mixer.SetFloat("MusicVolume", volume);
     }
     public void VolumeEffects(float volume)
     {
-        Effects.volume = volume;
-    }*/
-
+        mixer.SetFloat("FxVolume", volume);
+    }
 }
 
 [Serializable]
