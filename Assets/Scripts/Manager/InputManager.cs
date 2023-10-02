@@ -3,30 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
     Controles control;
+    public static InputManager Instance;
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+        }
         control = new Controles();
     }
 
     private void OnEnable()
     {
         control.Gameplay.Enable();
-        control.Gameplay.Movimiento.performed += movimiento;
-        control.Gameplay.Movimiento.canceled += movimiento;
         control.Gameplay.Atacar.started += atacar;
-       
+        control.Gameplay.Pause.started -= Pause;
     }
 
     private void OnDisable()
     {
         control.Gameplay.Disable();
-        control.Gameplay.Movimiento.performed -= movimiento;
-        control.Gameplay.Movimiento.canceled -= movimiento;
         control.Gameplay.Atacar.started -= atacar;
+        control.Gameplay.Pause.started -= Pause;
     }
 
     private void atacar(InputAction.CallbackContext obj)
@@ -34,10 +41,9 @@ public class InputManager : MonoBehaviour
         FindAnyObjectByType<Ataque>().Atacar();
     }
 
-    private void movimiento(InputAction.CallbackContext obj)
+    private void Pause(InputAction.CallbackContext obj)
     {
-        Vector2 moveDir = obj.ReadValue<Vector2>();
-
-        FindAnyObjectByType<MovimientoPersonaje>().moveDir(moveDir);
+        ManageScenes.Instance.AbrirPausa();
     }
+
 }

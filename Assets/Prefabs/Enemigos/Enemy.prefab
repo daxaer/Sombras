@@ -270,7 +270,7 @@ MonoBehaviour:
   iluminar: {fileID: 1804796711718029088}
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
-  _spawnManager: {fileID: 0}
+  damage: 5
 --- !u!212 &8225459986862862613
 SpriteRenderer:
   m_ObjectHideFlags: 0

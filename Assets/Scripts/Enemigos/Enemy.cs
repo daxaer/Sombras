@@ -15,10 +15,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject iluminar;
     [SerializeField] private Animator animation_Ojo;
     [SerializeField] private Animator animation_Cuerpo;
-
+    [SerializeField] private int damage;
 
     //probabilidad
-    [SerializeField] private SpawnManager _spawnManager;
 
     public void TakeDamage(float damage)
     {
@@ -42,23 +41,19 @@ public class Enemy : MonoBehaviour
     }
     public void Desactivar() // esto sera mi nuevo "Destruir"
     {
-        _spawnManager.RestarCurrentEnemy();
-        _spawnManager.SpawnAlmas(gameObject.transform);
+        SpawnManager.Instance.RestarCurrentEnemy();
+        SpawnManager.Instance.SpawnAlmas(gameObject.transform);
         gameObject.SetActive(false); //nos apagamos para seguir en el pool
-    }
-
-    public void SetSpawn(SpawnManager spawn)
-    {
-        _spawnManager = spawn;
     }
 
     public void Atacar()
     {
-        //iluminar.SetActive(false);
-        //animation_Ojo.SetTrigger("Atacar");
-        //animation_Cuerpo.SetTrigger("Atacar");
+        EstadisticasManager.Instance.vidaActual -= damage;
+        UIManager.Instance.UpdateVida();
+        iluminar.SetActive(false);
+        animation_Ojo.SetTrigger("Atacar");
+        animation_Cuerpo.SetTrigger("Atacar");
         Desactivar();
-
     }
     public void IncreaseLife()
     {

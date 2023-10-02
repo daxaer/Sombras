@@ -7,13 +7,11 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public static SpawnManager Instance { get; private set; }
 
     //instancias pools
-    [SerializeField] private Estadisticas _estadisticas;
+    //[SerializeField] private Estadisticas _estadisticas;
     [SerializeField] private GameObject[] _enemySpawn;
     [SerializeField] private GameObject _almaSpawn;
-    [SerializeField] private GameObject _spawnBalas;
 
     [SerializeField] private bool _stopSpawning;
     [SerializeField] private float _spawnTime;
@@ -45,22 +43,23 @@ public class SpawnManager : MonoBehaviour
     public Pool _poolBalas;
     public Enemy _enemy;
    
+    public static SpawnManager Instance;
     private void Awake()
     {
-        if (Instance != null && Instance !=this)
-        {
-            Destroy(Instance);
-        }
-        else
+        if (Instance == null)
         {
             Instance = this;
         }
+        else
+        {
+            Destroy(Instance);
+        }
+        SpawnearPlayer();
     }
+
     void Start()
     {
         //jugador = GameManager.Instance.Player().Player;
-        //SpawnearPlayer();
-        target = jugador.transform;
         //Enemigos
         _objectPool = new Pool();
         _objectPool.Inicializar(_enemySpawn[Random.Range(0, _enemySpawn.Length)], 5);
@@ -69,7 +68,7 @@ public class SpawnManager : MonoBehaviour
         _poolAlmas.Inicializar(_almaSpawn, 10);
         //Balas
         _poolBalas = new Pool();
-        _poolBalas.Inicializar(_spawnBalas, 0);
+        _poolBalas.Inicializar(EstadisticasManager.Instance.bala, 0);
         InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
         StartCoroutine("ActivarLampara");
 
@@ -110,9 +109,7 @@ public class SpawnManager : MonoBehaviour
         if (_currentEnemiesCount < maxEnemies)
         {
             GameObject go = _objectPool.Spawn(position, transform.rotation);
-            go.GetComponent<AIDestinationSetter>().target = target;
-            //go.GetComponent<Enemy>().SetSpawn(spawn);
-            go.GetComponent<Enemy2>().SetSpawn(spawn);
+            go.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
             _currentEnemiesCount++;
             if (_stopSpawning)
             {
@@ -128,8 +125,9 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject SpawnAtaque(Transform transform)
     {
-        GameObject alma = _poolBalas.Spawn(transform.position, transform.rotation);
-        return alma;
+        GameObject bala = _poolBalas.Spawn(transform.position, transform.rotation);
+        Debug.Log("bala" + bala);
+        return bala;
     }
 
     private float RandomizarNumero()
@@ -156,8 +154,8 @@ public class SpawnManager : MonoBehaviour
         if (_lamp[numero].GetComponent<Lampara>().Activado == true)
         {
             _lamp[numero].GetComponent<Lampara>().Activado = true;
-            _lamp[numero].GetComponent<Lampara>().RangoLuz(_estadisticas.rangoIluminacion);
-            _lamp[numero].GetComponent<Lampara>().TiempoIluminacion(_estadisticas.duracionLamparas);
+            //_lamp[numero].GetComponent<Lampara>().RangoLuz(_estadisticas.rangoIluminacion);
+            //_lamp[numero].GetComponent<Lampara>().TiempoIluminacion(_estadisticas.duracionLamparas);
         }
         else
         {
@@ -168,6 +166,6 @@ public class SpawnManager : MonoBehaviour
     }
     private void SpawnearPlayer()
     {
-       Instantiate(jugador,spawnPlayer);
+       Instantiate(GameManager.Instance.PlayerSave(),spawnPlayer);
     }
 }

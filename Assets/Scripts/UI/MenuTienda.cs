@@ -5,12 +5,9 @@ using UnityEngine;
 
 public class MenuTienda : MonoBehaviour
 {
-
-    public Almas alma;
-
     public AudioSource sonidoTarjeta;
 
-    [SerializeField] private Estadisticas estadisticas;
+    //[SerializeField] private Estadisticas estadisticas;
     
     [SerializeField] private TarjetaMostrada tarjetaSlot1;
 
@@ -47,21 +44,17 @@ public class MenuTienda : MonoBehaviour
                 break;
         }
 
-        if (alma.CantidadAlmas >= tarjetaEquipada.costoTarjeta)
+        if (UIManager.Instance.GetAlmas() >= tarjetaEquipada.costoTarjeta)
         {
             sonidoTarjeta.Play();
-            estadisticas.ataque += tarjetaEquipada.AtaqueBonus;
-            estadisticas.vidaMaxima += tarjetaEquipada.SaludBonus;
-            estadisticas.velocidadPlayer += tarjetaEquipada.VelocidadBonus;
-            estadisticas.rango += tarjetaEquipada.RangoArma;
-            estadisticas.VelocidadeAtaque += tarjetaEquipada.velAtaque;
-            estadisticas.roboDeVida += tarjetaEquipada.robaVida;
-            estadisticas.rangoIluminacion += tarjetaEquipada.RangoLampara;
-            alma.CantidadAlmas -= tarjetaEquipada.costoTarjeta;
-            alma.ActualizarAlmas();
+            EstadisticasManager.Instance.ataque += tarjetaEquipada.AtaqueBonus;
+            EstadisticasManager.Instance.vidaMaxima += tarjetaEquipada.SaludBonus;
+            EstadisticasManager.Instance.velocidadPlayer += tarjetaEquipada.VelocidadBonus;
+            EstadisticasManager.Instance.rango += tarjetaEquipada.RangoArma;
+            EstadisticasManager.Instance.velocidadeAtaque += tarjetaEquipada.velAtaque;
+            EstadisticasManager.Instance.roboDeVida += tarjetaEquipada.robaVida;
+            EstadisticasManager.Instance.rangoIluminacion += tarjetaEquipada.RangoLampara;
+            UIManager.Instance.Almas(-tarjetaEquipada.costoTarjeta);
         }
-       
-
-
     }
 }

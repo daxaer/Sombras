@@ -5,13 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class Projectil : MonoBehaviour
 {
-    [SerializeField] private Estadisticas estadisticas;
-    [SerializeField] private MovimientoPersonaje movimientoPersonaje;
+    //[SerializeField] private Estadisticas estadisticas;
     [SerializeField] private float velocidad;
     [SerializeField] private SpawnManager _spawnManager;
-
-    public Estadisticas EstadisticasPersonaje { get { return estadisticas; } set { estadisticas = value; } }
-    public MovimientoPersonaje Movimiento { get { return movimientoPersonaje; } set { movimientoPersonaje = value; } }
     
     private void OnEnable()
     {
@@ -27,8 +23,8 @@ public class Projectil : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            enemy.TakeDamage(estadisticas.ataque);
-            if (estadisticas.iluminarEnemigos == true)
+            enemy.TakeDamage(EstadisticasManager.Instance.ataque);
+            if (EstadisticasManager.Instance.iluminarEnemigos == true)
             {
                 enemy.Activarluz();
             }
@@ -38,9 +34,9 @@ public class Projectil : MonoBehaviour
     public void roboVida()
     {
         float robo = UnityEngine.Random.Range(0, 101);
-        if (robo <= estadisticas.roboDeVida)
+        if (robo <= EstadisticasManager.Instance.roboDeVida)
         {
-            movimientoPersonaje.RecuperarVIda(1);
+            Player.Instance.RecuperarVIda(1);
         }
     }
     public void Destruir()
@@ -50,7 +46,7 @@ public class Projectil : MonoBehaviour
 
     public void AumentoRango()
     {
-        gameObject.transform.localScale = new Vector3(estadisticas.rango, estadisticas.rango, 1);
+        gameObject.transform.localScale = new Vector3(EstadisticasManager.Instance.rango, EstadisticasManager.Instance.rango, 1);
     }
 
 }

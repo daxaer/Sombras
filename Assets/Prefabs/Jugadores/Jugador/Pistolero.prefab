@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2609150906504528055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4160473408633597086}
@@ -92,15 +92,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4160473408633597086}
+  - component: {fileID: 5385235288286192068}
+  - component: {fileID: 5773838964140946222}
   - component: {fileID: 3904388983087780166}
-  - component: {fileID: 372281042277662231}
   - component: {fileID: 4178300058161498754}
   - component: {fileID: 2581710144169056315}
-  - component: {fileID: 2622110522608581265}
   - component: {fileID: 7025925609239190522}
   - component: {fileID: 7903139616052774103}
   m_Layer: 0
-  m_Name: ComeAlmas
+  m_Name: Pistolero
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,6 +124,138 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5385235288286192068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755939281613191656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 1b1822b365544f643a6d0f73d592ecf9, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5773838964140946222}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: CambioDeControl
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5385235288286192068}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.InputSystem.PlayerInput,
+            Unity.InputSystem
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 92adbd4e-6e5a-4974-9682-47e5fc6ddd37
+    m_ActionName: Gameplay/Movimiento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4178300058161498754}
+        m_TargetAssemblyTypeName: Ataque, Assembly-CSharp
+        m_MethodName: Atacar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b813777b-156f-4ca1-85a8-711dfea3b120
+    m_ActionName: Gameplay/Atacar[/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2755939281613191656}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 86fc4ad1-0a57-47b0-ac12-b4f695b11860
+    m_ActionName: Gameplay/Pause[/XInputControllerWindows/start,/XInputControllerWindows/select,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aa1b79e3-0ac1-4818-816d-98481bcffb66
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d6024790-94ff-4319-83b3-74f5507c21c8
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aaf80e73-24f6-4b09-9768-933208b1c43e
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ae035bac-1c19-46d4-a22f-f398efc86f1c
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4fb30dd2-c83a-4422-89fa-a63f719918f6
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a21aca75-1182-4671-8ec3-9fa6a5c7f738
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca88ea31-f79f-4fd7-9506-6ddfc7a5c92e
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d6f2466-288b-4c72-8810-1767e288185f
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 88c7fa3a-1e55-4fff-9461-df4caaec0b42
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c2d8b79e-7c41-46aa-b972-38cb89c1d58d
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &5773838964140946222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755939281613191656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3198d88d61c3114b8e0d13144cc40a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 3904388983087780166}
 --- !u!212 &3904388983087780166
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,29 +308,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &372281042277662231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2755939281613191656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47ccd5463eff765498ff5770b9e49d3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
-  eventSystem: {fileID: 0}
-  estadisticas: {fileID: 2622110522608581265}
-  botonRetornar: {fileID: 0}
-  sprite: {fileID: 0}
-  _camera: {fileID: 0}
-  barraVida: {fileID: 0}
-  Alma: {fileID: 0}
-  _objectOpenSettings: {fileID: 0}
-  recibiendoDano: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &4178300058161498754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,14 +320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27060e5855b9524aaa91c787ae07805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estadisticas: {fileID: 2622110522608581265}
   sonidoAtaque: {fileID: 0}
-  prefabAtaque: {fileID: 2212208750441370251, guid: d4acc73c82a6f0c43aeb36708951bdcd, type: 3}
   spawnAtaque: {fileID: 1869190762329115102}
   _spawnManager: {fileID: 0}
   attackKey: 32
   _canAttack: 1
-  movimientoPersonaje: {fileID: 372281042277662231}
   animatorOjos: {fileID: 9191153713252100210}
   animatorCuerpo: {fileID: 7903139616052774103}
   animatorArma: {fileID: 6474292556519138755}
@@ -248,30 +354,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &2622110522608581265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2755939281613191656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b0503bf4b969d54aacf66b9368bcd32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadPlayer: 10
-  vidaMaxima: 0
-  vidaActual: 0
-  ataque: 0
-  rango: 0
-  VelocidadeAtaque: 0
-  roboDeVida: 0
-  duracionLamparas: 0
-  rangoIluminacion: 0
-  iluminarEnemigos: 0
-  personajeSeleccionado: {fileID: 0}
+  m_Constraints: 4
 --- !u!58 &7025925609239190522
 CircleCollider2D:
   m_ObjectHideFlags: 0

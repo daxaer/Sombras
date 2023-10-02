@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class ManageScenes : MonoBehaviour
 {
     [SerializeField] EventSystem eventSystem;
+    [SerializeField] private GameObject pausa;
+    [SerializeField] private GameObject win;
+    [SerializeField] private GameObject gameOver;
 
     public static ManageScenes Instance;
 
@@ -43,4 +46,30 @@ public class ManageScenes : MonoBehaviour
     {
         Application.Quit();
     }
+    public void AbrirWin()
+    {
+        win.SetActive(true);
+    }
+    public void AbrirGameOver()
+    {
+        gameOver.SetActive(true);
+    }
+    public void AbrirPausa()
+    {
+        pausa.SetActive(true);
+    }
+
+    public void PauseGame()
+    {
+        GameManager.Instance.UnpauseGame();
+    }
+    public void activePlayer(GameObject player)
+    {
+        GameManager.Instance.SetPlayer(player);
+    }
+    public void ActiveScriptable(ScriptableEstadisticas scriptable)
+    {
+        GameManager.Instance.SetScriptable(scriptable);
+    }
 }
+

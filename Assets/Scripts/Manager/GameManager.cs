@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,16 @@ public class GameManager : MonoBehaviour
     private int idioma;
     private bool pausa;
     private Transform spawnPlayer;
+    private GameObject player;
     //Lenguaje
     [SerializeField] private const string LocaleKey = "SelectedKey";
 
     public static GameManager Instance;
+    private ScriptableEstadisticas scriptable;
+
     private void Awake()
     {
+        UnpauseGame();
         DontDestroyOnLoad(this);
         if (Instance == null)
         {
@@ -28,7 +33,7 @@ public class GameManager : MonoBehaviour
             Destroy(Instance);
         }
     }
-
+   
     private void Start()
     {
         int savedLocalID = PlayerPrefs.GetInt(LocaleKey, 0);
@@ -53,14 +58,32 @@ public class GameManager : MonoBehaviour
 
     public void JuegoPausado()
     {
-        pausa = !pausa;
-        if(pausa)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        pausa = true;
+        Time.timeScale = 0;
     }
+    public void UnpauseGame()
+    {
+        pausa = false;
+        Time.timeScale = 1;
+    }
+    public void SetPlayer(GameObject _player )
+    {
+         player = _player ;
+    }
+
+    public GameObject PlayerSave()
+    {
+        return player;
+    }
+
+    public void SetScriptable(ScriptableEstadisticas _scriptable)
+    {
+        scriptable = _scriptable;
+    }
+
+    public ScriptableEstadisticas ScriptableSave()
+    {
+        return scriptable;
+    }
+
 }

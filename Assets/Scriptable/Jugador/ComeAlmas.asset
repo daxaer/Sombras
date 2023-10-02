@@ -16,15 +16,15 @@ MonoBehaviour:
   - Come Almas
   - Soul eater
   - soul
-  vidaMaxima: 0
-  Ataque: 0
-  vidaActual: 0
-  velocidadMovimiento: 0
-  velocidadDeAtaque: 0
-  porcentajeRoboDeVida: 0
-  rangoGolpe: 0
+  vidaMaxima: 30
+  Ataque: 3
+  vidaActual: 30
+  velocidadMovimiento: 2
+  velocidadDeAtaque: 1
+  porcentajeRoboDeVida: 30
+  rangoGolpe: 1
   velocidadBala: 0
   ataqueMele: 1
   rangoIluminacion: 12
   tiempoIluminacion: 3
-  player: {fileID: 2755939281613191656, guid: 1c526459102e7744fa50820edd730b24, type: 3}
+  bala: {fileID: 2212208750441370251, guid: d4acc73c82a6f0c43aeb36708951bdcd, type: 3}

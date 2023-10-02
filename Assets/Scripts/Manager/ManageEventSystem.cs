@@ -9,7 +9,6 @@ public class ManageEventSystem : MonoBehaviour
     public static ManageEventSystem Instance;
     private void Awake()
     {
-        DontDestroyOnLoad(this);
         if (Instance == null)
         {
             Instance = this;
