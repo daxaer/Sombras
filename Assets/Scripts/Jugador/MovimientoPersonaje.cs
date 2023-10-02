@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
+using UnityEngine.PlayerLoop;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
-    public TransitionGameOver gameOver;
     public EventSystem eventSystem;
     public Estadisticas estadisticas;
-    public GameObject botonRetornar;
     public SpriteRenderer sprite;
 
     private Vector3 _objetivoArma;
@@ -21,7 +21,6 @@ public class MovimientoPersonaje : MonoBehaviour
     
     private Rigidbody2D playerRb;
 
-    [SerializeField] private BarraVida barraVida;
     [SerializeField] private Almas Alma;
 
     [SerializeField] private GameObject _objectOpenSettings;
@@ -39,7 +38,7 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
 
-        barraVida.EstablecerBarraVida(estadisticas.vidaActual);
+        UIManager.Instance.EstablecerBarraVida(estadisticas.vidaActual);
 
         playerInputMap = new Controles();
 
@@ -61,7 +60,6 @@ public class MovimientoPersonaje : MonoBehaviour
             float rotacion = (180 / Mathf.PI) * angulo - 90;
             transform.rotation = Quaternion.Euler(0, 0, rotacion);
         }
-        Pause();
     }
 
     private void FixedUpdate()
@@ -76,8 +74,7 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if(estadisticas.vidaActual <=0)
         {
-            gameOver.CargarGameOver();
-            _deathcount.OnPlayerDeath();
+            
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
@@ -88,8 +85,8 @@ public class MovimientoPersonaje : MonoBehaviour
             recibiendoDano.Play();
             estadisticas.vidaActual = estadisticas.vidaActual - 10f;
             estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
-            barraVida.ValorBarraPorcentual(RangoVida);
-            barraVida.ValorVidaActual(estadisticas.vidaActual);
+            UIManager.Instance.ValorBarraPorcentual(RangoVida);
+            UIManager.Instance.ValorVidaActual(estadisticas.vidaActual);
             Mori();
             collision.GetComponent<Enemy>().Atacar();
             StartCoroutine("Invulnerabilidad");
@@ -102,8 +99,8 @@ public class MovimientoPersonaje : MonoBehaviour
             {
                 estadisticas.vidaActual = estadisticas.vidaActual + 10f;
                 estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
-                barraVida.ValorBarraPorcentual(RangoVida);
-                barraVida.ValorVidaActual(estadisticas.vidaActual);
+                UIManager.Instance.ValorBarraPorcentual(RangoVida);
+                UIManager.Instance.ValorVidaActual(estadisticas.vidaActual);
             }
             else
             {
@@ -117,8 +114,8 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         estadisticas.vidaActual += vida;
         estadisticas.vidaActual = Mathf.Clamp(estadisticas.vidaActual, 0, estadisticas.vidaMaxima);
-        barraVida.ValorBarraPorcentual(RangoVida);
-        barraVida.ValorVidaActual(estadisticas.vidaActual);
+        UIManager.Instance.ValorBarraPorcentual(RangoVida);
+        UIManager.Instance.ValorVidaActual(estadisticas.vidaActual);
         Debug.Log("recuperevida" + vida);
     }
 
@@ -127,7 +124,7 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         if (playerInputMap.Gameplay.Pause.WasPressedThisFrame())
         {
-            eventSystem.SetSelectedGameObject(botonRetornar);
+            //eventSystem.SetSelectedGameObject(botonRetornar);
             _objectOpenSettings.SetActive(true);
             Time.timeScale = 0f;
         }
