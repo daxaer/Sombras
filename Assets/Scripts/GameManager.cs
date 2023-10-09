@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private const string LocaleKey = "SelectedKey";
     public string[] palabra;
     public static GameManager Instance { get; private set; }
+
+    //deativate butons after click
+    [SerializeField] private Button _newGameButton;
+    [SerializeField] private Button _continueGameButton;
     private void Awake()
     {
         if(Instance == null)
@@ -32,6 +36,12 @@ public class GameManager : MonoBehaviour
     {
         int savedLocalID = PlayerPrefs.GetInt(LocaleKey, 0);
         ChangeLocal(savedLocalID);
+
+        //check if doesnt has data for disable the button
+        if(!DataPersistenceManager.Instance.HasGameData())
+        {
+            _continueGameButton.interactable = false;
+        }
     }
     public void AbrirMenu(GameObject menu)
     {
@@ -69,5 +79,28 @@ public class GameManager : MonoBehaviour
     public int ChangeLenguageTarget()
     {
         return idioma;
+    }
+
+    public void OnContinueCliked()
+    {
+        DisableMenuButtons();
+        //Load the scene - and save our game because the OnSceneUnload() is in the prefab DataPersistenceManager
+        SceneManager.LoadSceneAsync("Game"); //load our preexistence data
+    }
+
+    public void OnNewGameCliked()
+    {
+        DisableMenuButtons();
+        //intialize our game data
+        DataPersistenceManager.Instance.NewGame(); //keep data outside the application when transition to other scene
+        //Load the scene - and save our game because the OnSceneUnload() is in the prefab DataPersistenceManager
+        SceneManager.LoadSceneAsync("Game");
+        
+    }
+
+    private void DisableMenuButtons()
+    {
+        _newGameButton.interactable = false;
+        _continueGameButton.interactable = false;
     }
 }
