@@ -10,15 +10,13 @@ public class TiendaMenu : MonoBehaviour
     public Button botonComprar;
     public int nivelmejora;
     public int precio;
-
     public MejorasPermanentes mejora;
-
+    public GestionNivel efecto;
     // Start is called before the first frame update
     void Start()
     {
-        
         precio = int.Parse(textoPrecio.text);
-        
+        efecto = GetComponentInChildren<GestionNivel>();
     }
     // Update is called once per frame
     void Update()
@@ -29,7 +27,7 @@ public class TiendaMenu : MonoBehaviour
     public void SubiendoMejora()
     {
         GestionTienda gestionTienda = FindObjectOfType<GestionTienda>();
-        gestionTienda.SeleccionarMejora(mejora, nivelmejora);
+        gestionTienda.SeleccionarMejora(efecto, nivelmejora,mejora);
     }
    
 

@@ -295,15 +295,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58ad8191dfa7f5c47ad04d37caa5fe5c, type: 2}
   - {fileID: 11400000, guid: b2bedc19c3a90924db1b18ed68297f2e, type: 2}
   - {fileID: 11400000, guid: edf76a886fc57724ba71ea5d87e276fd, type: 2}
-  - {fileID: 11400000, guid: 344b34b4e9fa0a744a2a26460d5595d0, type: 2}
-  - {fileID: 11400000, guid: 58ad8191dfa7f5c47ad04d37caa5fe5c, type: 2}
-  - {fileID: 11400000, guid: b2bedc19c3a90924db1b18ed68297f2e, type: 2}
-  - {fileID: 11400000, guid: edf76a886fc57724ba71ea5d87e276fd, type: 2}
   menuDeTienda: {fileID: 8009785702225370301, guid: 6bebdba135b5e964ca779345f83e6575, type: 3}
-  gestionNivel: {fileID: 8914713253694579061, guid: d01388d439ee73242a0033829a4455aa, type: 3}
-  tiendaMenu: {fileID: 6608450023402869211, guid: 6bebdba135b5e964ca779345f83e6575, type: 3}
   textoAlmasMejora: {fileID: 147279610}
-  AlmasPrueba: 10000
+  AlmasPrueba: 100000
+  gestionNiveles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &47291287
 MonoBehaviour:
   m_ObjectHideFlags: 0
