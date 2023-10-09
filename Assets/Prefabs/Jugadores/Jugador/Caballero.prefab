@@ -167,49 +167,25 @@ MonoBehaviour:
     m_ActionId: 92adbd4e-6e5a-4974-9682-47e5fc6ddd37
     m_ActionName: Gameplay/Movimiento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4178300058161498754}
-        m_TargetAssemblyTypeName: Ataque, Assembly-CSharp
-        m_MethodName: Atacar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: b813777b-156f-4ca1-85a8-711dfea3b120
-    m_ActionName: Gameplay/Atacar[/XInputControllerWindows/rightTrigger]
+    m_ActionName: Gameplay/Atacar
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2755939281613191656}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 86fc4ad1-0a57-47b0-ac12-b4f695b11860
-    m_ActionName: Gameplay/Pause[/XInputControllerWindows/start,/XInputControllerWindows/select,/Keyboard/escape]
+    m_ActionName: Gameplay/Pause[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: aa1b79e3-0ac1-4818-816d-98481bcffb66
-    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: d6024790-94ff-4319-83b3-74f5507c21c8
-    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+    m_ActionName: UI/Submit[/Keyboard/enter]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: aaf80e73-24f6-4b09-9768-933208b1c43e
-    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+    m_ActionName: UI/Cancel[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: ae035bac-1c19-46d4-a22f-f398efc86f1c
@@ -322,7 +298,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonidoAtaque: {fileID: 0}
   spawnAtaque: {fileID: 1869190762329115102}
-  _spawnManager: {fileID: 0}
   attackKey: 32
   _canAttack: 1
   animatorOjos: {fileID: 9191153713252100210}
