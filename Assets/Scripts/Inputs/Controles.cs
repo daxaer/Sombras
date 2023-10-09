@@ -53,6 +53,15 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookAt"",
+                    ""type"": ""Value"",
+                    ""id"": ""5079cb82-e57e-44ec-b485-022a3a164dfa"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -60,6 +69,39 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""cf7c73e7-2fd8-45bf-9c9d-fc952deaac7b"",
                     ""path"": ""<SwitchProControllerHID>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""Movimiento"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b9e51af1-06e7-4d89-b0e5-aa38a17a66bb"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""Movimiento"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e20a31cb-d0cf-464e-9339-a21718b666dd"",
+                    ""path"": ""<DualShockGamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""Movimiento"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""01b10f1e-0bf6-4a12-99cb-e5e69cf06ab9"",
+                    ""path"": ""<XInputController>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Consola"",
@@ -124,17 +166,6 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b9e51af1-06e7-4d89-b0e5-aa38a17a66bb"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Consola"",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ab445774-5fd4-4bca-8a3e-5ef4c08e4371"",
                     ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
@@ -174,6 +205,50 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""PC"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""828d4ba0-25f1-49a6-ac91-c2189e7e3833"",
+                    ""path"": ""<SwitchProControllerHID>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""LookAt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53d2bdc1-2b30-469f-af15-694e219add67"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""LookAt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a939fe4-3f3d-40a7-9b8d-c3e837578739"",
+                    ""path"": ""<XInputController>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""LookAt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2d0e804-59c4-4ad8-9da3-4b8711dff97c"",
+                    ""path"": ""<DualShockGamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""LookAt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -763,6 +838,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         m_Gameplay_Movimiento = m_Gameplay.FindAction("Movimiento", throwIfNotFound: true);
         m_Gameplay_Atacar = m_Gameplay.FindAction("Atacar", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_LookAt = m_Gameplay.FindAction("LookAt", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -839,6 +915,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Movimiento;
     private readonly InputAction m_Gameplay_Atacar;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_LookAt;
     public struct GameplayActions
     {
         private @Controles m_Wrapper;
@@ -846,6 +923,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         public InputAction @Movimiento => m_Wrapper.m_Gameplay_Movimiento;
         public InputAction @Atacar => m_Wrapper.m_Gameplay_Atacar;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @LookAt => m_Wrapper.m_Gameplay_LookAt;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -864,6 +942,9 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @LookAt.started += instance.OnLookAt;
+            @LookAt.performed += instance.OnLookAt;
+            @LookAt.canceled += instance.OnLookAt;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -877,6 +958,9 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @LookAt.started -= instance.OnLookAt;
+            @LookAt.performed -= instance.OnLookAt;
+            @LookAt.canceled -= instance.OnLookAt;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1035,6 +1119,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         void OnMovimiento(InputAction.CallbackContext context);
         void OnAtacar(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnLookAt(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

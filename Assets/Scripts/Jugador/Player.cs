@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private bool invulnerable = false;
     public SpriteRenderer sprite;
     private Vector3 _objetivoArma;
+    private float _distancePlayer = 100f;
 
     public static Player Instance;
 
@@ -35,19 +36,34 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Vector2 rStickInput = new Vector2(Input.GetAxis("4 Axis"), Input.GetAxis("5 Axis"));
+        Vector2 rStickInput = playerInput.actions["Movimiento"].ReadValue<Vector2>();
 
-        if (rStickInput != Vector2.zero)
+        if (playerInput.currentControlScheme == "consola")
         {
-            Vector2 Direction = rStickInput.normalized;
-            float distanciaDelJugador = 100f;
 
-            _objetivoArma = transform.position + new Vector3(Direction.x, Direction.y, 0) * distanciaDelJugador;
+        }
 
+        else
+        {
+            Vector2 mousePos = Mouse.current.position.ReadValue();
+            Vector2 direction = mousePos.normalized;
+            _objetivoArma = transform.position + new Vector3(direction.x, direction.y, 0) * _distancePlayer;
             float angulo = Mathf.Atan2(transform.position.y - _objetivoArma.y, transform.position.x - _objetivoArma.x);
-            float rotacion = (180 / Mathf.PI) * angulo - 90;
+            float rotacion = (180 / Mathf.PI) * angulo;
             transform.rotation = Quaternion.Euler(0, 0, rotacion);
         }
+
+        //if (rStickInput != Vector2.zero)
+        //{
+        //    Vector2 Direction = rStickInput.normalized;
+        //    float distanciaDelJugador = 100f;
+
+        //    _objetivoArma = transform.position + new Vector3(Direction.x, Direction.y, 0) * distanciaDelJugador;
+
+        //    float angulo = Mathf.Atan2(transform.position.y - _objetivoArma.y, transform.position.x - _objetivoArma.x);
+        //    float rotacion = (180 / Mathf.PI) * angulo;
+        //    transform.rotation = Quaternion.Euler(0, 0, rotacion);
+        //}
     }
 
     private void FixedUpdate()
