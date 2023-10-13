@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class fllowPlayerCamera : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera camera;
-
+    [SerializeField] private CinemachineVirtualCamera camara;
     private void Start()
     {
-        camera.Follow = Player.Instance.transform;
+        camara = GetComponent<CinemachineVirtualCamera>();
+        camara.Follow = Player.Instance.transform;
     }
 }
