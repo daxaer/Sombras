@@ -10,17 +10,20 @@ public class FileDataHandler
 
     private string _dataFileName = "";
 
-    public FileDataHandler(string _dataDirPath, string _dataFileName) //constructor
+    private bool _useEncryption = false;
+    private readonly string _useEncryptionCodeWord = "Veracruz";
+    public FileDataHandler(string _dataDirPath, string _dataFileName, bool useEncryption) //constructor
     {
         this._dataDirPath = _dataDirPath;
         this._dataFileName = _dataFileName;
+        this._useEncryption = useEncryption;
     }
 
     public GameData Load()
     {
         //diferentes sistemas operativos
         string fullPath = Path.Combine(_dataDirPath, _dataFileName); //ruta del archivo
-        GameData _loadedData = null; //cargamos
+        GameData _loadedData = null; //cargamos variable
         if(File.Exists(fullPath)) //checamos si el archivo existe
         {
             try
@@ -34,6 +37,13 @@ public class FileDataHandler
                         _dataToLoad = _reader.ReadToEnd(); //cargamos los datos en stream
                     }
                 }
+
+                //optionaly encript data
+                if (_useEncryption)
+                {
+                    _dataToLoad = EncryptDecrypt(_dataToLoad);
+                }
+
                 //extraer de JSON String
                 _loadedData = JsonUtility.FromJson<GameData>(_dataToLoad); //especificamos el tipo GameData que estan en JSON String en la variable _loadedData
             }
@@ -58,6 +68,12 @@ public class FileDataHandler
             //GameData en un JSON string
             string _dataToStore = JsonUtility.ToJson(_data, true); //true para formatear
 
+            //optionaly encript data
+            if(_useEncryption) 
+            {
+                _dataToStore = EncryptDecrypt(_dataToStore);
+            }
+
             //mandar los datos escritos del JSON string al archivo del sistema
             using(FileStream stream = new FileStream(fullPath, FileMode.Create))
             {
@@ -74,5 +90,16 @@ public class FileDataHandler
             Debug.LogError("Error occured when trying to save data to file: " + fullPath + "\n" + e);
 
         }
+    }
+
+    private string EncryptDecrypt(string _data) //return Encrypt and Decrypt data
+    {
+        string modifiedData = "";
+        //loop data and XOR operation
+        for(int i = 0; i < _data.Length; i++)
+        {
+            modifiedData += (char)(_data[i] ^ _useEncryptionCodeWord[i % _useEncryptionCodeWord.Length]); //XOR operation encrypt
+        }
+        return modifiedData;
     }
 }
