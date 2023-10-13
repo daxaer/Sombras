@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public TransitionGameOver gameOver;
     public EventSystem eventSystem;
     [SerializeField] private float _timeRemaining = 180;
     [SerializeField] private float _tiempoInicial;
@@ -39,8 +39,9 @@ public class Timer : MonoBehaviour
             {
                 if(rondaActual == 4)
                 {
-                    gameOver.Win();
+                    ManageScenes.Instance.AbrirWin();
                     stoptimer = false;
+                    GameManager.Instance.JuegoPausado();
                 }
                 else
                 {
@@ -50,8 +51,7 @@ public class Timer : MonoBehaviour
                     sistemDrop.AparicionTarjetaEnSlot(2);
                     sistemDrop.AparicionTarjetaEnSlot(3);
                     tienda.SetActive(true);
-                    eventSystem.SetSelectedGameObject(retorno);
-                    PauseGame();
+                    GameManager.Instance.JuegoPausado();
                 }
             }
             else if(stoptimer)
@@ -79,15 +79,10 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void PauseGame()
-    {
-        Time.timeScale = 0f;
-    }
-    public void StartGame()
+    public void RestartTimer()
     {
         _timeRemaining = _tiempoInicial;
         DisplayTime(_tiempoInicial);
-        Time.timeScale = 1f;
         stoptimer = true;
     }
 }

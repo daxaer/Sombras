@@ -41,13 +41,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FogSize: 10
+    - _FogSize: 20
     m_Colors:
     - _Color: {r: 0.0627451, g: 0.0627451, b: 0.0627451, a: 0.3254902}
     - _Color_1: {r: 1, g: 1, b: 1, a: 1}
     - _FogSize_1: {r: 0.7, g: 0, b: 0, a: 0}
-    - _FogSpeed: {r: 0.1, g: 0, b: 0, a: 0}
-    - _Speed_1: {r: 0.1, g: 0, b: 0, a: 0}
+    - _FogSpeed: {r: 0.01, g: 0, b: 0, a: 0}
+    - _Speed_1: {r: 0.01, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &71850233289154509
 MonoBehaviour:

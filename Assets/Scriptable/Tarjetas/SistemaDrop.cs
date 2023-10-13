@@ -10,7 +10,6 @@ public class SistemaDrop : MonoBehaviour
     [SerializeField] private TarjetaMostrada slot1;
     [SerializeField] private TarjetaMostrada slot2;
     [SerializeField] private TarjetaMostrada slot3;
-    [SerializeField] private Almas almas;
     public static SistemaDrop Instance { get; private set; }
 
     [SerializeField] private int probabilidad1;
@@ -26,14 +25,13 @@ public class SistemaDrop : MonoBehaviour
     public Text textocompraSlot2;
     public Button botonCompraSlot3;
     public Text textocompraSlot3;
-    [SerializeField] private EventSystem eventSystem;
+    //[SerializeField] private EventSystem eventSystem;
 
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -55,7 +53,7 @@ public class SistemaDrop : MonoBehaviour
         AparicionTarjetaEnSlot(2); 
         AparicionTarjetaEnSlot(3);
 
-        eventSystem.SetSelectedGameObject(botonCompraSlot1.gameObject);
+        //eventSystem.SetSelectedGameObject(botonCompraSlot1.gameObject);
     }
 
     void Update()
@@ -85,20 +83,20 @@ public class SistemaDrop : MonoBehaviour
             if (miProbabilidad <= probabilidadTarjetas.prob[i].probabilidadAparicion)
             {
 
-                if (slot == 1 && almas.CantidadAlmas >= slot1.TarjetaEquipada.costoTarjeta)
+                if (slot == 1 && UIManager.Instance.GetAlmas() >= slot1.TarjetaEquipada.costoTarjeta)
                 {
                     slot1.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
                     slot1.Actualizar();
                    
 
                 }
-                else if (slot == 2 && almas.CantidadAlmas >= slot2.TarjetaEquipada.costoTarjeta)
+                else if (slot == 2 && UIManager.Instance.GetAlmas() >= slot2.TarjetaEquipada.costoTarjeta)
                 {
                     slot2.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
                     slot2.Actualizar();
                     
                 }
-                else if (slot == 3 && almas.CantidadAlmas >= slot3.TarjetaEquipada.costoTarjeta)
+                else if (slot == 3 && UIManager.Instance.GetAlmas() >= slot3.TarjetaEquipada.costoTarjeta)
                 {
                     slot3.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
                     slot3.Actualizar();
@@ -115,7 +113,7 @@ public class SistemaDrop : MonoBehaviour
 
     public void ActualizarColorTextoSlots()
     {
-        if (almas.CantidadAlmas < slot1.TarjetaEquipada.costoTarjeta)
+        if (UIManager.Instance.GetAlmas() < slot1.TarjetaEquipada.costoTarjeta)
         {
             textocompraSlot1.color = Color.red;
 
@@ -124,7 +122,7 @@ public class SistemaDrop : MonoBehaviour
         {
             textocompraSlot1.color = Color.white;
         }
-        if (almas.CantidadAlmas < slot2.TarjetaEquipada.costoTarjeta)
+        if (UIManager.Instance.GetAlmas() < slot2.TarjetaEquipada.costoTarjeta)
         {
             textocompraSlot2.color = Color.red;
 
@@ -133,7 +131,7 @@ public class SistemaDrop : MonoBehaviour
         {
             textocompraSlot2.color = Color.white;
         }
-        if (almas.CantidadAlmas < slot3.TarjetaEquipada.costoTarjeta)
+        if (UIManager.Instance.GetAlmas() < slot3.TarjetaEquipada.costoTarjeta)
         {
             textocompraSlot3.color = Color.red;
 

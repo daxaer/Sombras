@@ -1,40 +1,60 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 public class Ataque : MonoBehaviour
 {
-    public Estadisticas estadisticas;
+    //public Estadisticas estadisticas;
     public AudioSource sonidoAtaque;
-    [SerializeField] private GameObject prefabAtaque;
     [SerializeField] private Transform spawnAtaque;
-    [SerializeField] private SpawnManager _spawnManager;
 
     public KeyCode attackKey = KeyCode.Space; //tecla
     [SerializeField] private bool _canAttack = true; //se puede atacar?
-    [SerializeField] private MovimientoPersonaje movimientoPersonaje;
-    
+    [SerializeField] private Animator animatorOjos;
+    [SerializeField] private Animator animatorCuerpo;
+    [SerializeField] private Animator animatorArma;
+    private void Start()
+    {
+
+    }
+    public void Update()
+    {
+        //if (Input.GetKey(KeyCode.Space)) 
+        //{
+            Atacar();
+        //}
+    }
+
     public void Atacar()
     {
         if(_canAttack)
         {
             StartCoroutine(SpeedAtack());
+            Debug.Log("atacando");
             _canAttack = false;
-            sonidoAtaque.Play();
-            GameObject temp = _spawnManager.SpawnAtaque(spawnAtaque);
-            Projectil proj = temp.GetComponent<Projectil>();
-            proj.EstadisticasPersonaje = estadisticas;
-            proj.AumentoRango();
-            proj.Movimiento = movimientoPersonaje;
+            //MusicManager.Instance.PlayAudio(SOUNDTYPE.HIT_ENEMY, transform.position);
+            animatorArma.SetTrigger("Atacar");
+            animatorCuerpo.SetTrigger("Atacar");
+            animatorOjos.SetTrigger("Atacar");
+            
         }
     }
 
     private IEnumerator SpeedAtack()
     {
-        yield return new WaitForSeconds(estadisticas.VelocidadeAtaque);
+        yield return new WaitForSeconds(EstadisticasManager.Instance.velocidadeAtaque);
         _canAttack = true;
+    }
+
+    public void SpawnAtaque()
+    {
+        Instantiate(EstadisticasManager.Instance.bala, spawnAtaque.position, spawnAtaque.rotation);
+        //GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
+        //Projectil proj = temp.GetComponent<Projectil>();
     }
 }

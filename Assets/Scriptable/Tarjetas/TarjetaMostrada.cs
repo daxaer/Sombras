@@ -23,15 +23,10 @@ public class TarjetaMostrada : MonoBehaviour
     }
     public void Actualizar()
     {
-        
         nombreTarjeta.text = TarjetaEquipada.nombreTarjeta[GameManager.Instance.ChangeLenguageTarget()];
         descripcionTarjeta.text = TarjetaEquipada.descripcionDeTarjeta[GameManager.Instance.ChangeLenguageTarget()];
         costeTarjeta.text = TarjetaEquipada.costoTarjeta.ToString();
         marcoTarjeta.color = TarjetaEquipada.colorRareza;
         imagenTarjeta.sprite = TarjetaEquipada.imagenTarjeta;
     }
-
-  
-    
-    
 }

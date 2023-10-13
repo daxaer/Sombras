@@ -12,13 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3873bf664f9d27448486449f4c21fb7, type: 3}
   m_Name: Guerrero
   m_EditorClassIdentifier: 
-  nombreJugador: Guerrero
+  nombreJugador:
+  - Guerrero
+  - Warrior
+  - shinoby
   vidaMaxima: 100
-  Ataque: 1
+  Ataque: 3
   vidaActual: 100
   velocidadMovimiento: 3
   velocidadDeAtaque: 1
   porcentajeRoboDeVida: 90
   rangoGolpe: 1
+  velocidadBala: 0
+  ataqueMele: 1
   rangoIluminacion: 12
   tiempoIluminacion: 3
+  bala: {fileID: 2212208750441370251, guid: d4acc73c82a6f0c43aeb36708951bdcd, type: 3}
