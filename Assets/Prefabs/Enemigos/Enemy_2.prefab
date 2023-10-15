@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4148539617265017001}
-  - component: {fileID: 235953647414781044}
+  - component: {fileID: 4803947535349026804}
   - component: {fileID: 8225459986862862613}
   - component: {fileID: 5783500662886769663}
   - component: {fileID: 594802796594497193}
@@ -248,12 +248,13 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5966779778847013618}
   - {fileID: 3011830166460772717}
   - {fileID: 596928168896950106}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &235953647414781044
+--- !u!114 &4803947535349026804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,15 +263,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3155063478553261289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eac51490f21f545aec091607f40d6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 02c30e0a02af2bd4ab7e2629350a3d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vida: 3
+  _vida: 5
   _lifeIncrease: 1
   iluminar: {fileID: 1804796711718029088}
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
-  damage: 5
+  damage: 1
+  distance: 10
+  frontObject: {fileID: 6439551827627318465}
 --- !u!212 &8225459986862862613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -490,3 +493,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &6439551827627318465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5966779778847013618}
+  m_Layer: 3
+  m_Name: Front
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5966779778847013618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439551827627318465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.834, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4148539617265017001}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
