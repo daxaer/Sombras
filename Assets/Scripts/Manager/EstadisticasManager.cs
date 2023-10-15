@@ -15,6 +15,7 @@ public class EstadisticasManager : MonoBehaviour
     public float duracionLamparas;
     public float rangoIluminacion;
     public GameObject bala;
+    public bool ataqueMele;
 
     //Pasivas
     public bool iluminarEnemigos;
@@ -47,6 +48,7 @@ public class EstadisticasManager : MonoBehaviour
         duracionLamparas = personajeSeleccionado.TiempoIluminacion;
         rangoIluminacion = personajeSeleccionado.RangoIluminacion;
         bala = personajeSeleccionado.Bala;
+        ataqueMele = personajeSeleccionado.AtaqueMele;
         
         //Pasivas
         iluminarEnemigos = true;

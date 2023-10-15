@@ -66,9 +66,8 @@ public class Ataque : MonoBehaviour
 
     public void SpawnAtaque()
     {
-        Instantiate(EstadisticasManager.Instance.bala, spawnAtaque.position, spawnAtaque.rotation);
-        //GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
-        //Projectil proj = temp.GetComponent<Projectil>();
+        GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
+        Projectil proj = temp.GetComponent<Projectil>();
     }
     private void OnDestroy()
     {

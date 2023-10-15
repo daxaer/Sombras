@@ -7,15 +7,22 @@ public class Projectil : MonoBehaviour
 {
     //[SerializeField] private Estadisticas estadisticas;
     [SerializeField] private float velocidad;
-    [SerializeField] private SpawnManager _spawnManager;
     
     private void OnEnable()
     {
-        Invoke("Destruir", 0.3f);
+        if(EstadisticasManager.Instance.ataqueMele)
+        {
+            Invoke("Destruir", 0.8f);
+        }
+        else
+        {
+            Invoke("Destruir", 0.3f);
+        }
     }
 
     private void Update()
     {
+        Debug.Log("velocidad" +  velocidad);
         transform.Translate(Vector2.up * velocidad * Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)

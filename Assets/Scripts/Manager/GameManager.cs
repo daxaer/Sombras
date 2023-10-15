@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(Instance);
+            Destroy(this.gameObject);
         }
     }
    
@@ -85,5 +85,4 @@ public class GameManager : MonoBehaviour
     {
         return scriptable;
     }
-
 }
