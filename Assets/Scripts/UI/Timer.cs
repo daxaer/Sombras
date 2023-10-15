@@ -20,16 +20,14 @@ public class Timer : MonoBehaviour
     [SerializeField] private SistemaDrop sistemDrop;
     public Pool pool;
     private bool stoptimer = true;
-    [SerializeField] private int rondaActual;
+    public int rondaActual;
 
-    // Start is called before the first frame update
     void Start()
     {
         _timeIsRunning = true;
         _tiempoInicial = _timeRemaining;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (_timeIsRunning)

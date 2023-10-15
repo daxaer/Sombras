@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Pathfinding;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UIElements;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -32,18 +32,20 @@ public class SpawnManager : MonoBehaviour
     //private List<GameObject> enemies = new List<GameObject>();
 
     [SerializeField] private SpawnManager spawn;
-    [SerializeField] private Transform target;
     [SerializeField] private Transform spawnPlayer;
-    [SerializeField] private GameObject jugador;
-
+    [HideInInspector] public int _generateRandomEnemy;
+    [SerializeField] public Timer timer;
 
     //pool
-    public Pool _objectPool;
     public Pool _poolAlmas;
     public Pool _poolBalas;
     public Enemy _enemy;
-   
+    public Pool _PoolEnemy1;
+    public Pool _PoolEnemy2;
+    public Pool _PoolEnemy3;
+
     public static SpawnManager Instance;
+
     private void Awake()
     {
         if (Instance == null)
@@ -59,10 +61,14 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        //jugador = GameManager.Instance.Player().Player;
         //Enemigos
-        _objectPool = new Pool();
-        _objectPool.Inicializar(_enemySpawn[Random.Range(0, _enemySpawn.Length)], 5);
+        _PoolEnemy1 = new Pool();
+        _PoolEnemy1.Inicializar(_enemySpawn[0], 3);
+        _PoolEnemy2 = new Pool();
+        _PoolEnemy2.Inicializar(_enemySpawn[1], 3);
+        _PoolEnemy3 = new Pool();
+        _PoolEnemy3.Inicializar(_enemySpawn[2], 3);
+
         //Almas
         _poolAlmas = new Pool();
         _poolAlmas.Inicializar(_almaSpawn, 10);
@@ -102,14 +108,43 @@ public class SpawnManager : MonoBehaviour
     {
         _currentEnemiesCount--;
     }
+
     public void SpawnEnemy()
     {
         Vector3 position = new Vector3(RandomizarNumero(), RandomizarNumero(), 0);
+        int countRound = timer.rondaActual;
+        if (countRound >= 3)
+        {
+            countRound = 3;
+        }
 
+        int randomEnemy = Random.Range(1, countRound + 1);
+        Debug.Log(randomEnemy);
+        
         if (_currentEnemiesCount < maxEnemies)
         {
-            GameObject go = _objectPool.Spawn(position, transform.rotation);
-            go.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+            switch (randomEnemy)
+            {
+                case 1:
+                    Debug.Log("toy 1");
+                    GameObject go = _PoolEnemy1.Spawn(position, transform.rotation);
+                    go.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+                    break;
+                case 2:
+                    Debug.Log("toy 2");
+                    GameObject go1 = _PoolEnemy2.Spawn(position, transform.rotation);
+                    go1.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+                    break;
+                case 3:
+                    Debug.Log("toy 3");
+                    GameObject go2 = _PoolEnemy3.Spawn(position, transform.rotation);
+                    go2.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+                    break;
+
+                default:
+                    Debug.Log("No hay enemigo joven");
+                    break;
+            }
             _currentEnemiesCount++;
             if (_stopSpawning)
             {
@@ -117,6 +152,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
+
 
     public void SpawnAlmas(Transform transform)
     {
@@ -143,11 +179,6 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public Transform Target()
-    {
-        return target;
-    }
-
     IEnumerator  ActivarLampara()
     {
         int numero = Random.Range(1, _lamp.Length);
@@ -164,6 +195,7 @@ public class SpawnManager : MonoBehaviour
         _lamp[numero].SetActive(true);
         yield return new WaitForSeconds(timeLamp);
     }
+
     private void SpawnearPlayer()
     {
        Instantiate(GameManager.Instance.PlayerSave(),spawnPlayer);

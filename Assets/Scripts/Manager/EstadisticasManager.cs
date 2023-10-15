@@ -51,4 +51,9 @@ public class EstadisticasManager : MonoBehaviour
         //Pasivas
         iluminarEnemigos = true;
     }
+
+    private void InterpolationCubicRound()
+    {
+
+    }
 }

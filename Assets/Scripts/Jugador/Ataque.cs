@@ -32,7 +32,6 @@ public class Ataque : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Atacando " + atacando);
         if (atacando)
         {
             Atacar();

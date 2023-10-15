@@ -4723,7 +4723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 852162712}
-  _timeRemaining: 10
+  _timeRemaining: 5
   _tiempoInicial: 0
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
@@ -6362,6 +6362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemySpawn:
   - {fileID: 3155063478553261289, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
+  - {fileID: 3155063478553261289, guid: acd876dd2dbda7441bb5f913a10d7d43, type: 3}
+  - {fileID: 3155063478553261289, guid: acd876dd2dbda7441bb5f913a10d7d43, type: 3}
+  - {fileID: 3155063478553261289, guid: acd876dd2dbda7441bb5f913a10d7d43, type: 3}
   _almaSpawn: {fileID: 1623635145803344270, guid: 43d61249d01455a449c643a36b92c1ec, type: 3}
   _stopSpawning: 0
   _spawnTime: 1
@@ -6386,9 +6389,9 @@ MonoBehaviour:
   _timeSinceLastSpawn: 0
   _currentEnemiesCount: 0
   spawn: {fileID: 1141194140}
-  target: {fileID: 0}
   spawnPlayer: {fileID: 212230511}
-  jugador: {fileID: 0}
+  _generateRandomEnemy: 0
+  timer: {fileID: 833105531}
   _enemy: {fileID: 235953647414781044, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
 --- !u!1 &1190232644
 GameObject:

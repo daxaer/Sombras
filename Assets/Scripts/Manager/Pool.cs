@@ -18,7 +18,8 @@ public class Pool
         }
 
     }
-    GameObject Instanciar(Vector3 _pos, Quaternion _rot)
+
+    public GameObject Instanciar(Vector3 _pos, Quaternion _rot)
     {
         GameObject go = GameObject.Instantiate(prefab, _pos, _rot); //Creamos nuevo
         go.name = go.name + "_" + pool.Count;

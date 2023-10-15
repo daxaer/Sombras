@@ -40,9 +40,6 @@ public class Enemy2 : MonoBehaviour
         }
         else
         {
-            //_enemyAgent.GetComponent<AIDestinationSetter>().target = _player;
-            //_enemyAgent.maxSpeed = _normalSpeed;
-
             Vector2 _direction = _player.transform.position - transform.position;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, _detectionDistance);
 
