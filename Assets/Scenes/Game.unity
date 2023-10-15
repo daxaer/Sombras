@@ -4723,7 +4723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 852162712}
-  _timeRemaining: 5
+  _timeRemaining: 360
   _tiempoInicial: 0
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
