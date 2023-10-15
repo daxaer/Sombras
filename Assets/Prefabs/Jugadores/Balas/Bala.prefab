@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3496357452717923211}
   - component: {fileID: 21951044114785951}
   - component: {fileID: 1860218210279653153}
-  - component: {fileID: 8734724457049338594}
+  - component: {fileID: 2138573922142617237}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Untagged
@@ -47,10 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a966a7d1dc25a49a9d8d5f222abab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estadisticas: {fileID: 0}
-  movimientoPersonaje: {fileID: 0}
   velocidad: 25
-  _spawnManager: {fileID: 0}
 --- !u!212 &21951044114785951
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124,8 +121,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &8734724457049338594
-PolygonCollider2D:
+--- !u!58 &2138573922142617237
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,32 +150,9 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: -0.625}
-    oldSize: {x: 0.26, y: 0.48}
-    newSize: {x: 2.6, y: 1.4666667}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.1333334, y: -0.06666667}
-      - {x: 1.3000001, y: -0.06666667}
-      - {x: 1.3000001, y: 0.8333334}
-      - {x: 0.8000001, y: 1.3666668}
-      - {x: 0.70000005, y: 1.4000001}
-      - {x: -0.6, y: 1.4000001}
-      - {x: -1, y: 1.3000001}
-      - {x: -1.3000001, y: 0.7666667}
-      - {x: -1.3000001, y: -0.06666667}
-      - {x: -1.1333334, y: -0.06666667}
-      - {x: -0.73333335, y: 0.43333337}
-      - {x: -0.10000001, y: 0.73333335}
-      - {x: 0.8000001, y: 0.33333334}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 0, y: 0.55}
+  serializedVersion: 2
+  m_Radius: 0.24000001
