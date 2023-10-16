@@ -19,8 +19,9 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject retorno;
     [SerializeField] private SistemaDrop sistemDrop;
     public Pool pool;
-    private bool stoptimer = true;
+    public bool _stoptimer = true;
     public int rondaActual;
+    public static Timer Instance;
 
     void Start()
     {
@@ -28,23 +29,35 @@ public class Timer : MonoBehaviour
         _tiempoInicial = _timeRemaining;
     }
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+        }
+    }
+
     private void Update()
     {
         if (_timeIsRunning)
         {
             _timeRemaining -= Time.deltaTime;
-            if (_timeRemaining <= -1 && stoptimer)
+            if (_timeRemaining <= -1 && _stoptimer)
             {
                 if(rondaActual == 4)
                 {
                     ManageScenes.Instance.AbrirWin();
-                    stoptimer = false;
+                    _stoptimer = false;
                     GameManager.Instance.JuegoPausado();
                 }
                 else
                 {
                     rondaActual++;
-                    stoptimer = false;
+                    _stoptimer = false;
                     sistemDrop.AparicionTarjetaEnSlot(1);
                     sistemDrop.AparicionTarjetaEnSlot(2);
                     sistemDrop.AparicionTarjetaEnSlot(3);
@@ -52,7 +65,7 @@ public class Timer : MonoBehaviour
                     GameManager.Instance.JuegoPausado();
                 }
             }
-            else if(stoptimer)
+            else if(_stoptimer)
             {
                 DisplayTime(_timeRemaining);
             }
@@ -68,19 +81,17 @@ public class Timer : MonoBehaviour
         _timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 
-    private void DeactivateEnemies()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in enemies) 
-        {
-            pool.DeactivateEnemy(enemy);
-        }
-    }
-
     public void RestartTimer()
     {
+        if (rondaActual < 11)
+        {
+            _tiempoInicial += 15;
+        }
+
         _timeRemaining = _tiempoInicial;
         DisplayTime(_tiempoInicial);
-        stoptimer = true;
+        _stoptimer = true;
     }
+
+    
 }

@@ -4723,8 +4723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 852162712}
-  _timeRemaining: 360
-  _tiempoInicial: 0
+  _timeRemaining: 0
+  _tiempoInicial: 30
   _timeIsRunning: 1
   _timeText: {fileID: 833105532}
   spawn: {fileID: 1141194140}
@@ -4732,6 +4732,7 @@ MonoBehaviour:
   tienda: {fileID: 926512251}
   retorno: {fileID: 783250464}
   sistemDrop: {fileID: 926512255}
+  _stoptimer: 1
   rondaActual: 0
 --- !u!114 &833105532
 MonoBehaviour:

@@ -1,3 +1,4 @@
+using Pathfinding;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class Enemy_2 : MonoBehaviour
     [SerializeField] private float distance;
     [SerializeField] private RaycastHit2D rayCast;
     [SerializeField] private GameObject frontObject;
+    [SerializeField] private AIPath aiPath;
 
     public void FixedUpdate()
     {
