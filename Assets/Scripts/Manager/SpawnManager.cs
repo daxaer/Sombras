@@ -126,17 +126,14 @@ public class SpawnManager : MonoBehaviour
             switch (randomEnemy)
             {
                 case 1:
-                    Debug.Log("toy 1");
                     GameObject go = _PoolEnemy1.Spawn(position, transform.rotation);
                     go.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
                 case 2:
-                    Debug.Log("toy 2");
                     GameObject go1 = _PoolEnemy2.Spawn(position, transform.rotation);
                     go1.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
                 case 3:
-                    Debug.Log("toy 3");
                     GameObject go2 = _PoolEnemy3.Spawn(position, transform.rotation);
                     go2.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;

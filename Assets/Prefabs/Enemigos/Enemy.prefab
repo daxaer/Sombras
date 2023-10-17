@@ -265,12 +265,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0eac51490f21f545aec091607f40d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vida: 3
   _lifeIncrease: 1
   iluminar: {fileID: 1804796711718029088}
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
-  damage: 5
+  _vida: 3
+  _damage: 1
+  _vidaMin: 3
+  _vidaMax: 30
+  _speedMin: 1
+  _speedMax: 5
+  _damageMax: 1
+  _damageMin: 5
+  aiPath: {fileID: 594802796594497193}
 --- !u!212 &8225459986862862613
 SpriteRenderer:
   m_ObjectHideFlags: 0
