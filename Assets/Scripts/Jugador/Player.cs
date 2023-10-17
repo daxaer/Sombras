@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -111,7 +112,11 @@ public class Player : MonoBehaviour
         ManageScenes.Instance.AbrirGameOver();
         //MusicManager.Instance.PlayAudio(SOUNDTYPE.DEATH);
     }
-
+    public void Pausar()
+    {
+        GameManager.Instance.JuegoPausado();
+        ManageScenes.Instance.AbrirPausa();
+    }
     IEnumerator Invulnerabilidad()
     {
         sprite.color = Color.red;

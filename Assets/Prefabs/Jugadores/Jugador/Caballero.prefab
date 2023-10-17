@@ -167,11 +167,35 @@ MonoBehaviour:
     m_ActionId: 92adbd4e-6e5a-4974-9682-47e5fc6ddd37
     m_ActionName: Gameplay/Movimiento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4178300058161498754}
+        m_TargetAssemblyTypeName: Ataque, Assembly-CSharp
+        m_MethodName: Atacar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b813777b-156f-4ca1-85a8-711dfea3b120
     m_ActionName: Gameplay/Atacar
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5773838964140946222}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Pausar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 86fc4ad1-0a57-47b0-ac12-b4f695b11860
     m_ActionName: Gameplay/Pause[/Keyboard/escape]
   - m_PersistentCalls:

@@ -184,13 +184,13 @@ MonoBehaviour:
     m_ActionName: Gameplay/Atacar[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2755939281613191656}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 5773838964140946222}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Pausar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -238,6 +238,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c2d8b79e-7c41-46aa-b972-38cb89c1d58d
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e4ece37f-e0c3-4bff-9b1c-6d3e3228c4d3
+    m_ActionName: Gameplay/Look[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -322,9 +326,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonidoAtaque: {fileID: 0}
   spawnAtaque: {fileID: 1869190762329115102}
-  _spawnManager: {fileID: 0}
   attackKey: 32
   _canAttack: 1
+  atacando: 0
   animatorOjos: {fileID: 9191153713252100210}
   animatorCuerpo: {fileID: 7903139616052774103}
   animatorArma: {fileID: 6474292556519138755}
