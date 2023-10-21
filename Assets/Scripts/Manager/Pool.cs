@@ -44,6 +44,22 @@ public class Pool
         return Instanciar(_pos, _rot);
     }
 
+    public GameObject SpawnSound(Vector3 _pos, Quaternion _rot) //el que va sustituir los instantiate
+    {
+        for (int i = 0; i < pool.Count; i++)
+        {
+            if (pool[i].GetComponent<AudioSource>().isPlaying == false)
+            {
+                pool[i].transform.position = _pos;
+                pool[i].transform.rotation = _rot;
+                return pool[i]; // nos salimos de la funcion y devolvemos un gameObject
+            }
+
+        }
+        //si se sale del for, significa que no hay un gameObject disponible, entonces lo crecemos
+        return Instanciar(_pos, _rot);
+    }
+
     public void DeactivateEnemy(GameObject go)
     {
         go.SetActive(false);

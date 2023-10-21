@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         if(other.CompareTag("Enemy") && invulnerable == false)
         {
             invulnerable = true;
-            Enemy enemigo = other.GetComponent<Enemy>();
+            Enemies enemigo = other.GetComponent<Enemies>();
             enemigo.Atacar();
             if (EstadisticasManager.Instance.vidaActual <= 0)
             {

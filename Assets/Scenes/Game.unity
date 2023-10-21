@@ -11319,6 +11319,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
+      propertyPath: _spawnSound
+      value: 
+      objectReference: {fileID: 2054261423018414814, guid: cac0927f96b0eb4438928e1d99293b61, type: 3}
+    - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: sources.Array.data[0]
       value: 
       objectReference: {fileID: 1832040777}

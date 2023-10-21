@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Audio;
 using System;
+using Unity.Mathematics;
 
 public class MusicManager : MonoBehaviour
 {
-   // [SerializeField] private AudioSource _music;
-    //[SerializeField] private AudioSource _effects;
+    [SerializeField] private GameObject _spawnSound;
 
-    public AudioSource[] sources;
     public SoundType[] libreriarDeSonidos;
     public AudioMixer mixer;
 
+    public Pool _poolSounds;
     #region Singleton
     public static MusicManager Instance { get; private set; }
 
@@ -28,6 +28,12 @@ public class MusicManager : MonoBehaviour
         }
     }
     #endregion
+
+    void Start()
+    {
+        _poolSounds = new Pool();
+        _poolSounds.Inicializar(_spawnSound,10);
+    }
 
     AudioClip GetClip(SOUNDTYPE _type) 
     {
@@ -45,29 +51,17 @@ public class MusicManager : MonoBehaviour
     {
         GetComponent<AudioSource>().PlayOneShot(GetClip(_type));
     }
-
-    public void PlayAudio(SOUNDTYPE _type, Vector3 _position)
+   
+    public void PlayAudioPool(SOUNDTYPE _type, Transform _position)
     {
-        AudioSource currentsource = GetAudioSource();
-        if(currentsource != null)
+        GameObject currentsource = _poolSounds.SpawnSound(_position.position, _position.rotation);
+        currentsource.gameObject.SetActive(true);
+        if (currentsource != null)
         {
-            currentsource.transform.position = _position;
-            currentsource.clip = GetClip(_type);
-            currentsource.Play();
+            AudioSource audio = currentsource.GetComponent<AudioSource>();
+            audio.clip = GetClip(_type);
+            audio.Play();
         }
-    }
-
-    AudioSource GetAudioSource()
-    {
-        for(int i = 0; i < sources.Length; i++)
-        {
-            if(!sources[i].isPlaying)
-            {
-                return sources[i];
-            }
-           
-        }
-        return null;
     }
 
     public void VolumeMusic(float volume)
@@ -89,7 +83,6 @@ public class SoundType
     public AudioClip GetRandomClip()
     {
         return clip[UnityEngine.Random.Range(0, clip.Length)];
-
     }
 }
 
