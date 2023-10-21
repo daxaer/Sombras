@@ -2163,33 +2163,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TransitionSelectionGameManager, Assembly-CSharp
-          m_MethodName: CambiarImagen
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 56aa7f60c61356643beb333f077290f7, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TransitionSelectionGameManager, Assembly-CSharp
-          m_MethodName: CambiarImagen
-          m_Mode: 2
+        - m_Target: {fileID: 1097211060}
+          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 56aa7f60c61356643beb333f077290f7, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2535,33 +2519,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TransitionSelectionGameManager, Assembly-CSharp
-          m_MethodName: CambiarImagen
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: f3872c49383243a4aa443c1c5851c375, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TransitionSelectionGameManager, Assembly-CSharp
-          m_MethodName: CambiarImagen
-          m_Mode: 2
+        - m_Target: {fileID: 1097211060}
+          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: f3872c49383243a4aa443c1c5851c375, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3018,8 +2986,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6063353838428688924, guid: 5552426da76186a43b01f5a717097577, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097211060}
   m_SourcePrefab: {fileID: 100100000, guid: 5552426da76186a43b01f5a717097577, type: 3}
+--- !u!1 &1097211059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6063353838428688924, guid: 5552426da76186a43b01f5a717097577, type: 3}
+  m_PrefabInstance: {fileID: 1097211058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097211060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097211059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9742063d97443946ad591f0d09732ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundType: 7
+  transform: {fileID: 470181370}
 --- !u!1 &1141821854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3297,33 +3287,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TransitionSelectionGameManager, Assembly-CSharp
-          m_MethodName: CambiarImagen
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 5e0fcce5c0e107744b2d231b9a2a90d0, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TransitionSelectionGameManager, Assembly-CSharp
-          m_MethodName: CambiarImagen
-          m_Mode: 2
+        - m_Target: {fileID: 1097211060}
+          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 5e0fcce5c0e107744b2d231b9a2a90d0, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5676,6 +5650,7 @@ GameObject:
   - component: {fileID: 2001981614}
   - component: {fileID: 2001981613}
   - component: {fileID: 2001981616}
+  - component: {fileID: 2001981617}
   m_Layer: 5
   m_Name: Button-ReturnIndex
   m_TagString: Untagged
@@ -5819,6 +5794,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2001981617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001981611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1097211060}
+          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2010987293
 GameObject:
   m_ObjectHideFlags: 0
