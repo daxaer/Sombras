@@ -89,7 +89,8 @@ public class SoundType
 public enum SOUNDTYPE
 {
     DEATH,
-    HIT_ENEMY,
+    HIT_ENEMY_MELE,
+    HIT_ENEMY_RANGE,
     HIT_PLAYER,
     GET_SOUL,
     GET_HEALTH,
@@ -97,4 +98,6 @@ public enum SOUNDTYPE
     BUTTON_PRESS,
     BUTTON_SELECT,
     OPEN_UI,
+    HIT_PARED,
+    FIRE_RANGE,
 }

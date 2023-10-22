@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Alma
+  - Pared
   layers:
   - Default
   - TransparentFX

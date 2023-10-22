@@ -2979,6 +2979,10 @@ PrefabInstance:
       propertyPath: _spawnSound
       value: 
       objectReference: {fileID: 2054261423018414814, guid: cac0927f96b0eb4438928e1d99293b61, type: 3}
+    - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
+      propertyPath: libreriarDeSonidos.Array.data[0].clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 07d489d7978f8494ab5b0f475f9441c5, type: 3}
     - target: {fileID: 6063353838428688924, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: m_Name
       value: SoundManager

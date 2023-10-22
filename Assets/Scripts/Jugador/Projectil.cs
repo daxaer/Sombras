@@ -7,16 +7,18 @@ public class Projectil : MonoBehaviour
 {
     //[SerializeField] private Estadisticas estadisticas;
     [SerializeField] private float velocidad;
+    [SerializeField] bool hit;
     
     private void OnEnable()
     {
+        hit = false;
         if(EstadisticasManager.Instance.ataqueMele)
         {
             Invoke("Destruir", 0.8f);
         }
         else
         {
-            Invoke("Destruir", 0.3f);
+            Invoke("Destruir", 0.2f);
         }
     }
 
@@ -36,6 +38,26 @@ public class Projectil : MonoBehaviour
                 enemy.Activarluz();
             }
             roboVida();
+            if (!EstadisticasManager.Instance.ataqueMele)
+            {
+                Destruir();
+                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_RANGE, other.transform);
+            }
+            else
+            {
+                if(!hit)
+                {
+                    MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_MELE, other.transform);
+                }
+            }
+        }
+        else if(other.CompareTag("Pared"))
+        {
+            if (!EstadisticasManager.Instance.ataqueMele)
+            {
+                Destruir();
+                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_PARED, other.transform);
+            }
         }
     }
     public void roboVida()
