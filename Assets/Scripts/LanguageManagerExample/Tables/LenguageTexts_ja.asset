@@ -118,6 +118,10 @@ MonoBehaviour:
     m_Localized: "\r\u52DD\u5229\u3057\u305F\uFF01"
     m_Metadata:
       m_Items: []
+  - m_Id: 16817386384748544
+    m_Localized: TakaTaka
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

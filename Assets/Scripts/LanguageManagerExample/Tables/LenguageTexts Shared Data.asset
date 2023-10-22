@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Key: WinnableText
     m_Metadata:
       m_Items: []
+  - m_Id: 16817386384748544
+    m_Key: IndexButtonSettings
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139
