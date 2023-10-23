@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: VelocidadMovPermanente
   m_EditorClassIdentifier: 
   imagenMejora: {fileID: 21300000, guid: 6447ddced7bde7f4ca53cfc75521d72c, type: 3}
-  costeMejora: 1000
+  costeMejoraActual: 4250
+  costeInicial: 500
   nivel: 5
+  nivelActual: 5
+  AumentroPrecio: 750

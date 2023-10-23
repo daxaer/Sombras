@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: SaludPermanente
   m_EditorClassIdentifier: 
   imagenMejora: {fileID: 21300000, guid: 26d1d7be5bc59b249bc5779bf8a1923f, type: 3}
-  costeMejora: 500
-  nivel: 9
+  costeMejoraActual: 2000
+  costeInicial: 500
+  nivel: 5
+  nivelActual: 2
+  AumentroPrecio: 750

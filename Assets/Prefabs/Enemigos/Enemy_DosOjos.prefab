@@ -221,8 +221,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4148539617265017001}
-  - component: {fileID: 4803947535349026804}
   - component: {fileID: 8225459986862862613}
+  - component: {fileID: 5571140123472380384}
   - component: {fileID: 5783500662886769663}
   - component: {fileID: 594802796594497193}
   - component: {fileID: 4492078496029235557}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 1707214561227098646}
   - component: {fileID: 4411845708124067182}
   m_Layer: 3
-  m_Name: Enemy_2
+  m_Name: Enemy_DosOjos
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,28 +252,8 @@ Transform:
   - {fileID: 3011830166460772717}
   - {fileID: 596928168896950106}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4803947535349026804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155063478553261289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c30e0a02af2bd4ab7e2629350a3d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vida: 5
-  _lifeIncrease: 1
-  iluminar: {fileID: 1804796711718029088}
-  animation_Ojo: {fileID: 8673536928570557922}
-  animation_Cuerpo: {fileID: 4411845708124067182}
-  damage: 1
-  distance: 10
-  frontObject: {fileID: 6439551827627318465}
 --- !u!212 &8225459986862862613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -326,6 +306,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &5571140123472380384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3155063478553261289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb41964c47eafd44945486d102dfd0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeIncrease: 1
+  iluminar: {fileID: 1804796711718029088}
+  animation_Ojo: {fileID: 8673536928570557922}
+  animation_Cuerpo: {fileID: 4411845708124067182}
+  _vida: 10
+  _damage: 1
+  _vidaMin: 10
+  _vidaMax: 100
+  _speedMin: 1
+  _speedMax: 3
+  _damageMax: 1
+  _damageMin: 10
+  aiPath: {fileID: 594802796594497193}
 --- !u!114 &5783500662886769663
 MonoBehaviour:
   m_ObjectHideFlags: 0
