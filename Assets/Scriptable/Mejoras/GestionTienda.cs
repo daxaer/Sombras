@@ -15,11 +15,19 @@ public class GestionTienda : MonoBehaviour
         for (int i = 0; i < mejoraPermanente.Count; i++)
         {
             var mejora = mejoraPermanente[i];
+            mejora.costeMejoraActual = mejora.costeInicial + (mejora.nivelActual * mejora.AumentroPrecio);
             GameObject tiendaDelMenu = Instantiate(menuDeTienda, transform);
+            tiendaDelMenu.GetComponentInChildren<GestionNivel>().mejora = mejora.nivelActual;
             TiendaMenu tiendaMenu = tiendaDelMenu.GetComponent<TiendaMenu>();
-
             tiendaMenu.imagenTiendaPr.sprite = mejora.imagenMejora;
-            tiendaMenu.textoPrecio.text = mejora.costeMejora.ToString();
+            if (mejora.nivel == mejora.nivelActual)
+            {
+                tiendaMenu.textoPrecio.text = "Nivel Max";
+            }
+            else
+            {
+                tiendaMenu.textoPrecio.text = mejora.costeMejoraActual.ToString();
+            }
             tiendaMenu.nivelmejora = mejora.nivel;
             tiendaMenu.mejora = mejora;
         }
@@ -27,30 +35,29 @@ public class GestionTienda : MonoBehaviour
         textoAlmasMejora.text = AlmasPrueba.ToString();
     }
 
-    public void SeleccionarMejora(GestionNivel efecto, int indice, MejorasPermanentes mejoras)
+    public void SeleccionarMejora(GestionNivel gestionNivel, int nivelMax, MejorasPermanentes mejoras)
     {
         //Calculo momentaneo
-        int calculo = 750;
-        if (efecto.copiasNivel != null && efecto.copiasNivel.Count > 0 && AlmasPrueba > mejoras.costeMejora)
+        if (gestionNivel.copiasNivel != null && gestionNivel.copiasNivel.Count > 0 && AlmasPrueba > mejoras.costeMejoraActual)
         {
-            if (efecto.indiceActual >= 0 && efecto.indiceActual < efecto.copiasNivel.Count)
+            if (gestionNivel.indiceActual >= 0 && gestionNivel.indiceActual < gestionNivel.copiasNivel.Count)
             {
-                Image imagen = efecto.copiasNivel[efecto.indiceActual].GetComponent<Image>();
+                Image imagen = gestionNivel.copiasNivel[gestionNivel.indiceActual].GetComponent<Image>();
 
                 if (imagen != null)
                 {
                     imagen.color = Color.white;
-                    AlmasPrueba = AlmasPrueba - mejoras.costeMejora;
-                    mejoras.costeMejora = mejoras.costeMejora + calculo;
+                    AlmasPrueba = AlmasPrueba - mejoras.costeMejoraActual;
+                    mejoras.costeMejoraActual = mejoras.costeMejoraActual + mejoras.AumentroPrecio;
                     
                 }
-                efecto.indiceActual++;
+                gestionNivel.indiceActual++;
+                mejoras.nivelActual = gestionNivel.indiceActual;
             }
         }
         tienda();
         textoAlmasMejora.text = AlmasPrueba.ToString();
     }
-
     public void tienda()
     {
         for (int i = 0; i < mejoraPermanente.Count; i++)
@@ -69,7 +76,15 @@ public class GestionTienda : MonoBehaviour
             TiendaMenu tiendaMenu = tiendaDelMenu.GetComponent<TiendaMenu>();
 
             tiendaMenu.imagenTiendaPr.sprite = mejora.imagenMejora;
-            tiendaMenu.textoPrecio.text = mejora.costeMejora.ToString();
+            if (mejora.nivel == mejora.nivelActual)
+            {
+                tiendaMenu.textoPrecio.text = "Nivel Max";
+            }
+            else
+            {
+                tiendaMenu.textoPrecio.text = mejora.costeMejoraActual.ToString();
+            }
+
             tiendaMenu.nivelmejora = mejora.nivel;
             tiendaMenu.mejora = mejora;
         }

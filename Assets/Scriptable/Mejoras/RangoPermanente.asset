@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: RangoPermanente
   m_EditorClassIdentifier: 
   imagenMejora: {fileID: 21300000, guid: 5e0fcce5c0e107744b2d231b9a2a90d0, type: 3}
-  costeMejora: 750
-  nivel: 7
+  costeMejoraActual: 7250
+  costeInicial: 500
+  nivel: 9
+  nivelActual: 9
+  AumentroPrecio: 750
