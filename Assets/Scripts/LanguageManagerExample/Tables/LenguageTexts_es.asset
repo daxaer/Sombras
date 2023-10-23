@@ -67,7 +67,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 704228437807104
-    m_Localized: Lenguajes
+    m_Localized: Idioma
     m_Metadata:
       m_Items: []
   - m_Id: 706037663420416
@@ -121,6 +121,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16817386384748544
     m_Localized: Inicio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16957626818719744
+    m_Localized: Caballero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16958151677145088
+    m_Localized: Tirador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16958305968812032
+    m_Localized: Devorador
     m_Metadata:
       m_Items: []
   references:
