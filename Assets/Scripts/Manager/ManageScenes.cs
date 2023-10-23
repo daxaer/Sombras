@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ManageScenes : MonoBehaviour
+public class ManageScenes : MonoBehaviour, IDataPersiistence
 {
     [SerializeField] EventSystem eventSystem;
     [SerializeField] private GameObject pausa;
@@ -70,6 +70,17 @@ public class ManageScenes : MonoBehaviour
     public void ActiveScriptable(ScriptableEstadisticas scriptable)
     {
         GameManager.Instance.SetScriptable(scriptable);
+    }
+
+    public void LoadData(GameData _data)
+    {
+        ActiveScriptable(_data.estadisticas);
+        activePlayer(_data.player);
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+       
     }
 }
 

@@ -11,7 +11,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     [Header("File Storage Config")]
     private GameData _gameData;
-    private List<IDetaPersiistence> _dataPersistenceObjects;
+    private List<IDataPersiistence> _dataPersistenceObjects;
     public static DataPersistenceManager Instance { get; private set; } //solo esta clase
     [SerializeField] private string _fileName; //nombre de archivo para guardar los datos
     [SerializeField] private bool _useEncryption;
@@ -20,7 +20,7 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.LogError("Found more than one Data Persistence Manager in the scene. Destroying the newest one");
+            //Debug.LogError("Found more than one Data Persistence Manager in the scene. Destroying the newest one");
             Destroy(this.gameObject);
             return;
         }
@@ -28,7 +28,6 @@ public class DataPersistenceManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         this._fileDataHandler = new FileDataHandler(Application.persistentDataPath, _fileName, _useEncryption); //directory y nombre del archivo, conservar los datado en el proyecto de unity
-
     }
 
     private void OnEnable()
@@ -80,11 +79,10 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         //enviar datos guardados a los scripts
-        foreach(IDetaPersiistence _dataPersistenceObj in _dataPersistenceObjects)//recorrer todos los objectos de Idetapersiistence en la lista
+        foreach(IDataPersiistence _dataPersistenceObj in _dataPersistenceObjects)//recorrer todos los objectos de Idetapersiistence en la lista
         {
             _dataPersistenceObj.LoadData(_gameData); //los encontramos y pasamos el GameData
         }
-        Debug.Log("Loaded death count = " + _gameData._deathCount);
     }
 
     public void SaveGame()
@@ -97,11 +95,10 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         // pasar los datos a otros scripts para que puedan actualizarlos
-        foreach (IDetaPersiistence _dataPersistenceObj in _dataPersistenceObjects)//recorrer todos los objectos de Idetapersiistence en la lista
+        foreach (IDataPersiistence _dataPersistenceObj in _dataPersistenceObjects)//recorrer todos los objectos de Idetapersiistence en la lista
         {
             _dataPersistenceObj.SaveData(ref _gameData); //los encontramos y pasamos el GameData
         }
-        Debug.Log("Saved death count = " + _gameData._deathCount);
 
         //Guardamos los datos en un archivo utilizando el DataHandler
         _fileDataHandler.Save(_gameData); //le pasamos los nuevos datos de juego que se guardaran
@@ -112,12 +109,12 @@ public class DataPersistenceManager : MonoBehaviour
         SaveGame();
     }
 
-    private List<IDetaPersiistence> FindAllDataPersistenceObjects()
+    private List<IDataPersiistence> FindAllDataPersistenceObjects()
     {
-        IEnumerable<IDetaPersiistence> _dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>()
-            .OfType<IDetaPersiistence>();
+        IEnumerable<IDataPersiistence> _dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>()
+            .OfType<IDataPersiistence>();
 
-        return new List<IDetaPersiistence>( _dataPersistenceObjects);
+        return new List<IDataPersiistence>( _dataPersistenceObjects);
     }
 
     public bool HasGameData()

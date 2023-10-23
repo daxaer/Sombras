@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class Timer : MonoBehaviour, IDataPersiistence
 {
     public EventSystem eventSystem;
     [SerializeField] private float _timeRemaining = 180;
@@ -93,5 +93,13 @@ public class Timer : MonoBehaviour
         _stoptimer = true;
     }
 
-    
+    public void LoadData(GameData _data)
+    {
+        rondaActual = _data.rondaActual;
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+        _data.rondaActual = rondaActual;
+    }
 }
