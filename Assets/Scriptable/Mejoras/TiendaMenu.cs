@@ -15,7 +15,6 @@ public class TiendaMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        precio = int.Parse(textoPrecio.text);
         efecto = GetComponentInChildren<GestionNivel>();
     }
     // Update is called once per frame
@@ -26,10 +25,9 @@ public class TiendaMenu : MonoBehaviour
 
     public void SubiendoMejora()
     {
+        Debug.Log("El indice es" + efecto.indiceActual);;
         GestionTienda gestionTienda = FindObjectOfType<GestionTienda>();
         gestionTienda.SeleccionarMejora(efecto, nivelmejora,mejora);
     }
-   
-
 }
 
