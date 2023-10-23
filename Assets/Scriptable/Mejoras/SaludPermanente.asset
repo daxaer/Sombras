@@ -12,16 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba0c157cc95b144fb501cd10cdab134, type: 3}
   m_Name: SaludPermanente
   m_EditorClassIdentifier: 
-  niveles:
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
   imagenMejora: {fileID: 21300000, guid: 26d1d7be5bc59b249bc5779bf8a1923f, type: 3}
   costeMejora: 500
   nivel: 9

@@ -389,8 +389,11 @@ MonoBehaviour:
   imagenTiendaPr: {fileID: 397956521022802646}
   textoPrecio: {fileID: 2322361668261099029}
   botonComprar: {fileID: 9157833582761958152}
-  nivelmejora: 7
+  nivelmejora: 0
   precio: 100
+  mejora: {fileID: 0}
+  efecto: {fileID: 0}
+  Niveles: {fileID: 8944606183784549221}
 --- !u!1001 &8992357638118060434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -499,5 +502,10 @@ PrefabInstance:
 --- !u!224 &40320459882086415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8954416780177043869, guid: d01388d439ee73242a0033829a4455aa, type: 3}
+  m_PrefabInstance: {fileID: 8992357638118060434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8944606183784549221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 66105181035674359, guid: d01388d439ee73242a0033829a4455aa, type: 3}
   m_PrefabInstance: {fileID: 8992357638118060434}
   m_PrefabAsset: {fileID: 0}
