@@ -197,7 +197,7 @@ TextureImporter:
       name: ojo Charge-Sheet_4
       rect:
         serializedVersion: 2
-        x: 768
+        x: 512
         y: 0
         width: 128
         height: 128
@@ -218,7 +218,7 @@ TextureImporter:
       name: ojo Charge-Sheet_5
       rect:
         serializedVersion: 2
-        x: 896
+        x: 640
         y: 0
         width: 128
         height: 128
@@ -239,7 +239,7 @@ TextureImporter:
       name: ojo Charge-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 768
         y: 0
         width: 128
         height: 128
@@ -260,7 +260,7 @@ TextureImporter:
       name: ojo Charge-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 896
         y: 0
         width: 128
         height: 128
@@ -281,7 +281,7 @@ TextureImporter:
       name: ojo Charge-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1024
         y: 0
         width: 128
         height: 128
@@ -302,7 +302,7 @@ TextureImporter:
       name: ojo Charge-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1408
+        x: 1152
         y: 0
         width: 128
         height: 128
@@ -323,7 +323,7 @@ TextureImporter:
       name: ojo Charge-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 1280
         y: 0
         width: 128
         height: 128
@@ -344,7 +344,7 @@ TextureImporter:
       name: ojo Charge-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1664
+        x: 1408
         y: 0
         width: 128
         height: 128
@@ -365,7 +365,7 @@ TextureImporter:
       name: ojo Charge-Sheet_12
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 1536
         y: 0
         width: 128
         height: 128
@@ -386,7 +386,7 @@ TextureImporter:
       name: ojo Charge-Sheet_13
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 1664
         y: 0
         width: 128
         height: 128
@@ -407,7 +407,7 @@ TextureImporter:
       name: ojo Charge-Sheet_14
       rect:
         serializedVersion: 2
-        x: 2048
+        x: 1792
         y: 0
         width: 128
         height: 128
@@ -428,7 +428,7 @@ TextureImporter:
       name: ojo Charge-Sheet_15
       rect:
         serializedVersion: 2
-        x: 2176
+        x: 1920
         y: 0
         width: 128
         height: 128
@@ -441,6 +441,48 @@ TextureImporter:
       bones: []
       spriteID: 50988c19d621fba44a339aa54db7c78f
       internalID: 1595893740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojo Charge-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2c3c6a4f8236742bae31a7fe6ec36c
+      internalID: -1924756698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojo Charge-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ea72598428dca49a66321d0963922a
+      internalID: -95019220
       vertices: []
       indices: 
       edges: []
@@ -464,6 +506,8 @@ TextureImporter:
       ojo Charge-Sheet_13: -1311877276
       ojo Charge-Sheet_14: 1125760774
       ojo Charge-Sheet_15: 1595893740
+      ojo Charge-Sheet_16: -1924756698
+      ojo Charge-Sheet_17: -95019220
       ojo Charge-Sheet_2: 502712473
       ojo Charge-Sheet_3: 1606243594
       ojo Charge-Sheet_4: 1136122352

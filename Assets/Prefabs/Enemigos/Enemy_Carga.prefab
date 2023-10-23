@@ -201,7 +201,7 @@ Animator:
   m_GameObject: {fileID: 2450016543405604180}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 139f80cc478a511439e111879c05dcc3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3ff94a32bf278be4eac942837c17197c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -396,8 +396,8 @@ MonoBehaviour:
     maximumInterval: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
-  maxAcceleration: 6
-  rotationSpeed: 120
+  maxAcceleration: 100
+  rotationSpeed: 90
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
   endReachedDistance: 0.4
@@ -491,7 +491,7 @@ Animator:
   m_GameObject: {fileID: 3155063478553261289}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 384c9d68b9f6e364289d8e0476ed1e71, type: 2}
+  m_Controller: {fileID: 9100000, guid: e646a37918f852649a7372dcc1606745, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
