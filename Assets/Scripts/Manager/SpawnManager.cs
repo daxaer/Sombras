@@ -119,7 +119,7 @@ public class SpawnManager : MonoBehaviour
         }
 
         int randomEnemy = Random.Range(1, countRound + 1);
-        Debug.Log(randomEnemy);
+        
         
         if (_currentEnemiesCount < maxEnemies)
         {

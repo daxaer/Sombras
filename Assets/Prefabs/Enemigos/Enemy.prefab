@@ -275,8 +275,8 @@ MonoBehaviour:
   _vidaMax: 30
   _speedMin: 1
   _speedMax: 5
-  _damageMax: 1
-  _damageMin: 5
+  _damageMin: 1
+  _damageMax: 5
   aiPath: {fileID: 594802796594497193}
 --- !u!212 &8225459986862862613
 SpriteRenderer:
