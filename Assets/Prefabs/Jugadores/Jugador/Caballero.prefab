@@ -238,10 +238,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c2d8b79e-7c41-46aa-b972-38cb89c1d58d
     m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e4ece37f-e0c3-4bff-9b1c-6d3e3228c4d3
-    m_ActionName: Gameplay/Look[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -328,7 +324,6 @@ MonoBehaviour:
   spawnAtaque: {fileID: 1869190762329115102}
   attackKey: 32
   _canAttack: 1
-  atacando: 1
   animatorOjos: {fileID: 9191153713252100210}
   animatorCuerpo: {fileID: 7903139616052774103}
   animatorArma: {fileID: 6474292556519138755}

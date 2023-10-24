@@ -11,6 +11,7 @@ public class SpawnAlmas : MonoBehaviour
     public void OnEnable()
     {
         float probabilidad = Random.Range(1, 100);
+        Debug.Log("probabilidad");
         if (probabilidad >= 90)
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;

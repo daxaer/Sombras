@@ -3,8 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+<<<<<<< HEAD
 using Cinemachine;
 using UnityEngine.SceneManagement;
+=======
+using UnityEngine.U2D;
+>>>>>>> parent of fd69355 (apuntado)
 
 public class Player : MonoBehaviour
 {
@@ -12,8 +16,10 @@ public class Player : MonoBehaviour
     private Rigidbody2D playerRb;
     private bool invulnerable = false;
     public SpriteRenderer sprite;
+    private Vector3 _objetivoArma;
+    private float _distancePlayer = 100f;
+
     public static Player Instance;
-    
 
     private void Awake()
     {
@@ -35,18 +41,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        Vector2 rStickInput = playerInput.actions["Movimiento"].ReadValue<Vector2>();
+
         if (playerInput.currentControlScheme == "consola")
         {
 
         }
+
         else
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(playerInput.actions["Look"].ReadValue<Vector2>());
-            float angulo = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
-            float rotacion = (180 / Mathf.PI) * angulo - 90;
+            Vector2 mousePos = Mouse.current.position.ReadValue();
+            Vector2 direction = mousePos.normalized;
+            _objetivoArma = transform.position + new Vector3(direction.x, direction.y, 0) * _distancePlayer;
+            float angulo = Mathf.Atan2(transform.position.y - _objetivoArma.y, transform.position.x - _objetivoArma.x);
+            float rotacion = (180 / Mathf.PI) * angulo;
             transform.rotation = Quaternion.Euler(0, 0, rotacion);
         }
+
         //if (rStickInput != Vector2.zero)
         //{
         //    Vector2 Direction = rStickInput.normalized;

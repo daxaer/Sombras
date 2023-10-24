@@ -30,7 +30,11 @@ public class GameManager : MonoBehaviour, IDataPersiistence
         }
         else
         {
+<<<<<<< HEAD
             Destroy(gameObject);
+=======
+            Destroy(Instance);
+>>>>>>> parent of 7372f44 (projectil y rejugar)
         }
     }
    
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
         return scriptable;
     }
 
+<<<<<<< HEAD
     public void LoadData(GameData _data)
     {
 
@@ -105,4 +110,6 @@ public class GameManager : MonoBehaviour, IDataPersiistence
         _data.player = player;
         _data.estadisticas = scriptable;
     }
+=======
+>>>>>>> parent of 7372f44 (projectil y rejugar)
 }

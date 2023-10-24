@@ -14,22 +14,23 @@ public class Ataque : MonoBehaviour
     [SerializeField] private Transform spawnAtaque;
 
     public KeyCode attackKey = KeyCode.Space; //tecla
-    [SerializeField] private bool _canAttack; //se puede atacar?
-    [SerializeField] private bool atacando; 
-
+    [SerializeField] private bool _canAttack = true; //se puede atacar?
     [SerializeField] private Animator animatorOjos;
     [SerializeField] private Animator animatorCuerpo;
     [SerializeField] private Animator animatorArma;
-    private PlayerInput playerInput;
     private void Start()
     {
-        atacando = false;
-        _canAttack = true;
-        playerInput = GetComponent<PlayerInput>();
-        playerInput.actions["Atacar"].performed += Pressed;
-        playerInput.actions["Atacar"].canceled += UnPreseed;
+
+    }
+    public void Update()
+    {
+        //if (Input.GetKey(KeyCode.Space)) 
+        //{
+            Atacar();
+        //}
     }
 
+<<<<<<< HEAD
     private void Update()
     {
         if (atacando)
@@ -45,16 +46,20 @@ public class Ataque : MonoBehaviour
     {
         atacando = false;
     }
+=======
+>>>>>>> parent of fd69355 (apuntado)
     public void Atacar()
     {
-        if(_canAttack && atacando)
+        if(_canAttack)
         {
-            _canAttack = false;
             StartCoroutine(SpeedAtack());
+            Debug.Log("atacando");
+            _canAttack = false;
             //MusicManager.Instance.PlayAudio(SOUNDTYPE.HIT_ENEMY, transform.position);
             animatorArma.SetTrigger("Atacar");
             animatorCuerpo.SetTrigger("Atacar");
             animatorOjos.SetTrigger("Atacar");
+            
         }
     }
 
@@ -66,12 +71,8 @@ public class Ataque : MonoBehaviour
 
     public void SpawnAtaque()
     {
-        GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
-        Projectil proj = temp.GetComponent<Projectil>();
-    }
-    private void OnDestroy()
-    {
-        playerInput.actions["Atacar"].performed -= Pressed;
-        playerInput.actions["Atacar"].canceled -= UnPreseed;
+        Instantiate(EstadisticasManager.Instance.bala, spawnAtaque.position, spawnAtaque.rotation);
+        //GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
+        //Projectil proj = temp.GetComponent<Projectil>();
     }
 }
