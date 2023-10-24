@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Index.unity
     guid: beeeb3e888967dd4bbdbb690c745e020
   - enabled: 1
-    path: Assets/Scenes/Seleccion.unity
+    path: Assets/Scenes/Seleccion0.unity
     guid: c96f4fa7afeb5b741a3c6ceaed937aa6
   - enabled: 1
     path: Assets/Scenes/Game.unity
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Edson.unity
     guid: 53bec406a4dd3834f8e0a2ae447a09f8
+  - enabled: 1
+    path: Assets/Scenes/Seleccion.unity
+    guid: cdcda0df9aa42554b909370ce1638da7
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: df4edc8cbcb12874fac2eaf1d11c7083, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 4906df2577173834da0b13758e511ca1, type: 2}

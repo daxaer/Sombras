@@ -180,10 +180,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -3258268891164396559, guid: 4d89902bab4d3d845adad474bae7e237, type: 3}
+  m_Sprite: {fileID: -1949425542, guid: 4be0ca40cf792e54080df6df56fe51d4, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -227,8 +227,8 @@ GameObject:
   - component: {fileID: 594802796594497193}
   - component: {fileID: 4492078496029235557}
   - component: {fileID: 7349952213639143445}
-  - component: {fileID: 1707214561227098646}
   - component: {fileID: 4411845708124067182}
+  - component: {fileID: 2610514794851636857}
   m_Layer: 3
   m_Name: Enemy_Carga
   m_TagString: Enemy
@@ -324,10 +324,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5661044446538976366, guid: 2f4bb7b4534b4bd40bb0847f97c4c8c8, type: 3}
+  m_Sprite: {fileID: -95020555, guid: aa2ab456d62ac644dba05c747d404849, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -446,8 +446,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &1707214561227098646
-CircleCollider2D:
+--- !u!95 &4411845708124067182
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3155063478553261289}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e646a37918f852649a7372dcc1606745, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &2610514794851636857
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -478,30 +499,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.525}
-  serializedVersion: 2
-  m_Radius: 0.21500002
---- !u!95 &4411845708124067182
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155063478553261289}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e646a37918f852649a7372dcc1606745, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Offset: {x: 0.01, y: -0.16}
+  m_Size: {x: 0.42, y: 0.67}
+  m_Direction: 0
 --- !u!1 &5214436977606927410
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +609,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35521048, y: 2.0938284}
+  m_Size: {x: 0.03, y: 2.0938284}
   m_EdgeRadius: 0
 --- !u!114 &5502364181321995824
 MonoBehaviour:
