@@ -8,6 +8,7 @@ public class Projectil : MonoBehaviour
     //[SerializeField] private Estadisticas estadisticas;
     [SerializeField] private float velocidad;
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField] bool hit;
     
     private void OnEnable()
@@ -21,6 +22,13 @@ public class Projectil : MonoBehaviour
         {
             Invoke("Destruir", 0.2f);
         }
+=======
+    [SerializeField] private SpawnManager _spawnManager;
+    
+    private void OnEnable()
+    {
+        Invoke("Destruir", 0.3f);
+>>>>>>> parent of 7372f44 (projectil y rejugar)
 =======
     [SerializeField] private SpawnManager _spawnManager;
     

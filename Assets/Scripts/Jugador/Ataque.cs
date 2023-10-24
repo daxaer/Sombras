@@ -74,5 +74,13 @@ public class Ataque : MonoBehaviour
         Instantiate(EstadisticasManager.Instance.bala, spawnAtaque.position, spawnAtaque.rotation);
         //GameObject temp = SpawnManager.Instance.SpawnAtaque(spawnAtaque);
         //Projectil proj = temp.GetComponent<Projectil>();
+<<<<<<< HEAD
+=======
+    }
+    private void OnDestroy()
+    {
+        playerInput.actions["Atacar"].performed -= Pressed;
+        playerInput.actions["Atacar"].canceled -= UnPreseed;
+>>>>>>> parent of 7372f44 (projectil y rejugar)
     }
 }
