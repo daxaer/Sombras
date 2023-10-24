@@ -15,7 +15,7 @@ public class GestionTienda : MonoBehaviour
         for (int i = 0; i < mejoraPermanente.Count; i++)
         {
             var mejora = mejoraPermanente[i];
-            mejora.costeMejoraActual = mejora.costeInicial + (mejora.nivelActual * mejora.AumentroPrecio);
+            mejora.costeMejoraActual = mejora.costeInicial + (mejora.nivelActual * mejora.aumentoPrecio);
             GameObject tiendaDelMenu = Instantiate(menuDeTienda, transform);
             tiendaDelMenu.GetComponentInChildren<GestionNivel>().mejora = mejora.nivelActual;
             TiendaMenu tiendaMenu = tiendaDelMenu.GetComponent<TiendaMenu>();
@@ -48,7 +48,8 @@ public class GestionTienda : MonoBehaviour
                 {
                     imagen.color = Color.white;
                     AlmasPrueba = AlmasPrueba - mejoras.costeMejoraActual;
-                    mejoras.costeMejoraActual = mejoras.costeMejoraActual + mejoras.AumentroPrecio;
+                    mejoras.EstadisticaOtorgada = mejoras.EstadisticaOtorgada + mejoras.aumentoEstadistica;
+                    mejoras.costeMejoraActual = mejoras.costeMejoraActual + mejoras.aumentoPrecio;
                     
                 }
                 gestionNivel.indiceActual++;

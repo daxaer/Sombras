@@ -5150,6 +5150,11 @@ MonoBehaviour:
   rangoIluminacion: 0
   bala: {fileID: 0}
   ataqueMele: 0
+  mejoraPermanente:
+  - {fileID: 11400000, guid: 344b34b4e9fa0a744a2a26460d5595d0, type: 2}
+  - {fileID: 11400000, guid: 58ad8191dfa7f5c47ad04d37caa5fe5c, type: 2}
+  - {fileID: 11400000, guid: edf76a886fc57724ba71ea5d87e276fd, type: 2}
+  - {fileID: 11400000, guid: b2bedc19c3a90924db1b18ed68297f2e, type: 2}
   iluminarEnemigos: 0
   personajeSeleccionado: {fileID: 11400000, guid: 556f57bdc137373419d44f991925ad05, type: 2}
 --- !u!1 &874355288

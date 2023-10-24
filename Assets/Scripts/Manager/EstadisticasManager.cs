@@ -16,11 +16,12 @@ public class EstadisticasManager : MonoBehaviour
     public float rangoIluminacion;
     public GameObject bala;
     public bool ataqueMele;
-
+    [SerializeField] private MejorasPermanentes[] mejoraPermanente;
     //Pasivas
     public bool iluminarEnemigos;
 
     [SerializeField] private ScriptableEstadisticas personajeSeleccionado;
+    
     public static EstadisticasManager Instance;
 
     private void Awake()
@@ -38,11 +39,11 @@ public class EstadisticasManager : MonoBehaviour
 
     private void Start()
     {
-        vidaMaxima = personajeSeleccionado.VidaMaxima;
-        velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento;
-        vidaActual = personajeSeleccionado.vidaActual;
-        ataque = personajeSeleccionado.ATaque;
-        rango = personajeSeleccionado.RangoGolpe;
+        vidaMaxima = personajeSeleccionado.VidaMaxima + mejoraPermanente[0].aumentoEstadistica;
+        velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento + mejoraPermanente[3].aumentoEstadistica;
+        vidaActual = personajeSeleccionado.vidaActual + mejoraPermanente[0].aumentoEstadistica;
+        ataque = personajeSeleccionado.ATaque + mejoraPermanente[1].aumentoEstadistica;
+        rango = personajeSeleccionado.RangoGolpe + mejoraPermanente[2].aumentoEstadistica;
         velocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque;
         roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida;
         duracionLamparas = personajeSeleccionado.TiempoIluminacion;

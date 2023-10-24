@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
         {
             if(other.GetComponent<SpawnAlmas>().TipoAlma() == 1)
             {
-                EstadisticasManager.Instance.vidaActual += 10;
+                EstadisticasManager.Instance.vidaActual += 1;
                 EstadisticasManager.Instance.vidaActual = Mathf.Clamp(EstadisticasManager.Instance.vidaActual, 0, EstadisticasManager.Instance.vidaMaxima);
             }
             if (other.GetComponent<SpawnAlmas>().TipoAlma() == 2)

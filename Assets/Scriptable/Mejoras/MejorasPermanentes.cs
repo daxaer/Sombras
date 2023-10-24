@@ -12,5 +12,8 @@ public class MejorasPermanentes : ScriptableObject
     public int costeInicial;
     public int nivel;
     public int nivelActual;
-    public int AumentroPrecio;
+    public int aumentoPrecio;
+    public int aumentoEstadistica;
+    public int EstadisticaOtorgada;
+
 }
