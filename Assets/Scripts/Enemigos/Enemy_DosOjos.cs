@@ -7,9 +7,11 @@ using UnityEngine.AI;
 
 public class Enemy_DosOjos : Enemies
 {
+
+    
+
     private void OnEnable()
     {
-        Debug.Log("en enemigoDosOjos");
         animation_Cuerpo.SetBool("Muerto", false);
         animation_Ojo.SetBool("Muerto", false);
     }
@@ -21,6 +23,8 @@ public class Enemy_DosOjos : Enemies
         iluminar.SetActive(false);
         animation_Ojo.SetTrigger("Atacar");
         animation_Cuerpo.SetTrigger("Atacar");
-        Desactivar();
     }
+
+   
+
 }

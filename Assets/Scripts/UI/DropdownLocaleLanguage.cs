@@ -5,7 +5,6 @@ using UnityEngine.Localization.Settings;
 public class DropdownLocaleLanguage : MonoBehaviour
 {
     private const string LocaleKey = "SelectedKey";
-    public string[] palabra;
 
     private void Start()
     {

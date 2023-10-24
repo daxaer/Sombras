@@ -17,14 +17,17 @@ public class Enemies : MonoBehaviour
     [SerializeField] protected float _vidaMax;
     [SerializeField] protected float _speedMin;
     [SerializeField] protected float _speedMax;
-    [SerializeField] protected float _damageMax;
     [SerializeField] protected float _damageMin;
+    [SerializeField] protected float _damageMax;
+    
 
     [SerializeField] protected AIPath aiPath;
 
     void Start()
     {
-           
+        _vida = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _vidaMin, _vidaMax));
+        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
+        _damage = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _damageMin, _damageMax));
     }
     private void Update()
     {
@@ -33,6 +36,7 @@ public class Enemies : MonoBehaviour
             DeactivateEnemies();
         }
     }
+
 
     public void DeactivateEnemies()
     {
@@ -52,9 +56,14 @@ public class Enemies : MonoBehaviour
 
     }
 
+    public virtual void Cargando()
+    {
+
+    }
+
     private void OnEnable()
     {
-        Debug.Log("en padre");
+        GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
         _vida = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _vidaMin, _vidaMax));
         aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
         _damage = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _damageMin, _damageMax));
@@ -80,12 +89,15 @@ public class Enemies : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+        Debug.Log(_vida);
         _vida -= damage;
-
+        Debug.Log(_vida);
         if (_vida <= 0)
         {
             //_alma.ActivarAlma();
+           
             Invoke(nameof(Desactivar), 0f);
+            
         }
     }
 
