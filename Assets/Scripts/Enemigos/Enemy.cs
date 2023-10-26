@@ -9,14 +9,13 @@ public class Enemy : Enemies
 {
     private void OnEnable()
     {
-        Debug.Log("en enemigo1");
         animation_Cuerpo.SetBool("Muerto", false);
         animation_Ojo.SetBool("Muerto", false);
     }
 
     public override void Atacar()
     {
-      
+        gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
         iluminar.SetActive(false);
         animation_Ojo.SetTrigger("Atacar");
         animation_Cuerpo.SetTrigger("Atacar");
@@ -25,6 +24,6 @@ public class Enemy : Enemies
 
     public void SpawnAtaque()
     {
-        SpawnManager.Instance.SpawnExplosion(transform);
+        SpawnManager.Instance.SpawnExplosion(transform,_damage);
     }
 }

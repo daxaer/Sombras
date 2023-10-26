@@ -208,9 +208,10 @@ public class SpawnManager : MonoBehaviour
        Instantiate(GameManager.Instance.PlayerSave(),spawnPlayer);
     }
 
-    public void SpawnExplosion(Transform transform)
+    public void SpawnExplosion(Transform transform, int damage)
     {
         GameObject explosion = _PoolAtaqueExplosion.Spawn(transform.position, transform.rotation);
+        explosion.GetComponent<AtaquesEnemigos>().damage = damage;
     }
     public void SpawnAtaqueOjo(Transform transform)
     {

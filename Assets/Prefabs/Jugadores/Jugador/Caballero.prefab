@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8316553871473072583}
   - component: {fileID: 7509479470545006723}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2581710144169056315}
   - component: {fileID: 7025925609239190522}
   - component: {fileID: 7903139616052774103}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Caballero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 5218658173854209101}
   - component: {fileID: 3313772118653912172}
   - component: {fileID: 6474292556519138755}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 4431981987539258220}
   - component: {fileID: 4285020900803273517}
   - component: {fileID: 9191153713252100210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ojos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1869190762329115102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "punto da\xF1o"
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}

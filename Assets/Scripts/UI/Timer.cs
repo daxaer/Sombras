@@ -95,7 +95,7 @@ public class Timer : MonoBehaviour, IDataPersiistence
 
     public void LoadData(GameData _data)
     {
-        rondaActual = _data.rondaActual;
+        rondaActual = 0; //_data.rondaActual;
     }
 
     public void SaveData(ref GameData _data)

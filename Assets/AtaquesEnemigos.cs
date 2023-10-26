@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class AtaquesEnemigos : MonoBehaviour
 {
+    public int damage;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        EstadisticasManager.Instance.vidaActual -= 1;
+        if (collision.CompareTag("Player"))
+        {
+            EstadisticasManager.Instance.vidaActual -= damage;
+        }
     }
 }
