@@ -12,6 +12,7 @@ public class SpawnManager : MonoBehaviour
     //[SerializeField] private Estadisticas _estadisticas;
     [SerializeField] private GameObject[] _enemySpawn;
     [SerializeField] private GameObject _almaSpawn;
+    [SerializeField] private GameObject[] _Ataques;
 
     [SerializeField] private bool _stopSpawning;
     [SerializeField] private float _spawnTime;
@@ -43,6 +44,9 @@ public class SpawnManager : MonoBehaviour
     public Pool _PoolEnemy1;
     public Pool _PoolEnemy2;
     public Pool _PoolEnemy3;
+
+    public Pool _PoolAtaqueExplosion;
+    public Pool _PoolAtaque2Ojos;
 
     public static SpawnManager Instance;
 
@@ -77,6 +81,12 @@ public class SpawnManager : MonoBehaviour
         _poolBalas.Inicializar(EstadisticasManager.Instance.bala, 0);
         InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
         StartCoroutine("ActivarLampara");
+        //Ataques Enemigos
+        _PoolAtaqueExplosion = new Pool();
+        _PoolAtaqueExplosion.Inicializar(_Ataques[0], 0);
+
+        _PoolAtaque2Ojos = new Pool();
+        _PoolAtaque2Ojos.Inicializar(_Ataques[1], 0);
 
         for (int i = 0; i < _startEnemyCount; i++)
         {
@@ -196,5 +206,14 @@ public class SpawnManager : MonoBehaviour
     private void SpawnearPlayer()
     {
        Instantiate(GameManager.Instance.PlayerSave(),spawnPlayer);
+    }
+
+    public void SpawnExplosion(Transform transform)
+    {
+        GameObject explosion = _PoolAtaqueExplosion.Spawn(transform.position, transform.rotation);
+    }
+    public void SpawnAtaqueOjo(Transform transform)
+    {
+        GameObject ataqueOjo = _PoolAtaque2Ojos.Spawn(transform.position, transform.rotation);
     }
 }

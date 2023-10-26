@@ -6516,11 +6516,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpawn:
-  - {fileID: 3155063478553261289, guid: acd876dd2dbda7441bb5f913a10d7d43, type: 3}
-  - {fileID: 3155063478553261289, guid: acd876dd2dbda7441bb5f913a10d7d43, type: 3}
+  - {fileID: 3155063478553261289, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
+  - {fileID: 3155063478553261289, guid: 0f999cf199e71d14cb3200b243bb4629, type: 3}
   - {fileID: 3155063478553261289, guid: acd876dd2dbda7441bb5f913a10d7d43, type: 3}
   - {fileID: 3155063478553261289, guid: acd876dd2dbda7441bb5f913a10d7d43, type: 3}
   _almaSpawn: {fileID: 1623635145803344270, guid: 43d61249d01455a449c643a36b92c1ec, type: 3}
+  _Ataques:
+  - {fileID: 5805768696342657649, guid: de4d9a34a2f616145a8d82214082d376, type: 3}
+  - {fileID: 0}
   _stopSpawning: 0
   _spawnTime: 1
   _spawnDelay: 3

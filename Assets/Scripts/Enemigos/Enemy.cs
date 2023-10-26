@@ -16,11 +16,15 @@ public class Enemy : Enemies
 
     public override void Atacar()
     {
-        EstadisticasManager.Instance.vidaActual -= _damage;
-        UIManager.Instance.UpdateVida();
+      
         iluminar.SetActive(false);
         animation_Ojo.SetTrigger("Atacar");
         animation_Cuerpo.SetTrigger("Atacar");
         Desactivar();
+    }
+
+    public void SpawnAtaque()
+    {
+        SpawnManager.Instance.SpawnExplosion(transform);
     }
 }
