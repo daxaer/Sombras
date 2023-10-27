@@ -9,7 +9,7 @@
                     "name": "Movimiento",
                     "type": "Value",
                     "id": "92adbd4e-6e5a-4974-9682-47e5fc6ddd37",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -55,64 +55,20 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "ef7375fc-59bc-4a86-9415-498d93f63471",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "8bd3e458-9341-45e1-8073-40dd3744e06a",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "aa67cd25-fd5f-44c2-9d12-c870d9e7acc1",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "8680e0e8-9964-4232-8605-f6ec1944387d",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "8d14244d-1915-4abe-9ba5-4c75bc02c750",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "b9e51af1-06e7-4d89-b0e5-aa38a17a66bb",
                     "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consola",
+                    "action": "Movimiento",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f33ab41d-3f04-4876-84dd-2f9dad3eed71",
+                    "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Consola",
@@ -182,6 +138,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ecfc31c6-af76-4d47-bb04-ccb20d6f68f2",
+                    "path": "<XInputController>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consola",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9425520b-e319-4fa0-936f-e24a7cd65644",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consola",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -8,12 +8,14 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    private Controles playerInput;
     private Rigidbody2D playerRb;
     private bool invulnerable = false;
     public SpriteRenderer sprite;
     public static Player Instance;
-    
+    Vector2 move;
+    Vector2 rotation;
+    [SerializeField] private float velocidadDeRotacion = 5.0f;
 
     private void Awake()
     {
@@ -25,18 +27,36 @@ public class Player : MonoBehaviour
         {
             Destroy(Instance);
         }
+
+        playerInput = new Controles();
+
+        playerInput.Gameplay.Movimiento.performed += ctx => move = ctx.ReadValue<Vector2>();
+        playerInput.Gameplay.Movimiento.canceled += ctx => move = Vector2.zero;
+
+        playerInput.Gameplay.Look.performed += ctx => rotation = ctx.ReadValue<Vector2>();
+        playerInput.Gameplay.Look.canceled += ctx => rotation = Vector2.zero;
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Gameplay.Disable(); 
     }
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        playerInput = GetComponent<PlayerInput>();
+        //playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
         
-        if (playerInput.currentControlScheme == "consola")
+        /*if (playerInput.currentControlScheme == "consola")
         {
 
         }
@@ -46,7 +66,7 @@ public class Player : MonoBehaviour
             float angulo = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
             float rotacion = (180 / Mathf.PI) * angulo - 90;
             transform.rotation = Quaternion.Euler(0, 0, rotacion);
-        }
+        }*/
         //if (rStickInput != Vector2.zero)
         //{
         //    Vector2 Direction = rStickInput.normalized;
@@ -58,11 +78,12 @@ public class Player : MonoBehaviour
         //    float rotacion = (180 / Mathf.PI) * angulo;
         //    transform.rotation = Quaternion.Euler(0, 0, rotacion);
         //}
-    }
 
-    private void FixedUpdate()
-    {
-        playerRb.MovePosition(playerRb.position + playerInput.actions["Movimiento"].ReadValue<Vector2>() * (EstadisticasManager.Instance.velocidadPlayer * Time.fixedDeltaTime));
+        Vector2 m = new Vector2(move.x, move.y) * Time.deltaTime;
+        transform.Translate(m, Space.World);
+
+        Vector2 r = rotation * Time.deltaTime * velocidadDeRotacion;
+        transform.Rotate(new Vector3(0, 0, -r.x), Space.World);
     }
 
     public void CambioDeControl(PlayerInput player)
