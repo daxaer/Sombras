@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour, IDataPersiistence
 {
     private int idioma;
     private bool pausa;
-    private Transform spawnPlayer;
     private GameObject player;
     //Lenguaje
     [SerializeField] private const string LocaleKey = "SelectedKey";

@@ -8,8 +8,14 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    //private PlayerInput playerInput;
     private Rigidbody2D playerRb;
+    private Vector2 _movementInput;
+    private Vector2 _movementInputRotate;
+
+    //[SerializeField] private float _rotationSpeed;
+
+
     private bool invulnerable = false;
     public SpriteRenderer sprite;
     public static Player Instance;
@@ -30,13 +36,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        playerInput = GetComponent<PlayerInput>();
+        //playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
         
-        if (playerInput.currentControlScheme == "consola")
+        /*if (playerInput.currentControlScheme == "consola")
         {
 
         }
@@ -46,7 +52,7 @@ public class Player : MonoBehaviour
             float angulo = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
             float rotacion = (180 / Mathf.PI) * angulo - 90;
             transform.rotation = Quaternion.Euler(0, 0, rotacion);
-        }
+        }*/
         //if (rStickInput != Vector2.zero)
         //{
         //    Vector2 Direction = rStickInput.normalized;
@@ -62,16 +68,42 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + playerInput.actions["Movimiento"].ReadValue<Vector2>() * (EstadisticasManager.Instance.velocidadPlayer * Time.fixedDeltaTime));
+        playerRb.velocity = _movementInput;
+        RotateInDirectionInput(_movementInputRotate);
+
+        //playerRb.MovePosition(playerRb.position + playerInput.actions["Movimiento"].ReadValue<Vector2>() * (EstadisticasManager.Instance.velocidadPlayer * Time.fixedDeltaTime));
     }
 
-    public void CambioDeControl(PlayerInput player)
+    public void OnMove(InputValue _inputValue)
+    {
+        _movementInput = _inputValue.Get<Vector2>() * EstadisticasManager.Instance.velocidadPlayer * Time.fixedDeltaTime;
+    }
+
+    public void OnLook(InputValue _inputValue)
+    {
+        Vector2 lookInput = _inputValue.Get<Vector2>();
+        RotateInDirectionInput(lookInput);
+    }
+
+    private void RotateInDirectionInput(Vector2 lookInput)
+    {
+        if (lookInput != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(lookInput.y, lookInput.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
+
+
+
+    /*public void CambioDeControl(PlayerInput player)
     {
         if(player.currentControlScheme == "Consola")
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-    }
+    }*/
+
     public void RecuperarVIda(int vida)
     {
         EstadisticasManager.Instance.vidaActual += vida;
