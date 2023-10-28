@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba0c157cc95b144fb501cd10cdab134, type: 3}
   m_Name: VelocidadMovPermanente
   m_EditorClassIdentifier: 
-  niveles:
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
-  - {fileID: 555508435942380414, guid: 1297e147485832c4ea075771f6b69198, type: 3}
   imagenMejora: {fileID: 21300000, guid: 6447ddced7bde7f4ca53cfc75521d72c, type: 3}
-  costeMejora: 1000
+  costeMejoraActual: 4250
+  costeInicial: 500
   nivel: 5
+  nivelActual: 5
+  AumentroPrecio: 750

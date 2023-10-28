@@ -67,7 +67,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 704228437807104
-    m_Localized: Idioma
+    m_Localized: Lenguajes
     m_Metadata:
       m_Items: []
   - m_Id: 706037663420416
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1991447337259008
-    m_Localized: Seleccionar personaje
+    m_Localized: Selecionar Personaje
     m_Metadata:
       m_Items: []
   - m_Id: 1992496466907136
@@ -123,15 +123,15 @@ MonoBehaviour:
     m_Localized: Inicio
     m_Metadata:
       m_Items: []
-  - m_Id: 16957626818719744
+  - m_Id: 18839763142270976
     m_Localized: Caballero
     m_Metadata:
       m_Items: []
-  - m_Id: 16958151677145088
+  - m_Id: 18840288499818496
     m_Localized: Tirador
     m_Metadata:
       m_Items: []
-  - m_Id: 16958305968812032
+  - m_Id: 18840511313829888
     m_Localized: Devorador
     m_Metadata:
       m_Items: []

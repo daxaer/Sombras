@@ -7,49 +7,61 @@ using UnityEngine.AI;
 public class Enemy_2 : Enemies
 {
     //[SerializeField] private Transform target;
-
-    //Vida
-    [SerializeField] private float distance;
-    [SerializeField] private RaycastHit2D rayCast;
-    [SerializeField] private GameObject frontObject;
-
-    public void FixedUpdate()
-    {
-        Vector2 raycastDirection = Vector2.right;
-
-        rayCast = Physics2D.Raycast(frontObject.transform.position, raycastDirection, distance);
-        if (rayCast.collider != null)
-        {
-            Debug.DrawLine(frontObject.transform.position, rayCast.point, Color.red);
-        }
-        else
-        {
-            Debug.DrawLine(frontObject.transform.position, rayCast.point, Color.green);
-        }
-    }
+    [SerializeField] float velCarga;
+    [SerializeField] GameObject PuntoFinal;
+    [SerializeField] bool puedoAtacar;
+    [SerializeField] CapsuleCollider2D cebo;
 
     private void OnEnable()
     {
+        puedoAtacar = true;
         animation_Cuerpo.SetBool("Muerto", false);
         animation_Ojo.SetBool("Muerto", false);
     }
+    private void OnDisable()
+    {
+        CancelInvoke("Cargando");
+        CancelInvoke("Carga");
+        CancelInvoke("TerminarCarga");
+        CancelInvoke("RecuperandoCarga");
+    }
 
+    public  override void Cargando()
+    {
+        if(puedoAtacar == true)
+        {
+            puedoAtacar = false;
+            GetComponent<AIDestinationSetter>().target = this.PuntoFinal.transform;
+            Invoke("Carga", 1);
+            aiPath.maxSpeed = 0;
+        }
+    }
 
     public override void Atacar()
     {
-        EstadisticasManager.Instance.vidaActual -= _damage;
+       EstadisticasManager.Instance.vidaActual -= _damage;
         UIManager.Instance.UpdateVida();
         iluminar.SetActive(false);
         animation_Ojo.SetTrigger("Atacar");
         animation_Cuerpo.SetTrigger("Atacar");
-        Desactivar();
     }
 
-    enum PatrolEnemy
+    public void Carga()
     {
-        //Estados de ataque del enemigo, Embestir, Quieto, Caminar
-        Ram, 
-        Stay,
-        Walk,
+        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax) * 4;
+        Invoke("TerminarCarga", 2.5f);
+    }
+   
+    public void TerminarCarga()
+    {
+        aiPath.maxSpeed = 0;
+        GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+        Invoke("RecuperarDestino", 2);
+    }
+    public void RecuperarDestino()
+    {
+        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
+        puedoAtacar = true;
+        cebo.enabled = true;
     }
 }

@@ -119,15 +119,15 @@ MonoBehaviour:
     m_Key: IndexButtonSettings
     m_Metadata:
       m_Items: []
-  - m_Id: 16957626818719744
+  - m_Id: 18839763142270976
     m_Key: Seleccion/Canvas/UI/Section-Selection/Knight/Section-Knight
     m_Metadata:
       m_Items: []
-  - m_Id: 16958151677145088
+  - m_Id: 18840288499818496
     m_Key: Seleccion/Canvas/UI/Section-Selection/Ranger/Section-Pistol
     m_Metadata:
       m_Items: []
-  - m_Id: 16958305968812032
+  - m_Id: 18840511313829888
     m_Key: Seleccion/Canvas/UI/Section-Selection/SoulEater/Section-SoulEater
     m_Metadata:
       m_Items: []

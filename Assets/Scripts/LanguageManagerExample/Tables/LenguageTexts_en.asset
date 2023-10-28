@@ -118,8 +118,20 @@ MonoBehaviour:
     m_Localized: "\xA1You Win!"
     m_Metadata:
       m_Items: []
-  - m_Id: 16997397234413568
-    m_Localized: SHOP
+  - m_Id: 16817386384748544
+    m_Localized: Main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18839763142270976
+    m_Localized: Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840288499818496
+    m_Localized: Shooter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840511313829888
+    m_Localized: Soul Eater
     m_Metadata:
       m_Items: []
   references:

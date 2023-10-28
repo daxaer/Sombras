@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using System;
 using Unity.Mathematics;
 
-public class MusicManager : MonoBehaviour
+public class MusicManager : MonoBehaviour, IDataPersiistence
 {
     [SerializeField] private GameObject _spawnSound;
 
@@ -13,6 +13,10 @@ public class MusicManager : MonoBehaviour
     public AudioMixer mixer;
 
     public Pool _poolSounds;
+
+    private float volumenMusica;
+    private float volumenEfectos;
+
     #region Singleton
     public static MusicManager Instance { get; private set; }
 
@@ -67,10 +71,30 @@ public class MusicManager : MonoBehaviour
     public void VolumeMusic(float volume)
     {
         mixer.SetFloat("MusicVolume", volume);
+        volumenMusica = volume;
     }
     public void VolumeEffects(float volume)
     {
         mixer.SetFloat("FxVolume", volume);
+        volumenEfectos = volume;
+    }
+    public void SetVolume()
+    {
+        VolumeEffects(volumenEfectos);
+        VolumeMusic(volumenMusica);
+    }
+
+    public void LoadData(GameData _data)
+    {
+        volumenMusica = _data.volumenMusic;
+        volumenEfectos = _data.volumenEfectos;
+        Invoke("SetVolume", 0.01f);
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+        _data.volumenMusic = volumenMusica;
+        _data.volumenEfectos = volumenEfectos;
     }
 }
 

@@ -24,14 +24,13 @@ public class Projectil : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("velocidad" +  velocidad);
         transform.Translate(Vector2.up * velocidad * Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            Enemies enemy = other.gameObject.GetComponent<Enemies>();
             enemy.TakeDamage(EstadisticasManager.Instance.ataque);
             if (EstadisticasManager.Instance.iluminarEnemigos == true)
             {
