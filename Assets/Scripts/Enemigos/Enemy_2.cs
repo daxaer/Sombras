@@ -7,15 +7,10 @@ using UnityEngine.AI;
 public class Enemy_2 : Enemies
 {
     //[SerializeField] private Transform target;
-
-    //Vida
-   
     [SerializeField] float velCarga;
     [SerializeField] GameObject PuntoFinal;
     [SerializeField] bool puedoAtacar;
-
-
-   
+    [SerializeField] CapsuleCollider2D cebo;
 
     private void OnEnable()
     {
@@ -31,7 +26,6 @@ public class Enemy_2 : Enemies
         CancelInvoke("RecuperandoCarga");
     }
 
-
     public  override void Cargando()
     {
         if(puedoAtacar == true)
@@ -41,8 +35,6 @@ public class Enemy_2 : Enemies
             Invoke("Carga", 1);
             aiPath.maxSpeed = 0;
         }
-        
-        
     }
 
     public override void Atacar()
@@ -52,7 +44,6 @@ public class Enemy_2 : Enemies
         iluminar.SetActive(false);
         animation_Ojo.SetTrigger("Atacar");
         animation_Cuerpo.SetTrigger("Atacar");
-        
     }
 
     public void Carga()
@@ -61,7 +52,6 @@ public class Enemy_2 : Enemies
         Invoke("TerminarCarga", 2.5f);
     }
    
-
     public void TerminarCarga()
     {
         aiPath.maxSpeed = 0;
@@ -72,6 +62,6 @@ public class Enemy_2 : Enemies
     {
         aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
         puedoAtacar = true;
+        cebo.enabled = true;
     }
-
 }

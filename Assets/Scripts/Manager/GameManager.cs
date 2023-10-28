@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour, IDataPersiistence
    
     private void Start()
     {
-        int savedLocalID = PlayerPrefs.GetInt(LocaleKey, 0);
-        ChangeLocal(savedLocalID);
         if(!DataPersistenceManager.Instance.HasGameData())
         {
             DataPersistenceManager.Instance.NewGame();
@@ -51,6 +49,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
     //Lenguaje
     public void ChangeLocal(int localID)
     {
+        //int savedLocalID = PlayerPrefs.GetInt(LocaleKey, 0);
         var avaliableLocales = LocalizationSettings.AvailableLocales;
         if (localID >= 0 && localID < avaliableLocales.Locales.Count)
         {
@@ -97,12 +96,14 @@ public class GameManager : MonoBehaviour, IDataPersiistence
 
     public void LoadData(GameData _data)
     {
-
+        ChangeLocal(_data.idioma);
+        idioma = _data.idioma;
     }
 
     public void SaveData(ref GameData _data)
     {
         _data.player = player;
         _data.estadisticas = scriptable;
+        _data.idioma = idioma;
     }
 }
