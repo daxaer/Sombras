@@ -15,7 +15,6 @@ public class CambiarLengauje : MonoBehaviour
         LenguajeText = GameManager.Instance.ChangeLenguageTarget();
 
         CambiarTexto(LenguajeText);
-        Debug.Log("Lenguaje Actual" + LenguajeText);
     }
     public void CambiarLengaje(int lenguaje)
     {
@@ -29,7 +28,7 @@ public class CambiarLengauje : MonoBehaviour
         {
             text.text = "Español";
         }
-        else
+        else if (texto == 1)
         {
             text.text = "English";
         }

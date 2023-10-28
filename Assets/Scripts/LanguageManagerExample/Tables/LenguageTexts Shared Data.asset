@@ -131,6 +131,10 @@ MonoBehaviour:
     m_Key: Seleccion/Canvas/UI/Section-Selection/SoulEater/Section-SoulEater
     m_Metadata:
       m_Items: []
+  - m_Id: 18853785057058816
+    m_Key: Index/UI/SpaceCam/Section-Menu Botones/Button-Continue/TextPlay
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139
