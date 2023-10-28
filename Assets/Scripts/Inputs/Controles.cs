@@ -159,7 +159,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PC"",
+                    ""groups"": ""PC;Consola"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -179,6 +179,17 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""9425520b-e319-4fa0-936f-e24a7cd65644"",
                     ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consola"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""47ba02e4-8932-4aab-8198-885cd5ef4268"",
+                    ""path"": ""<SwitchProControllerHID>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Consola"",

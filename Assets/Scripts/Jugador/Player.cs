@@ -55,35 +55,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
-        /*if (playerInput.currentControlScheme == "consola")
-        {
-
-        }
-        else
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(playerInput.actions["Look"].ReadValue<Vector2>());
-            float angulo = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
-            float rotacion = (180 / Mathf.PI) * angulo - 90;
-            transform.rotation = Quaternion.Euler(0, 0, rotacion);
-        }*/
-        //if (rStickInput != Vector2.zero)
-        //{
-        //    Vector2 Direction = rStickInput.normalized;
-        //    float distanciaDelJugador = 100f;
-
-        //    _objetivoArma = transform.position + new Vector3(Direction.x, Direction.y, 0) * distanciaDelJugador;
-
-        //    float angulo = Mathf.Atan2(transform.position.y - _objetivoArma.y, transform.position.x - _objetivoArma.x);
-        //    float rotacion = (180 / Mathf.PI) * angulo;
-        //    transform.rotation = Quaternion.Euler(0, 0, rotacion);
-        //}
-
         Vector2 m = new Vector2(move.x, move.y) * Time.deltaTime;
         transform.Translate(m, Space.World);
 
-        Vector2 r = rotation * Time.deltaTime * velocidadDeRotacion;
-        transform.Rotate(new Vector3(0, 0, -r.x), Space.World);
+        // Rotación del personaje con el joystick derecho
+        RotateWithRightStick();
+    }
+    void RotateWithRightStick()
+    {
+        if (rotation.magnitude >= 0.1f)
+        {
+            float angle = Mathf.Atan2(rotation.x, rotation.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, -angle);
+
+            // Debug
+            Debug.Log("Rotation: " + rotation);
+            Debug.Log("Calculated Angle: " + angle);
+        }
     }
 
     public void CambioDeControl(PlayerInput player)
