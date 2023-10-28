@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1991447337259008
-    m_Localized: Seleccionar personaje
+    m_Localized: Selecionar Personaje
     m_Metadata:
       m_Items: []
   - m_Id: 1992496466907136
@@ -121,6 +121,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16817386384748544
     m_Localized: Inicio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18839763142270976
+    m_Localized: Caballero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840288499818496
+    m_Localized: Tirador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840511313829888
+    m_Localized: Devorador
     m_Metadata:
       m_Items: []
   references:

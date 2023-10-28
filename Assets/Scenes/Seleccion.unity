@@ -2410,29 +2410,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjects:
-  - rid: 1701307840252084248
+  - rid: 1435847376719577094
   references:
     version: 2
     RefIds:
-    - rid: 1701307840252084248
+    - rid: 1435847376719577094
       type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
       data:
         m_Target: {fileID: 765181517}
         m_TrackedProperties:
           items:
-          - rid: 1701307840252084249
+          - rid: 1435847376719577095
         m_UpdateType: 1
         m_Changed:
           m_PersistentCalls:
             m_Calls: []
-    - rid: 1701307840252084249
+    - rid: 1435847376719577095
       type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
         m_Localized:
           m_TableReference:
             m_TableCollectionName: GUID:549809e64b2e22349b57e72ae0d01e5e
           m_TableEntryReference:
-            m_KeyId: 16958305968812032
+            m_KeyId: 18840511313829888
             m_Key: 
           m_FallbackState: 0
           m_WaitForCompletion: 0
@@ -2673,10 +2673,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 2001981613}
+    m_SelectOnDown: {fileID: 1203534187}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -2860,29 +2860,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjects:
-  - rid: 1701307840252084244
+  - rid: 1435847376719577090
   references:
     version: 2
     RefIds:
-    - rid: 1701307840252084244
+    - rid: 1435847376719577090
       type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
       data:
         m_Target: {fileID: 799168432}
         m_TrackedProperties:
           items:
-          - rid: 1701307840252084245
+          - rid: 1435847376719577091
         m_UpdateType: 1
         m_Changed:
           m_PersistentCalls:
             m_Calls: []
-    - rid: 1701307840252084245
+    - rid: 1435847376719577091
       type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
         m_Localized:
           m_TableReference:
             m_TableCollectionName: GUID:549809e64b2e22349b57e72ae0d01e5e
           m_TableEntryReference:
-            m_KeyId: 16957626818719744
+            m_KeyId: 18839763142270976
             m_Key: 
           m_FallbackState: 0
           m_WaitForCompletion: 0
@@ -3800,29 +3800,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjects:
-  - rid: 1701307840252084246
+  - rid: 1435847376719577092
   references:
     version: 2
     RefIds:
-    - rid: 1701307840252084246
+    - rid: 1435847376719577092
       type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
       data:
         m_Target: {fileID: 1203534191}
         m_TrackedProperties:
           items:
-          - rid: 1701307840252084247
+          - rid: 1435847376719577093
         m_UpdateType: 1
         m_Changed:
           m_PersistentCalls:
             m_Calls: []
-    - rid: 1701307840252084247
+    - rid: 1435847376719577093
       type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
         m_Localized:
           m_TableReference:
             m_TableCollectionName: GUID:549809e64b2e22349b57e72ae0d01e5e
           m_TableEntryReference:
-            m_KeyId: 16958151677145088
+            m_KeyId: 18840288499818496
             m_Key: 
           m_FallbackState: 0
           m_WaitForCompletion: 0
@@ -6443,10 +6443,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 765181513}
+    m_SelectOnDown: {fileID: 799168430}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 3
@@ -6612,7 +6612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -480.00003, y: 75}
+  m_AnchoredPosition: {x: -480.00006, y: 75}
   m_SizeDelta: {x: -960, y: -150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2010987296
