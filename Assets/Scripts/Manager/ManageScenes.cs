@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ManageScenes : MonoBehaviour, IDataPersiistence
+public class ManageScenes : MonoBehaviour
 {
     [SerializeField] EventSystem eventSystem;
+    [SerializeField] bool gameSave;
     [SerializeField] private GameObject pausa;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject gameOver;
-
     public static ManageScenes Instance;
 
     private void Awake()
@@ -72,15 +72,9 @@ public class ManageScenes : MonoBehaviour, IDataPersiistence
         GameManager.Instance.SetScriptable(scriptable);
     }
 
-    public void LoadData(GameData _data)
+    public void NewSavegame()
     {
-        ActiveScriptable(_data.estadisticas);
-        activePlayer(_data.player);
-    }
-
-    public void SaveData(ref GameData _data)
-    {
-       
+        gameSave = true;
     }
 }
 

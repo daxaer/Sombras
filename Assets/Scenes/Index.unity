@@ -365,6 +365,18 @@ MonoBehaviour:
           m_StringArgument: seleccion
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 625609642}
+        m_TargetAssemblyTypeName: GuardarJuego, Assembly-CSharp
+        m_MethodName: Guardar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &105192481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,6 +989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 642141006}
+  gameSave: 0
   pausa: {fileID: 0}
   win: {fileID: 0}
   gameOver: {fileID: 0}
@@ -1404,6 +1417,18 @@ MonoBehaviour:
         - m_Target: {fileID: 444805011}
           m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
           m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 625609642}
+          m_TargetAssemblyTypeName: GuardarJuego, Assembly-CSharp
+          m_MethodName: Guardar
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6435,6 +6460,7 @@ GameObject:
   - component: {fileID: 625609636}
   - component: {fileID: 625609640}
   - component: {fileID: 625609641}
+  - component: {fileID: 625609642}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -6564,6 +6590,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderMusic: {fileID: 789110322}
   sliderEfectos: {fileID: 76379578}
+--- !u!114 &625609642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625609635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247b2f3b5a7ab7540acd6a47710ece2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &627176467
 GameObject:
   m_ObjectHideFlags: 0

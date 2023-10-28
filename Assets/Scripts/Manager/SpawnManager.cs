@@ -5,15 +5,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour, IDataPersiistence
 {
+    //Save dates
+    [SerializeField] private GameObject player;
+    [SerializeField] private bool gameSave;
 
     //instancias pools
     //[SerializeField] private Estadisticas _estadisticas;
     [SerializeField] private GameObject[] _enemySpawn;
     [SerializeField] private GameObject _almaSpawn;
     [SerializeField] private GameObject[] _Ataques;
-
     [SerializeField] private bool _stopSpawning;
     [SerializeField] private float _spawnTime;
     [SerializeField] private float _spawnDelay = 1f; //intervalo entre cada instancia
@@ -31,7 +33,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private int _currentEnemiesCount = 0; //enemigos actuales en pantalla
 
     //private List<GameObject> enemies = new List<GameObject>();
-
     [SerializeField] private SpawnManager spawn;
     [SerializeField] private Transform spawnPlayer;
     [HideInInspector] public int _generateRandomEnemy;
@@ -44,10 +45,8 @@ public class SpawnManager : MonoBehaviour
     public Pool _PoolEnemy1;
     public Pool _PoolEnemy2;
     public Pool _PoolEnemy3;
-
     public Pool _PoolAtaqueExplosion;
     public Pool _PoolAtaque2Ojos;
-
     public static SpawnManager Instance;
 
     private void Awake()
@@ -130,7 +129,6 @@ public class SpawnManager : MonoBehaviour
 
         int randomEnemy = Random.Range(1, countRound + 1);
         
-        
         if (_currentEnemiesCount < maxEnemies)
         {
             switch (randomEnemy)
@@ -159,7 +157,6 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
-
 
     public void SpawnAlmas(Transform transform)
     {
@@ -203,11 +200,6 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(timeLamp);
     }
 
-    private void SpawnearPlayer()
-    {
-       Instantiate(GameManager.Instance.PlayerSave(),spawnPlayer);
-    }
-
     public void SpawnExplosion(Transform transform, int damage)
     {
         GameObject explosion = _PoolAtaqueExplosion.Spawn(transform.position, transform.rotation);
@@ -216,5 +208,26 @@ public class SpawnManager : MonoBehaviour
     public void SpawnAtaqueOjo(Transform transform)
     {
         GameObject ataqueOjo = _PoolAtaque2Ojos.Spawn(transform.position, transform.rotation);
+    }
+    private void SpawnearPlayer()
+    {
+        if(gameSave)
+        {
+            Instantiate(player);
+        }
+        else
+        {
+            Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
+        }
+    }
+    public void LoadData(GameData _data)
+    {
+        gameSave = _data.juegoGuardado;
+        player = _data.player;
+    }
+    public void SaveData(ref GameData _data)
+    {
+        _data.juegoGuardado = gameSave;
+        _data.player = player;
     }
 }
