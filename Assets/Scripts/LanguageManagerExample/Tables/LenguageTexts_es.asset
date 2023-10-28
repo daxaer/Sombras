@@ -135,6 +135,10 @@ MonoBehaviour:
     m_Localized: Devorador
     m_Metadata:
       m_Items: []
+  - m_Id: 16997397234413568
+    m_Localized: TIENDA
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

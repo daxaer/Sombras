@@ -63,11 +63,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 704174947848192
-    m_Localized: Effects Volume
+    m_Localized: Volume Effects
     m_Metadata:
       m_Items: []
   - m_Id: 704228437807104
-    m_Localized: Language
+    m_Localized: Lenguage
     m_Metadata:
       m_Items: []
   - m_Id: 706037663420416
@@ -118,20 +118,8 @@ MonoBehaviour:
     m_Localized: "\xA1You Win!"
     m_Metadata:
       m_Items: []
-  - m_Id: 16817386384748544
-    m_Localized: Main
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16957626818719744
-    m_Localized: Knight
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16958151677145088
-    m_Localized: Ranger
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16958305968812032
-    m_Localized: Soul Eater
+  - m_Id: 16997397234413568
+    m_Localized: SHOP
     m_Metadata:
       m_Items: []
   references:

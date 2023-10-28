@@ -131,6 +131,10 @@ MonoBehaviour:
     m_Key: Seleccion/Canvas/UI/Section-Selection/SoulEater/Section-SoulEater
     m_Metadata:
       m_Items: []
+  - m_Id: 16997397234413568
+    m_Key: ShopTextButton
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139
