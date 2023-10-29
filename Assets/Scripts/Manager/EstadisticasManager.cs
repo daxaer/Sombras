@@ -5,7 +5,6 @@ using UnityEngine.Rendering.Universal;
 
 public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 {
-    private bool saveGame;
 
     public float velocidadPlayer;
     public int vidaMaxima;
@@ -20,7 +19,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
     public bool ataqueMele;
 
     //Pasivas
-    public bool iluminarEnemigos;
+    public bool pasivaIluminacion;
 
     [SerializeField] private ScriptableEstadisticas personajeSeleccionado;
     public static EstadisticasManager Instance;
@@ -35,17 +34,30 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
         {
             Destroy(Instance);
         }
-        personajeSeleccionado = GameManager.Instance.ScriptableSave();
     }
 
-    private void Start()
+    public void LoadData(GameData _data)
     {
-        if(saveGame)
+        personajeSeleccionado = _data.estadisticas;
+        if(_data.rondaActual > 0)
         {
             bala = personajeSeleccionado.Bala;
             ataqueMele = personajeSeleccionado.AtaqueMele;
+            vidaMaxima = _data.vidaMaxima;
+            velocidadPlayer = _data.velocidadPlayer;
+            vidaActual = _data.vidaActual;
+            ataque = _data.ataque;
+            rango = _data.rango;
+            velocidadeAtaque = _data.velocidadeAtaque;
+            roboDeVida = _data.roboDeVida;
+            duracionLamparas = _data.duracionLamparas;
+            rangoIluminacion = _data.rangoIluminacion;
+
+            //Pasivas
+            pasivaIluminacion = _data.iluminarEnemigos;
         }
-        else{
+        else
+        {
             vidaMaxima = personajeSeleccionado.VidaMaxima;
             velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento;
             vidaActual = personajeSeleccionado.vidaActual;
@@ -57,26 +69,10 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
             rangoIluminacion = personajeSeleccionado.RangoIluminacion;
             bala = personajeSeleccionado.Bala;
             ataqueMele = personajeSeleccionado.AtaqueMele;
-        
+
             //Pasivas
-            iluminarEnemigos = personajeSeleccionado.Iluminar;
+            pasivaIluminacion = personajeSeleccionado.Iluminar;
         }
-    }
-
-    public void LoadData(GameData _data)
-    {
-        vidaMaxima = _data.vidaMaxima;
-        velocidadPlayer = _data.velocidadPlayer;
-        vidaActual = _data.vidaActual;
-        ataque = _data.ataque;
-        rango = _data.rango;
-        velocidadeAtaque = _data.velocidadeAtaque;
-        roboDeVida = _data.roboDeVida;
-        duracionLamparas = _data.duracionLamparas;
-        rangoIluminacion = _data.rangoIluminacion;
-
-        //Pasivas
-        iluminarEnemigos = _data.iluminarEnemigos;
     }
 
     public void SaveData(ref GameData _data)
@@ -92,6 +88,6 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
         _data.rangoIluminacion = rangoIluminacion;
 
         //Pasivas
-        _data.iluminarEnemigos = iluminarEnemigos;
+        _data.iluminarEnemigos = pasivaIluminacion;
     }
 }

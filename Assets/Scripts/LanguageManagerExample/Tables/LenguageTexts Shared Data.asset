@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1991447337259008
-    m_Key: TextSelectCharacter
+    m_Key: 'ContinuarButton  '
     m_Metadata:
       m_Items: []
   - m_Id: 1992496466907136
@@ -131,8 +131,8 @@ MonoBehaviour:
     m_Key: Seleccion/Canvas/UI/Section-Selection/SoulEater/Section-SoulEater
     m_Metadata:
       m_Items: []
-  - m_Id: 18853785057058816
-    m_Key: Index/UI/SpaceCam/Section-Menu Botones/Button-Continue/TextPlay
+  - m_Id: 19095449612804096
+    m_Key: Index/UI/SpaceCam/Section-Menu Botones/Button-Continue/TextContinue
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -9,7 +9,6 @@ public class GameData
     public float volumenEfectos;
     public int rondaActual;
     public int idioma;
-    public bool juegoGuardado;
     public GameObject player;
 
     //Guardado Estadisticas
@@ -22,6 +21,9 @@ public class GameData
     public float roboDeVida;
     public float duracionLamparas;
     public float rangoIluminacion;
+    public ScriptableEstadisticas estadisticas;
+    public int Almas;
+    public int AlmasMax;
 
     //Pasivas
     public bool iluminarEnemigos;
@@ -33,7 +35,6 @@ public class GameData
         rondaActual = 0;
         idioma = 0;
         player = null;
-        juegoGuardado = false;
 
         //Guardado estadisticas public float velocidadPlayer;
         vidaMaxima = 0;
@@ -44,6 +45,7 @@ public class GameData
         roboDeVida = 0;
         duracionLamparas = 0;
         rangoIluminacion = 0;
+        estadisticas = null;
 
         //Pasivas
         iluminarEnemigos = false;

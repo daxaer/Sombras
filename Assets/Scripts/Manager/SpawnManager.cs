@@ -211,23 +211,14 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     }
     private void SpawnearPlayer()
     {
-        if(gameSave)
-        {
-            Instantiate(player);
-        }
-        else
-        {
-            Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
-        }
+
     }
     public void LoadData(GameData _data)
     {
-        gameSave = _data.juegoGuardado;
-        player = _data.player;
+        Instantiate(_data.player);
     }
     public void SaveData(ref GameData _data)
     {
-        _data.juegoGuardado = gameSave;
-        _data.player = player;
+       
     }
 }

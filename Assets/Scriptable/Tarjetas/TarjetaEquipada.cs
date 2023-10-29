@@ -17,15 +17,16 @@ public enum RarezaTarjeta
 public class TarjetaEquipada : Tarjeta
 {
     public string[] descripcionDeTarjeta;
-    public int SaludBonus;
-    public int AtaqueBonus;
-    public int VelocidadBonus;
-    public float RangoLampara;
-    public float velAtaque;
-    public float RangoArma;
-    public int DuracionLampara;
+    public int salud;
+    public int ataque;
+    public float velocidadMovimiento;
+    public float rangoLampara;
+    public float velocidadAtaque;
+    public float projectilSize;
+    public int duracionLampara;
     public int costoTarjeta;
     public float robaVida;
+    public bool pasivaIluminacion;
 
   
     public Color colorRareza;

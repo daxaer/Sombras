@@ -23,6 +23,8 @@ public class Timer : MonoBehaviour, IDataPersiistence
     public int rondaActual;
     public static Timer Instance;
 
+    [SerializeField] GuardarJuego guardar;
+
     void Start()
     {
         _timeIsRunning = true;
@@ -48,7 +50,7 @@ public class Timer : MonoBehaviour, IDataPersiistence
             _timeRemaining -= Time.deltaTime;
             if (_timeRemaining <= -1 && _stoptimer)
             {
-                if(rondaActual == 4)
+                if(rondaActual == 5)
                 {
                     ManageScenes.Instance.AbrirWin();
                     _stoptimer = false;
@@ -56,6 +58,7 @@ public class Timer : MonoBehaviour, IDataPersiistence
                 }
                 else
                 {
+                    guardar.Guardar();
                     rondaActual++;
                     _stoptimer = false;
                     sistemDrop.AparicionTarjetaEnSlot(1);
@@ -95,11 +98,15 @@ public class Timer : MonoBehaviour, IDataPersiistence
 
     public void LoadData(GameData _data)
     {
-        rondaActual = 0; //_data.rondaActual;
+        rondaActual = _data.rondaActual;
     }
 
     public void SaveData(ref GameData _data)
     {
         _data.rondaActual = rondaActual;
+        if(rondaActual == 5) 
+        {
+            _data.rondaActual = 0;
+        }
     }
 }
