@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.JuegoPausado();
         ManageScenes.Instance.AbrirGameOver();
-        //MusicManager.Instance.PlayAudio(SOUNDTYPE.DEATH);
+
     }
     public void Pausar()
     {

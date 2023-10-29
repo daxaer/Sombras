@@ -47,13 +47,14 @@ public class MenuTienda : MonoBehaviour
         if (UIManager.Instance.GetAlmas() >= tarjetaEquipada.costoTarjeta)
         {
             sonidoTarjeta.Play();
-            EstadisticasManager.Instance.ataque += tarjetaEquipada.AtaqueBonus;
-            EstadisticasManager.Instance.vidaMaxima += tarjetaEquipada.SaludBonus;
-            EstadisticasManager.Instance.velocidadPlayer += tarjetaEquipada.VelocidadBonus;
-            EstadisticasManager.Instance.rango += tarjetaEquipada.RangoArma;
-            EstadisticasManager.Instance.velocidadeAtaque += tarjetaEquipada.velAtaque;
+            EstadisticasManager.Instance.ataque += tarjetaEquipada.ataque;
+            EstadisticasManager.Instance.vidaMaxima += tarjetaEquipada.salud;
+            EstadisticasManager.Instance.velocidadPlayer += tarjetaEquipada.velocidadMovimiento;
+            EstadisticasManager.Instance.rango += tarjetaEquipada.projectilSize;
+            EstadisticasManager.Instance.velocidadeAtaque += tarjetaEquipada.velocidadAtaque;
             EstadisticasManager.Instance.roboDeVida += tarjetaEquipada.robaVida;
-            EstadisticasManager.Instance.rangoIluminacion += tarjetaEquipada.RangoLampara;
+            EstadisticasManager.Instance.rangoIluminacion += tarjetaEquipada.rangoLampara;
+            EstadisticasManager.Instance.pasivaIluminacion = tarjetaEquipada.pasivaIluminacion;
             UIManager.Instance.Almas(-tarjetaEquipada.costoTarjeta);
         }
     }

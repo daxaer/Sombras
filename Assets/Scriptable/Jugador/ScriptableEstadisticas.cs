@@ -8,7 +8,8 @@ public class ScriptableEstadisticas : ScriptableObject
     [Header("Jugador")]
     [SerializeField] private string[] nombreJugador;
     [SerializeField] private int vidaMaxima;
-    [SerializeField] private int Ataque;
+    [SerializeField] private int ataque;
+    [SerializeField] private bool iluminar;
     public int vidaActual;
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float velocidadDeAtaque;
@@ -33,7 +34,8 @@ public class ScriptableEstadisticas : ScriptableObject
         }
     }
     public int VidaMaxima { get { return vidaMaxima; } }
-    public int ATaque { get { return Ataque; } }
+    public int Ataque { get { return ataque; } }
+    public bool Iluminar { get { return iluminar; } }
     public float VelocidadDeMovimiento { get { return velocidadMovimiento; } }
     public float VelocidadDeAtaque { get { return velocidadDeAtaque; } }
     public float PorcentajeRoboDeVida { get { return porcentajeRoboDeVida; } }
