@@ -10,12 +10,15 @@ public class GestionTienda : MonoBehaviour
     [SerializeField] GameObject menuDeTienda;
     public Text textoAlmasMejora;
     public int AlmasPrueba;
+
     void Start()
     {
         for (int i = 0; i < mejoraPermanente.Count; i++)
         {
             var mejora = mejoraPermanente[i];
             mejora.costeMejoraActual = mejora.costeInicial + (mejora.nivelActual * mejora.AumentroPrecio);
+            mejora.AumentoEstadisticaOtorgada = mejora.AumentoEstadistica * mejora.nivelActual;
+            Debug.Log(mejora.AumentoEstadisticaOtorgada + "Aumentando");
             GameObject tiendaDelMenu = Instantiate(menuDeTienda, transform);
             tiendaDelMenu.GetComponentInChildren<GestionNivel>().mejora = mejora.nivelActual;
             TiendaMenu tiendaMenu = tiendaDelMenu.GetComponent<TiendaMenu>();
@@ -48,8 +51,8 @@ public class GestionTienda : MonoBehaviour
                 {
                     imagen.color = Color.white;
                     AlmasPrueba = AlmasPrueba - mejoras.costeMejoraActual;
+                    mejoras.AumentoEstadisticaOtorgada = mejoras.AumentoEstadisticaOtorgada + mejoras.AumentoEstadistica;
                     mejoras.costeMejoraActual = mejoras.costeMejoraActual + mejoras.AumentroPrecio;
-                    
                 }
                 gestionNivel.indiceActual++;
                 mejoras.nivelActual = gestionNivel.indiceActual;

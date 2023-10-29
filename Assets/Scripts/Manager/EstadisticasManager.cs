@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -17,6 +19,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
     public float rangoIluminacion;
     public GameObject bala;
     public bool ataqueMele;
+    [SerializeField] private MejorasPermanentes[] mejorasPermanentes;
 
     //Pasivas
     public bool pasivaIluminacion;
@@ -58,17 +61,18 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
         }
         else
         {
-            vidaMaxima = personajeSeleccionado.VidaMaxima;
-            velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento;
-            vidaActual = personajeSeleccionado.vidaActual;
-            ataque = personajeSeleccionado.Ataque;
-            rango = personajeSeleccionado.RangoGolpe;
-            velocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque;
-            roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida;
+            vidaMaxima = personajeSeleccionado.VidaMaxima + (int)mejorasPermanentes[0].AumentoEstadistica;
+            velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento + (int)mejorasPermanentes[1].AumentoEstadistica; ;
+            vidaActual = personajeSeleccionado.vidaActual + (int)mejorasPermanentes[0].AumentoEstadistica; ;
+            ataque = personajeSeleccionado.Ataque + (int)mejorasPermanentes[2].AumentoEstadistica; ;
+            rango = personajeSeleccionado.ProjectileSize + (int)mejorasPermanentes[3].AumentoEstadistica; ;
+            velocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque + (int)mejorasPermanentes[4].AumentoEstadistica; ;
+            roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida + (int)mejorasPermanentes[5].AumentoEstadistica; ;
             duracionLamparas = personajeSeleccionado.TiempoIluminacion;
             rangoIluminacion = personajeSeleccionado.RangoIluminacion;
             bala = personajeSeleccionado.Bala;
             ataqueMele = personajeSeleccionado.AtaqueMele;
+
 
             //Pasivas
             pasivaIluminacion = personajeSeleccionado.Iluminar;

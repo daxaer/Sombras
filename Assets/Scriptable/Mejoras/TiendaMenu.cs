@@ -12,15 +12,10 @@ public class TiendaMenu : MonoBehaviour
     public int precio;
     public MejorasPermanentes mejora;
     public GestionNivel efecto;
-    // Start is called before the first frame update
+
     void Start()
     {
         efecto = GetComponentInChildren<GestionNivel>();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 
     public void SubiendoMejora()

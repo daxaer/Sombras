@@ -135,6 +135,10 @@ MonoBehaviour:
     m_Key: Index/UI/SpaceCam/Section-Menu Botones/Button-Continue/TextContinue
     m_Metadata:
       m_Items: []
+  - m_Id: 19140778534334464
+    m_Key: Shop-Button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139

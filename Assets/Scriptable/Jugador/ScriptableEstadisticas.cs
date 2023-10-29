@@ -14,7 +14,7 @@ public class ScriptableEstadisticas : ScriptableObject
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float velocidadDeAtaque;
     [SerializeField] private float porcentajeRoboDeVida;
-    [SerializeField] private float rangoGolpe;
+    [SerializeField] private float projectileSize;
     [SerializeField] private float velocidadBala;
     [SerializeField] private bool ataqueMele;
     [Header("Lamparas")] 
@@ -39,7 +39,7 @@ public class ScriptableEstadisticas : ScriptableObject
     public float VelocidadDeMovimiento { get { return velocidadMovimiento; } }
     public float VelocidadDeAtaque { get { return velocidadDeAtaque; } }
     public float PorcentajeRoboDeVida { get { return porcentajeRoboDeVida; } }
-    public float RangoGolpe { get { return rangoGolpe; } }
+    public float ProjectileSize { get { return projectileSize; } }
     public float VelocidadBala { get { return velocidadBala; } }
 
     public bool AtaqueMele { get { return ataqueMele; } }

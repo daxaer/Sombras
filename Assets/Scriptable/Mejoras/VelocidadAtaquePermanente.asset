@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ba0c157cc95b144fb501cd10cdab134, type: 3}
-  m_Name: SaludPermanente
+  m_Name: VelocidadAtaquePermanente
   m_EditorClassIdentifier: 
-  imagenMejora: {fileID: -1982622064817679025, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
-  costeMejoraActual: 4250
+  imagenMejora: {fileID: -145591459120656007, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
+  costeMejoraActual: 7250
   costeInicial: 500
-  nivel: 5
-  nivelActual: 5
+  nivel: 9
+  nivelActual: 9
   AumentroPrecio: 750
-  AumentoEstadistica: 2
-  AumentoEstadisticaOtorgada: 10
+  AumentoEstadistica: -0.1
+  AumentoEstadisticaOtorgada: 0

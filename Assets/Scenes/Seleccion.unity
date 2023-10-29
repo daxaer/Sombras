@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 250567317}
   - component: {fileID: 250567319}
   - component: {fileID: 250567318}
+  - component: {fileID: 250567320}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -502,6 +503,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247b2f3b5a7ab7540acd6a47710ece2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonContinue: {fileID: 0}
+  buttonPlay: {fileID: 0}
+  buttonExit: {fileID: 0}
+--- !u!114 &250567320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250567313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26de71f82b8816c47a40da7d41f6d221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 579642359}
+  speed: {fileID: 146092416}
+  attack: {fileID: 404086861}
+  attackSpeed: {fileID: 1330015869}
+  projectileSize: {fileID: 1459461089}
+  roboVida: {fileID: 635329373}
+  mejorasPermanentes:
+  - {fileID: 11400000, guid: 344b34b4e9fa0a744a2a26460d5595d0, type: 2}
+  - {fileID: 11400000, guid: b2bedc19c3a90924db1b18ed68297f2e, type: 2}
+  - {fileID: 11400000, guid: 58ad8191dfa7f5c47ad04d37caa5fe5c, type: 2}
+  - {fileID: 11400000, guid: edf76a886fc57724ba71ea5d87e276fd, type: 2}
+  - {fileID: 11400000, guid: a6f6cbb769a7bbc4baae4f383500baa9, type: 2}
+  - {fileID: 11400000, guid: a6f6cbb769a7bbc4baae4f383500baa9, type: 2}
 --- !u!1 &325013956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1261,7 @@ GameObject:
   - component: {fileID: 499658480}
   - component: {fileID: 499658479}
   m_Layer: 5
-  m_Name: Section-Vida (1)
+  m_Name: Sectio-ProjectileSize
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1769,7 +1798,7 @@ GameObject:
   - component: {fileID: 679000283}
   - component: {fileID: 679000282}
   m_Layer: 5
-  m_Name: Section-Vida (2)
+  m_Name: Section-RoboVida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5370,7 +5399,7 @@ GameObject:
   - component: {fileID: 1942057175}
   - component: {fileID: 1942057174}
   m_Layer: 5
-  m_Name: Section-Vida
+  m_Name: Section-Movimiento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5992,7 +6021,7 @@ GameObject:
   - component: {fileID: 2023346451}
   - component: {fileID: 2023346450}
   m_Layer: 5
-  m_Name: Section-Velocidad
+  m_Name: Section-VelocidadATK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

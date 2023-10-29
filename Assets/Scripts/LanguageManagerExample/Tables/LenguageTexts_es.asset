@@ -139,6 +139,10 @@ MonoBehaviour:
     m_Localized: CONTINUAR
     m_Metadata:
       m_Items: []
+  - m_Id: 19140778534334464
+    m_Localized: TIENDA
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
