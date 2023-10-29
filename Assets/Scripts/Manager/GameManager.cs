@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
     //Lenguaje
     public void ChangeLocal(int localID)
     {
-        Debug.Log("cambiando idioma" +  localID);
+        //Debug.Log("cambiando idioma" +  localID);
         var avaliableLocales = LocalizationSettings.AvailableLocales;
         if (localID >= 0 && localID < avaliableLocales.Locales.Count)
         {
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
 
     private void Change()
     {
-        Debug.Log("Idioma Actual" + idioma);
+        //Debug.Log("Idioma Actual" + idioma);
         ChangeLocal(idioma);
     }
     public void LoadData(GameData _data)

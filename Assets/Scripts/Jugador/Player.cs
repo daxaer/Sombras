@@ -13,8 +13,6 @@ public class Player : MonoBehaviour
     private bool invulnerable = false;
     public SpriteRenderer sprite;
     public static Player Instance;
-    
-
     private void Awake()
     {
         if (Instance == null)
@@ -32,44 +30,42 @@ public class Player : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
     }
-
     void Update()
     {
-        
-        if (playerInput.currentControlScheme == "consola")
+        if (playerInput.currentControlScheme == "Gamepad")
         {
-
+            Vector2 control = playerInput.actions["Look"].ReadValue<Vector2>();
+            if(control != Vector2.zero)
+            {
+                float angulo = Mathf.Atan2(control.y - transform.position.z, control.x - transform.position.z);
+                float rotacion = (180 / Mathf.PI) * angulo - 90;
+                transform.rotation = Quaternion.Euler(0, 0, rotacion);
+            }
         }
-        else
+
+        if (playerInput.currentControlScheme == "Teclado")
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(playerInput.actions["Look"].ReadValue<Vector2>());
             float angulo = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
             float rotacion = (180 / Mathf.PI) * angulo - 90;
             transform.rotation = Quaternion.Euler(0, 0, rotacion);
         }
-        //if (rStickInput != Vector2.zero)
-        //{
-        //    Vector2 Direction = rStickInput.normalized;
-        //    float distanciaDelJugador = 100f;
-
-        //    _objetivoArma = transform.position + new Vector3(Direction.x, Direction.y, 0) * distanciaDelJugador;
-
-        //    float angulo = Mathf.Atan2(transform.position.y - _objetivoArma.y, transform.position.x - _objetivoArma.x);
-        //    float rotacion = (180 / Mathf.PI) * angulo;
-        //    transform.rotation = Quaternion.Euler(0, 0, rotacion);
-        //}
     }
 
     private void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + playerInput.actions["Movimiento"].ReadValue<Vector2>() * (EstadisticasManager.Instance.velocidadPlayer * Time.fixedDeltaTime));
+        playerRb.MovePosition(playerRb.position + playerInput.actions["Move"].ReadValue<Vector2>() * (EstadisticasManager.Instance.velocidadPlayer * Time.fixedDeltaTime));
     }
 
     public void CambioDeControl(PlayerInput player)
     {
-        if(player.currentControlScheme == "Consola")
+        if(player.currentControlScheme == "Gamepad")
         {
             Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     public void RecuperarVIda(int vida)

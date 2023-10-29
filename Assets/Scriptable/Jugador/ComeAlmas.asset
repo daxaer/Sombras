@@ -16,9 +16,10 @@ MonoBehaviour:
   - Come Almas
   - Soul eater
   - soul
-  vidaMaxima: 30
-  Ataque: 3
-  vidaActual: 30
+  vidaMaxima: 5
+  ataque: 0
+  iluminar: 0
+  vidaActual: 10
   velocidadMovimiento: 2
   velocidadDeAtaque: 1
   porcentajeRoboDeVida: 30
