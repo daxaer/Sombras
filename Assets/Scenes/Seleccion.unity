@@ -2200,7 +2200,7 @@ MonoBehaviour:
           m_MethodName: ReciveImage
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: -8863714306952377876, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
+            m_ObjectArgument: {fileID: 21300000, guid: 434c62c8f835e40449ce04b08838870b, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5923,7 +5923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -480.00006, y: 75}
+  m_AnchoredPosition: {x: -480.0001, y: 75}
   m_SizeDelta: {x: -960, y: -150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2010987296
