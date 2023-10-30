@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: VelocidadAtaquePermanente
   m_EditorClassIdentifier: 
   imagenMejora: {fileID: -145591459120656007, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
-  costeMejoraActual: 7250
+  costeMejoraActual: 500
   costeInicial: 500
   nivel: 9
-  nivelActual: 9
+  nivelActual: 0
   AumentroPrecio: 750
   AumentoEstadistica: -0.1
-  AumentoEstadisticaOtorgada: 0
+  AumentoEstadisticaOtorgada: -0

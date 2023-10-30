@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.77179056, g: 1, b: 0.6556604, a: 1}
+    m_SelectedColor: {r: 0, g: 1, b: 0.07363963, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -393,7 +393,6 @@ MonoBehaviour:
   precio: 100
   mejora: {fileID: 0}
   efecto: {fileID: 0}
-  Niveles: {fileID: 8944606183784549221}
 --- !u!1001 &8992357638118060434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -502,10 +501,5 @@ PrefabInstance:
 --- !u!224 &40320459882086415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8954416780177043869, guid: d01388d439ee73242a0033829a4455aa, type: 3}
-  m_PrefabInstance: {fileID: 8992357638118060434}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8944606183784549221 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 66105181035674359, guid: d01388d439ee73242a0033829a4455aa, type: 3}
   m_PrefabInstance: {fileID: 8992357638118060434}
   m_PrefabAsset: {fileID: 0}

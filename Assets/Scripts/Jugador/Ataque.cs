@@ -62,7 +62,7 @@ public class Ataque : MonoBehaviour
             else
             {
                 Debug.Log("ataque rango");
-                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.SLASH, transform);
+                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.FIRE_RANGE, transform);
             }
         }
     }

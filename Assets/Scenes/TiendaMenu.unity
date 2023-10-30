@@ -264,11 +264,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58ad8191dfa7f5c47ad04d37caa5fe5c, type: 2}
   - {fileID: 11400000, guid: b2bedc19c3a90924db1b18ed68297f2e, type: 2}
   - {fileID: 11400000, guid: edf76a886fc57724ba71ea5d87e276fd, type: 2}
-  - {fileID: 11400000, guid: b2bedc19c3a90924db1b18ed68297f2e, type: 2}
+  - {fileID: 11400000, guid: 7e3cbea6f1b5ffb488652118a92dd997, type: 2}
   - {fileID: 11400000, guid: a6f6cbb769a7bbc4baae4f383500baa9, type: 2}
   menuDeTienda: {fileID: 8009785702225370301, guid: 6bebdba135b5e964ca779345f83e6575, type: 3}
   textoAlmasMejora: {fileID: 147279610}
-  AlmasPrueba: 100000
 --- !u!114 &47291287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,7 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

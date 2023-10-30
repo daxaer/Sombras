@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: RoboVidaPermanente
   m_EditorClassIdentifier: 
   imagenMejora: {fileID: -8863714306952377876, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
-  costeMejoraActual: 7250
+  costeMejoraActual: 500
   costeInicial: 500
-  nivel: 9
-  nivelActual: 9
-  AumentroPrecio: 750
+  nivel: 5
+  nivelActual: 0
+  AumentroPrecio: 1000
   AumentoEstadistica: 1
-  AumentoEstadisticaOtorgada: 9
+  AumentoEstadisticaOtorgada: 0

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ProjectileSizePermanente
   m_EditorClassIdentifier: 
   imagenMejora: {fileID: 7763907425060419378, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
-  costeMejoraActual: 7250
-  costeInicial: 500
-  nivel: 9
-  nivelActual: 9
-  AumentroPrecio: 750
+  costeMejoraActual: 100
+  costeInicial: 100
+  nivel: 5
+  nivelActual: 0
+  AumentroPrecio: 500
   AumentoEstadistica: 0.1
-  AumentoEstadisticaOtorgada: 0.90000004
+  AumentoEstadisticaOtorgada: 0

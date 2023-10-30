@@ -17,7 +17,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
     public float vidaMaxima;
     public float vidaActual;
     public float ataque;
-    public float rango;
+    public float projectileSize;
     public float velocidadeAtaque;
     public float roboDeVida;
     public float duracionLamparas;
@@ -57,7 +57,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
             velocidadPlayer = _data.velocidadPlayer;
             vidaActual = _data.vidaActual;
             ataque = _data.ataque;
-            rango = _data.rango;
+            projectileSize = _data.ProjectileSize;
             velocidadeAtaque = _data.velocidadeAtaque;
             roboDeVida = _data.roboDeVida;
             duracionLamparas = _data.duracionLamparas;
@@ -72,7 +72,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
             velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento + mejorasPermanentes[1].AumentoEstadisticaOtorgada; ;
             vidaActual = personajeSeleccionado.vidaActual + mejorasPermanentes[0].AumentoEstadisticaOtorgada; ;
             ataque = personajeSeleccionado.Ataque + mejorasPermanentes[2].AumentoEstadisticaOtorgada; ;
-            rango = personajeSeleccionado.ProjectileSize + mejorasPermanentes[3].AumentoEstadisticaOtorgada; ;
+            projectileSize = personajeSeleccionado.ProjectileSize + mejorasPermanentes[3].AumentoEstadisticaOtorgada; ;
             velocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque + mejorasPermanentes[4].AumentoEstadisticaOtorgada; ;
             roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida + mejorasPermanentes[5].AumentoEstadisticaOtorgada; ;
             duracionLamparas = personajeSeleccionado.TiempoIluminacion;
@@ -129,7 +129,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
         _data.velocidadPlayer = velocidadPlayer;
         _data.vidaActual = vidaActual;
         _data.ataque = ataque;
-        _data.rango = rango;
+        _data.ProjectileSize = projectileSize;
         _data.velocidadeAtaque = velocidadeAtaque;
         _data.roboDeVida = roboDeVida;
         _data.duracionLamparas = duracionLamparas;

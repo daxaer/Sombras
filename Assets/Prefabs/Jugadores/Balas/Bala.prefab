@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a966a7d1dc25a49a9d8d5f222abab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 25
+  velocidad: 4
   hit: 0
 --- !u!212 &21951044114785951
 SpriteRenderer:
@@ -151,7 +151,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.55}

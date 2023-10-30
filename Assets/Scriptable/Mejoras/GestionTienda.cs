@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GestionTienda : MonoBehaviour
+public class GestionTienda : MonoBehaviour, IDataPersiistence
 {
     [SerializeField] List<MejorasPermanentes> mejoraPermanente;
     [SerializeField] GameObject menuDeTienda;
     public Text textoAlmasMejora;
-    public int AlmasPrueba;
+    private int almasMax;
 
     void Start()
     {
@@ -35,13 +35,13 @@ public class GestionTienda : MonoBehaviour
             tiendaMenu.mejora = mejora;
         }
         //Eliminar tambien despues
-        textoAlmasMejora.text = AlmasPrueba.ToString();
+        textoAlmasMejora.text = almasMax.ToString();
     }
 
     public void SeleccionarMejora(GestionNivel gestionNivel, int nivelMax, MejorasPermanentes mejoras)
     {
         //Calculo momentaneo
-        if (gestionNivel.copiasNivel != null && gestionNivel.copiasNivel.Count > 0 && AlmasPrueba > mejoras.costeMejoraActual)
+        if (gestionNivel.copiasNivel != null && gestionNivel.copiasNivel.Count > 0 && almasMax > mejoras.costeMejoraActual)
         {
             if (gestionNivel.indiceActual >= 0 && gestionNivel.indiceActual < gestionNivel.copiasNivel.Count)
             {
@@ -50,7 +50,7 @@ public class GestionTienda : MonoBehaviour
                 if (imagen != null)
                 {
                     imagen.color = Color.white;
-                    AlmasPrueba = AlmasPrueba - mejoras.costeMejoraActual;
+                    almasMax = almasMax - mejoras.costeMejoraActual;
                     mejoras.AumentoEstadisticaOtorgada = mejoras.AumentoEstadisticaOtorgada + mejoras.AumentoEstadistica;
                     mejoras.costeMejoraActual = mejoras.costeMejoraActual + mejoras.AumentroPrecio;
                 }
@@ -59,7 +59,7 @@ public class GestionTienda : MonoBehaviour
             }
         }
         tienda();
-        textoAlmasMejora.text = AlmasPrueba.ToString();
+        textoAlmasMejora.text = almasMax.ToString();
     }
     public void tienda()
     {
@@ -95,6 +95,16 @@ public class GestionTienda : MonoBehaviour
         {
             DestroyImmediate(transform.GetChild(transform.childCount - 1).gameObject);
         }
-        textoAlmasMejora.text = AlmasPrueba.ToString();
+        textoAlmasMejora.text = almasMax.ToString();
+    }
+
+    public void LoadData(GameData _data)
+    {
+        almasMax = _data.AlmasMax;
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+        _data.AlmasMax = almasMax;  
     }
 }
