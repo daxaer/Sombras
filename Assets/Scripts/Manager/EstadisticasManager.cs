@@ -8,6 +8,10 @@ using UnityEngine.Rendering.Universal;
 
 public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 {
+
+    //Almas
+    public int almasMax;
+
     //Estadisticas iniciales
     public float velocidadPlayer;
     public float vidaMaxima;
@@ -30,6 +34,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 
     private void Awake()
     {
+        almasMax = 0;
         if (Instance == null)
         {
             Instance = this;
@@ -119,6 +124,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
                 Debug.Log(_data.rondaActual + "Y la vida Continua");
             }
         }
+        _data.AlmasMax += almasMax;
         _data.vidaMaxima = vidaMaxima;
         _data.velocidadPlayer = velocidadPlayer;
         _data.vidaActual = vidaActual;

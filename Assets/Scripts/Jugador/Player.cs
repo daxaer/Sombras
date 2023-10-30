@@ -91,6 +91,7 @@ public class Player : MonoBehaviour
             if (other.GetComponent<SpawnAlmas>().TipoAlma() == 2)
             {
                 UIManager.Instance.Almas(1);
+                EstadisticasManager.Instance.almasMax++;
                 MusicManager.Instance.PlayAudioPool(SOUNDTYPE.GET_SOUL, transform);
             }
         }
