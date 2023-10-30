@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
 {
     private PlayerInput playerInput;
     private Rigidbody2D playerRb;
-    private bool invulnerable = false;
-    public SpriteRenderer sprite;
+    public bool invulnerable;
+    public SpriteRenderer[] sprite;
     public static Player Instance;
     private void Awake()
     {
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        invulnerable = false;
         playerRb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
     }
@@ -76,17 +77,9 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Enemy") && invulnerable == false)
+        if(other.CompareTag("Enemy"))
         {
-            invulnerable = true;
-            Enemies enemigo = other.GetComponent<Enemies>();
-            enemigo.Atacar();
-            if (EstadisticasManager.Instance.vidaActual <= 0)
-            {
-                Mori();
-            }
-            //MusicManager.Instance.PlayAudio(SOUNDTYPE.HIT_PLAYER, transform.position);
-            StartCoroutine("Invulnerabilidad");
+            other.GetComponent<Enemies>().Atacar();
         }   
         if (other.CompareTag("Alma"))
         {
@@ -101,7 +94,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-
     public void Mori()
     {
         GameManager.Instance.JuegoPausado();
@@ -113,20 +105,45 @@ public class Player : MonoBehaviour
         GameManager.Instance.JuegoPausado();
         ManageScenes.Instance.AbrirPausa();
     }
+    public void TakeDamage()
+    {
+        if (EstadisticasManager.Instance.vidaActual <= 0)
+        {
+            Mori();
+        }
+        else
+        {
+            StartCoroutine("Invulnerabilidad");
+        }
+    }
     IEnumerator Invulnerabilidad()
     {
-        sprite.color = Color.red;
+        var transparencia = sprite[0].color.a;
+        var transparencia1 = sprite[1].color.a;
+        var transparencia2 = sprite[2].color.a;
+        transparencia = 0.2f;
+        transparencia1 = 0.2f;
+        transparencia2 = 0.2f;
         yield return new WaitForSeconds(0.1f);
-        sprite.color = Color.white;
+        transparencia = 1f;
+        transparencia1 = 1f;
+        transparencia2 = 1f;
         yield return new WaitForSeconds(0.1f);
-        sprite.color = Color.red;
+        transparencia = 0.2f;
+        transparencia1 = 0.2f;
+        transparencia2 = 0.2f;
         yield return new WaitForSeconds(0.1f);
-        sprite.color = Color.white;
+        transparencia = 1f;
+        transparencia1 = 1f;
+        transparencia2 = 1f;
         yield return new WaitForSeconds(0.1f);
-        sprite.color = Color.red;
+        transparencia = 0.2f;
+        transparencia1 = 0.2f;
+        transparencia2 = 0.2f;
         yield return new WaitForSeconds(0.1f);
-        sprite.color = Color.white;
+        transparencia = 1f;
+        transparencia1 = 1f;
+        transparencia2 = 1f;
         invulnerable = false;
     }
-
 }

@@ -51,10 +51,19 @@ public class Ataque : MonoBehaviour
         {
             _canAttack = false;
             StartCoroutine(SpeedAtack());
-            //MusicManager.Instance.PlayAudio(SOUNDTYPE.HIT_ENEMY, transform.position);
             animatorArma.SetTrigger("Atacar");
             animatorCuerpo.SetTrigger("Atacar");
             animatorOjos.SetTrigger("Atacar");
+            if (EstadisticasManager.Instance.ataqueMele)
+            {
+                Debug.Log("ataque mele");
+                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.SLASH, transform);
+            }
+            else
+            {
+                Debug.Log("ataque rango");
+                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.SLASH, transform);
+            }
         }
     }
 
