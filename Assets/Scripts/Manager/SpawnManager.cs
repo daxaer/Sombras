@@ -215,7 +215,7 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     }
     public void LoadData(GameData _data)
     {
-        Instantiate(_data.player);
+        Instantiate(_data.player,spawnPlayer);
     }
     public void SaveData(ref GameData _data)
     {

@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlaySounds : MonoBehaviour
 {
     [SerializeField] private SOUNDTYPE soundType;
-    [SerializeField] private Transform transform;
+    [SerializeField] private Transform posicion;
     public void Play()
     {
-        MusicManager.Instance.PlayAudioPool(soundType, transform);
+        MusicManager.Instance.PlayAudioPool(soundType, posicion);
     }
 }

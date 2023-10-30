@@ -58,14 +58,11 @@ public class MusicManager : MonoBehaviour, IDataPersiistence
    
     public void PlayAudioPool(SOUNDTYPE _type, Transform _position)
     {
-        GameObject currentsource = _poolSounds.SpawnSound(_position.position, _position.rotation);
-        currentsource.gameObject.SetActive(true);
-        if (currentsource != null)
-        {
-            AudioSource audio = currentsource.GetComponent<AudioSource>();
-            audio.clip = GetClip(_type);
-            audio.Play();
-        }
+        GameObject currentsource = _poolSounds.Spawn(_position.position, _position.rotation);
+        AudioSource audio = currentsource.GetComponent<AudioSource>();
+        audio.clip = GetClip(_type);
+        currentsource.GetComponent<DesactivarAudio>().tiempo = audio.clip.length;
+        audio.Play();
     }
 
     public void VolumeMusic(float volume)
@@ -114,6 +111,8 @@ public enum SOUNDTYPE
 {
     DEATH,
     HIT_ENEMY_MELE,
+    SLASH,
+    RANGE,
     HIT_ENEMY_RANGE,
     HIT_PLAYER,
     GET_SOUL,
@@ -124,4 +123,5 @@ public enum SOUNDTYPE
     OPEN_UI,
     HIT_PARED,
     FIRE_RANGE,
+    ENEMY_EXPLOSION,
 }

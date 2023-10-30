@@ -32,6 +32,7 @@ public class Projectil : MonoBehaviour
         {
             Enemies enemy = other.gameObject.GetComponent<Enemies>();
             enemy.TakeDamage(EstadisticasManager.Instance.ataque);
+
             if (EstadisticasManager.Instance.pasivaIluminacion == true)
             {
                 enemy.Activarluz();

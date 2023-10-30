@@ -41,7 +41,7 @@ public class Enemy_2 : Enemies
     {
        EstadisticasManager.Instance.vidaActual -= _damage;
         UIManager.Instance.UpdateVida();
-        iluminar.SetActive(false);
+        DesactivarLuz();
         animation_Ojo.SetTrigger("Atacar");
         animation_Cuerpo.SetTrigger("Atacar");
     }

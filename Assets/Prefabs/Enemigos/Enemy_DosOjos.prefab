@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &596928168896950106
 Transform:
   m_ObjectHideFlags: 0
@@ -74,16 +74,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8899083325555642675, guid: bfbd31b8bdbbe5e41bb292b5ea4ef4a9, type: 3}
+  m_Sprite: {fileID: 1008052205, guid: b3cd120539020c5479fd142ad60281ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &6942835736518465406
 Animator:
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 1804796711718029088}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 512276714837056926, guid: bfbd31b8bdbbe5e41bb292b5ea4ef4a9, type: 3}
+  m_Controller: {fileID: 9100000, guid: fd115fe81fa2e4c4893f708a5d46adf7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -180,10 +180,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -3258268891164396559, guid: 4d89902bab4d3d845adad474bae7e237, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -857203106, guid: 00f2ab1eed5657d4f8106f51107f57f2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -201,7 +201,7 @@ Animator:
   m_GameObject: {fileID: 2450016543405604180}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 139f80cc478a511439e111879c05dcc3, type: 2}
+  m_Controller: {fileID: 9100000, guid: bc49318fb62ca9a4a823937ee5dee9cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -295,16 +295,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5661044446538976366, guid: 2f4bb7b4534b4bd40bb0847f97c4c8c8, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -809857119, guid: 9809863a672584b4193acb7c8c94fd33, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5571140123472380384
 MonoBehaviour:
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeIncrease: 1
-  iluminar: {fileID: 1804796711718029088}
+  iluminar: {fileID: 117965689675876408}
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
   _vida: 10
@@ -487,7 +487,7 @@ Animator:
   m_GameObject: {fileID: 3155063478553261289}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 384c9d68b9f6e364289d8e0476ed1e71, type: 2}
+  m_Controller: {fileID: 9100000, guid: c823834385b74484f80e8ee553f94d4e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -524,7 +524,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6439551827627318465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.026, y: 0.834, z: 0}
+  m_LocalPosition: {x: 0, y: 0.291, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -563,7 +563,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022506833, y: 0.15111727}
+  m_Offset: {x: -0.0023371577, y: 0.082548425}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -574,7 +574,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5177108, y: 0.53057176}
+  m_Size: {x: 1.0807651, y: 0.39343408}
   m_EdgeRadius: 0
 --- !u!114 &1282366337403476054
 MonoBehaviour:
@@ -588,5 +588,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2786c7d8e158d8144b7080e1a07bf3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Frente: {fileID: 4178085166988575243}
-  dosOjos: {fileID: 5571140123472380384}
+  enemigo: {fileID: 0}
