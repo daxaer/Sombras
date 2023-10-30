@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &596928168896950106
 Transform:
   m_ObjectHideFlags: 0
@@ -74,16 +74,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8899083325555642675, guid: bfbd31b8bdbbe5e41bb292b5ea4ef4a9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -51936935, guid: ec25463fda5b8ca408e98424f5271460, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &6942835736518465406
 Animator:
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 1804796711718029088}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 512276714837056926, guid: bfbd31b8bdbbe5e41bb292b5ea4ef4a9, type: 3}
+  m_Controller: {fileID: 9100000, guid: d36d9097b48b4f842a7d591045d42722, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -179,8 +179,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 858114865
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -1949425542, guid: 4be0ca40cf792e54080df6df56fe51d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -295,7 +295,7 @@ Transform:
   m_GameObject: {fileID: 3155063478553261289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5966779778847013618}
@@ -318,22 +318,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeIncrease: 1
-  iluminar: {fileID: 1804796711718029088}
+  iluminar: {fileID: 117965689675876408}
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
-  _vida: 5
+  animation_Brillo: {fileID: 6942835736518465406}
+  _vida: 3
   _damage: 1
-  _vidaMin: 5
+  _vidaMin: 3
   _vidaMax: 20
-  _speedMin: 3
+  _speedMin: 1
   _speedMax: 4
   _damageMin: 1
   _damageMax: 4
   aiPath: {fileID: 594802796594497193}
-  velCarga: 8
+  "RecibirDa\xF1o": 0
   PuntoFinal: {fileID: 5214436977606927410}
   puedoAtacar: 0
   cebo: {fileID: 1724806284254852261}
+  box: {fileID: 488939489581282317}
 --- !u!212 &8225459986862862613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -372,8 +374,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 858114865
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: -95020555, guid: aa2ab456d62ac644dba05c747d404849, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -384,7 +386,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!114 &5783500662886769663
 MonoBehaviour:
@@ -550,8 +552,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.56}
-  m_Size: {x: 1.25, y: 2.01}
+  m_Offset: {x: 0, y: -0.56969774}
+  m_Size: {x: 1.26, y: 2.0452049}
   m_Direction: 0
 --- !u!70 &2789849477345743429
 CapsuleCollider2D:
@@ -568,7 +570,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -586,7 +588,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.03}
-  m_Size: {x: 0.55, y: 0.93}
+  m_Size: {x: 1.65, y: 2.93}
   m_Direction: 0
 --- !u!1 &5214436977606927410
 GameObject:
@@ -645,7 +647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6439551827627318465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.73, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -710,3 +712,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigo: {fileID: 4803947535349026804}
+  viendo: 30

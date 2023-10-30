@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public bool invulnerable;
     public SpriteRenderer[] sprite;
     public static Player Instance;
+    public bool dead;
     private void Awake()
     {
         if (Instance == null)
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
         {
             Destroy(Instance);
         }
+        dead = false;
+        Time.timeScale = 1.0f;
     }
 
     void Start()
@@ -77,20 +80,18 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Enemy"))
-        {
-            other.GetComponent<Enemies>().Atacar();
-        }   
         if (other.CompareTag("Alma"))
         {
             if(other.GetComponent<SpawnAlmas>().TipoAlma() == 1)
             {
+                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.GET_HEALTH, transform);
                 EstadisticasManager.Instance.vidaActual += 1;
                 EstadisticasManager.Instance.vidaActual = Mathf.Clamp(EstadisticasManager.Instance.vidaActual, 0, EstadisticasManager.Instance.vidaMaxima);
             }
             if (other.GetComponent<SpawnAlmas>().TipoAlma() == 2)
             {
                 UIManager.Instance.Almas(1);
+                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.GET_SOUL, transform);
             }
         }
     }
@@ -99,51 +100,63 @@ public class Player : MonoBehaviour
         GameManager.Instance.JuegoPausado();
         ManageScenes.Instance.AbrirGameOver();
 
+
     }
     public void Pausar()
     {
         GameManager.Instance.JuegoPausado();
         ManageScenes.Instance.AbrirPausa();
     }
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        if (EstadisticasManager.Instance.vidaActual <= 0)
+        if(invulnerable == false)
         {
-            Mori();
-        }
-        else
-        {
-            StartCoroutine("Invulnerabilidad");
+            invulnerable = true;
+            EstadisticasManager.Instance.vidaActual -= damage;
+            MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_PLAYER, transform);
+            if (EstadisticasManager.Instance.vidaActual <= 0)
+            {
+                Mori();
+            }
+            else
+            {
+                StartCoroutine("Invulnerabilidad");
+            }
         }
     }
     IEnumerator Invulnerabilidad()
     {
+        Debug.Log("Comenzando recuperacion");
         var transparencia = sprite[0].color.a;
         var transparencia1 = sprite[1].color.a;
         var transparencia2 = sprite[2].color.a;
-        transparencia = 0.2f;
-        transparencia1 = 0.2f;
-        transparencia2 = 0.2f;
-        yield return new WaitForSeconds(0.1f);
+        transparencia = 0f;
+        transparencia1 = 0f;
+        transparencia2 = 0f;
+        yield return new WaitForSeconds(0.2f);
         transparencia = 1f;
         transparencia1 = 1f;
         transparencia2 = 1f;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         transparencia = 0.2f;
         transparencia1 = 0.2f;
         transparencia2 = 0.2f;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         transparencia = 1f;
         transparencia1 = 1f;
         transparencia2 = 1f;
-        yield return new WaitForSeconds(0.1f);
-        transparencia = 0.2f;
-        transparencia1 = 0.2f;
-        transparencia2 = 0.2f;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
+        transparencia = 0f;
+        transparencia1 = 0f;
+        transparencia2 = 0f;
+        yield return new WaitForSeconds(0.2f);
         transparencia = 1f;
         transparencia1 = 1f;
         transparencia2 = 1f;
         invulnerable = false;
+        Debug.Log("terminada recuperacion");
+
     }
+
+
 }

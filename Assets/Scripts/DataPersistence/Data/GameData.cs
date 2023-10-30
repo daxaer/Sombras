@@ -13,8 +13,8 @@ public class GameData
 
     //Guardado Estadisticas
     public float velocidadPlayer;
-    public int vidaMaxima;
-    public int vidaActual;
+    public float vidaMaxima;
+    public float vidaActual;
     public float ataque;
     public float rango;
     public float velocidadeAtaque;

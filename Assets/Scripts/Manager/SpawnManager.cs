@@ -22,7 +22,6 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     [SerializeField] private float spawnY;
     [SerializeField] private float spawnx;
     [SerializeField] private float[] rangoMinimoYMaximo;
-    [SerializeField] private float[] rangoProhibido;
     [SerializeField] private GameObject[] _lamp;
     [SerializeField] private float timeLamp;
 
@@ -173,11 +172,6 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     private float RandomizarNumero()
     {
         float numero = Random.Range(rangoMinimoYMaximo[0], rangoMinimoYMaximo[1]);
-        if (numero > rangoProhibido[0] && numero < rangoProhibido[1])
-        {
-            return RandomizarNumero();
-        }
-        else
         {
             return numero;
         }
@@ -205,9 +199,10 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
         GameObject explosion = _PoolAtaqueExplosion.Spawn(transform.position, transform.rotation);
         explosion.GetComponent<AtaquesEnemigos>().damage = damage;
     }
-    public void SpawnAtaqueOjo(Transform transform)
+    public void SpawnAtaqueOjo(Transform transform, int damage)
     {
         GameObject ataqueOjo = _PoolAtaque2Ojos.Spawn(transform.position, transform.rotation);
+        ataqueOjo.GetComponent<AtaquesEnemigos>().damage = damage;
     }
     private void SpawnearPlayer()
     {

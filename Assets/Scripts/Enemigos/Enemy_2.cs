@@ -3,20 +3,25 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class Enemy_2 : Enemies
 {
     //[SerializeField] private Transform target;
-    [SerializeField] float velCarga;
     [SerializeField] GameObject PuntoFinal;
     [SerializeField] bool puedoAtacar;
     [SerializeField] CapsuleCollider2D cebo;
+    [SerializeField] BoxCollider2D box;
 
     private void OnEnable()
     {
+        DesactivarLuz();
+        RecibirDaño = true;
         puedoAtacar = true;
-        animation_Cuerpo.SetBool("Muerto", false);
-        animation_Ojo.SetBool("Muerto", false);
+        animation_Cuerpo.SetTrigger("caminando");
+        animation_Ojo.SetTrigger("caminando");
+        gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Enemigos";
     }
     private void OnDisable()
     {
@@ -30,38 +35,52 @@ public class Enemy_2 : Enemies
     {
         if(puedoAtacar == true)
         {
-            puedoAtacar = false;
+            gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+            box.enabled = false;
             GetComponent<AIDestinationSetter>().target = this.PuntoFinal.transform;
-            Invoke("Carga", 1);
             aiPath.maxSpeed = 0;
+            animation_Cuerpo.SetTrigger("cargando");
+            animation_Ojo.SetTrigger("cargando");
+            Invoke("Atacar", 1);
+            puedoAtacar = false;
         }
     }
-
     public override void Atacar()
     {
-       EstadisticasManager.Instance.vidaActual -= _damage;
+        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax) * 3;
         UIManager.Instance.UpdateVida();
-        DesactivarLuz();
-        animation_Ojo.SetTrigger("Atacar");
-        animation_Cuerpo.SetTrigger("Atacar");
-    }
-
-    public void Carga()
-    {
-        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax) * 4;
-        Invoke("TerminarCarga", 2.5f);
+        animation_Ojo.SetTrigger("atacando");
+        animation_Cuerpo.SetTrigger("atacando");
+        Invoke("TerminarCarga", 3f);
     }
    
     public void TerminarCarga()
     {
+        animation_Ojo.SetTrigger("recuperando");
+        animation_Cuerpo.SetTrigger("recuperando");
         aiPath.maxSpeed = 0;
-        GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
         Invoke("RecuperarDestino", 2);
     }
     public void RecuperarDestino()
     {
+        animation_Ojo.SetTrigger("caminando");
+        animation_Cuerpo.SetTrigger("caminando");
+        animation_Brillo.SetTrigger("caminando");
         aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
+        GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
         puedoAtacar = true;
         cebo.enabled = true;
+        box.enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Enemigos";
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player") && !puedoAtacar)
+        {
+            Player.Instance.TakeDamage(_damage);
+        }
     }
 }

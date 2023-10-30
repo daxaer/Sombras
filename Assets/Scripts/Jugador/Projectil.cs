@@ -66,6 +66,7 @@ public class Projectil : MonoBehaviour
         if (robo <= EstadisticasManager.Instance.roboDeVida)
         {
             Player.Instance.RecuperarVIda(1);
+            MusicManager.Instance.PlayAudioPool(SOUNDTYPE.LIFE_STEAL, Player.Instance.transform);
         }
     }
     public void Destruir()

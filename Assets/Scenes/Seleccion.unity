@@ -398,17 +398,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_PointAction: {fileID: -4172128483307762244, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_MoveAction: {fileID: -3451512714494257517, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_SubmitAction: {fileID: -5448806370667715857, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_CancelAction: {fileID: 5226293342139556301, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_LeftClickAction: {fileID: 1762937370198240705, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_MiddleClickAction: {fileID: 5480694300492326392, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_RightClickAction: {fileID: -4271377037763542088, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_ScrollWheelAction: {fileID: -4253683511257842453, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 7080468387480443449, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 5705941016171233391, guid: 16c0aa09f17ecfa4581e3da7961e9841, type: 3}
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -523,7 +523,7 @@ MonoBehaviour:
   attack: {fileID: 404086861}
   attackSpeed: {fileID: 1330015869}
   projectileSize: {fileID: 1459461089}
-  roboVida: {fileID: 635329373}
+  liveStheal: {fileID: 635329373}
   mejorasPermanentes:
   - {fileID: 11400000, guid: 344b34b4e9fa0a744a2a26460d5595d0, type: 2}
   - {fileID: 11400000, guid: b2bedc19c3a90924db1b18ed68297f2e, type: 2}
@@ -531,6 +531,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: edf76a886fc57724ba71ea5d87e276fd, type: 2}
   - {fileID: 11400000, guid: a6f6cbb769a7bbc4baae4f383500baa9, type: 2}
   - {fileID: 11400000, guid: a6f6cbb769a7bbc4baae4f383500baa9, type: 2}
+  vida: 0
+  velocidadMovimiento: 0
+  ataque: 0
+  velocidadAtaque: 0
+  BalaSize: 0
+  roboVida: 0
 --- !u!1 &325013956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,12 +2178,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1097211060}
-          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 8300000, guid: e0274892597e0f441a4e486b2cb21cdd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2214,6 +2220,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: -8863714306952377876, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 250567320}
+          m_TargetAssemblyTypeName: StadisticSelect, Assembly-CSharp
+          m_MethodName: ActiveScriptable
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: bbde827e2773b614c9c49095e145be96, type: 2}
+            m_ObjectArgumentAssemblyTypeName: ScriptableEstadisticas, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2555,18 +2573,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 526851475}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 796314389}
         m_TargetAssemblyTypeName: ManageScenes, Assembly-CSharp
         m_MethodName: ActiveScriptable
@@ -2574,6 +2580,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: e66177b87d7616e41b84dc4ec4dc84c3, type: 2}
           m_ObjectArgumentAssemblyTypeName: ScriptableEstadisticas, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 526851475}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2623,12 +2641,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1097211060}
-          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 8300000, guid: e0274892597e0f441a4e486b2cb21cdd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2665,6 +2683,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 21300000, guid: 868ca7e61e039344ab2c75e31809b74e, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 250567320}
+          m_TargetAssemblyTypeName: StadisticSelect, Assembly-CSharp
+          m_MethodName: ActiveScriptable
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: e66177b87d7616e41b84dc4ec4dc84c3, type: 2}
+            m_ObjectArgumentAssemblyTypeName: ScriptableEstadisticas, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3246,6 +3276,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2054261423018414814, guid: cac0927f96b0eb4438928e1d99293b61, type: 3}
     - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
+      propertyPath: libreriarDeSonidos.Array.data[0].type
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: libreriarDeSonidos.Array.data[0].clip.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 07d489d7978f8494ab5b0f475f9441c5, type: 3}
@@ -3266,20 +3300,102 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6063353838428688924, guid: 5552426da76186a43b01f5a717097577, type: 3}
   m_PrefabInstance: {fileID: 1097211058}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1097211060
-MonoBehaviour:
+--- !u!82 &1097211060
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097211059}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9742063d97443946ad591f0d09732ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundType: 7
-  transform: {fileID: 470181370}
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2334551853492825744, guid: ff5ec84d6d4a2f144b4410838f828b4f, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1203534185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,12 +3602,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1097211060}
-          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 8300000, guid: e0274892597e0f441a4e486b2cb21cdd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3526,8 +3642,20 @@ MonoBehaviour:
           m_MethodName: ReciveImage
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 7763907425060419378, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
+            m_ObjectArgument: {fileID: 21300000, guid: dee31d6aff92bdd4f92de799754e3f7e, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 250567320}
+          m_TargetAssemblyTypeName: StadisticSelect, Assembly-CSharp
+          m_MethodName: ActiveScriptable
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 556f57bdc137373419d44f991925ad05, type: 2}
+            m_ObjectArgumentAssemblyTypeName: ScriptableEstadisticas, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5922,12 +6050,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1097211060}
-          m_TargetAssemblyTypeName: PlaySounds, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 8300000, guid: e0274892597e0f441a4e486b2cb21cdd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

@@ -7,8 +7,8 @@ TagManager:
   - Enemy
   - Alma
   - Pared
-  - projectil
   - AtaqueEnemigo
+  - Projectile
   layers:
   - Default
   - TransparentFX

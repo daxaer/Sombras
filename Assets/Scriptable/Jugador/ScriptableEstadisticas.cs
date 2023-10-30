@@ -7,10 +7,10 @@ public class ScriptableEstadisticas : ScriptableObject
 {
     [Header("Jugador")]
     [SerializeField] private string[] nombreJugador;
-    [SerializeField] private int vidaMaxima;
-    [SerializeField] private int ataque;
+    [SerializeField] private float vidaMaxima;
+    [SerializeField] private float ataque;
     [SerializeField] private bool iluminar;
-    public int vidaActual;
+    public float vidaActual;
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float velocidadDeAtaque;
     [SerializeField] private float porcentajeRoboDeVida;
@@ -33,8 +33,8 @@ public class ScriptableEstadisticas : ScriptableObject
             return "No existe el idioma";
         }
     }
-    public int VidaMaxima { get { return vidaMaxima; } }
-    public int Ataque { get { return ataque; } }
+    public float VidaMaxima { get { return vidaMaxima; } }
+    public float Ataque { get { return ataque; } }
     public bool Iluminar { get { return iluminar; } }
     public float VelocidadDeMovimiento { get { return velocidadMovimiento; } }
     public float VelocidadDeAtaque { get { return velocidadDeAtaque; } }
