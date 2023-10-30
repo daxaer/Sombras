@@ -16,7 +16,7 @@ MonoBehaviour:
   costeMejoraActual: 4250
   costeInicial: 500
   nivel: 5
-  nivelActual: 5
+  nivelActual: 1
   AumentroPrecio: 750
   AumentoEstadistica: 0.25
   AumentoEstadisticaOtorgada: 1.25

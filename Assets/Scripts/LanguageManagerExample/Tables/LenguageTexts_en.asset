@@ -143,6 +143,22 @@ MonoBehaviour:
     m_Localized: SHOP
     m_Metadata:
       m_Items: []
+  - m_Id: 19475159736086528
+    m_Localized: ANY UNSAVED PROGRESS WILL BE LOST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475285842030592
+    m_Localized: ANY UNSAVED PROGRESS WILL BE LOST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475993068793856
+    m_Localized: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19476014744956928
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -139,6 +139,22 @@ MonoBehaviour:
     m_Key: Shop-Button
     m_Metadata:
       m_Items: []
+  - m_Id: 19475159736086528
+    m_Key: Are-You-Sure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475285842030592
+    m_Key: Any-Unsaved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475993068793856
+    m_Key: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19476014744956928
+    m_Key: NO
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AtaquePermanente
   m_EditorClassIdentifier: 
   imagenMejora: {fileID: 9123457217101032794, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
-  costeMejoraActual: 2750
+  costeMejoraActual: 7250
   costeInicial: 500
   nivel: 9
-  nivelActual: 3
+  nivelActual: 1
   AumentroPrecio: 750
   AumentoEstadistica: 1
-  AumentoEstadisticaOtorgada: 3
+  AumentoEstadisticaOtorgada: 9

@@ -143,6 +143,22 @@ MonoBehaviour:
     m_Localized: TIENDA
     m_Metadata:
       m_Items: []
+  - m_Id: 19475159736086528
+    m_Localized: ESTAS SEGURO DE QUE QUIERES SALIR?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475285842030592
+    m_Localized: CUALQUIER PROGRESO SERA BORRADO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475993068793856
+    m_Localized: SI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19476014744956928
+    m_Localized: NOP
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
