@@ -16,6 +16,6 @@ public class VolumenActual : MonoBehaviour, IDataPersiistence
 
     public void SaveData(ref GameData _data)
     {
- 
+            
     }
 }

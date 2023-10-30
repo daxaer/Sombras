@@ -13,6 +13,6 @@ public class GuardarEstadisticas : MonoBehaviour, IDataPersiistence
     {
         _data.player = GameManager.Instance.PlayerSave();
         _data.estadisticas = GameManager.Instance.ScriptableSave();
-        _data.rondaActual = 0;
+        //_data.rondaActual = 0;
     }
 }
