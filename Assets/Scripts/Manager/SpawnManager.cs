@@ -206,11 +206,11 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     }
     private void SpawnearPlayer()
     {
-        Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
+        //Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
     }
     public void LoadData(GameData _data)
     {
-        //Instantiate(_data.player,spawnPlayer);
+        Instantiate(_data.player,spawnPlayer);
     }
     public void SaveData(ref GameData _data)
     {
