@@ -121,9 +121,9 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     {
         Vector3 position = new Vector3(RandomizarNumero(), RandomizarNumero(), 0);
         int countRound = timer.rondaActual;
-        if (countRound >= 3)
+        if (countRound >= 4)
         {
-            countRound = 3;
+            countRound = 4;
         }
 
         int randomEnemy = Random.Range(1, countRound + 1);
