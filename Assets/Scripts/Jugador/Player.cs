@@ -156,8 +156,5 @@ public class Player : MonoBehaviour
         transparencia2 = 1f;
         invulnerable = false;
         Debug.Log("terminada recuperacion");
-
     }
-
-
 }

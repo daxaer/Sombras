@@ -261,7 +261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invulnerable: 0
   sprite:
-  - {fileID: 0}
+  - {fileID: 3904388983087780166}
+  - {fileID: 4285020900803273517}
+  - {fileID: 3313772118653912172}
   dead: 0
 --- !u!212 &3904388983087780166
 SpriteRenderer:
