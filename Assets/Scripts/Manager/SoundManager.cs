@@ -36,7 +36,7 @@ public class MusicManager : MonoBehaviour, IDataPersiistence
     void Start()
     {
         _poolSounds = new Pool();
-        _poolSounds.Inicializar(_spawnSound,10);
+        _poolSounds.Inicializar(_spawnSound,1);
     }
 
     AudioClip GetClip(SOUNDTYPE _type) 

@@ -187,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2442dc535b75eb24cb5cd74ece006f87
+      spriteID: 7056ca7e6ac579d438d606902aa003da
       internalID: 1083234047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OjoIzquierdo2Ojo-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fdba0eaf849d2f4faf98217b8b3f5a5
+      internalID: 1087921826
       vertices: []
       indices: 
       edges: []
@@ -208,6 +229,7 @@ TextureImporter:
       OjoIzquierdo2Ojo-Sheet_1: -534010737
       OjoIzquierdo2Ojo-Sheet_2: -1995507416
       OjoIzquierdo2Ojo-Sheet_3: 1083234047
+      OjoIzquierdo2Ojo-Sheet_4: 1087921826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

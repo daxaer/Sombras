@@ -103,10 +103,6 @@ public class Timer : MonoBehaviour, IDataPersiistence
 
     public void SaveData(ref GameData _data)
     {
-        _data.rondaActual = rondaActual;
-        if(rondaActual == 5) 
-        {
-            _data.rondaActual = 0;
-        }
+       
     }
 }

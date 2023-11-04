@@ -17,13 +17,13 @@ MonoBehaviour:
   - Tirador en ingles
   - Tirador en japones
   vidaMaxima: 8
-  ataque: 0
+  ataque: 1
   iluminar: 0
   vidaActual: 8
-  velocidadMovimiento: 3
-  velocidadDeAtaque: 0.5
+  velocidadMovimiento: 2
+  velocidadDeAtaque: 1.5
   porcentajeRoboDeVida: 0
-  rangoGolpe: 1
+  projectileSize: 0
   velocidadBala: 10
   ataqueMele: 0
   rangoIluminacion: 12

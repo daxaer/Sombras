@@ -19,7 +19,7 @@ public class Enemy : Enemies
         _vida = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _vidaMin, _vidaMax));
         aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
         _damage = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _damageMin, _damageMax));
-
+        RecibirDaño = true;
     }
 
     public override void Atacar()
@@ -37,5 +37,13 @@ public class Enemy : Enemies
     public void SpawnAtaque()
     {
         SpawnManager.Instance.SpawnExplosion(transform,_damage);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            Atacar();
+        }
     }
 }

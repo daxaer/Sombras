@@ -11,6 +11,7 @@ public class Projectil : MonoBehaviour
     
     private void OnEnable()
     {
+        AumentoRango();
         hit = false;
         if(EstadisticasManager.Instance.ataqueMele)
         {
@@ -18,7 +19,7 @@ public class Projectil : MonoBehaviour
         }
         else
         {
-            Invoke("Destruir", 0.2f);
+            Invoke("Destruir", 2f);
         }
     }
 
@@ -66,6 +67,7 @@ public class Projectil : MonoBehaviour
         if (robo <= EstadisticasManager.Instance.roboDeVida)
         {
             Player.Instance.RecuperarVIda(1);
+            MusicManager.Instance.PlayAudioPool(SOUNDTYPE.LIFE_STEAL, Player.Instance.transform);
         }
     }
     public void Destruir()
@@ -75,7 +77,7 @@ public class Projectil : MonoBehaviour
 
     public void AumentoRango()
     {
-        gameObject.transform.localScale = new Vector3(EstadisticasManager.Instance.rango, EstadisticasManager.Instance.rango, 1);
+        gameObject.transform.localScale = new Vector3(1 + EstadisticasManager.Instance.projectileSize,1 + EstadisticasManager.Instance.projectileSize, 1);
     }
 
 }

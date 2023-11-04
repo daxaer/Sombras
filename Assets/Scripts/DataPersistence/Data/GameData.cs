@@ -13,10 +13,10 @@ public class GameData
 
     //Guardado Estadisticas
     public float velocidadPlayer;
-    public int vidaMaxima;
-    public int vidaActual;
+    public float vidaMaxima;
+    public float vidaActual;
     public float ataque;
-    public float rango;
+    public float ProjectileSize;
     public float velocidadeAtaque;
     public float roboDeVida;
     public float duracionLamparas;
@@ -40,7 +40,7 @@ public class GameData
         vidaMaxima = 0;
         vidaActual = 0;
         ataque = 0;
-        rango = 0;
+        ProjectileSize = 0;
         velocidadeAtaque = 0;
         roboDeVida = 0;
         duracionLamparas = 0;

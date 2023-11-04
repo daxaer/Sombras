@@ -13,11 +13,7 @@ public class AtaquesEnemigos : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if(!Player.Instance.invulnerable) 
-            {
-                EstadisticasManager.Instance.vidaActual -= damage;
-                Player.Instance.TakeDamage();
-            }
+            Player.Instance.TakeDamage(damage);
         }
     }
 

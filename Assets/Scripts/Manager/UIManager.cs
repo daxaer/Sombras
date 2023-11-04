@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     private float hitDelay = 1f;
     private float nextupdate;
     private int almas;
-    private int vidaAnterior;
+    private float vidaAnterior;
     bool actualizar = false;
     bool playerSpawneo = false;
 

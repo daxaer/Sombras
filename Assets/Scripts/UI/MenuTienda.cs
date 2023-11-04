@@ -50,7 +50,7 @@ public class MenuTienda : MonoBehaviour
             EstadisticasManager.Instance.ataque += tarjetaEquipada.ataque;
             EstadisticasManager.Instance.vidaMaxima += tarjetaEquipada.salud;
             EstadisticasManager.Instance.velocidadPlayer += tarjetaEquipada.velocidadMovimiento;
-            EstadisticasManager.Instance.rango += tarjetaEquipada.projectilSize;
+            EstadisticasManager.Instance.projectileSize += tarjetaEquipada.projectilSize;
             EstadisticasManager.Instance.velocidadeAtaque += tarjetaEquipada.velocidadAtaque;
             EstadisticasManager.Instance.roboDeVida += tarjetaEquipada.robaVida;
             EstadisticasManager.Instance.rangoIluminacion += tarjetaEquipada.rangoLampara;

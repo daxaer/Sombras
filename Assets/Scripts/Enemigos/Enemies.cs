@@ -11,6 +11,8 @@ public class Enemies : MonoBehaviour
     [SerializeField] protected SpriteRenderer iluminar;
     [SerializeField] protected Animator animation_Ojo;
     [SerializeField] protected Animator animation_Cuerpo;
+    [SerializeField] protected Animator animation_Brillo;
+
     [SerializeField] protected float _vida;
     [SerializeField] protected int _damage;
     [SerializeField] protected float _vidaMin;
@@ -85,13 +87,14 @@ public class Enemies : MonoBehaviour
         {
             RecibirDaño = false;
             _vida -= damage;
+            Debug.Log(_vida);
             if (_vida <= 0)
             {
                 Invoke(nameof(Desactivar), 0f);
             }
             else
             {
-                StartCoroutine("");
+                StartCoroutine("damageAnule");
             }
         }
     }
