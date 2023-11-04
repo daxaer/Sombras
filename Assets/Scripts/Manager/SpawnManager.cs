@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SpawnManager : MonoBehaviour, IDataPersiistence
+public class SpawnManager : MonoBehaviour
 {
     //Save dates
     [SerializeField] private GameObject player;
@@ -207,13 +207,5 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     private void SpawnearPlayer()
     {
         Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
-    }
-    public void LoadData(GameData _data)
-    {
-
-    }
-    public void SaveData(ref GameData _data)
-    {
-       
     }
 }
