@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5107221549056
-    m_Localized: Solo es un roguelike
+    m_Localized: "S\xF3lo es un roguelike"
     m_Metadata:
       m_Items: []
   - m_Id: 5283004829696
@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10470876532736
-    m_Localized: CREDITOS
+    m_Localized: "CR\xC9DITOS"
     m_Metadata:
       m_Items: []
   - m_Id: 10491860635648
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1301438057697280
-    m_Localized: Caballero de gran armadura, portadora de la espadad de luz
+    m_Localized: Caballero de gran armadura, portadora de la espada de la luz
     m_Metadata:
       m_Items: []
   - m_Id: 1301638524456960
@@ -124,15 +124,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18839763142270976
-    m_Localized: Caballero
+    m_Localized: CABALLERO
     m_Metadata:
       m_Items: []
   - m_Id: 18840288499818496
-    m_Localized: Tirador
+    m_Localized: TIRADOR
     m_Metadata:
       m_Items: []
   - m_Id: 18840511313829888
-    m_Localized: Devorador
+    m_Localized: DEVORADOR
     m_Metadata:
       m_Items: []
   - m_Id: 19095449612804096
@@ -144,11 +144,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 19475159736086528
-    m_Localized: "ESTAS S\xC9GURO DE QUE QUI\xC9RES SALIR?"
+    m_Localized: "\xBFESTAS SEGURO DE QUE QUI\xC9RES SALIR?"
     m_Metadata:
       m_Items: []
   - m_Id: 19475285842030592
-    m_Localized: "CUALQUI\xC9R PROGRESO SERA BORRADO"
+    m_Localized: "\xA1CUALQUIER PROGRESO SERA BORRADO!"
     m_Metadata:
       m_Items: []
   - m_Id: 19475993068793856
