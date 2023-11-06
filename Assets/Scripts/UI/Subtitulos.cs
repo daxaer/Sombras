@@ -68,7 +68,7 @@ public class Subtitulos : MonoBehaviour
         }
     }
 
-    public void ActualizarDescription() 
+    public void ActualizarDescription()
     {
         if (GameManager.Instance.ChangeLenguageTarget() == 0)
         {
