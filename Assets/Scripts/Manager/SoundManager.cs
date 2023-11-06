@@ -124,4 +124,6 @@ public enum SOUNDTYPE
     HIT_PARED,
     FIRE_RANGE,
     ENEMY_EXPLOSION,
+    LIGHT,
+    END_lIGHT,
 }
