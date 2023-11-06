@@ -23,7 +23,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float spawnx;
     [SerializeField] private float[] rangoMinimoYMaximo;
     [SerializeField] private GameObject[] _lamp;
-    [SerializeField] private float timeLamp;
+    [SerializeField] private float prenderLampara;
+    private int lamparaActual;
 
     [SerializeField] private int maxEnemies = 10; //limite de enemigos
     [SerializeField] private int _startEnemyCount = 1; //Cantidad inicial de enemigos
@@ -179,19 +180,11 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator  ActivarLampara()
     {
-        int numero = Random.Range(1, _lamp.Length);
-        if (_lamp[numero].GetComponent<Lampara>().Activado == true)
-        {
-            _lamp[numero].GetComponent<Lampara>().Activado = true;
-            //_lamp[numero].GetComponent<Lampara>().RangoLuz(_estadisticas.rangoIluminacion);
-            //_lamp[numero].GetComponent<Lampara>().TiempoIluminacion(_estadisticas.duracionLamparas);
-        }
-        else
-        {
-            _lamp[numero].GetComponent<Lampara>().Activado = false;
-        }
-        _lamp[numero].SetActive(true);
-        yield return new WaitForSeconds(timeLamp);
+        lamparaActual = Random.Range(1, _lamp.Length);
+        _lamp[lamparaActual].SetActive(true);
+        _lamp[lamparaActual].GetComponent<Animator>().SetTrigger("Prender");
+        yield return new WaitForSeconds(prenderLampara);
+        StartCoroutine("ActivarLampara");
     }
 
     public void SpawnExplosion(Transform transform, int damage)
