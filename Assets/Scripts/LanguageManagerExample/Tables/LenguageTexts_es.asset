@@ -63,11 +63,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 704174947848192
-    m_Localized: Volumen de Efectos
+    m_Localized: Efectos de Sonido
     m_Metadata:
       m_Items: []
   - m_Id: 704228437807104
-    m_Localized: Lenguajes
+    m_Localized: Idioma
     m_Metadata:
       m_Items: []
   - m_Id: 706037663420416
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1301638524456960
-    m_Localized: Tirador de gran alcance, puede disparar a distancia
+    m_Localized: Tirador de gran alcance, puede disparar a larga distancia
     m_Metadata:
       m_Items: []
   - m_Id: 1302022097752064
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1990554348965888
-    m_Localized: "\xBFQue qui\xE9res hacer?"
+    m_Localized: "\xBFQu\xE9 quieres hacer?"
     m_Metadata:
       m_Items: []
   - m_Id: 1991070902669312
@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1991218160488448
-    m_Localized: Pantalla inicio
+    m_Localized: Pantalla de inicio
     m_Metadata:
       m_Items: []
   - m_Id: 1991447337259008
@@ -156,7 +156,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 19476014744956928
-    m_Localized: NOP
+    m_Localized: NO
     m_Metadata:
       m_Items: []
   references:

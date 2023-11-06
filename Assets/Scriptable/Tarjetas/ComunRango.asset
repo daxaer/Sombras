@@ -15,8 +15,8 @@ MonoBehaviour:
   imagenTarjeta: {fileID: 21300000, guid: 5e0fcce5c0e107744b2d231b9a2a90d0, type: 3}
   IdTarjeta: 000
   nombreTarjeta:
-  - Aumento de Rango I
-  - Range Increase I
+  - "Aumento del Tama\xF1o del arma I"
+  - Bullet Size Increase I
   - "\u52D5\u304D\u306E\u5897\u52A0 I"
   descripcionDeTarjeta:
   - "Aumenta ligeramente el tama\xF1o de tu arma"
