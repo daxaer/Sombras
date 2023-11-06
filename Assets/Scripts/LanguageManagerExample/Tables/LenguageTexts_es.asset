@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5107221549056
-    m_Localized: Solo es un roguelike
+    m_Localized: "S\xF3lo es un roguelike"
     m_Metadata:
       m_Items: []
   - m_Id: 5283004829696
@@ -47,11 +47,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10470876532736
-    m_Localized: CREDITOS
+    m_Localized: "CR\xC9DITOS"
     m_Metadata:
       m_Items: []
   - m_Id: 10491860635648
-    m_Localized: CONFIGURACION
+    m_Localized: "CONFIGURACI\xD3N"
     m_Metadata:
       m_Items: []
   - m_Id: 10832429731840
@@ -59,7 +59,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 681489530376192
-    m_Localized: Musica
+    m_Localized: "M\xFAsica"
     m_Metadata:
       m_Items: []
   - m_Id: 704174947848192
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1301438057697280
-    m_Localized: Caballero de gran armadura, portadora de la espadad de luz
+    m_Localized: Caballero de gran armadura, portadora de la espada de la luz
     m_Metadata:
       m_Items: []
   - m_Id: 1301638524456960
@@ -87,8 +87,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1302022097752064
-    m_Localized: Es un come almas, le encanta la oscuridad y obtiene ventaja en las
-      zonas oscuras.
+    m_Localized: "Es un come almas, le encanta la oscuridad y obti\xE9ne ventaja
+      en las zonas oscuras."
     m_Metadata:
       m_Items: []
   - m_Id: 1339837724512256
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1990554348965888
-    m_Localized: "\xBFQue quieres hacer?"
+    m_Localized: "\xBFQue qui\xE9res hacer?"
     m_Metadata:
       m_Items: []
   - m_Id: 1991070902669312
@@ -124,15 +124,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18839763142270976
-    m_Localized: Caballero
+    m_Localized: CABALLERO
     m_Metadata:
       m_Items: []
   - m_Id: 18840288499818496
-    m_Localized: Tirador
+    m_Localized: TIRADOR
     m_Metadata:
       m_Items: []
   - m_Id: 18840511313829888
-    m_Localized: Devorador
+    m_Localized: DEVORADOR
     m_Metadata:
       m_Items: []
   - m_Id: 19095449612804096
@@ -140,15 +140,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 19140778534334464
-    m_Localized: TIENDA
+    m_Localized: MEJORAS
     m_Metadata:
       m_Items: []
   - m_Id: 19475159736086528
-    m_Localized: ESTAS SEGURO DE QUE QUIERES SALIR?
+    m_Localized: "\xBFESTAS SEGURO DE QUE QUI\xC9RES SALIR?"
     m_Metadata:
       m_Items: []
   - m_Id: 19475285842030592
-    m_Localized: CUALQUIER PROGRESO SERA BORRADO
+    m_Localized: "\xA1CUALQUIER PROGRESO SERA BORRADO!"
     m_Metadata:
       m_Items: []
   - m_Id: 19475993068793856

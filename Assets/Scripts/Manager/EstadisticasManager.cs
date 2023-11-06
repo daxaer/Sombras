@@ -8,11 +8,15 @@ using UnityEngine.Rendering.Universal;
 public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 {
 
+    //Almas
+    public int almasMax;
+
+    //Estadisticas iniciales
     public float velocidadPlayer;
-    public int vidaMaxima;
-    public int vidaActual;
+    public float vidaMaxima;
+    public float vidaActual;
     public float ataque;
-    public float rango;
+    public float projectileSize;
     public float velocidadeAtaque;
     public float roboDeVida;
     public float duracionLamparas;
@@ -29,6 +33,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 
     private void Awake()
     {
+        almasMax = 0;
         if (Instance == null)
         {
             Instance = this;
@@ -41,6 +46,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 
     public void LoadData(GameData _data)
     {
+        Debug.Log(_data.rondaActual + "rondaActual");
         personajeSeleccionado = _data.estadisticas;
         if(_data.rondaActual > 0)
         {
@@ -50,7 +56,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
             velocidadPlayer = _data.velocidadPlayer;
             vidaActual = _data.vidaActual;
             ataque = _data.ataque;
-            rango = _data.rango;
+            projectileSize = _data.ProjectileSize;
             velocidadeAtaque = _data.velocidadeAtaque;
             roboDeVida = _data.roboDeVida;
             duracionLamparas = _data.duracionLamparas;
@@ -61,31 +67,68 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
         }
         else
         {
-            vidaMaxima = personajeSeleccionado.VidaMaxima + (int)mejorasPermanentes[0].AumentoEstadistica;
-            velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento + (int)mejorasPermanentes[1].AumentoEstadistica; ;
-            vidaActual = personajeSeleccionado.vidaActual + (int)mejorasPermanentes[0].AumentoEstadistica; ;
-            ataque = personajeSeleccionado.Ataque + (int)mejorasPermanentes[2].AumentoEstadistica; ;
-            rango = personajeSeleccionado.ProjectileSize + (int)mejorasPermanentes[3].AumentoEstadistica; ;
-            velocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque + (int)mejorasPermanentes[4].AumentoEstadistica; ;
-            roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida + (int)mejorasPermanentes[5].AumentoEstadistica; ;
+            vidaMaxima = personajeSeleccionado.VidaMaxima + mejorasPermanentes[0].AumentoEstadisticaOtorgada;
+            velocidadPlayer = personajeSeleccionado.VelocidadDeMovimiento + mejorasPermanentes[1].AumentoEstadisticaOtorgada; ;
+            vidaActual = personajeSeleccionado.vidaActual + mejorasPermanentes[0].AumentoEstadisticaOtorgada; ;
+            ataque = personajeSeleccionado.Ataque + mejorasPermanentes[2].AumentoEstadisticaOtorgada; ;
+            projectileSize = personajeSeleccionado.ProjectileSize + mejorasPermanentes[3].AumentoEstadisticaOtorgada; ;
+            velocidadeAtaque = personajeSeleccionado.VelocidadDeAtaque + mejorasPermanentes[4].AumentoEstadisticaOtorgada; ;
+            roboDeVida = personajeSeleccionado.PorcentajeRoboDeVida + mejorasPermanentes[5].AumentoEstadisticaOtorgada; ;
             duracionLamparas = personajeSeleccionado.TiempoIluminacion;
             rangoIluminacion = personajeSeleccionado.RangoIluminacion;
             bala = personajeSeleccionado.Bala;
             ataqueMele = personajeSeleccionado.AtaqueMele;
 
-
             //Pasivas
             pasivaIluminacion = personajeSeleccionado.Iluminar;
+        }
+    }
+    public void ActualizarVida()
+    {
+        vidaActual = vidaMaxima;
+        MusicManager.Instance.PlayAudioPool(SOUNDTYPE.GET_HEALTH, Player.Instance.transform);
+    }
+    public void saveGame()
+    {
+        if(EstadisticasManager.Instance.vidaActual <= 0)
+        {
+            Player.Instance.dead = true;
+            DataPersistenceManager.Instance.SaveGame();
+
+        }
+        else
+        {
+            DataPersistenceManager.Instance.SaveGame();
         }
     }
 
     public void SaveData(ref GameData _data)
     {
+        if(Player.Instance.dead == true)
+        {
+            _data.rondaActual = 0;
+            Debug.Log(_data.rondaActual + "Moriste");
+        }
+        else
+        {
+            if (Timer.Instance.rondaActual == 5)
+            {
+                _data.rondaActual = 0;
+
+                Debug.Log(_data.rondaActual + "Ganaste");
+            }
+            else
+            {
+                _data.rondaActual = Timer.Instance.rondaActual;
+                Debug.Log(_data.rondaActual + "Y la vida Continua");
+            }
+        }
+        _data.AlmasMax += almasMax;
         _data.vidaMaxima = vidaMaxima;
         _data.velocidadPlayer = velocidadPlayer;
         _data.vidaActual = vidaActual;
         _data.ataque = ataque;
-        _data.rango = rango;
+        _data.ProjectileSize = projectileSize;
         _data.velocidadeAtaque = velocidadeAtaque;
         _data.roboDeVida = roboDeVida;
         _data.duracionLamparas = duracionLamparas;

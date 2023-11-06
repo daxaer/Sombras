@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SpawnManager : MonoBehaviour, IDataPersiistence
+public class SpawnManager : MonoBehaviour
 {
     //Save dates
     [SerializeField] private GameObject player;
@@ -22,7 +22,6 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     [SerializeField] private float spawnY;
     [SerializeField] private float spawnx;
     [SerializeField] private float[] rangoMinimoYMaximo;
-    [SerializeField] private float[] rangoProhibido;
     [SerializeField] private GameObject[] _lamp;
     [SerializeField] private float timeLamp;
 
@@ -122,9 +121,9 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     {
         Vector3 position = new Vector3(RandomizarNumero(), RandomizarNumero(), 0);
         int countRound = timer.rondaActual;
-        if (countRound >= 3)
+        if (countRound >= 4)
         {
-            countRound = 3;
+            countRound = 4;
         }
 
         int randomEnemy = Random.Range(1, countRound + 1);
@@ -173,11 +172,6 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
     private float RandomizarNumero()
     {
         float numero = Random.Range(rangoMinimoYMaximo[0], rangoMinimoYMaximo[1]);
-        if (numero > rangoProhibido[0] && numero < rangoProhibido[1])
-        {
-            return RandomizarNumero();
-        }
-        else
         {
             return numero;
         }
@@ -205,20 +199,13 @@ public class SpawnManager : MonoBehaviour, IDataPersiistence
         GameObject explosion = _PoolAtaqueExplosion.Spawn(transform.position, transform.rotation);
         explosion.GetComponent<AtaquesEnemigos>().damage = damage;
     }
-    public void SpawnAtaqueOjo(Transform transform)
+    public void SpawnAtaqueOjo(Transform transform, int damage)
     {
         GameObject ataqueOjo = _PoolAtaque2Ojos.Spawn(transform.position, transform.rotation);
+        ataqueOjo.GetComponent<AtaquesEnemigos>().damage = damage;
     }
     private void SpawnearPlayer()
     {
-
-    }
-    public void LoadData(GameData _data)
-    {
-        Instantiate(_data.player,spawnPlayer);
-    }
-    public void SaveData(ref GameData _data)
-    {
-       
+        Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
     }
 }

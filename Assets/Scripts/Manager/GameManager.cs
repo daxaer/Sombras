@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
     {
         idioma = _data.idioma;
         Invoke("Change", 0.1f);
+        player = _data.player;
     }
 
     public void SaveData(ref GameData _data)
