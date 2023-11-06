@@ -765,8 +765,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 38.0719, y: 19.8336, z: 0}
-    m_Extent: {x: 0.8290005, y: 1.5983, z: 0}
+    m_Center: {x: 38.069748, y: 19.83255, z: 0}
+    m_Extent: {x: 0.8280506, y: 1.6005497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6762,8 +6762,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.018799782, y: -0.0038003922, z: 0}
-    m_Extent: {x: 19.716599, y: 11.3055, z: 0}
+    m_Center: {x: -0.014249802, y: -0.00454998, z: 0}
+    m_Extent: {x: 19.72105, y: 11.29835, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10937,7 +10937,7 @@ PrefabInstance:
       objectReference: {fileID: 1832040777}
     - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: libreriarDeSonidos.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: libreriarDeSonidos.Array.data[0].type
@@ -11004,6 +11004,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
+      propertyPath: libreriarDeSonidos.Array.data[16].type
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: libreriarDeSonidos.Array.data[0].clip.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11065,6 +11069,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: libreriarDeSonidos.Array.data[15].clip.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
+      propertyPath: libreriarDeSonidos.Array.data[16].clip.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
@@ -11263,6 +11271,10 @@ PrefabInstance:
       propertyPath: libreriarDeSonidos.Array.data[15].clip.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: f873c6d9e0b8f2a47ac1bbd7103c67ab, type: 3}
+    - target: {fileID: 2364327762742136190, guid: 5552426da76186a43b01f5a717097577, type: 3}
+      propertyPath: libreriarDeSonidos.Array.data[16].clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e322e9bea324db048a846d736b561571, type: 3}
     - target: {fileID: 6063353838428688924, guid: 5552426da76186a43b01f5a717097577, type: 3}
       propertyPath: m_Name
       value: SoundManager

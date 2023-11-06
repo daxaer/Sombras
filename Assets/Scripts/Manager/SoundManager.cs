@@ -125,4 +125,5 @@ public enum SOUNDTYPE
     FIRE_RANGE,
     ENEMY_EXPLOSION,
     LIGHT,
+    END_lIGHT,
 }
