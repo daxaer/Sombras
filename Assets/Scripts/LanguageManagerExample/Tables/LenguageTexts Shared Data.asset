@@ -155,6 +155,10 @@ MonoBehaviour:
     m_Key: NO
     m_Metadata:
       m_Items: []
+  - m_Id: 22635008359358464
+    m_Key: Game/UI/GameOver/SpaceIn/TiendaMejoras/Mejoras Permanentes/Text (TMP)
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 959351525567365139

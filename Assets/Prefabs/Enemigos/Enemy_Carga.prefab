@@ -326,7 +326,7 @@ MonoBehaviour:
   _damage: 1
   _vidaMin: 3
   _vidaMax: 20
-  _speedMin: 1
+  _speedMin: 1.3
   _speedMax: 4
   _damageMin: 1
   _damageMax: 4

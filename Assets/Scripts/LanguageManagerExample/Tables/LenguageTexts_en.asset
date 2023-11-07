@@ -159,6 +159,10 @@ MonoBehaviour:
     m_Localized: NO
     m_Metadata:
       m_Items: []
+  - m_Id: 22635008359358464
+    m_Localized: "\rpermanent improvements\n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
