@@ -14,6 +14,7 @@ public class SpawnManager : MonoBehaviour
     //instancias pools
     //[SerializeField] private Estadisticas _estadisticas;
     [SerializeField] private GameObject[] _enemySpawn;
+    [SerializeField] private GameObject marca;
     [SerializeField] private GameObject _almaSpawn;
     [SerializeField] private GameObject[] _Ataques;
     [SerializeField] private bool _stopSpawning;
@@ -39,6 +40,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] public Timer timer;
 
     //pool
+    public Pool _marca;
     public Pool _poolAlmas;
     public Pool _poolBalas;
     public Enemy _enemy;
@@ -64,6 +66,9 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        //Marca
+        _marca = new Pool();
+        _marca.Inicializar(marca, 3);
         //Enemigos
         _PoolEnemy1 = new Pool();
         _PoolEnemy1.Inicializar(_enemySpawn[0], 3);
@@ -200,5 +205,9 @@ public class SpawnManager : MonoBehaviour
     private void SpawnearPlayer()
     {
         Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
+    }
+    IEnumerator SpawnEnemyes()
+    {
+        yield return new WaitForSeconds(1f);
     }
 }

@@ -7,8 +7,9 @@ using UnityEngine.Rendering.Universal;
 
 public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 {
-
     //Almas
+    public int almas;
+    public int almasGuardadas;
     public int almasMax;
 
     //Estadisticas iniciales
@@ -33,7 +34,9 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 
     private void Awake()
     {
-        almasMax = 0;
+        almasGuardadas = 0;
+        almas = 0;
+
         if (Instance == null)
         {
             Instance = this;
@@ -46,7 +49,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 
     public void LoadData(GameData _data)
     {
-        Debug.Log(_data.rondaActual + "rondaActual");
+        almasMax = _data.AlmasMax;
         personajeSeleccionado = _data.estadisticas;
         if(_data.rondaActual > 0)
         {
@@ -104,9 +107,25 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
 
     public void SaveData(ref GameData _data)
     {
+        _data.AlmasMax += almas;
+        almasMax = _data.AlmasMax;
+        almas = 0;
+        _data.vidaMaxima = vidaMaxima;
+        _data.velocidadPlayer = velocidadPlayer;
+        _data.vidaActual = vidaActual;
+        _data.ataque = ataque;
+        _data.ProjectileSize = projectileSize;
+        _data.velocidadeAtaque = velocidadeAtaque;
+        _data.roboDeVida = roboDeVida;
+        _data.duracionLamparas = duracionLamparas;
+        _data.rangoIluminacion = rangoIluminacion;
+
+        //Pasivas
+        _data.iluminarEnemigos = pasivaIluminacion;
         if(Player.Instance.dead == true)
         {
             _data.rondaActual = 0;
+            _data.Almas = 0;
             Debug.Log(_data.rondaActual + "Moriste");
         }
         else
@@ -123,18 +142,5 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
                 Debug.Log(_data.rondaActual + "Y la vida Continua");
             }
         }
-        _data.AlmasMax += almasMax;
-        _data.vidaMaxima = vidaMaxima;
-        _data.velocidadPlayer = velocidadPlayer;
-        _data.vidaActual = vidaActual;
-        _data.ataque = ataque;
-        _data.ProjectileSize = projectileSize;
-        _data.velocidadeAtaque = velocidadeAtaque;
-        _data.roboDeVida = roboDeVida;
-        _data.duracionLamparas = duracionLamparas;
-        _data.rangoIluminacion = rangoIluminacion;
-
-        //Pasivas
-        _data.iluminarEnemigos = pasivaIluminacion;
     }
 }
