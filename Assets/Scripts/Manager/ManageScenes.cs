@@ -11,10 +11,14 @@ public class ManageScenes : MonoBehaviour
     [SerializeField] private GameObject pausa;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject transition;
     public static ManageScenes Instance;
+    [SerializeField] private ChangScene changeScene; 
 
     private void Awake()
     {
+        Instance = this;
+        /*
         if (Instance == null)
         {
             Instance = this;
@@ -22,7 +26,7 @@ public class ManageScenes : MonoBehaviour
         else
         {
             Destroy(Instance);
-        }
+        }*/
     }
 
     public void AbrirMenu(GameObject menu)
@@ -39,7 +43,9 @@ public class ManageScenes : MonoBehaviour
     }
     public void LoadScene(string nombreScena)
     {
-        SceneManager.LoadSceneAsync(nombreScena, LoadSceneMode.Single);
+        //SceneManager.LoadSceneAsync(nombreScena, LoadSceneMode.Single);
+        changeScene.SceneToCall(nombreScena);
+        transition.SetActive(true);
     }
 
     public void Exit()
