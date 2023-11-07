@@ -41,14 +41,21 @@ public class Projectil : MonoBehaviour
             roboVida();
             if (!EstadisticasManager.Instance.ataqueMele)
             {
-                Destruir();
-                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_RANGE, other.transform);
+                if (!hit)
+                {
+                    SpawnManager.Instance.SpawnHit(other.transform);
+                    MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_RANGE, other.transform);
+                    hit = false;
+                    Destruir();
+                }
             }
             else
             {
-                if(!hit)
+                if (!hit)
                 {
+                    SpawnManager.Instance.SpawnHit(other.transform);    
                     MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_MELE, other.transform);
+                    hit = false;
                 }
             }
         }
@@ -56,8 +63,8 @@ public class Projectil : MonoBehaviour
         {
             if (!EstadisticasManager.Instance.ataqueMele)
             {
-                Destruir();
                 MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_PARED, other.transform);
+                Destruir();
             }
         }
     }

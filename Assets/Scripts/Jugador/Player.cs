@@ -91,7 +91,8 @@ public class Player : MonoBehaviour
             if (other.GetComponent<SpawnAlmas>().TipoAlma() == 2)
             {
                 UIManager.Instance.Almas(1);
-                EstadisticasManager.Instance.almasMax++;
+                EstadisticasManager.Instance.almasGuardadas++;
+                EstadisticasManager.Instance.almas++;
                 MusicManager.Instance.PlayAudioPool(SOUNDTYPE.GET_SOUL, transform);
             }
         }
@@ -100,8 +101,6 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.JuegoPausado();
         ManageScenes.Instance.AbrirGameOver();
-
-
     }
     public void Pausar()
     {

@@ -14,6 +14,8 @@ public class SpawnManager : MonoBehaviour
     //instancias pools
     //[SerializeField] private Estadisticas _estadisticas;
     [SerializeField] private GameObject[] _enemySpawn;
+    [SerializeField] private GameObject marca;
+    [SerializeField] private GameObject hit;
     [SerializeField] private GameObject _almaSpawn;
     [SerializeField] private GameObject[] _Ataques;
     [SerializeField] private bool _stopSpawning;
@@ -39,6 +41,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] public Timer timer;
 
     //pool
+    public Pool _marca;
+    public Pool _hit;
     public Pool _poolAlmas;
     public Pool _poolBalas;
     public Enemy _enemy;
@@ -64,6 +68,11 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        //Fx
+        _marca = new Pool();
+        _marca.Inicializar(marca, 3);
+        _hit = new Pool();
+        _hit.Inicializar(hit, 3);
         //Enemigos
         _PoolEnemy1 = new Pool();
         _PoolEnemy1.Inicializar(_enemySpawn[0], 3);
@@ -98,8 +107,9 @@ public class SpawnManager : MonoBehaviour
         _timeSinceLastSpawn += Time.deltaTime;
 
         //verificar si ha pasado tiempo suficiente para el proximo enemigo
-        if(_timeSinceLastSpawn >= _spawnDelay )
+        if(_timeSinceLastSpawn >= _spawnDelay - (Timer.Instance.rondaActual * 0.01) )
         {
+            Debug.Log(_spawnDelay - (Timer.Instance.rondaActual * 0.05) + "operacion");
             _timeSinceLastSpawn = 0;
             //Aumentar el numero de enemigos actuales en pantalla
             for(int i = 0; i < _enemiesPerInterval; i++)
@@ -201,4 +211,13 @@ public class SpawnManager : MonoBehaviour
     {
         Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
     }
+    IEnumerator SpawnEnemyes()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+    public void SpawnHit(Transform transform)
+    {
+        GameObject explosion = _hit.Spawn(transform.position, transform.rotation);
+    }
+
 }

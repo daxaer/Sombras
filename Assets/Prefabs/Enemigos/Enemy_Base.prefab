@@ -270,15 +270,17 @@ MonoBehaviour:
   iluminar: {fileID: 117965689675876408}
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
+  animation_Brillo: {fileID: 0}
   _vida: 3
   _damage: 1
   _vidaMin: 3
   _vidaMax: 30
-  _speedMin: 1
+  _speedMin: 1.3
   _speedMax: 5
   _damageMin: 1
   _damageMax: 5
   aiPath: {fileID: 594802796594497193}
+  "RecibirDa\xF1o": 0
   circulo: {fileID: 1707214561227098646}
 --- !u!58 &1707214561227098646
 CircleCollider2D:
