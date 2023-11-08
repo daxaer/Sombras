@@ -148,7 +148,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 19475285842030592
-    m_Localized: "\xA1CUALQUIER PROGRESO SERA BORRADO!"
+    m_Localized: "\xA1CUALQUIER PROGRESO NO GUARDADO SERA BORRADO!"
     m_Metadata:
       m_Items: []
   - m_Id: 19475993068793856

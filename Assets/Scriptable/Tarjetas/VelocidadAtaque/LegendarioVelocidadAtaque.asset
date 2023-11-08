@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36eb23e21e8dd5a4d81b7d1d14fb3e12, type: 3}
-  m_Name: RaraSalud
+  m_Name: LegendarioVelocidadAtaque
   m_EditorClassIdentifier: 
-  imagenTarjeta: {fileID: 21300000, guid: 26d1d7be5bc59b249bc5779bf8a1923f, type: 3}
+  imagenTarjeta: {fileID: -8863714306952377876, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
   IdTarjeta: 000
   nombreTarjeta:
-  - Aumento de Salud III
-  - Health Increase III
+  - Velocidad de ataque legendaria
+  - Legendary attack speed
   - "\u52D5\u304D\u306E\u5897\u52A0 I"
   descripcionDeTarjeta:
-  - Aumenta 30 puntos de salud a tu salud maxima.
-  - Increases 30 health points to your maximum health.
-  - "\u4F53\u529B\u30DD\u30A4\u30F3\u30C8\u304C 30 \u5897\u52A0\u3057\u3066\u6700\u5927\u4F53\u529B\u306B\u306A\u308A\u307E\u3059\u3002"
-  salud: 3
+  - La velocidad de ataque aumenta enormemente
+  - Attack speed increases immensely
+  - "\u79FB\u52D5\u901F\u5EA6\u304C\u308F\u305A\u304B\u306B\u5897\u52A0\u3057\u307E\u3059"
+  salud: 0
   ataque: 0
   velocidadMovimiento: 0
   rangoLampara: 0
-  velocidadAtaque: 0
+  velocidadAtaque: -0.5
   projectilSize: 0
   duracionLampara: 0
-  costoTarjeta: 50
+  costoTarjeta: 35
   robaVida: 0
   pasivaIluminacion: 0
-  colorRareza: {r: 0.09852261, g: 0.5544919, b: 0.7735849, a: 1}
+  colorRareza: {r: 0.7254902, g: 0.6784314, b: 0.039215688, a: 1}
   RarezaTarjeta: 2

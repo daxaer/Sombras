@@ -109,7 +109,6 @@ public class SpawnManager : MonoBehaviour
         //verificar si ha pasado tiempo suficiente para el proximo enemigo
         if(_timeSinceLastSpawn >= _spawnDelay - (Timer.Instance.rondaActual * 0.01) )
         {
-            Debug.Log(_spawnDelay - (Timer.Instance.rondaActual * 0.05) + "operacion");
             _timeSinceLastSpawn = 0;
             //Aumentar el numero de enemigos actuales en pantalla
             for(int i = 0; i < _enemiesPerInterval; i++)
@@ -148,16 +147,20 @@ public class SpawnManager : MonoBehaviour
                     go.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
                 case 2:
-                    GameObject go1 = _PoolEnemy2.Spawn(position, transform.rotation);
+                    GameObject go1 = _PoolEnemy1.Spawn(position, transform.rotation);
                     go1.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
                 case 3:
-                    GameObject go2 = _PoolEnemy3.Spawn(position, transform.rotation);
+                    GameObject go2 = _PoolEnemy2.Spawn(position, transform.rotation);
                     go2.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
-
+                case 4:
+                    GameObject go3 = _PoolEnemy3.Spawn(position, transform.rotation);
+                    go3.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+                    break;
                 default:
-                    Debug.Log("No hay enemigo joven");
+                    GameObject go4 = _PoolEnemy1.Spawn(position, transform.rotation);
+                    go4.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
             }
             _currentEnemiesCount++;
@@ -176,7 +179,6 @@ public class SpawnManager : MonoBehaviour
     public GameObject SpawnAtaque(Transform transform)
     {
         GameObject bala = _poolBalas.Spawn(transform.position, transform.rotation);
-        Debug.Log("bala" + bala);
         return bala;
     }
 

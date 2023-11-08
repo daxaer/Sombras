@@ -101,6 +101,9 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.JuegoPausado();
         ManageScenes.Instance.AbrirGameOver();
+        Timer.Instance.rondaActual = 0;
+        DataPersistenceManager.Instance.SaveGame();
+
     }
     public void Pausar()
     {

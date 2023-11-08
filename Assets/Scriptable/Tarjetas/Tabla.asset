@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: Tabla
   m_EditorClassIdentifier: 
   prob:
-  - TarjetaEquip: {fileID: 11400000, guid: 8b391f9c952787144ad24fcc9e5c32e9, type: 2}
-    probabilidadAparicion: 40
   - TarjetaEquip: {fileID: 11400000, guid: f3d59c4388673634590e03edd9df74bc, type: 2}
-    probabilidadAparicion: 60
-  - TarjetaEquip: {fileID: 11400000, guid: 2c394222f31229342a2a839649540001, type: 2}
     probabilidadAparicion: 50
+  - TarjetaEquip: {fileID: 11400000, guid: 6b2887682d3785141a60e6224f78abb4, type: 2}
+    probabilidadAparicion: 35
+  - TarjetaEquip: {fileID: 11400000, guid: fc6d4bb9d4b5c2240933dfdd156ace55, type: 2}
+    probabilidadAparicion: 18
+  - TarjetaEquip: {fileID: 11400000, guid: 742f5df99eabbf74fb64c6a309b8d890, type: 2}
+    probabilidadAparicion: 5
+  - TarjetaEquip: {fileID: 11400000, guid: 4a23de218dce4fe43927c03eac4b4253, type: 2}
+    probabilidadAparicion: 1
+  - TarjetaEquip: {fileID: 11400000, guid: 8b391f9c952787144ad24fcc9e5c32e9, type: 2}
+    probabilidadAparicion: 50
+  - TarjetaEquip: {fileID: 11400000, guid: 0a4bcf49698bcdd4e9498aa727776fed, type: 2}
+    probabilidadAparicion: 35
+  - TarjetaEquip: {fileID: 11400000, guid: 4ad0a648f6e4fd242b834dcecf6517ef, type: 2}
+    probabilidadAparicion: 18
+  - TarjetaEquip: {fileID: 11400000, guid: 02f13e2b11deda34a8a07eb22477febe, type: 2}
+    probabilidadAparicion: 5
+  - TarjetaEquip: {fileID: 11400000, guid: 9f83aaa04af9b2b45a0c1fc11a8a85fb, type: 2}
+    probabilidadAparicion: 1
+  - TarjetaEquip: {fileID: 11400000, guid: 16986a3d1860e254c94dfb00033096f1, type: 2}
+    probabilidadAparicion: 18
+  - TarjetaEquip: {fileID: 11400000, guid: c5115beeaa7d7f54eb6a286ad85368be, type: 2}
+    probabilidadAparicion: 5
+  - TarjetaEquip: {fileID: 11400000, guid: 6141719a2f5492a4693e289fbcd77fc3, type: 2}
+    probabilidadAparicion: 1
   - TarjetaEquip: {fileID: 11400000, guid: 72bbe457a87bdfa40956ee0d0ccbeb65, type: 2}
-    probabilidadAparicion: 30
+    probabilidadAparicion: 50
   - TarjetaEquip: {fileID: 11400000, guid: 0bcf7ea6637f9c24681b406e7595eb2c, type: 2}
-    probabilidadAparicion: 20
+    probabilidadAparicion: 35
   - TarjetaEquip: {fileID: 11400000, guid: 110537cb6e4fb6a41934dee5bfeb52f1, type: 2}
-    probabilidadAparicion: 10
+    probabilidadAparicion: 18
   - TarjetaEquip: {fileID: 11400000, guid: 497c690b48e37744c96f440ae64a358a, type: 2}
     probabilidadAparicion: 5
   - TarjetaEquip: {fileID: 11400000, guid: eee0de06a6dac6c4da84702282c6e2e2, type: 2}
+    probabilidadAparicion: 1
+  - TarjetaEquip: {fileID: 11400000, guid: 08a457dcda3734a4982d25d20669e85f, type: 2}
+    probabilidadAparicion: 35
+  - TarjetaEquip: {fileID: 11400000, guid: ba584d1480c2f6049ac4549bd82f5fd3, type: 2}
+    probabilidadAparicion: 18
+  - TarjetaEquip: {fileID: 11400000, guid: 565caeb2d1ee8a04090990d8992a627f, type: 2}
+    probabilidadAparicion: 5
+  - TarjetaEquip: {fileID: 11400000, guid: 74315323fcd884f49aa8c6c60c0cbbe7, type: 2}
+    probabilidadAparicion: 1
+  - TarjetaEquip: {fileID: 11400000, guid: 2c394222f31229342a2a839649540001, type: 2}
+    probabilidadAparicion: 50
+  - TarjetaEquip: {fileID: 11400000, guid: 83d70e40356d68f4a8aded00df919c3d, type: 2}
+    probabilidadAparicion: 35
+  - TarjetaEquip: {fileID: 11400000, guid: f68cb617efe2ff34980b0ca7c6470752, type: 2}
+    probabilidadAparicion: 18
+  - TarjetaEquip: {fileID: 11400000, guid: 3d5d0bafdbcb66d4c8e6200bbacf9b8c, type: 2}
+    probabilidadAparicion: 5
+  - TarjetaEquip: {fileID: 11400000, guid: 53189a75d2bf1674dab274edf9fa6738, type: 2}
     probabilidadAparicion: 1

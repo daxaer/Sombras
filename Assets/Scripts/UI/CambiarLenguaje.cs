@@ -15,13 +15,18 @@ public class CambiarLengauje : MonoBehaviour, IDataPersiistence
     {
         LenguajeText = GameManager.Instance.ChangeLenguageTarget();
         CambiarTexto(LenguajeText);
+
+    }
+    public void Start()
+    {
+        CambiarTexto(LenguajeText);
+
     }
     public void CambiarLengaje(int lenguaje)
     {
-        GameManager.Instance.ChangeLocal(lenguaje - 1);
-        CambiarTexto(lenguaje - 1);
-        idioma = lenguaje - 1;
-        Debug.Log("idioma" + idioma);
+        GameManager.Instance.ChangeLocal(lenguaje);
+        CambiarTexto(lenguaje);
+        idioma = lenguaje;
     }
 
     public void CambiarTexto(int texto)
@@ -38,7 +43,7 @@ public class CambiarLengauje : MonoBehaviour, IDataPersiistence
 
     public void LoadData(GameData _data)
     {
-        
+
     }
 
     public void SaveData(ref GameData _data)

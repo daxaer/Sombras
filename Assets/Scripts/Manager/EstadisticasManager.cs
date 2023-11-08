@@ -35,7 +35,6 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
     private void Awake()
     {
         almasGuardadas = 0;
-        almas = 0;
 
         if (Instance == null)
         {
@@ -50,6 +49,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
     public void LoadData(GameData _data)
     {
         almasMax = _data.AlmasMax;
+        almasGuardadas = _data.Almas;
         personajeSeleccionado = _data.estadisticas;
         if(_data.rondaActual > 0)
         {
@@ -110,6 +110,7 @@ public class EstadisticasManager : MonoBehaviour, IDataPersiistence
         _data.AlmasMax += almas;
         almasMax = _data.AlmasMax;
         almas = 0;
+        almasGuardadas = UIManager.Instance.GetAlmas();
         _data.vidaMaxima = vidaMaxima;
         _data.velocidadPlayer = velocidadPlayer;
         _data.vidaActual = vidaActual;

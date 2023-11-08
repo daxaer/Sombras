@@ -17,13 +17,13 @@ MonoBehaviour:
   - Soul eater
   - soul
   vidaMaxima: 5
-  ataque: 0
+  ataque: 2
   iluminar: 0
   vidaActual: 10
   velocidadMovimiento: 2
   velocidadDeAtaque: 1
   porcentajeRoboDeVida: 30
-  rangoGolpe: 1
+  projectileSize: 0
   velocidadBala: 0
   ataqueMele: 1
   rangoIluminacion: 12
