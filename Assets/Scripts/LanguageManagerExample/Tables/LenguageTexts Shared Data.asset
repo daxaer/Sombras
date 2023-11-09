@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1991447337259008
-    m_Key: TextSelectCharacter
+    m_Key: 'ContinuarButton  '
     m_Metadata:
       m_Items: []
   - m_Id: 1992496466907136
@@ -117,6 +117,46 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16817386384748544
     m_Key: IndexButtonSettings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18839763142270976
+    m_Key: Seleccion/Canvas/UI/Section-Selection/Knight/Section-Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840288499818496
+    m_Key: Seleccion/Canvas/UI/Section-Selection/Ranger/Section-Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840511313829888
+    m_Key: Seleccion/Canvas/UI/Section-Selection/SoulEater/Section-SoulEater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19095449612804096
+    m_Key: Index/UI/SpaceCam/Section-Menu Botones/Button-Continue/TextContinue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19140778534334464
+    m_Key: Shop-Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475159736086528
+    m_Key: Are-You-Sure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475285842030592
+    m_Key: Any-Unsaved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475993068793856
+    m_Key: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19476014744956928
+    m_Key: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22635008359358464
+    m_Key: Game/UI/GameOver/SpaceIn/TiendaMejoras/Mejoras Permanentes/Text (TMP)
     m_Metadata:
       m_Items: []
   m_Metadata:

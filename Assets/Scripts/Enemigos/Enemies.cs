@@ -8,23 +8,29 @@ using UnityEngine.AI;
 public class Enemies : MonoBehaviour
 {
     [SerializeField] protected float _lifeIncrease = 1f;
-    [SerializeField] protected GameObject iluminar;
+    [SerializeField] protected SpriteRenderer iluminar;
     [SerializeField] protected Animator animation_Ojo;
     [SerializeField] protected Animator animation_Cuerpo;
+    [SerializeField] protected Animator animation_Brillo;
+
     [SerializeField] protected float _vida;
     [SerializeField] protected int _damage;
     [SerializeField] protected float _vidaMin;
     [SerializeField] protected float _vidaMax;
     [SerializeField] protected float _speedMin;
     [SerializeField] protected float _speedMax;
-    [SerializeField] protected float _damageMax;
     [SerializeField] protected float _damageMin;
+    [SerializeField] protected float _damageMax;
+    
 
     [SerializeField] protected AIPath aiPath;
+    [SerializeField] protected bool RecibirDaño;
 
     void Start()
     {
-           
+        _vida = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _vidaMin, _vidaMax));
+        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
+        _damage = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _damageMin, _damageMax));
     }
     private void Update()
     {
@@ -33,7 +39,6 @@ public class Enemies : MonoBehaviour
             DeactivateEnemies();
         }
     }
-
     public void DeactivateEnemies()
     {
         SpawnManager.Instance.RestarCurrentEnemy();
@@ -47,29 +52,27 @@ public class Enemies : MonoBehaviour
         gameObject.SetActive(false); //nos apagamos para seguir en el pool
     }
 
-    public virtual void Atacar()
-    {
+    public virtual void Atacar(){}
 
-    }
+    public virtual void Cargando(){}
 
     private void OnEnable()
     {
-        Debug.Log("en padre");
-        _vida = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _vidaMin, _vidaMax));
-        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
-        _damage = (int)Mathf.Floor(AmountDifficult(Timer.Instance.rondaActual, _damageMin, _damageMax));
+
     }
 
     public void Activarluz()
     {
-        iluminar.SetActive(true);
+        var transparencia = iluminar.color.a;
+        transparencia = 1;
         CancelInvoke("DesactivarLuz");
-        Invoke(nameof(DesactivarLuz), 2f);
+        Invoke(nameof(DesactivarLuz), 5f);
     }
 
     public void DesactivarLuz()
     {
-        iluminar.SetActive(false);
+        var transparencia = iluminar.color.a;
+        transparencia = 0;
     }
 
     public float AmountDifficult(int _round, float _estadisticMin, float _estadisticMax)
@@ -80,13 +83,25 @@ public class Enemies : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        _vida -= damage;
-
-        if (_vida <= 0)
+        if(RecibirDaño)
         {
-            //_alma.ActivarAlma();
-            Invoke(nameof(Desactivar), 0f);
+            RecibirDaño = false;
+            _vida -= damage;
+            Debug.Log(_vida);
+            if (_vida <= 0)
+            {
+                Invoke(nameof(Desactivar), 0f);
+            }
+            else
+            {
+                StartCoroutine("damageAnule");
+            }
         }
+    }
+    IEnumerator damageAnule()
+    {
+        yield return new WaitForSeconds(EstadisticasManager.Instance.velocidadeAtaque - 0.05f);
+        RecibirDaño = true;
     }
 
     private void OnDisable()

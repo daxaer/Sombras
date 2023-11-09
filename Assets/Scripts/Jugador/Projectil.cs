@@ -11,6 +11,7 @@ public class Projectil : MonoBehaviour
     
     private void OnEnable()
     {
+        AumentoRango();
         hit = false;
         if(EstadisticasManager.Instance.ataqueMele)
         {
@@ -18,36 +19,43 @@ public class Projectil : MonoBehaviour
         }
         else
         {
-            Invoke("Destruir", 0.2f);
+            Invoke("Destruir", 2f);
         }
     }
 
     private void Update()
     {
-        Debug.Log("velocidad" +  velocidad);
         transform.Translate(Vector2.up * velocidad * Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            Enemies enemy = other.gameObject.GetComponent<Enemies>();
             enemy.TakeDamage(EstadisticasManager.Instance.ataque);
-            if (EstadisticasManager.Instance.iluminarEnemigos == true)
+
+            if (EstadisticasManager.Instance.pasivaIluminacion == true)
             {
                 enemy.Activarluz();
             }
             roboVida();
             if (!EstadisticasManager.Instance.ataqueMele)
             {
-                Destruir();
-                MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_RANGE, other.transform);
+                if (!hit)
+                {
+                    SpawnManager.Instance.SpawnHit(other.transform);
+                    MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_RANGE, other.transform);
+                    hit = false;
+                    Destruir();
+                }
             }
             else
             {
-                if(!hit)
+                if (!hit)
                 {
+                    SpawnManager.Instance.SpawnHit(other.transform);    
                     MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_ENEMY_MELE, other.transform);
+                    hit = false;
                 }
             }
         }
@@ -55,8 +63,8 @@ public class Projectil : MonoBehaviour
         {
             if (!EstadisticasManager.Instance.ataqueMele)
             {
-                Destruir();
                 MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_PARED, other.transform);
+                Destruir();
             }
         }
     }
@@ -66,6 +74,7 @@ public class Projectil : MonoBehaviour
         if (robo <= EstadisticasManager.Instance.roboDeVida)
         {
             Player.Instance.RecuperarVIda(1);
+            MusicManager.Instance.PlayAudioPool(SOUNDTYPE.LIFE_STEAL, Player.Instance.transform);
         }
     }
     public void Destruir()
@@ -75,7 +84,7 @@ public class Projectil : MonoBehaviour
 
     public void AumentoRango()
     {
-        gameObject.transform.localScale = new Vector3(EstadisticasManager.Instance.rango, EstadisticasManager.Instance.rango, 1);
+        gameObject.transform.localScale = new Vector3(1 + EstadisticasManager.Instance.projectileSize,1 + EstadisticasManager.Instance.projectileSize, 1);
     }
 
 }

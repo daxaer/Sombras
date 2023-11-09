@@ -7,21 +7,26 @@ using UnityEngine.UIElements;
 
 public class SpawnManager : MonoBehaviour
 {
+    //Save dates
+    [SerializeField] private GameObject player;
+    [SerializeField] private bool gameSave;
 
     //instancias pools
     //[SerializeField] private Estadisticas _estadisticas;
     [SerializeField] private GameObject[] _enemySpawn;
+    [SerializeField] private GameObject marca;
+    [SerializeField] private GameObject hit;
     [SerializeField] private GameObject _almaSpawn;
-
+    [SerializeField] private GameObject[] _Ataques;
     [SerializeField] private bool _stopSpawning;
     [SerializeField] private float _spawnTime;
     [SerializeField] private float _spawnDelay = 1f; //intervalo entre cada instancia
     [SerializeField] private float spawnY;
     [SerializeField] private float spawnx;
     [SerializeField] private float[] rangoMinimoYMaximo;
-    [SerializeField] private float[] rangoProhibido;
     [SerializeField] private GameObject[] _lamp;
-    [SerializeField] private float timeLamp;
+    [SerializeField] private float prenderLampara;
+    private int lamparaActual;
 
     [SerializeField] private int maxEnemies = 10; //limite de enemigos
     [SerializeField] private int _startEnemyCount = 1; //Cantidad inicial de enemigos
@@ -30,20 +35,22 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private int _currentEnemiesCount = 0; //enemigos actuales en pantalla
 
     //private List<GameObject> enemies = new List<GameObject>();
-
     [SerializeField] private SpawnManager spawn;
     [SerializeField] private Transform spawnPlayer;
     [HideInInspector] public int _generateRandomEnemy;
     [SerializeField] public Timer timer;
 
     //pool
+    public Pool _marca;
+    public Pool _hit;
     public Pool _poolAlmas;
     public Pool _poolBalas;
     public Enemy _enemy;
     public Pool _PoolEnemy1;
     public Pool _PoolEnemy2;
     public Pool _PoolEnemy3;
-
+    public Pool _PoolAtaqueExplosion;
+    public Pool _PoolAtaque2Ojos;
     public static SpawnManager Instance;
 
     private void Awake()
@@ -61,6 +68,11 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        //Fx
+        _marca = new Pool();
+        _marca.Inicializar(marca, 3);
+        _hit = new Pool();
+        _hit.Inicializar(hit, 3);
         //Enemigos
         _PoolEnemy1 = new Pool();
         _PoolEnemy1.Inicializar(_enemySpawn[0], 3);
@@ -77,6 +89,12 @@ public class SpawnManager : MonoBehaviour
         _poolBalas.Inicializar(EstadisticasManager.Instance.bala, 0);
         InvokeRepeating("SpawnEnemy", _spawnTime, _spawnDelay);
         StartCoroutine("ActivarLampara");
+        //Ataques Enemigos
+        _PoolAtaqueExplosion = new Pool();
+        _PoolAtaqueExplosion.Inicializar(_Ataques[0], 0);
+
+        _PoolAtaque2Ojos = new Pool();
+        _PoolAtaque2Ojos.Inicializar(_Ataques[1], 0);
 
         for (int i = 0; i < _startEnemyCount; i++)
         {
@@ -89,7 +107,7 @@ public class SpawnManager : MonoBehaviour
         _timeSinceLastSpawn += Time.deltaTime;
 
         //verificar si ha pasado tiempo suficiente para el proximo enemigo
-        if(_timeSinceLastSpawn >= _spawnDelay )
+        if(_timeSinceLastSpawn >= _spawnDelay - (Timer.Instance.rondaActual * 0.01) )
         {
             _timeSinceLastSpawn = 0;
             //Aumentar el numero de enemigos actuales en pantalla
@@ -113,13 +131,12 @@ public class SpawnManager : MonoBehaviour
     {
         Vector3 position = new Vector3(RandomizarNumero(), RandomizarNumero(), 0);
         int countRound = timer.rondaActual;
-        if (countRound >= 3)
+        if (countRound >= 4)
         {
-            countRound = 3;
+            countRound = 4;
         }
 
         int randomEnemy = Random.Range(1, countRound + 1);
-        Debug.Log(randomEnemy);
         
         if (_currentEnemiesCount < maxEnemies)
         {
@@ -130,16 +147,20 @@ public class SpawnManager : MonoBehaviour
                     go.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
                 case 2:
-                    GameObject go1 = _PoolEnemy2.Spawn(position, transform.rotation);
+                    GameObject go1 = _PoolEnemy1.Spawn(position, transform.rotation);
                     go1.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
                 case 3:
-                    GameObject go2 = _PoolEnemy3.Spawn(position, transform.rotation);
+                    GameObject go2 = _PoolEnemy2.Spawn(position, transform.rotation);
                     go2.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
-
+                case 4:
+                    GameObject go3 = _PoolEnemy3.Spawn(position, transform.rotation);
+                    go3.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+                    break;
                 default:
-                    Debug.Log("No hay enemigo joven");
+                    GameObject go4 = _PoolEnemy1.Spawn(position, transform.rotation);
+                    go4.GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
                     break;
             }
             _currentEnemiesCount++;
@@ -150,7 +171,6 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-
     public void SpawnAlmas(Transform transform)
     {
         GameObject alma = _poolAlmas.Spawn(transform.position, transform.rotation);
@@ -159,18 +179,12 @@ public class SpawnManager : MonoBehaviour
     public GameObject SpawnAtaque(Transform transform)
     {
         GameObject bala = _poolBalas.Spawn(transform.position, transform.rotation);
-        Debug.Log("bala" + bala);
         return bala;
     }
 
     private float RandomizarNumero()
     {
         float numero = Random.Range(rangoMinimoYMaximo[0], rangoMinimoYMaximo[1]);
-        if (numero > rangoProhibido[0] && numero < rangoProhibido[1])
-        {
-            return RandomizarNumero();
-        }
-        else
         {
             return numero;
         }
@@ -178,23 +192,34 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator  ActivarLampara()
     {
-        int numero = Random.Range(1, _lamp.Length);
-        if (_lamp[numero].GetComponent<Lampara>().Activado == true)
-        {
-            _lamp[numero].GetComponent<Lampara>().Activado = true;
-            //_lamp[numero].GetComponent<Lampara>().RangoLuz(_estadisticas.rangoIluminacion);
-            //_lamp[numero].GetComponent<Lampara>().TiempoIluminacion(_estadisticas.duracionLamparas);
-        }
-        else
-        {
-            _lamp[numero].GetComponent<Lampara>().Activado = false;
-        }
-        _lamp[numero].SetActive(true);
-        yield return new WaitForSeconds(timeLamp);
+        lamparaActual = Random.Range(1, _lamp.Length);
+        _lamp[lamparaActual].SetActive(true);
+        _lamp[lamparaActual].GetComponent<Animator>().SetTrigger("Prender");
+        yield return new WaitForSeconds(prenderLampara);
+        StartCoroutine("ActivarLampara");
     }
 
+    public void SpawnExplosion(Transform transform, int damage)
+    {
+        GameObject explosion = _PoolAtaqueExplosion.Spawn(transform.position, transform.rotation);
+        explosion.GetComponent<AtaquesEnemigos>().damage = damage;
+    }
+    public void SpawnAtaqueOjo(Transform transform, int damage)
+    {
+        GameObject ataqueOjo = _PoolAtaque2Ojos.Spawn(transform.position, transform.rotation);
+        ataqueOjo.GetComponent<AtaquesEnemigos>().damage = damage;
+    }
     private void SpawnearPlayer()
     {
-       Instantiate(GameManager.Instance.PlayerSave(),spawnPlayer);
+        Instantiate(GameManager.Instance.PlayerSave(), spawnPlayer);
     }
+    IEnumerator SpawnEnemyes()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+    public void SpawnHit(Transform transform)
+    {
+        GameObject explosion = _hit.Spawn(transform.position, transform.rotation);
+    }
+
 }

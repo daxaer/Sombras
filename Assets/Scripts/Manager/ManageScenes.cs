@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class ManageScenes : MonoBehaviour
 {
     [SerializeField] EventSystem eventSystem;
+    [SerializeField] bool gameSave;
     [SerializeField] private GameObject pausa;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject gameOver;
-
     public static ManageScenes Instance;
 
     private void Awake()
@@ -70,6 +70,11 @@ public class ManageScenes : MonoBehaviour
     public void ActiveScriptable(ScriptableEstadisticas scriptable)
     {
         GameManager.Instance.SetScriptable(scriptable);
+    }
+
+    public void NewSavegame()
+    {
+        gameSave = true;
     }
 }
 

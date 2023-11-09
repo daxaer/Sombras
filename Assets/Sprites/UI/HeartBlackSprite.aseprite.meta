@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 200
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638323810887556305
+  platformSettingsDirtyTick: 638350077561964421
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -182,15 +182,15 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: HeartBlackSprite_0
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 51
-      y: 157
-      width: 40
-      height: 40
+      x: 4
+      y: 120
+      width: 52
+      height: 46
     spriteID: 83c2b312b8ae921499b7062d99da5d60
     spriteBone: []
     spriteOutline: []
@@ -202,15 +202,15 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: HeartBlackSprite_1
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 76
-      width: 39
-      height: 59
+      y: 174
+      width: 43
+      height: 42
     spriteID: 1d97d78653eccbc4bb80b5680e0fbf20
     spriteBone: []
     spriteOutline: []
@@ -222,15 +222,15 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: HeartBlackSprite_2
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 51
-      y: 110
-      width: 44
-      height: 39
+      x: 4
+      y: 66
+      width: 52
+      height: 46
     spriteID: 81342ed2f25142848a953ca1350e4b83
     spriteBone: []
     spriteOutline: []
@@ -242,15 +242,15 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: HeartBlackSprite_3
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 39
-      height: 64
+      width: 54
+      height: 54
     spriteID: 8a0b67e407cfa5545b6c56d7da4fb305
     spriteBone: []
     spriteOutline: []
@@ -262,15 +262,15 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: HeartBlackSprite_4
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 51
-      y: 58
-      width: 50
-      height: 44
+      x: 58
+      y: 50
+      width: 41
+      height: 43
     spriteID: 8ff74b9f1033d1544ae10636c512dc93
     spriteBone: []
     spriteOutline: []
@@ -287,10 +287,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 51
+      x: 66
       y: 4
-      width: 52
-      height: 46
+      width: 38
+      height: 38
     spriteID: 2e20ef5e9e636624cb2ba903734c866b
     spriteBone: []
     spriteOutline: []
@@ -308,37 +308,37 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: HeartBlackSprite_Frame_5
-      frameIndex: 5
+    - name: HeartBlackSprite_Frame_4
+      frameIndex: 4
       cellRect:
-        x: 12
-        y: 3
-        width: 39
-        height: 59
+        x: 10
+        y: 10
+        width: 54
+        height: 54
       spriteId: 845585ec42da53f44be39e21b5fe464b
     - name: HeartBlackSprite_Frame_0
       frameIndex: 0
       cellRect:
-        x: 7
-        y: 10
-        width: 50
-        height: 44
+        x: 6
+        y: 9
+        width: 52
+        height: 46
       spriteId: 31df33969357b48439d04e0762292cc3
     - name: HeartBlackSprite_Frame_1
       frameIndex: 1
       cellRect:
-        x: 13
-        y: 12
-        width: 40
-        height: 40
+        x: 14
+        y: 13
+        width: 38
+        height: 38
       spriteId: 32c3f91cef689de4a82cc32498cf4517
     - name: HeartBlackSprite_Frame_2
       frameIndex: 2
       cellRect:
         x: 10
-        y: 12
-        width: 44
-        height: 39
+        y: 13
+        width: 43
+        height: 38
       spriteId: 296f334d84de99741849d04ea8390a95
     - name: HeartBlackSprite_Frame_3
       frameIndex: 3
@@ -348,13 +348,13 @@ ScriptedImporter:
         width: 52
         height: 46
       spriteId: 65c33831ddfc76140a04f5e2e7e87a45
-    - name: HeartBlackSprite_Frame_4
-      frameIndex: 4
+    - name: HeartBlackSprite_Frame_5
+      frameIndex: 5
       cellRect:
-        x: 14
-        y: 0
-        width: 39
-        height: 64
+        x: 21
+        y: 17
+        width: 26
+        height: 42
       spriteId: e8c8e91fb97ebc94d947c612204aaf23
     linkedCells: []
     parentIndex: -1

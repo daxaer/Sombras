@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36eb23e21e8dd5a4d81b7d1d14fb3e12, type: 3}
+  m_Name: ComunVelocidadAtaque
+  m_EditorClassIdentifier: 
+  imagenTarjeta: {fileID: -8863714306952377876, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
+  IdTarjeta: 000
+  nombreTarjeta:
+  - "Velocidad de ataque com\xFAn"
+  - Common attack speed
+  - "\u52D5\u304D\u306E\u5897\u52A0 I"
+  descripcionDeTarjeta:
+  - La velocidad de ataque aumenta muy poco
+  - Attack speed increases very slightly
+  - "\u79FB\u52D5\u901F\u5EA6\u304C\u308F\u305A\u304B\u306B\u5897\u52A0\u3057\u307E\u3059"
+  salud: 0
+  ataque: 0
+  velocidadMovimiento: 0
+  rangoLampara: 0
+  velocidadAtaque: -0.1
+  projectilSize: 0
+  duracionLampara: 0
+  costoTarjeta: 9
+  robaVida: 0
+  pasivaIluminacion: 0
+  colorRareza: {r: 0.40392157, g: 0.40392157, b: 0.40392157, a: 1}
+  RarezaTarjeta: 2

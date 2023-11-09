@@ -8,7 +8,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersiistence
 {
     private int idioma;
     private bool pausa;
@@ -30,14 +30,21 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
    
     private void Start()
     {
-        int savedLocalID = PlayerPrefs.GetInt(LocaleKey, 0);
-        ChangeLocal(savedLocalID);
+        if(!DataPersistenceManager.Instance.HasGameData())
+        {
+            DataPersistenceManager.Instance.NewGame();
+            Debug.Log("Creando Juego Nuevo");
+        }
+        else
+        {
+            //DataPersistenceManager.Instance.LoadGame();
+        }
     }
     //Lenguaje
     public void ChangeLocal(int localID)
@@ -84,5 +91,22 @@ public class GameManager : MonoBehaviour
     public ScriptableEstadisticas ScriptableSave()
     {
         return scriptable;
+    }
+
+    public  void Change()
+    {
+        ChangeLocal(idioma);
+    }
+
+    public void LoadData(GameData _data)
+    {
+        idioma = _data.idioma;
+        Invoke("Change", 0.1f);
+        player = _data.player;
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+        
     }
 }

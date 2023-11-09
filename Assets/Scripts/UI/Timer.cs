@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class Timer : MonoBehaviour, IDataPersiistence
 {
     public EventSystem eventSystem;
     [SerializeField] private float _timeRemaining = 180;
@@ -22,6 +22,8 @@ public class Timer : MonoBehaviour
     public bool _stoptimer = true;
     public int rondaActual;
     public static Timer Instance;
+
+    [SerializeField] GuardarJuego guardar;
 
     void Start()
     {
@@ -48,7 +50,7 @@ public class Timer : MonoBehaviour
             _timeRemaining -= Time.deltaTime;
             if (_timeRemaining <= -1 && _stoptimer)
             {
-                if(rondaActual == 4)
+                if(rondaActual == 5)
                 {
                     ManageScenes.Instance.AbrirWin();
                     _stoptimer = false;
@@ -56,6 +58,7 @@ public class Timer : MonoBehaviour
                 }
                 else
                 {
+                    guardar.Guardar();
                     rondaActual++;
                     _stoptimer = false;
                     sistemDrop.AparicionTarjetaEnSlot(1);
@@ -93,5 +96,13 @@ public class Timer : MonoBehaviour
         _stoptimer = true;
     }
 
-    
+    public void LoadData(GameData _data)
+    {
+        rondaActual = _data.rondaActual;
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+       
+    }
 }

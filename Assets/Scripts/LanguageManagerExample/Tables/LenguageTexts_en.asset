@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 549809e64b2e22349b57e72ae0d01e5e, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1435847376719577106
   m_TableData:
   - m_Id: 4022394179584
     m_Localized: Shadows
@@ -27,7 +28,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5107221549056
-    m_Localized: Just Roguelike
+    m_Localized: Its Just a Roguelike
     m_Metadata:
       m_Items: []
   - m_Id: 5283004829696
@@ -55,7 +56,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10832429731840
-    m_Localized: Just Roguelike
+    m_Localized: Its just a Roguelike
     m_Metadata:
       m_Items: []
   - m_Id: 681489530376192
@@ -63,15 +64,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 704174947848192
-    m_Localized: Volume Effects
+    m_Localized: Sounds Effects
     m_Metadata:
       m_Items: []
   - m_Id: 704228437807104
-    m_Localized: Lenguage
+    m_Localized: Language
     m_Metadata:
       m_Items: []
   - m_Id: 706037663420416
-    m_Localized: Espanish
+    m_Localized: Spanish
     m_Metadata:
       m_Items: []
   - m_Id: 723901673918464
@@ -79,11 +80,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1301438057697280
-    m_Localized: Knight in great armor, wielder of the sword of light
+    m_Localized: Knight in great armor, bearer of the sword of light
     m_Metadata:
       m_Items: []
   - m_Id: 1301638524456960
-    m_Localized: Powerful shooter, can shoot from a distance
+    m_Localized: Powerful shooter, can shoot from a large distance
     m_Metadata:
       m_Items: []
   - m_Id: 1302022097752064
@@ -122,6 +123,50 @@ MonoBehaviour:
     m_Localized: Main
     m_Metadata:
       m_Items: []
+  - m_Id: 18839763142270976
+    m_Localized: KNIGHT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840288499818496
+    m_Localized: SHOOTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18840511313829888
+    m_Localized: SOUL EATER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19095449612804096
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19140778534334464
+    m_Localized: UPGRADES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475159736086528
+    m_Localized: ARE YOU SURE YOU WANT TO LEAVE?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475285842030592
+    m_Localized: ANY UNSAVED PROGRESS WILL BE LOST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19475993068793856
+    m_Localized: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19476014744956928
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22635008359358464
+    m_Localized: "\rpermanent improvements\n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1435847376719577106
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0060ffe86afb4200

@@ -16,13 +16,14 @@ MonoBehaviour:
   - Guerrero
   - Warrior
   - shinoby
-  vidaMaxima: 100
-  Ataque: 3
-  vidaActual: 100
+  vidaMaxima: 10
+  ataque: 2
+  iluminar: 0
+  vidaActual: 10
   velocidadMovimiento: 3
   velocidadDeAtaque: 1
-  porcentajeRoboDeVida: 90
-  rangoGolpe: 1
+  porcentajeRoboDeVida: 0
+  projectileSize: 0
   velocidadBala: 0
   ataqueMele: 1
   rangoIluminacion: 12

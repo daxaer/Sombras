@@ -3,53 +3,84 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class Enemy_2 : Enemies
 {
     //[SerializeField] private Transform target;
-
-    //Vida
-    [SerializeField] private float distance;
-    [SerializeField] private RaycastHit2D rayCast;
-    [SerializeField] private GameObject frontObject;
-
-    public void FixedUpdate()
-    {
-        Vector2 raycastDirection = Vector2.right;
-
-        rayCast = Physics2D.Raycast(frontObject.transform.position, raycastDirection, distance);
-        if (rayCast.collider != null)
-        {
-            Debug.DrawLine(frontObject.transform.position, rayCast.point, Color.red);
-        }
-        else
-        {
-            Debug.DrawLine(frontObject.transform.position, rayCast.point, Color.green);
-        }
-    }
+    [SerializeField] GameObject PuntoFinal;
+    [SerializeField] bool puedoAtacar;
+    [SerializeField] CapsuleCollider2D cebo;
+    [SerializeField] BoxCollider2D box;
 
     private void OnEnable()
     {
-        animation_Cuerpo.SetBool("Muerto", false);
-        animation_Ojo.SetBool("Muerto", false);
+        DesactivarLuz();
+        RecibirDaño = true;
+        puedoAtacar = true;
+        animation_Cuerpo.SetTrigger("caminando");
+        animation_Ojo.SetTrigger("caminando");
+        gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Enemigos";
+    }
+    private void OnDisable()
+    {
+        CancelInvoke("Cargando");
+        CancelInvoke("Carga");
+        CancelInvoke("TerminarCarga");
+        CancelInvoke("RecuperandoCarga");
     }
 
-
+    public  override void Cargando()
+    {
+        if(puedoAtacar == true)
+        {
+            gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+            box.enabled = false;
+            GetComponent<AIDestinationSetter>().target = this.PuntoFinal.transform;
+            aiPath.maxSpeed = 0;
+            animation_Cuerpo.SetTrigger("cargando");
+            animation_Ojo.SetTrigger("cargando");
+            Invoke("Atacar", 1);
+            puedoAtacar = false;
+        }
+    }
     public override void Atacar()
     {
-        EstadisticasManager.Instance.vidaActual -= _damage;
+        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax) * 3;
         UIManager.Instance.UpdateVida();
-        iluminar.SetActive(false);
-        animation_Ojo.SetTrigger("Atacar");
-        animation_Cuerpo.SetTrigger("Atacar");
-        Desactivar();
+        animation_Ojo.SetTrigger("atacando");
+        animation_Cuerpo.SetTrigger("atacando");
+        Invoke("TerminarCarga", 3f);
+    }
+   
+    public void TerminarCarga()
+    {
+        animation_Ojo.SetTrigger("recuperando");
+        animation_Cuerpo.SetTrigger("recuperando");
+        aiPath.maxSpeed = 0;
+        Invoke("RecuperarDestino", 2);
+    }
+    public void RecuperarDestino()
+    {
+        animation_Ojo.SetTrigger("caminando");
+        animation_Cuerpo.SetTrigger("caminando");
+        animation_Brillo.SetTrigger("caminando");
+        aiPath.maxSpeed = AmountDifficult(Timer.Instance.rondaActual, _speedMin, _speedMax);
+        GetComponent<AIDestinationSetter>().target = Player.Instance.transform;
+        puedoAtacar = true;
+        cebo.enabled = true;
+        box.enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Enemigos";
     }
 
-    enum PatrolEnemy
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Estados de ataque del enemigo, Embestir, Quieto, Caminar
-        Ram, 
-        Stay,
-        Walk,
+        if(collision.CompareTag("Player") && !puedoAtacar)
+        {
+            Player.Instance.TakeDamage(_damage);
+        }
     }
 }

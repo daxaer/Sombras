@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviour, IDataPersiistence
 {
     [SerializeField] private TextMeshProUGUI textoAlmas;
     [SerializeField] private TextMeshProUGUI textovida;
@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     private float hitDelay = 1f;
     private float nextupdate;
     private int almas;
-    private int vidaAnterior;
+    private float vidaAnterior;
     bool actualizar = false;
     bool playerSpawneo = false;
 
@@ -106,6 +106,17 @@ public class UIManager : MonoBehaviour
             }
             hitSlider.value = vidaAnterior;
         }
+    }
+
+    public void LoadData(GameData _data)
+    {
+        almas = EstadisticasManager.Instance.almas;
+        AlmasActuales();
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+        
     }
 }
 
