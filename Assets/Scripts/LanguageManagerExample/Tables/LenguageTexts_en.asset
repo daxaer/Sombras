@@ -72,7 +72,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 706037663420416
-    m_Localized: Spanish
+    m_Localized: 'English
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 723901673918464
@@ -161,6 +163,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 22635008359358464
     m_Localized: "\rpermanent improvements\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23849549231513600
+    m_Localized: Spanish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23849555548135424
+    m_Localized: English
     m_Metadata:
       m_Items: []
   references:

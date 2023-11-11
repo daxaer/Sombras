@@ -68,7 +68,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 706037663420416
-    m_Key: SelectorLenguageEsp
+    m_Key: BotonLenguage
     m_Metadata:
       m_Items: []
   - m_Id: 723901673918464
@@ -157,6 +157,17 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 22635008359358464
     m_Key: Game/UI/GameOver/SpaceIn/TiendaMejoras/Mejoras Permanentes/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23849549231513600
+    m_Key: 'SpanishButton
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23849555548135424
+    m_Key: EnglishButton
     m_Metadata:
       m_Items: []
   m_Metadata:
