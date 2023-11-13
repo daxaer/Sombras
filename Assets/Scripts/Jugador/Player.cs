@@ -141,9 +141,9 @@ public class Player : MonoBehaviour
         transparencia1 = 1f;
         transparencia2 = 1f;
         yield return new WaitForSeconds(0.2f);
-        transparencia = 0.2f;
-        transparencia1 = 0.2f;
-        transparencia2 = 0.2f;
+        transparencia = 0f;
+        transparencia1 = 0f;
+        transparencia2 = 0f;
         yield return new WaitForSeconds(0.2f);
         transparencia = 1f;
         transparencia1 = 1f;
