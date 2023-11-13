@@ -867,8 +867,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 38.071503, y: 19.83145, z: 0}
-    m_Extent: {x: 0.82520103, y: 1.60075, z: 0}
+    m_Center: {x: 38.066498, y: 19.8335, z: 0}
+    m_Extent: {x: 0.82990074, y: 1.6005001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8460,8 +8460,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.017499924, y: -0.011350155, z: 0}
-    m_Extent: {x: 19.7225, y: 11.30055, z: 0}
+    m_Center: {x: -0.020750046, y: -0.005249977, z: 0}
+    m_Extent: {x: 19.72025, y: 11.30435, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11041,7 +11041,7 @@ PrefabInstance:
     - target: {fileID: 6857246662638247225, guid: f2c83581474e7e94cbfa3c2ef79e2a66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1082920748}
+      objectReference: {fileID: 1574324609}
     - target: {fileID: 6857246662638247225, guid: f2c83581474e7e94cbfa3c2ef79e2a66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PauseGame
