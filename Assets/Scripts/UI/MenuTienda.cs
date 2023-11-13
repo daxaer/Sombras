@@ -27,7 +27,6 @@ public class MenuTienda : MonoBehaviour
         }
 
         TarjetaEquipada tarjetaEquipada = null;
-        
 
         switch (slot)
         {
@@ -46,6 +45,7 @@ public class MenuTienda : MonoBehaviour
 
         if (UIManager.Instance.GetAlmas() >= tarjetaEquipada.costoTarjeta)
         {
+            SistemaDrop.Instance.actualizar = true;
             sonidoTarjeta.Play();
             EstadisticasManager.Instance.ataque += tarjetaEquipada.ataque;
             EstadisticasManager.Instance.vidaMaxima += tarjetaEquipada.salud;
@@ -56,6 +56,10 @@ public class MenuTienda : MonoBehaviour
             EstadisticasManager.Instance.rangoIluminacion += tarjetaEquipada.rangoLampara;
             EstadisticasManager.Instance.pasivaIluminacion = tarjetaEquipada.pasivaIluminacion;
             UIManager.Instance.Almas(-tarjetaEquipada.costoTarjeta);
+        }
+        else
+        {
+            SistemaDrop.Instance.actualizar = false;
         }
     }
 }

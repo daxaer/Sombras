@@ -14,15 +14,14 @@ public class TarjetaMostrada : MonoBehaviour
     [SerializeField] Text costeTarjeta;
     [SerializeField] Image imagenTarjeta;
     [SerializeField] Image marcoTarjeta;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-       
         Actualizar();
     }
+
     public void Actualizar()
     {
+        Debug.Log("tarjeta nueva");
         nombreTarjeta.text = TarjetaEquipada.nombreTarjeta[GameManager.Instance.ChangeLenguageTarget()];
         descripcionTarjeta.text = TarjetaEquipada.descripcionDeTarjeta[GameManager.Instance.ChangeLenguageTarget()];
         costeTarjeta.text = TarjetaEquipada.costoTarjeta.ToString();

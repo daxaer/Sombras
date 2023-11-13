@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -27,6 +28,8 @@ public class SistemaDrop : MonoBehaviour
     public Text textocompraSlot3;
     //[SerializeField] private EventSystem eventSystem;
 
+    public bool actualizar;
+
     private void Awake()
     {
         if(Instance == null)
@@ -49,23 +52,71 @@ public class SistemaDrop : MonoBehaviour
             porcentajeTotal += cantidad.probabilidadAparicion;
         }
 
-        AparicionTarjetaEnSlot(1); 
-        AparicionTarjetaEnSlot(2); 
-        AparicionTarjetaEnSlot(3);
+        ActualizarTarjetaEnSlot(1);
+        ActualizarTarjetaEnSlot(2);
+        ActualizarTarjetaEnSlot(3);
 
         //eventSystem.SetSelectedGameObject(botonCompraSlot1.gameObject);
     }
-
-    void Update()
+    private void OnEnable()
     {
-        ActualizarColorTextoSlots();
+        ActualizarTarjetaEnSlot(1);
+        ActualizarTarjetaEnSlot(2);
+        ActualizarTarjetaEnSlot(3);
+    }
+
+    public void ActualizarTarjetaEnSlot(int slot)
+    {
+        if (slot != 1 && slot != 2 && slot != 3)
+        {
+            return;
+        }
+
+        int probabilidad = Random.Range(1, porcentajeTotal + 1);
+        int miProbabilidad = probabilidad;
+
+        if (miProbabilidad >= porcentajeTotal)
+        {
+            miProbabilidad = porcentajeTotal;
+        }
+
+
+        for (int i = 0; i < probabilidadTarjetas.prob.Length; i++)
+        {
+            if (miProbabilidad <= probabilidadTarjetas.prob[i].probabilidadAparicion)
+            {
+
+                if (slot == 1)
+                {
+                    slot1.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
+                    slot1.Actualizar();
+                    ActualizarColorTextoSlots();
+                }
+                else if (slot == 2)
+                {
+                    slot2.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
+                    slot2.Actualizar();
+                    ActualizarColorTextoSlots();
+                }
+                else if (slot == 3)
+                {
+                    slot3.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
+                    slot3.Actualizar();
+                    ActualizarColorTextoSlots();
+                }
+                return;
+            }
+            else
+            {
+                miProbabilidad -= probabilidadTarjetas.prob[i].probabilidadAparicion;
+            }
+        }
     }
 
     public void AparicionTarjetaEnSlot(int slot)
     {
         if (slot != 1 && slot != 2 && slot != 3)
         {
-            
             return;
         }
 
@@ -87,20 +138,43 @@ public class SistemaDrop : MonoBehaviour
                 {
                     slot1.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
                     slot1.Actualizar();
-                   
-
+                    ActualizarColorTextoSlots();
                 }
                 else if (slot == 2 && UIManager.Instance.GetAlmas() >= slot2.TarjetaEquipada.costoTarjeta)
                 {
                     slot2.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
                     slot2.Actualizar();
-                    
+                    ActualizarColorTextoSlots();
                 }
                 else if (slot == 3 && UIManager.Instance.GetAlmas() >= slot3.TarjetaEquipada.costoTarjeta)
                 {
                     slot3.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
                     slot3.Actualizar();
-                    
+                    ActualizarColorTextoSlots();
+                }
+                else
+                {
+                    if(slot == 1 && actualizar)
+                    {
+                        actualizar = false;
+                        slot1.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
+                        slot1.Actualizar();
+                        ActualizarColorTextoSlots();
+                    }
+                    if (slot == 2 && actualizar)
+                    {
+                        actualizar = false;
+                        slot2.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
+                        slot2.Actualizar();
+                        ActualizarColorTextoSlots();
+                    }
+                    if (slot == 3 && actualizar)
+                    {
+                        actualizar = false;
+                        slot3.TarjetaEquipada = (TarjetaEquipada)probabilidadTarjetas.prob[i].TarjetaEquip;
+                        slot3.Actualizar();
+                        ActualizarColorTextoSlots();
+                    }
                 }
                 return;
             }
@@ -116,7 +190,6 @@ public class SistemaDrop : MonoBehaviour
         if (UIManager.Instance.GetAlmas() < slot1.TarjetaEquipada.costoTarjeta)
         {
             textocompraSlot1.color = Color.red;
-
         }
         else
         {
@@ -125,7 +198,6 @@ public class SistemaDrop : MonoBehaviour
         if (UIManager.Instance.GetAlmas() < slot2.TarjetaEquipada.costoTarjeta)
         {
             textocompraSlot2.color = Color.red;
-
         }
         else
         {
