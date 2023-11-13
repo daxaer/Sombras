@@ -3,7 +3,13 @@ guid: 2eb4eb45b8158af42a0d4e2ec8950aa9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - iluminar: {instanceID: 0}
+  - animation_Ojo: {instanceID: 0}
+  - animation_Cuerpo: {instanceID: 0}
+  - animation_Brillo: {instanceID: 0}
+  - aiPath: {instanceID: 0}
+  - hitParticles: {fileID: 4668692498936120001, guid: 03ab485732ac2064bb92add186bca64d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

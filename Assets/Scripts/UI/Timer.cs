@@ -25,10 +25,17 @@ public class Timer : MonoBehaviour, IDataPersiistence
 
     [SerializeField] GuardarJuego guardar;
 
+    //UI rondas
+    public TMP_Text roundText;
+    public Animator roundTextAnimator;
+
+
     void Start()
     {
         _timeIsRunning = true;
         _tiempoInicial = _timeRemaining;
+        UpdateRoundText();
+        PlayTextAnimation();
     }
 
     private void Awake()
@@ -66,14 +73,32 @@ public class Timer : MonoBehaviour, IDataPersiistence
                     sistemDrop.AparicionTarjetaEnSlot(3);
                     tienda.SetActive(true);
                     GameManager.Instance.JuegoPausado();
+                    UpdateRoundText();
                 }
             }
             else if(_stoptimer)
             {
                 DisplayTime(_timeRemaining);
+                PlayTextAnimation();
             }
   
         }
+    }
+
+    public void UpdateRoundText()
+    {
+        roundText.text = "Ronda: " + rondaActual;
+    }
+
+    public void PlayTextAnimation()
+    {
+        roundTextAnimator.SetTrigger("StartRoundAnimation");
+    }
+
+    public void ResetAnimation()
+    {
+        roundTextAnimator.enabled = false;
+        roundTextAnimator.enabled = true;
     }
 
     void DisplayTime(float _timeToDisplay)
@@ -82,6 +107,9 @@ public class Timer : MonoBehaviour, IDataPersiistence
         float minutes = Mathf.FloorToInt(_timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(_timeToDisplay % 60);
         _timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        UpdateRoundText();
+        ResetAnimation();
+        PlayTextAnimation();
     }
 
     public void RestartTimer()
