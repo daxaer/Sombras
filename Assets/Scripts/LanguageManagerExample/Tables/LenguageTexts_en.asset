@@ -173,6 +173,10 @@ MonoBehaviour:
     m_Localized: English
     m_Metadata:
       m_Items: []
+  - m_Id: 27086310760009728
+    m_Localized: Upgrades
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

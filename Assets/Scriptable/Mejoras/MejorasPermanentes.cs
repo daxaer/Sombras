@@ -15,4 +15,5 @@ public class MejorasPermanentes : ScriptableObject
     public int AumentroPrecio;
     public float AumentoEstadistica;
     public float AumentoEstadisticaOtorgada;
+    public string []DescriptionMejora;
 }

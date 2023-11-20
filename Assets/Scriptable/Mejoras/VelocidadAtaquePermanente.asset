@@ -20,3 +20,6 @@ MonoBehaviour:
   AumentroPrecio: 750
   AumentoEstadistica: -0.1
   AumentoEstadisticaOtorgada: -0
+  DescriptionMejora:
+  - Aumento de velocidad de ataque
+  - Increased Attack Speed

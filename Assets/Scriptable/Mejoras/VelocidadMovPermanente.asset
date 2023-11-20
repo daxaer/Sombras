@@ -20,3 +20,6 @@ MonoBehaviour:
   AumentroPrecio: 750
   AumentoEstadistica: 0.25
   AumentoEstadisticaOtorgada: 0
+  DescriptionMejora:
+  - Aumento de velocidad de movimiento
+  - 'Increased Movement Speed '
