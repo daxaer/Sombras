@@ -67,3 +67,5 @@ MonoBehaviour:
     probabilidadAparicion: 1
   - TarjetaEquip: {fileID: 11400000, guid: 53189a75d2bf1674dab274edf9fa6738, type: 2}
     probabilidadAparicion: 1
+  - TarjetaEquip: {fileID: 11400000, guid: fe85818c6ce03bd42852dc02d79d7ac4, type: 2}
+    probabilidadAparicion: 1

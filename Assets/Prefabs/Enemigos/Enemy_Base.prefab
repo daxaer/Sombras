@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 055edf4a893523047be904b30245a6a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 858114865
   m_SortingLayer: 1
   m_SortingOrder: 5
-  m_Sprite: {fileID: -667257820, guid: 9e3589c6a89c96a478056a4403d40908, type: 3}
+  m_Sprite: {fileID: -511910788, guid: 005a182e9b72d67409db1259c33acfc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 1
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 1804796711718029088}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08bd3959d30d52345ab22a3a27a4919c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 384c9d68b9f6e364289d8e0476ed1e71, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 7349952213639143445}
   - component: {fileID: 4411845708124067182}
   - component: {fileID: 769070496191382576}
+  - component: {fileID: 8662182346887220571}
   m_Layer: 3
   m_Name: Enemy_Base
   m_TagString: Enemy
@@ -252,7 +253,7 @@ Transform:
   - {fileID: 3011830166460772717}
   - {fileID: 596928168896950106}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235953647414781044
 MonoBehaviour:
@@ -267,10 +268,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeIncrease: 1
-  iluminar: {fileID: 117965689675876408}
+  iluminar: 0
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
-  animation_Brillo: {fileID: 0}
+  animation_Brillo: {fileID: 6942835736518465406}
   _vida: 3
   _damage: 1
   _vidaMin: 3
@@ -279,6 +280,7 @@ MonoBehaviour:
   _speedMax: 5
   _damageMin: 1
   _damageMax: 5
+  material: {fileID: 8225459986862862613}
   aiPath: {fileID: 594802796594497193}
   "RecibirDa\xF1o": 0
   circulo: {fileID: 1707214561227098646}
@@ -337,7 +339,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -536,3 +538,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00009985412, y: -0.0009706308}
   m_Size: {x: 1.37, y: 1.08}
   m_Direction: 1
+--- !u!114 &8662182346887220571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3155063478553261289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0

@@ -13,6 +13,7 @@ public class Enemy : Enemies
         circulo.enabled = true;
         animation_Cuerpo.SetBool("Muerto", false);
         animation_Ojo.SetBool("Muerto", false);
+        animation_Brillo.SetBool("Muerto", false);
         gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Enemigos";
         gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
         GetComponent<AIDestinationSetter>().target = Player.Instance.transform;

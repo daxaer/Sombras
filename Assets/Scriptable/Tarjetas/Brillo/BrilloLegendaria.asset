@@ -29,7 +29,7 @@ MonoBehaviour:
   velocidadAtaque: 0
   projectilSize: 0
   duracionLampara: 0
-  costoTarjeta: 10
+  costoTarjeta: 35
   robaVida: 0
   pasivaIluminacion: 1
   colorRareza: {r: 0.7254902, g: 0.6784314, b: 0.039215688, a: 1}

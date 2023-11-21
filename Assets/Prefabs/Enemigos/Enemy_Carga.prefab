@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 4411845708124067182}
   - component: {fileID: 2610514794851636857}
   - component: {fileID: 2789849477345743429}
+  - component: {fileID: 8828905183792487051}
   m_Layer: 3
   m_Name: Enemy_Carga
   m_TagString: Enemy
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeIncrease: 1
-  iluminar: {fileID: 117965689675876408}
+  iluminar: 0
   animation_Ojo: {fileID: 8673536928570557922}
   animation_Cuerpo: {fileID: 4411845708124067182}
   animation_Brillo: {fileID: 6942835736518465406}
@@ -330,6 +331,7 @@ MonoBehaviour:
   _speedMax: 4
   _damageMin: 1
   _damageMax: 4
+  material: {fileID: 8225459986862862613}
   aiPath: {fileID: 594802796594497193}
   "RecibirDa\xF1o": 0
   PuntoFinal: {fileID: 5214436977606927410}
@@ -356,7 +358,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -590,6 +592,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.03}
   m_Size: {x: 1.65, y: 2.93}
   m_Direction: 0
+--- !u!114 &8828905183792487051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3155063478553261289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &5214436977606927410
 GameObject:
   m_ObjectHideFlags: 0

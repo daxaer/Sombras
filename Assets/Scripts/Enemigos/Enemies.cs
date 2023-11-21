@@ -1,3 +1,4 @@
+using AllIn1SpriteShader;
 using Pathfinding;
 using System;
 using System.Collections;
@@ -8,7 +9,7 @@ using UnityEngine.AI;
 public class Enemies : MonoBehaviour
 {
     [SerializeField] protected float _lifeIncrease = 1f;
-    [SerializeField] protected SpriteRenderer iluminar;
+    [SerializeField] protected bool iluminar;
     [SerializeField] protected Animator animation_Ojo;
     [SerializeField] protected Animator animation_Cuerpo;
     [SerializeField] protected Animator animation_Brillo;
@@ -21,7 +22,7 @@ public class Enemies : MonoBehaviour
     [SerializeField] protected float _speedMax;
     [SerializeField] protected float _damageMin;
     [SerializeField] protected float _damageMax;
-    
+    [SerializeField] protected Renderer material;
 
     [SerializeField] protected AIPath aiPath;
     [SerializeField] protected bool RecibirDaño;
@@ -63,16 +64,17 @@ public class Enemies : MonoBehaviour
 
     public void Activarluz()
     {
-        var transparencia = iluminar.color.a;
-        transparencia = 1;
+        material.material.EnableKeyword("OUTBASE_ON");
         CancelInvoke("DesactivarLuz");
         Invoke(nameof(DesactivarLuz), 5f);
+        //shader.
     }
 
     public void DesactivarLuz()
     {
-        var transparencia = iluminar.color.a;
-        transparencia = 0;
+        material.material.DisableKeyword("OUTBASE_ON");
+        gameObject.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Enemigos";
     }
 
     public float AmountDifficult(int _round, float _estadisticMin, float _estadisticMax)
