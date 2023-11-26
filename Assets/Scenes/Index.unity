@@ -1284,6 +1284,18 @@ MonoBehaviour:
           m_StringArgument: Seleccion
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 7c5323ff9e8cd354e92a4a40eb6a6496, type: 2}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &444805007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,18 +1379,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: e0274892597e0f441a4e486b2cb21cdd, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 625609642}
-          m_TargetAssemblyTypeName: GuardarJuego, Assembly-CSharp
-          m_MethodName: Guardar
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -9146,6 +9146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3255945264502939673, guid: 079d7d3286208cc45a07006e51e4eb29, type: 3}
+      propertyPath: idiomaActual
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c5323ff9e8cd354e92a4a40eb6a6496, type: 2}
     - target: {fileID: 7825574149142441379, guid: 079d7d3286208cc45a07006e51e4eb29, type: 3}
       propertyPath: m_RootOrder
       value: 13

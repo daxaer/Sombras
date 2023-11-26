@@ -9,6 +9,9 @@ using UnityEngine.Serialization;
 
 public class Ataque : MonoBehaviour
 {
+    [SerializeField] private Animator animatorRecarga;
+    [SerializeField] private AnimationClip clip;
+    [SerializeField] private GameObject recargaGameobject;
     //public Estadisticas estadisticas;
     public AudioSource sonidoAtaque;
     [SerializeField] private Transform spawnAtaque;
@@ -69,7 +72,12 @@ public class Ataque : MonoBehaviour
 
     private IEnumerator SpeedAtack()
     {
+        recargaGameobject.SetActive(true);
+        float velocidad = clip.length / EstadisticasManager.Instance.velocidadeAtaque;
+        animatorRecarga.speed = velocidad;
+        animatorRecarga.SetTrigger("recarga");
         yield return new WaitForSeconds(EstadisticasManager.Instance.velocidadeAtaque);
+        recargaGameobject.SetActive(false);
         _canAttack = true;
     }
 
