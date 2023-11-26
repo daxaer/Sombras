@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.LowLevel;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
     private bool pausa;
     private Transform spawnPlayer;
     private GameObject player;
+    public ScriptableIdioma idiomaActual;
     //Lenguaje
     [SerializeField] private const string LocaleKey = "SelectedKey";
 
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
 
     private void Awake()
     {
+        idioma = idiomaActual.idioma;
         UnpauseGame();
         DontDestroyOnLoad(this);
         if (Instance == null)
@@ -30,7 +33,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
    
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
             LocalizationSettings.SelectedLocale = avaliableLocales.Locales[localID];
             PlayerPrefs.SetInt(LocaleKey, localID);
             idioma = localID;
+            idiomaActual.idioma = localID;
         }
     }
 
@@ -100,13 +104,14 @@ public class GameManager : MonoBehaviour, IDataPersiistence
 
     public void LoadData(GameData _data)
     {
-        idioma = _data.idioma;
-        Invoke("Change", 0.1f);
+        idioma = idiomaActual.idioma;
+        //Invoke("Change", 0.1f);
+        ChangeLocal(idioma);
         player = _data.player;
     }
 
     public void SaveData(ref GameData _data)
     {
-        _data.idioma = idioma;
+
     }
 }
