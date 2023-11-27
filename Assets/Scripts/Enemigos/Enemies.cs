@@ -87,7 +87,6 @@ public class Enemies : MonoBehaviour
         {
             RecibirDaño = false;
             _vida -= damage;
-            Debug.Log(_vida);
             if (_vida <= 0)
             {
                 Invoke(nameof(Desactivar), 0f);

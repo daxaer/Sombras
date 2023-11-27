@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class Timer : MonoBehaviour, IDataPersiistence
 {
@@ -48,10 +50,8 @@ public class Timer : MonoBehaviour, IDataPersiistence
             {
                 if(rondaActual == 9)
                 {
-                    ManageScenes.Instance.AbrirWin();
-                    _stoptimer = false;
-                    GameManager.Instance.JuegoPausado();
-                    rondaActual = 0;
+                    Player.Instance.JuegoTerminado();
+                    StartCoroutine("victoria");
                 }
                 else
                 {
@@ -101,5 +101,13 @@ public class Timer : MonoBehaviour, IDataPersiistence
     public void SaveData(ref GameData _data)
     {
        
+    }
+    IEnumerator victoria()
+    {
+        yield return new WaitForSeconds(5f);
+        ManageScenes.Instance.AbrirWin();
+        _stoptimer = false;
+        GameManager.Instance.JuegoPausado();
+        rondaActual = 0;
     }
 }

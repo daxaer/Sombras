@@ -9,6 +9,7 @@ TagManager:
   - Pared
   - AtaqueEnemigo
   - Projectile
+  - lampara
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Enemigos
     uniqueID: 858114865
+    locked: 0
+  - name: Explosion
+    uniqueID: 1236704611
     locked: 0

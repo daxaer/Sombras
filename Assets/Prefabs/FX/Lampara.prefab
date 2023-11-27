@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 121689751527594796}
   m_Layer: 0
   m_Name: Lampara
-  m_TagString: Untagged
+  m_TagString: lampara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,9 +122,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.266856}
+  m_Offset: {x: 0, y: 0.35}
   serializedVersion: 2
-  m_Radius: 0.066725254
+  m_Radius: 0.1
 --- !u!95 &517704788675197055
 Animator:
   serializedVersion: 5

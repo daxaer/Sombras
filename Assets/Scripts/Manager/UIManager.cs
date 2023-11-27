@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class UIManager : MonoBehaviour, IDataPersiistence
 {
@@ -77,12 +78,16 @@ public class UIManager : MonoBehaviour, IDataPersiistence
             textovida.text = EstadisticasManager.Instance.vidaActual.ToString();
             if (EstadisticasManager.Instance.vidaActual <= 0)
             {
-                Player.Instance.Mori();
+                EstadisticasManager.Instance.velocidadPlayer = 0;
+                Player.Instance.dead = true;
+                Player.Instance.JuegoTerminado();
             }
         }
         else if (playerSpawneo)
         {
-            Player.Instance.Mori();
+            EstadisticasManager.Instance.velocidadPlayer = 0;
+            Player.Instance.dead = true;
+            Player.Instance.JuegoTerminado();
         }
         
         if (EstadisticasManager.Instance.vidaActual < vidaAnterior && !actualizar)

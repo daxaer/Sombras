@@ -126,5 +126,7 @@ public enum SOUNDTYPE
     ENEMY_EXPLOSION,
     LIGHT,
     END_lIGHT,
-    RECARGA
+    RECARGA,
+    DERROTA,
+    VICTORIA
 }

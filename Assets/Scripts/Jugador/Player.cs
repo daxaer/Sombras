@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private VictoriaYDerrota gameEnd;
     private PlayerInput playerInput;
     private Rigidbody2D playerRb;
     public bool invulnerable;
@@ -103,8 +104,8 @@ public class Player : MonoBehaviour
         ManageScenes.Instance.AbrirGameOver();
         Timer.Instance.rondaActual = 0;
         DataPersistenceManager.Instance.SaveGame();
-
     }
+
     public void Pausar()
     {
         ManageScenes.Instance.AbrirPausa();
@@ -120,12 +121,22 @@ public class Player : MonoBehaviour
             VibracionCamara.Instance.MoviendoCamara(5, 5, 0.5f);
             if (EstadisticasManager.Instance.vidaActual <= 0)
             {
-                Mori();
+                dead = true;
+                JuegoTerminado();
             }
             else
             {
                 StartCoroutine("Invulnerabilidad");
             }
+        }
+    }
+    public void JuegoTerminado()
+    {
+        gameEnd.gameObject.SetActive(true);
+        gameEnd.scalaraura();
+        if (dead) 
+        {
+            Invoke("Mori", 5f);
         }
     }
     IEnumerator Invulnerabilidad()

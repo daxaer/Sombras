@@ -55,12 +55,10 @@ public class Ataque : MonoBehaviour
             animatorOjos.SetTrigger("Atacar");
             if (EstadisticasManager.Instance.ataqueMele == true)
             {
-                Debug.Log("ataque mele");
                 MusicManager.Instance.PlayAudioPool(SOUNDTYPE.SLASH, transform);
             }
             else
             {
-                Debug.Log("ataque rango");
                 MusicManager.Instance.PlayAudioPool(SOUNDTYPE.FIRE_RANGE, transform);
             }
         }
