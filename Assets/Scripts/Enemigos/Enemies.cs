@@ -25,6 +25,7 @@ public class Enemies : MonoBehaviour
 
     [SerializeField] protected AIPath aiPath;
     [SerializeField] protected bool RecibirDaño;
+    [SerializeField] protected int rondaMax;
 
     void Start()
     {
@@ -77,8 +78,7 @@ public class Enemies : MonoBehaviour
 
     public float AmountDifficult(int _round, float _estadisticMin, float _estadisticMax)
     {
-        int roundMax = 15;
-        float estadistic = _estadisticMin + (_estadisticMax - _estadisticMin) * Mathf.Pow((_round - 1) / (roundMax - 1), 3);
+        float estadistic = _estadisticMin + (_estadisticMax - _estadisticMin) * Mathf.Pow((_round - 1) / (rondaMax - 1), 3);
         return estadistic;
     }
     public void TakeDamage(float damage)

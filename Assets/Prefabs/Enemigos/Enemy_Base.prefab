@@ -281,6 +281,7 @@ MonoBehaviour:
   _damageMax: 5
   aiPath: {fileID: 594802796594497193}
   "RecibirDa\xF1o": 0
+  rondaMax: 12
   circulo: {fileID: 1707214561227098646}
 --- !u!58 &1707214561227098646
 CircleCollider2D:

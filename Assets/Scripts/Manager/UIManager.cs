@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour, IDataPersiistence
     public void RecibirDaño()
     {
         slidervida.value = EstadisticasManager.Instance.vidaActual;
-        textovida.text = EstadisticasManager.Instance.vidaActual.ToString();
+        textovida.text = (EstadisticasManager.Instance.vidaActual.ToString() + " / " + EstadisticasManager.Instance.vidaMaxima.ToString());
     }
     
     public void ActualizarVidaMaxima()
@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour, IDataPersiistence
         if (EstadisticasManager.Instance.vidaActual >= 0 && playerSpawneo)
         {
             slidervida.value = EstadisticasManager.Instance.vidaActual;
-            textovida.text = EstadisticasManager.Instance.vidaActual.ToString();
+            textovida.text = (EstadisticasManager.Instance.vidaActual.ToString() + " / " + EstadisticasManager.Instance.vidaMaxima.ToString());
             if (EstadisticasManager.Instance.vidaActual <= 0)
             {
                 EstadisticasManager.Instance.velocidadPlayer = 0;

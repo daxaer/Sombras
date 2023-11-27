@@ -367,6 +367,7 @@ MonoBehaviour:
   _damageMax: 10
   aiPath: {fileID: 594802796594497193}
   "RecibirDa\xF1o": 0
+  rondaMax: 12
   cuerpo: {fileID: 1745192954688936496}
   der: {fileID: 2320559466741601419}
   izq: {fileID: 4810787895458972784}

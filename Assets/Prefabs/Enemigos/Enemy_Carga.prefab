@@ -332,6 +332,7 @@ MonoBehaviour:
   _damageMax: 4
   aiPath: {fileID: 594802796594497193}
   "RecibirDa\xF1o": 0
+  rondaMax: 12
   PuntoFinal: {fileID: 5214436977606927410}
   puedoAtacar: 0
   cebo: {fileID: 1724806284254852261}
