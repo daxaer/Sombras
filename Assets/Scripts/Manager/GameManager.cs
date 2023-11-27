@@ -67,6 +67,11 @@ public class GameManager : MonoBehaviour, IDataPersiistence
         return idioma;
     }
 
+    public bool GetPause()
+    {
+        return pausa;
+    }
+
     public void JuegoPausado()
     {
         pausa = true;

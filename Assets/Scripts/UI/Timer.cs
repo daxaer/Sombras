@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class Timer : MonoBehaviour, IDataPersiistence
 {
     public EventSystem eventSystem;
-    [SerializeField] private float _timeRemaining = 180;
+    [SerializeField] public float _timeRemaining = 180;
     [SerializeField] private float _tiempoInicial;
     [SerializeField] private bool _timeIsRunning = true;
     [SerializeField] private TMP_Text _timeText;
@@ -46,11 +46,12 @@ public class Timer : MonoBehaviour, IDataPersiistence
             _timeRemaining -= Time.deltaTime;
             if (_timeRemaining <= -1 && _stoptimer)
             {
-                if(rondaActual == 5)
+                if(rondaActual == 9)
                 {
                     ManageScenes.Instance.AbrirWin();
                     _stoptimer = false;
                     GameManager.Instance.JuegoPausado();
+                    rondaActual = 0;
                 }
                 else
                 {

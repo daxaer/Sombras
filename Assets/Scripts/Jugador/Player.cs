@@ -107,9 +107,9 @@ public class Player : MonoBehaviour
     }
     public void Pausar()
     {
-        GameManager.Instance.JuegoPausado();
         ManageScenes.Instance.AbrirPausa();
     }
+
     public void TakeDamage(int damage)
     {
         if(invulnerable == false)

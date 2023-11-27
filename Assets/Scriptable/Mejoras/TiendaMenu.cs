@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TiendaMenu : MonoBehaviour
 {
     public Image imagenTiendaPr;
-    public Text textoPrecio;
+    public TextMeshProUGUI textoPrecio;
     public Button botonComprar;
     public int nivelmejora;
     public int precio;

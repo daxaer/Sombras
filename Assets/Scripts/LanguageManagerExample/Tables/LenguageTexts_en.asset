@@ -177,6 +177,10 @@ MonoBehaviour:
     m_Localized: Upgrades
     m_Metadata:
       m_Items: []
+  - m_Id: 29635088251637760
+    m_Localized: 'Round:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
