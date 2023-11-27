@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 [CreateAssetMenu]
 public class MejorasPermanentes : ScriptableObject
@@ -15,4 +12,5 @@ public class MejorasPermanentes : ScriptableObject
     public int AumentroPrecio;
     public float AumentoEstadistica;
     public float AumentoEstadisticaOtorgada;
+    public string []DescriptionMejora;
 }

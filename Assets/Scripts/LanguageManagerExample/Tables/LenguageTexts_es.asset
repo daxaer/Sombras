@@ -173,6 +173,14 @@ MonoBehaviour:
     m_Localized: "Ingl\xE9s "
     m_Metadata:
       m_Items: []
+  - m_Id: 27086310760009728
+    m_Localized: Mejoras
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29635088251637760
+    m_Localized: 'Ronda:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

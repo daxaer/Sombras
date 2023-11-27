@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba0c157cc95b144fb501cd10cdab134, type: 3}
   m_Name: VelocidadAtaquePermanente
   m_EditorClassIdentifier: 
-  imagenMejora: {fileID: -145591459120656007, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
+  imagenMejora: {fileID: -8863714306952377876, guid: 6cc06b4e7a76f834b9b7520c5c2165a0, type: 3}
   costeMejoraActual: 500
   costeInicial: 500
-  nivel: 9
+  nivel: 4
   nivelActual: 0
   AumentroPrecio: 750
   AumentoEstadistica: -0.1
   AumentoEstadisticaOtorgada: -0
+  DescriptionMejora:
+  - Aumento de velocidad de ataque
+  - Increased Attack Speed

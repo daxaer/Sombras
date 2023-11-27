@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -12,7 +10,7 @@ public class ManageScenes : MonoBehaviour
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject gameOver;
     public static ManageScenes Instance;
-
+    
     private void Awake()
     {
         if (Instance == null)
@@ -56,7 +54,20 @@ public class ManageScenes : MonoBehaviour
     }
     public void AbrirPausa()
     {
-        pausa.SetActive(true);
+        
+        if (GameManager.Instance.GetPause())
+        {
+            pausa.SetActive(false);
+            GameManager.Instance.UnpauseGame();
+            Debug.Log("Abrir pausa");
+
+        }
+        else
+        {
+            pausa.SetActive(true);
+            GameManager.Instance.JuegoPausado();
+            Debug.Log("Cerrar pausa");
+        }
     }
 
     public void PauseGame()

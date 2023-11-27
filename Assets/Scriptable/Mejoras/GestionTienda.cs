@@ -1,6 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +9,7 @@ public class GestionTienda : MonoBehaviour, IDataPersiistence
     [SerializeField] GameObject menuDeTienda;
     public Text textoAlmasMejora;
     private int almasMax;
+    
 
     void Start()
     {
@@ -97,6 +97,7 @@ public class GestionTienda : MonoBehaviour, IDataPersiistence
         }
         textoAlmasMejora.text = almasMax.ToString();
     }
+    
 
     public void LoadData(GameData _data)
     {
