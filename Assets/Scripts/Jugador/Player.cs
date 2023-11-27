@@ -117,6 +117,7 @@ public class Player : MonoBehaviour
             invulnerable = true;
             EstadisticasManager.Instance.vidaActual -= damage;
             MusicManager.Instance.PlayAudioPool(SOUNDTYPE.HIT_PLAYER, transform);
+            VibracionCamara.Instance.MoviendoCamara(5, 5, 0.5f);
             if (EstadisticasManager.Instance.vidaActual <= 0)
             {
                 Mori();
