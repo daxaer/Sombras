@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour, IDataPersiistence
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
    

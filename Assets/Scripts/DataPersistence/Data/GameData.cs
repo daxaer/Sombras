@@ -25,6 +25,10 @@ public class GameData
     public int Almas;
     public int AlmasMax;
 
+    public int[] nivelactual;
+
+
+
     //Pasivas
     public bool iluminarEnemigos;
 
@@ -49,5 +53,7 @@ public class GameData
 
         //Pasivas
         iluminarEnemigos = false;
+
+        nivelactual = new int[6];
 }
 }

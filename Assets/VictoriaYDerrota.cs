@@ -26,6 +26,8 @@ public class VictoriaYDerrota : MonoBehaviour
     {
         if(Player.Instance.dead)
         {
+            Timer.Instance._timeIsRunning = false;
+            luz.intensity = 0.02f;
             sprite.color = Color.black;
             MusicManager.Instance.PlayAudioPool(SOUNDTYPE.DERROTA, transform);
             Debug.Log("perdi");
@@ -54,7 +56,12 @@ public class VictoriaYDerrota : MonoBehaviour
         }
         else if(collision.CompareTag("lampara") && Player.Instance.dead)
         {
+            MusicManager.Instance.PlayAudioPool(SOUNDTYPE.FOCO, transform);
             collision.gameObject.GetComponent<Animator>().SetTrigger("perdi");
+        }
+        if(collision.CompareTag("Enemy") && !Player.Instance.dead)
+        {
+            collision.GetComponent<Enemies>().Desactivar();
         }
     }
 }

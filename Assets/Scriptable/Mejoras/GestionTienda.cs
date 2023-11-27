@@ -7,8 +7,10 @@ public class GestionTienda : MonoBehaviour, IDataPersiistence
 {
     [SerializeField] List<MejorasPermanentes> mejoraPermanente;
     [SerializeField] GameObject menuDeTienda;
+    [SerializeField] private AudioClip[] clip;
     public Text textoAlmasMejora;
     private int almasMax;
+    
 
     void Start()
     {
@@ -52,11 +54,22 @@ public class GestionTienda : MonoBehaviour, IDataPersiistence
                     almasMax = almasMax - mejoras.costeMejoraActual;
                     mejoras.AumentoEstadisticaOtorgada = mejoras.AumentoEstadisticaOtorgada + mejoras.AumentoEstadistica;
                     mejoras.costeMejoraActual = mejoras.costeMejoraActual + mejoras.AumentroPrecio;
+                    MusicManager.Instance.PlayAudio(SOUNDTYPE.VICTORIA);
+
                 }
                 gestionNivel.indiceActual++;
                 mejoras.nivelActual = gestionNivel.indiceActual;
             }
+            else
+            {
+                MusicManager.Instance.PlayAudio(SOUNDTYPE.DERROTA);
+
+            }
         }
+        else
+        {
+            MusicManager.Instance.PlayAudio(SOUNDTYPE.DERROTA);
+        }    
         tienda();
         textoAlmasMejora.text = almasMax.ToString();
     }
@@ -99,10 +112,19 @@ public class GestionTienda : MonoBehaviour, IDataPersiistence
     public void LoadData(GameData _data)
     {
         almasMax = _data.AlmasMax;
+        Debug.Log(mejoraPermanente.Count);
+        for (int i = 0; i < mejoraPermanente.Count; i++)
+        {
+            mejoraPermanente[i].nivelActual = _data.nivelactual[i];
+        }
     }
 
     public void SaveData(ref GameData _data)
     {
         _data.AlmasMax = almasMax;  
+        for (int i = 0; i < mejoraPermanente.Count; i++)
+        {
+            _data.nivelactual[i] = mejoraPermanente[i].nivelActual;
+        }
     }
 }

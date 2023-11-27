@@ -128,5 +128,6 @@ public enum SOUNDTYPE
     END_lIGHT,
     RECARGA,
     DERROTA,
-    VICTORIA
+    VICTORIA,
+    FOCO,
 }

@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9742063d97443946ad591f0d09732ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundType: 15
+  soundType: 20
   posicion: {fileID: 7997579992034633154}
 --- !u!1 &3060530701805205641
 GameObject:

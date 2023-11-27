@@ -192,11 +192,18 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator  ActivarLampara()
     {
-        lamparaActual = Random.Range(1, _lamp.Length);
-        _lamp[lamparaActual].SetActive(true);
-        _lamp[lamparaActual].GetComponent<Animator>().SetTrigger("Prender");
-        yield return new WaitForSeconds(prenderLampara);
-        StartCoroutine("ActivarLampara");
+        if(_stopSpawning)
+        {
+
+        }
+        else
+        {
+            lamparaActual = Random.Range(1, _lamp.Length);
+            _lamp[lamparaActual].SetActive(true);
+            _lamp[lamparaActual].GetComponent<Animator>().SetTrigger("Prender");
+            yield return new WaitForSeconds(prenderLampara);
+            StartCoroutine("ActivarLampara");
+        }
     }
 
     public void SpawnExplosion(Transform transform, int damage)
