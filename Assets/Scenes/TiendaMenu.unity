@@ -210,9 +210,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 47291282}
+  - component: {fileID: 47291287}
   - component: {fileID: 47291284}
   - component: {fileID: 47291286}
-  - component: {fileID: 47291287}
   - component: {fileID: 47291288}
   m_Layer: 5
   m_Name: Mejora

@@ -164,6 +164,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6608450023402869211}
+          m_TargetAssemblyTypeName: TiendaMenu, Assembly-CSharp
+          m_MethodName: SelectedDescription
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6743564463708154368
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +358,7 @@ MonoBehaviour:
   precio: 100
   mejora: {fileID: 0}
   efecto: {fileID: 0}
+  singletonDescription: {fileID: 0}
 --- !u!1001 &8992357638118060434
 PrefabInstance:
   m_ObjectHideFlags: 0

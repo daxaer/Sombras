@@ -21,5 +21,5 @@ MonoBehaviour:
   AumentoEstadistica: 0.1
   AumentoEstadisticaOtorgada: 0
   DescriptionMejora:
-  - Aumento de salud permanentemente
-  - Permanent Health Boost
+  - "Aumento de tama\xF1o de bala permanentemente"
+  - Permanent size bullet
